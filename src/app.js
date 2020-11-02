@@ -7,9 +7,7 @@
 
 
 ////////////-----------------PUBLIC--------------------////////////
-     app.use(express.static(path.join(__dirname, './public')));
-
-
+     app.use(express.static(path.join(__dirname, '../public')));
 
 ////////////------------------RUTAS--------------------////////////
      app.get('/', function (req, res) {
