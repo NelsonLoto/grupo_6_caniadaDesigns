@@ -2,7 +2,7 @@
   "name": "CaniadaDesign",
   "version": "1.0.0",
   "description": "Caniada Designs es un e-commerce de indumentaria casual. Su target son hombres y mujeres de 18 a 35 años ubicados en Argentina.",
-  "main": "index.js",
+  "main": "./src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/NelsonLoto/grupo_6_caniadaDesigns/issues"
   },
-  "homepage": "https://github.com/NelsonLoto/grupo_6_caniadaDesigns#readme"
+  "homepage": "https://github.com/NelsonLoto/grupo_6_caniadaDesigns#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
