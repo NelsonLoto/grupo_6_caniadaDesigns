@@ -11,6 +11,3 @@ main{
     flex-direction: column;
 }
 
-main div.ruta {
-    display: flex;
-}
