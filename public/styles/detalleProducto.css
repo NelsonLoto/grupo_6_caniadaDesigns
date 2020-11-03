@@ -6,8 +6,59 @@
     padding: 0;
 }
 
-main{
-    display : flex;
-    flex-direction: column;
+* a{
+    text-decoration: none;
 }
+
+/*===========ESTRUCTURA PRINCIPAL===========*/
+
+body{
+    display: flex;
+    flex-direction: wrap;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 150vh;
+    width: 100%;
+}
+
+main div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+main div.rutaProducto{
+    height: 5%;
+}
+
+main div.contenedorDetalle{
+    height: 60%;
+    background-color: lightcoral;
+}
+main div.similaresProducto{
+    height: 35%;
+}
+
+/*===========DIV RUTAPRODUCTO===========*/
+main div.rutaProducto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main div.rutaProducto ul li{
+    display: inline;
+}
+
+main div.rutaProducto ul li a{
+    text-decoration: none;
+    color: #B3ABBC;
+}
+
+/*===========DIV CONTENEDORDETALLES===========*/
+
 
