@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/NelsonLoto/grupo_6_caniadaDesigns#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "start": "^5.1.0"
   }
 }
