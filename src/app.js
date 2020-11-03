@@ -9,8 +9,6 @@
 ////////////-----------------PUBLIC--------------------////////////
      app.use(express.static(path.join(__dirname, '../public')));
 
-
-
 ////////////------------------RUTAS--------------------////////////
      app.get('/', function (req, res) {
           res.sendFile(path.join(__dirname, '/views/index.html'))
