@@ -1,0 +1,128 @@
+
+
+*{
+     box-sizing: border-box;
+     margin: 0;
+     font-family: 'Courier New', Courier, monospace;
+     text-decoration: none;
+     padding: 0px;
+     font-family: 'Montserrat', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     
+}
+footer {}
+
+
+
+/* Footer superior */
+footer .fila1 {
+     display: flex;
+     justify-content: space-between;
+     margin: 20px 50px;
+     border-bottom: solid 1px #363636;
+     padding-bottom: 30px;
+}
+
+footer .fila1 img.logo {
+     width: 5%;
+     height: 10%;
+     margin:10px 50px;
+}
+footer .fila1 div.derecha{
+     margin: 0px 50px;
+     display: flex;
+     justify-content: space-between;
+}
+
+footer .fila1 .derecha h4 {
+     margin: 10px 0px 20px 0px;
+}
+footer .fila1 .derecha ul {
+     list-style-type: none;
+}
+footer .fila1 .derecha ul li {
+     padding-top: 15px;
+}
+footer .fila1 .derecha ul li a{
+     color: #363636
+}
+
+.fila1 div.derecha div.nav {
+     margin: 0px 60px 0px 0px;
+     display: flex;
+     flex-direction: column;   
+}
+
+.fila1 div.derecha div.colecciones {
+     margin: 0px 60px 0px 0px;
+     display: flex;
+     flex-direction: column;
+}
+
+.fila1 div.derecha div.nosotros {
+     margin: 0px 60px 0px 0px;
+     display: flex;
+     flex-direction: column;
+}
+.fila1 div.derecha div.nosotros ul{
+     
+}
+
+.fila1 div.derecha div.usuario {
+     margin: 10px 0px 10px 0px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+.fila1 div.derecha div.usuario a{
+     margin-bottom: 20px;
+     padding: 10px 20px;
+     width: 160px;
+     border: solid 1px #363636;
+     border-radius: 8px;
+     text-align: center;
+     font-size: 15px;
+}
+.fila1 div.derecha div.usuario a.registro{
+     background-color: #363636;
+     color: white;
+}
+
+.fila1 div.derecha div.usuario a.logIn{
+     background-color: white;
+     color: #363636;
+}
+
+
+
+/* Footer inferior */
+
+footer .fila2 {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 30px 50px;
+     
+}
+footer .fila2 h4{
+     margin: 0px 50px;
+}
+footer .fila2 .redes{
+     margin: 0px 50px;
+     display: flex;
+     justify-items: space-around;
+     align-items: center;
+}
+footer .fila2 .redes p{
+     padding: 0px 0px 0px 30px;
+}
+footer .fila2 .redes a{
+     margin: 0px 0px 0px 30px;
+}
+footer .fila2 .redes a i{
+     color: #363636;
+     font-size: 25px;
+}
+footer .fila2 .redes a i.fa-facebook{}
+footer .fila2 .redes a i.fa-instagram{}
+footer .fila2 .redes a i.fa-pinterest{}
