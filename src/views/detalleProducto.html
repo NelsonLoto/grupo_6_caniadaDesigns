@@ -1,83 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="/styles/detalleProducto.css">
-     <title>CANIADA - Productos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/detalleProducto.css">
+    <title>CANIADA - Productos</title>
 </head>
+
 <body>
-     <!--<header></header>--> 
-     <main>
-          <div class="rutaProducto">
-               <ul>
-                    <li><a href="#">género</a></li>
-                    <li><a href="#">/categoría</a></li>
-                    <li><a href="#">/subcategoría</a></li>
-                    <li><a href="#">/producto</a></li>
-               </ul>
-          </div>
-          <div class="contenedorDetalle">
-               <section class="vidriera">
+    <!--<header></header>-->
+    <main>
+        <div class="rutaProducto">
+            <ul>
+                <li><a href="#">género</a></li>
+                <li><a href="#">/ categoría</a></li>
+                <li><a href="#">/ subcategoría</a></li>
+                <li><a href="#">/ producto</a></li>
+            </ul>
+        </div>
+        <div class="contenedorDetalle">
+            <div class="panelIzquierdo">
+                <section class="vidriera">
                     <div class="imagenes">
-                         <img src="" alt="Imagen1">
-                         <img src="" alt="Imagen2">
-                         <img src="" alt="Imagen3">
-                         <img src="" alt="Imagen4">
-                         <button><a href="">Izquierda</a></button>
-                         <button><a href="">Derecha</a></button>
+                        <div class="botonIzq">
+                            <button><i class="fas fa-arrow-left"></i></button>
+                        </div>
+                        <div><img src="/images/producto1/remeraLisaBlanca1.jpeg" alt="remeraLisaBlanca1"></div>
+                        <div>
+                            <img src="/images/producto1/remeraLisaBlanca2.jpeg" alt="remeraLisaBlanca2">
+                        </div>
+                        <div class="botonDer">
+                            <button><i class="fas fa-arrow-right"></i></button>
+                        </div>
                     </div>
-               </section>
-               <section class="detallesProducto">
+                </section>
+                <section class="caracteristicasProducto">
+                    <h3>Nombre detallado del producto</h3>
+                    <h4>Talla</h4>
+                    <p>El/la modelo mide x y lleva talle x</p>
+                    <h4>Modelo</h4>
+                    <p>Slim Fit</p>
+                    <h4>Composicion</h4>
+                    <p>Tipo de composición</p>
+                    <h4>Art. N°</h4>
+                    <p>123456</p>
+                    <div class="opinionTalles">
+                        <h4>Talle según XX opiniones</h4>
+                        <img src="/images/medidorTalles.jpg" alt="">
+                    </div>
+                </section>
+            </div>
+            <div class="panelDerecho">
                     <h2>Nombre del producto</h2>
                     <h2>Precio</h2>
-                    <p>Colores/Diseños</p>
+                    <p>Hasta en <strong>12 cuotas sin interés</strong> con los mejores bancos </p>
+                    <p><strong>Colores/Diseños</strong></strong></p>
                     <div class="coloresProducto">
-                         <img src="" alt="color1">
-                         <img src="" alt="color2">
-                         <img src="" alt="color3">
+                        <div class="miniatura"><a href="#"><img src="/images/producto1/miniaturaRemeraLisaNegra.jpeg" alt="color1"></a></div>
+                        <div class="miniatura"><a href="#"><img src="/images/producto1/miniaturaRemeraLisaBordo.jpeg"alt="color2"></a></div>
+                        <div class="miniatura"><a href="#"><img src="/images/producto1/miniaturaRemeraLisaVerde.jpeg" alt="color3"></a></div>
+                        <button><i class="fas fa-arrow-right"></i></button>
                     </div>
                     <div class="seleccionTalles">
-                         <select name="seleccionTalles" id="seleccionTalles">
-                              <option value="selecTalle">Seleccioná tu talle</option>
-                              <option value="XS">XS</option>
-                              <option value="S">S</option>
-                              <option value="M">M</option>
-                              <option value="L">L</option>
-                              <option value="XL">XL</option>
+                        <select name="seleccionTalles" id="seleccionTalles">
+                                   <option value="selecTalle">Seleccioná tu talle</option>
+                                   <option value="XS">XS</option>
+                                   <option value="S">S</option>
+                                   <option value="M">M</option>
+                                   <option value="L">L</option>
+                                   <option value="XL">XL</option>
                               </select>
                     </div>
-                    <a href="#">Tabla de talles</a>
-                    <button><i>ícono</i><a href="#">Añadir</a></button>
+                    <small><a href="#">Tabla de talles</a></small>
+                    <button><i class="fas fa-shopping-bag"></i><a href="#"> Añadir</a></button>
                     <ul>
-                         <li>Envíos gratis a todo el país</li>
-                         <li>Devoluciones gratiuitas</li>
+                        <li><i class="far fa-check-circle"></i>Envíos gratis a todo el país</li>
+                        <li><i class="far fa-check-circle"></i>Devoluciones gratuitas</li>
                     </ul>
-               </section>
-          <section class="caracteristicasProducto">
-               <h3>Nombre detallado del producto</h3>
-               <h4>Talla</h4><p>El/la modelo mide x y lleva talle x</p>
-               <h4>Modelo</h4><p>Slim Fit</p>
-               <h4>Composicion</h4><p>Tipo de composición</p>
-               <h4>Art. N°</h4><p>123456</p>
-               <div class="opinionTalles">
-                    <h4>Talle según XX opiniones</h4>
-                    <p>Acá iría funcionalidad con jQuery</p>
-               </div>
-          </section>
-     </div>
-          <div class="similaresProducto">
-               <h3>Otros también compraron</h3>
-               <div class="recomendaciones">
-                    <img src="" alt="recom1">
-                    <img src="" alt="recom2">
-                    <img src="" alt="recom3">
-                    <img src="" alt="recom4">
-                    <img src="" alt="recom5 ">
-                    <button>Siguiente</button>
-               </div>
-          </div>
-     </main> 
+            </div>
+        </div>
+        <div class="similaresProducto">
+            <h3>Otros también compraron</h3>
+            <div class="recomendaciones">
+                <div><img src="images/producto1/recom1.jpeg" alt="recom1"></div>
+                <div><img src="images/producto1/recom2.jpeg" alt="recom2"></div>
+                <div><img src="images/producto1/recom3.jpeg" alt="recom3"></div>
+                <div><img src="images/producto1/recom4.jpeg" alt="recom4"></div>
+                <button><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+
+    <!--FOOTER-->
+    <footer>
+        <div class="fila1">
+            <img class="logo" src="/images/logoCaniada.svg" alt="">
+            <!--logo-->
+
+            <div class="derecha">
+                <div class="nav">
+                    <h4>Caniada</h4>
+                    <ul>
+                        <li><a href="">Link 1</a></li>
+                        <li><a href="">Link 2</a></li>
+                        <li><a href="">Link 3</a></li>
+                    </ul>
+                </div>
+
+                <div class="colecciones">
+                    <h4>Colecciones</h4>
+                    <ul>
+                        <li><a href="">Link 1</a></li>
+                        <li><a href="">Link 2</a></li>
+                        <li><a href="">Link 3</a></li>
+                    </ul>
+                </div>
+
+                <div class="nosotros">
+                    <h4>Nosotros</h4>
+                    <ul>
+                        <li><a href="">Quiénes somos</a></li>
+                        <li><a href="">Contactanos</a></li>
+                    </ul>
+                </div>
+
+                <div class="usuario">
+                    <a href="" class="registro">Registrarme</a>
+                    <a href="" class="logIn">Iniciar sesión</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="fila2">
+            <h4>© grupo6 DH</h4>
+            <div class="redes">
+                <p>Seguinos</p>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

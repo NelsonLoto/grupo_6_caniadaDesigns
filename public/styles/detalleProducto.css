@@ -1,64 +1,405 @@
 @import '/public/styles/style.css';
+@import url('https://use.fontawesome.com/releases/v5.15.1/css/all.css');
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    padding: 0px;
+    font-family: 'Montserrat', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-* a{
-    text-decoration: none;
-}
 
 /*===========ESTRUCTURA PRINCIPAL===========*/
 
-body{
+body {
     display: flex;
-    flex-direction: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    height: 150vh;
+    flex-wrap: nowrap;
+    height: auto;
     width: 100%;
 }
 
 main div {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
-
-main div.rutaProducto{
-    height: 5%;
+main div.rutaProducto {
+    height: 3%;
 }
 
-main div.contenedorDetalle{
-    height: 60%;
-    background-color: lightcoral;
+main div.contenedorDetalle {
+    height: auto;
+    flex-direction: row;
 }
-main div.similaresProducto{
-    height: 35%;
+
+main div.similaresProducto {
+    height: auto;
 }
+
 
 /*===========DIV RUTAPRODUCTO===========*/
-main div.rutaProducto{
+
+main div.rutaProducto {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-main div.rutaProducto ul li{
+main div.rutaProducto ul li {
     display: inline;
 }
 
-main div.rutaProducto ul li a{
+main div.rutaProducto ul li a {
     text-decoration: none;
     color: #B3ABBC;
 }
 
+
 /*===========DIV CONTENEDORDETALLES===========*/
 
+main div.panelIzquierdo {
+    width: 70%;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    background-color: lightgreen;
+}
 
+main div .panelDerecho {
+    width: 30%;
+    height: 50%;
+    background-color: lightpink;
+    display: flex;
+    flex-direction: column;
+}
+
+main div.panelIzquierdo section.vidriera {
+    height: 60%;
+    background-color: lightsalmon;
+}
+
+main div.panelIzquierdo section.caracteristicasProducto {
+    height: auto;
+    background-color: lightseagreen;
+}
+
+
+/*===========SECTION VIDRIERA===========*/
+
+main div.panelIzquierdo section.vidriera div.imagenes {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background-color: lightseagreen;
+}
+
+main div.panelIzquierdo section.vidriera div.imagenes div {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    background-color: lime;
+    height: 100%;
+}
+
+main div.panelIzquierdo section.vidriera div.imagenes div img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: lime;
+}
+
+main div.panelIzquierdo section.vidriera div.imagenes div.botonIzq {
+    width: 10%;
+    background-color: lightgrey;
+    align-items: center;
+
+}
+
+main div.panelIzquierdo section.vidriera div.imagenes div.botonDer {
+    width: 10%;
+    background-color: lightgrey;
+    align-items: center;
+}
+
+main div.panelIzquierdo section.vidriera div.imagenes button {
+    background:none;
+    border: 0;
+    color: inherit;
+    }
+main div.panelIzquierdo section.vidriera div.imagenes button i{
+    font-size: 35px;
+}
+
+/*===========SECTION CARACTERÍSTICAS===========*/
+main div.panelIzquierdo section.caracteristicasProducto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin: 15px;
+    top: 15px;
+    background-color: lightgray;
+}
+
+main div.panelIzquierdo section.caracteristicasProducto div.opinionTalles{
+    display: flex;
+    flex-direction: column;
+}
+main div.panelIzquierdo section.caracteristicasProducto div.opinionTalles img{
+    align-self: center;
+    max-width: 60%;
+    max-height: 60%;
+}
+
+/*===========DIV PANEL DERECHO===========*/
+main div.panelDerecho{
+    justify-content: space-between;
+}
+
+ul > li {
+    list-style-type:none; ;
+}
+
+/*===========DIV COLORES PRODUCTOS===========*/
+
+main div.panelDerecho div.coloresProducto{
+    background-color: lightskyblue;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+main div.panelDerecho div.coloresProducto div{
+    display: flex;
+    align-content: center;
+    background-color: lime;
+    height: auto;
+}
+
+main div.panelDerecho div.coloresProducto div img {
+    background-color: lightskyblue;
+    width: 60px;
+    }
+
+main div.panelDerecho div.coloresProducto button i{
+    font-size: 14px;
+} 
+
+main div.panelDerecho div.coloresProducto button {
+    background:none;
+    border: 0;
+    color: inherit;
+    position: relative;
+    left: 15px;
+}
+
+/*===========DIV SELECCIÓN DE TALLES===========*/
+
+main div.panelDerecho div.seleccionTalles select {
+    width: 100%;
+    height: 30px;
+}
+
+/*===========DIV BOTÓN AÑADIR===========*/
+
+main div.panelDerecho button{
+    background:#363636;
+    border: 1;
+    color: inherit;
+    font-size: 18px;
+}
+
+main div.panelDerecho button i{
+    font-size: 18px;
+    color: white
+}
+
+main div.panelDerecho button a{
+    color: white;
+}
+
+main div.panelDerecho ul{
+    align-self: center;
+}
+
+/*===========DIV SIMILARES===========*/
+
+main div.similaresProducto{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+main div.similaresProducto div.recomendaciones{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background: tomato;
+}
+
+main div.similaresProducto div.recomendaciones div{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    background-color: teal;
+    height: 100%;
+}
+
+main div.similaresProducto div.recomendaciones div img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: yellow;
+}
+
+main div.similaresProducto div.recomendaciones button{
+    background:none;
+    border: none;
+    color: inherit;
+    position: relative;
+    left: 15px;
+}
+
+main div.similaresProducto div.recomendaciones button{
+    font-size: 20px;
+}
+
+/*===========FOOTER===========*/
+
+
+/* Footer superior */
+
+footer .fila1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 50px;
+    border-bottom: solid 1px #363636;
+    padding-bottom: 30px;
+}
+
+footer .fila1 img.logo {
+    width: 5%;
+    height: 10%;
+    margin: 10px 50px;
+}
+
+footer .fila1 div.derecha {
+    margin: 0px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .fila1 .derecha h4 {
+    margin: 10px 0px 20px 0px;
+}
+
+footer .fila1 .derecha ul {
+    list-style-type: none;
+}
+
+footer .fila1 .derecha ul li {
+    padding-top: 15px;
+}
+
+footer .fila1 .derecha ul li a {
+    color: #363636
+}
+
+.fila1 div.derecha div.nav {
+    margin: 0px 60px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fila1 div.derecha div.colecciones {
+    margin: 0px 60px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fila1 div.derecha div.nosotros {
+    margin: 0px 60px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fila1 div.derecha div.nosotros ul {}
+
+.fila1 div.derecha div.usuario {
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fila1 div.derecha div.usuario a {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    width: 160px;
+    border: solid 1px #363636;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.fila1 div.derecha div.usuario a.registro {
+    background-color: #363636;
+    color: white;
+}
+
+.fila1 div.derecha div.usuario a.logIn {
+    background-color: white;
+    color: #363636;
+}
+
+
+/* Footer inferior */
+
+footer .fila2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 50px;
+}
+
+footer .fila2 h4 {
+    margin: 0px 50px;
+}
+
+footer .fila2 .redes {
+    margin: 0px 50px;
+    display: flex;
+    justify-items: space-around;
+    align-items: center;
+}
+
+footer .fila2 .redes p {
+    padding: 0px 0px 0px 30px;
+}
+
+footer .fila2 .redes a {
+    margin: 0px 0px 0px 30px;
+}
+
+footer .fila2 .redes a i {
+    color: #363636;
+    font-size: 25px;
+}
+
+footer .fila2 .redes a i.fa-facebook {}
+
+footer .fila2 .redes a i.fa-instagram {}
+
+footer .fila2 .redes a i.fa-pinterest {}
