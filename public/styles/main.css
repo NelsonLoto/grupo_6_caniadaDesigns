@@ -1,0 +1,123 @@
+
+.seccionUno{
+    height: 70vh;
+    background-color: #e5e5e5 ;
+    background-image: url(/images/home-imgs/fondoseccionuno.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    
+    
+}
+.tituloSeccionUno{
+    padding-left: 10vw;  
+   
+
+    
+}
+.tituloSeccionUno h1{
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 140%;
+}
+.callToAction{
+    border-radius: 5px;
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.flechaScroll{
+    margin-bottom: 10px;
+    align-self: center;
+    position: absolute;
+    bottom: 0px;
+   
+}
+#flechaTop{
+    color: #fff;
+    background-color: black;
+    padding:7px;
+    border-radius: 100%;
+}
+
+
+.seccionDos{
+    background-color: #e5e5e5 ;
+    display: flex;
+    position: relative;
+    justify-content: center;    
+    height: 100vh;
+    
+}
+.divSeccionDos{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+.divSeccionDos img{
+    width: 100%;
+    height: 100%;
+}
+.divSeccionDos .izquierda{
+    padding-left: 10vw;
+    
+}
+
+
+.seccionTres h2{
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+
+/* ----------- Slider ---------- */
+.box{
+	width:300px;
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 25px;
+}
+.slide-img{
+	height: 50%;
+}
+.slide-img img{
+	width:100%;
+	height: 100%;
+	object-fit: cover;
+}
+.detail-box{
+    height: 50%;
+}
+.detail-box .descripcionProducto{
+    text-align: center;
+}
+.precioYoferta{
+    display: flex;
+    justify-content: space-around;
+    padding:5px 0px;
+}
+.envio{
+text-align: center;
+}
+
+.lineaInferior{
+    display: flex;
+    justify-content: space-around;
+}
+
+#autoWidth{
+display: flex;
+overflow: hidden;
+list-style: none;
+}

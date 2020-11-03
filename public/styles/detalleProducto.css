@@ -10,10 +10,15 @@
     font-family: 'Montserrat', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+* a {
+    color: black;
+}
+
 
 /*===========ESTRUCTURA PRINCIPAL===========*/
 
 body {
+    background-color: #faf9f8;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -37,6 +42,7 @@ main div.rutaProducto {
 }
 
 main div.contenedorDetalle {
+    margin-right: 35px;
     height: auto;
     flex-direction: row;
 }
@@ -52,6 +58,8 @@ main div.rutaProducto {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 main div.rutaProducto ul li {
@@ -71,25 +79,21 @@ main div.panelIzquierdo {
     display: flex;
     height: auto;
     flex-direction: column;
-    background-color: lightgreen;
 }
 
 main div .panelDerecho {
     width: 30%;
-    height: 50%;
-    background-color: lightpink;
+    height: 70vh;
     display: flex;
     flex-direction: column;
 }
 
 main div.panelIzquierdo section.vidriera {
     height: 60%;
-    background-color: lightsalmon;
 }
 
 main div.panelIzquierdo section.caracteristicasProducto {
     height: auto;
-    background-color: lightseagreen;
 }
 
 
@@ -99,14 +103,12 @@ main div.panelIzquierdo section.vidriera div.imagenes {
     display: flex;
     justify-content: center;
     height: 100%;
-    background-color: lightseagreen;
 }
 
 main div.panelIzquierdo section.vidriera div.imagenes div {
     display: flex;
     justify-content: center;
     width: 40%;
-    background-color: lime;
     height: 100%;
 }
 
@@ -115,19 +117,16 @@ main div.panelIzquierdo section.vidriera div.imagenes div img {
     height: auto;
     max-width: 100%;
     max-height: 100%;
-    background-color: lime;
 }
 
 main div.panelIzquierdo section.vidriera div.imagenes div.botonIzq {
     width: 10%;
-    background-color: lightgrey;
     align-items: center;
 
 }
 
 main div.panelIzquierdo section.vidriera div.imagenes div.botonDer {
     width: 10%;
-    background-color: lightgrey;
     align-items: center;
 }
 
@@ -137,7 +136,7 @@ main div.panelIzquierdo section.vidriera div.imagenes button {
     color: inherit;
     }
 main div.panelIzquierdo section.vidriera div.imagenes button i{
-    font-size: 35px;
+    font-size: 30px;
 }
 
 /*===========SECTION CARACTERÍSTICAS===========*/
@@ -146,9 +145,8 @@ main div.panelIzquierdo section.caracteristicasProducto {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    margin: 15px;
+    margin: 35px;
     top: 15px;
-    background-color: lightgray;
 }
 
 main div.panelIzquierdo section.caracteristicasProducto div.opinionTalles{
@@ -173,7 +171,6 @@ ul > li {
 /*===========DIV COLORES PRODUCTOS===========*/
 
 main div.panelDerecho div.coloresProducto{
-    background-color: lightskyblue;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -183,12 +180,10 @@ main div.panelDerecho div.coloresProducto{
 main div.panelDerecho div.coloresProducto div{
     display: flex;
     align-content: center;
-    background-color: lime;
     height: auto;
 }
 
 main div.panelDerecho div.coloresProducto div img {
-    background-color: lightskyblue;
     width: 60px;
     }
 
@@ -229,30 +224,25 @@ main div.panelDerecho button a{
     color: white;
 }
 
-main div.panelDerecho ul{
-    align-self: center;
-}
 
 /*===========DIV SIMILARES===========*/
 
 main div.similaresProducto{
     display: flex;
     flex-direction: column;
-    margin-left: 15px;
+    margin-left: 35px;
 }
 
 main div.similaresProducto div.recomendaciones{
     display: flex;
     justify-content: center;
     height: 100%;
-    background: tomato;
 }
 
 main div.similaresProducto div.recomendaciones div{
     display: flex;
     justify-content: center;
     width: 20%;
-    background-color: teal;
     height: 100%;
 }
 
@@ -261,7 +251,6 @@ main div.similaresProducto div.recomendaciones div img{
     height: auto;
     max-width: 100%;
     max-height: 100%;
-    background-color: yellow;
 }
 
 main div.similaresProducto div.recomendaciones button{
