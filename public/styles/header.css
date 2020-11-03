@@ -1,0 +1,40 @@
+/* ----Estilo general---- */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    padding: 0px;
+    font-family: 'Montserrat', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
+header .principal_header{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 50px;
+    border-bottom: solid 1px #363636;
+    padding-bottom: 30px;
+}
+
+header .principal_header img.logo_superior {
+    width: 5%;
+    height: 10%;
+    margin:10px 50px;
+}
+
+header .principal_header div.caja_navegacion nav.menu{
+    display: flex;
+    list-style: none;
+}
+
+header .principal_header div.caja_navegacion{
+    display: flex;
+    list-style: none;
+    align-items: flex-start;
+}
+
+header .principal_header div.caja_navegacion_derecha nav.user{
+    display: flex;
+    list-style: none;
+    color: black;
+}
