@@ -23,9 +23,9 @@ footer .fila1 {
 }
 
 footer .fila1 img.logo {
-     width: 5%;
-     height: 10%;
-     margin:10px 50px;
+     height: 60px;
+     width: 150px;
+     margin:10px 0px 0px 50px;
 }
 footer .fila1 div.derecha{
      margin: 0px 50px;
