@@ -158,6 +158,14 @@ ul > li {
     line-height: 1.8;
 }
 
+main div.panelDerecho h2 a i{
+    font-size: 22px;
+}
+
+main div.panelDerecho h2 a i:hover{
+    color: lightcoral
+}
+
 /*===========DIV COLORES PRODUCTOS===========*/
 
 main div.panelDerecho div.coloresProducto{
@@ -200,6 +208,7 @@ main div.panelDerecho div.seleccionTalles select {
 
 /*===========DIV BOTÓN AÑADIR===========*/
 
+
 main div.panelDerecho button{
     word-spacing: 10px;
     border: none;
@@ -209,6 +218,9 @@ main div.panelDerecho button{
     font-size: 18px;
     border-radius: 3px;
 }
+main div.panelDerecho button:hover{
+    cursor:pointer;
+}
 
 main div.panelDerecho button i{
     font-size: 18px;
@@ -216,7 +228,6 @@ main div.panelDerecho button i{
 }
 
 main div.panelDerecho button a{
-
     color: white;
 }
 
@@ -238,6 +249,8 @@ main div.similaresProducto div.recomendaciones{
 
 main div.similaresProducto div.recomendaciones div{
     display: flex;
+    flex-direction: column;
+    line-height: 1.5;
     justify-content: center;
     width: 20%;
     height: 100%;
@@ -261,6 +274,10 @@ main div.similaresProducto div.recomendaciones button{
 main div.similaresProducto div.recomendaciones button{
     margin-right: 20px;
     font-size: 20px;
+}
+
+main div.similaresProducto div.recomendaciones div a:hover{
+    text-decoration: underline;
 }
 
 /*===========FOOTER===========*/
