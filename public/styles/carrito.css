@@ -2,14 +2,13 @@ main.contenedorCarrito {
      display: flex;
      justify-content: space-evenly;
      position: relative
+     
 }
 
 section.vistaResumen{
      width: 40%;
      margin: 30px;
-     position: absolute;
-     top: 0px;
-     left: 0px;
+     
 }
 
 
@@ -105,8 +104,7 @@ section.vistaResumen .producto .precioYeliminar h3 {
      border-radius: 10px;
 }
 
-section.vistaResumen .producto .precioYeliminar a{
-}
+
 section.vistaResumen .producto .precioYeliminar a img{
      width: 20px;
      height: 20px;
@@ -138,7 +136,7 @@ section.vistaResumen .infoEnvio i {
      padding-right: 10px;
      font-size: 30px;
 }
-section.vistaResumen .infoEnvio{}
+
 
 
 /*---------------------------------*/
@@ -167,25 +165,182 @@ section.vistaResumen .detalleTotal .totalPedido{
      padding: 15px 0px 15px 0px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*---------------------------------*/
 
 
 section.pago{
      width: 50%;
-     position: fixed;
-     right: 0px;
-     top: 0px;
+    
+     
 }
 
+section.pago .seccionFija {
+     max-width: 50%;
+     position: fixed;
+     top:10px;
+     right: 0px;
+     box-shadow: -3px 3px 2px #ebeaea;
+     margin: 20px;
+     padding: 10px 30px 0px 30px;
+     height: 90vh;
+     background-color: #fff;
+}
+
+section.pago .seccionFija .preFormulario{
+     display: flex;
+     justify-content: space-between;
+     
+}
+
+section.pago .seccionFija a{
+     color: #1a2cf3;
+     font-size: 14px;
+     border-bottom: solid 1px #5168fc;
+}
+
+
+section.pago .seccionFija .formulario form .completar {
+     display: flex;
+     flex-wrap: wrap;
+     margin-bottom: 20px;
+     
+}
+section.pago .seccionFija .preFormulario{
+     margin: 0px 0px 10px 0px;
+}
+
+section.pago .seccionFija p.datos{
+     padding: 10px 0px;
+     font-weight: 600;
+
+}
+
+section.pago .seccionFija .formulario .completar label{
+     display: flex;
+     flex-direction: column;
+     width: 50%;
+     padding:10px 10px 0px 0px;
+     font-size: 0.9rem;
+     color: #363636;
+     
+
+}
+
+section.pago .seccionFija .formulario .completar label input {
+     border: solid 0.5px #B3ABBC;
+     border-radius: 8px;
+     padding: 5px 5px;
+     margin-top: 5px;
+}
+
+s
+section.pago .seccionFija .formulario .completar label.calle{
+     width: 33.3%;
+}
+section.pago .seccionFija .formulario .completar label.numeracion{
+     width: 33.3%;}
+section.pago .seccionFija .formulario .completar label.masInfo{
+     width: 33.3%;
+}
+
+
+section.pago .seccionFija .formulario .seleccionEnvio{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     
+     padding: 10px 0px;
+}
+
+section.pago .seccionFija .formulario p input{
+     margin-right: 20px;
+
+}
+section.pago .seccionFija .formulario .newsletterAceptar{
+     margin: 20px 0px;
+     text-align: center;
+     width: 100%;
+     border: solid 0.5px #B3ABBC;
+     border-radius: 8px;
+     padding: 10px 0px
+}
+
+
+section.pago .seccionFija .formulario .total{
+     display: flex;
+     color: #363636;
+
+
+}
+
+section.pago .seccionFija .formulario .total h4{
+     text-align: right;
+     flex-grow: 2;
+     width: 66.6%;
+
+
+}
+
+section.pago .seccionFija .formulario .total p{
+     width: 33.3% ;
+    text-align: center;
+}
+
+
+section.pago .seccionFija .formulario h3.montoAPagar{
+     text-align: center;
+     padding: 20px;
+     color: #363636;
+}
+section.pago .seccionFija .formulario .botonPagar{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     
+     
+     
+}
+ 
+section.pago .seccionFija .formulario .botonPagar button {
+     display: flex;
+     justify-content: center;
+     width: 50%;
+     padding: 10px 0px;
+     background: #6FCF97;
+     border: none;
+     border-radius: 8px;
+
+
+     
+
+}
+section.pago .seccionFija .formulario .botonPagar button a {
+     border-bottom: none;
+     display:flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 5px 0px;
+     color: white;
+
+}
+
+section.pago .seccionFija .formulario .botonPagar button a img{
+     width: 150px;
+     padding: 0px 5px;
+
+}
+section.pago .seccionFija .formulario .botonPagar button a p{
+     padding: 0px 10px;
+     
+}
+
+
+
+
+footer.footerCarrito{
+     position: relative;
+     z-index: 3;
+     background-color: white;
+}
