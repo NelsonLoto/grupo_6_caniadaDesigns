@@ -1,0 +1,191 @@
+main.contenedorCarrito {
+     display: flex;
+     justify-content: space-evenly;
+     position: relative
+}
+
+section.vistaResumen{
+     width: 40%;
+     margin: 30px;
+     position: absolute;
+     top: 0px;
+     left: 0px;
+}
+
+
+
+/*---------------PRODUCTO------------------*/
+
+section.vistaResumen .producto{
+     display: flex;
+     justify-content: stretch;
+     margin-bottom: 30px;
+    
+}
+
+
+section.vistaResumen .producto img.imgProducto{
+     width: 220px;
+     box-shadow: -2px 0px 4px #dedddd;
+     border-radius: 8px;
+     
+}
+
+section.vistaResumen .producto .detalleProducto{
+     flex-grow: 1.8;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     margin: 0px 30px;
+     padding: 10px 0px;
+     
+}
+
+     .detalleProducto .nombreDescripcion p{
+          padding: 0px 0px;
+     }
+     .detalleProducto .nombreDescripcion h4, 
+     .detalleProducto .nombreDescripcion p {
+          font-family: 'Inter';
+          padding: 10px 0px;
+     } 
+
+
+section.vistaResumen .producto .detalleProducto .cantidadYtalle{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+section.vistaResumen .producto .detalleProducto .cantidadYtalle input {
+     width: 50px;
+     height: 40px;
+     background-color: #f2f2f2;
+     border: solid 1px #b9b9b9;
+     border-radius: 8px;
+     text-align: center;
+}
+
+section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     border: solid 1px #b9b9b9;
+     border-radius: 8px;
+
+}
+
+section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles p{
+     padding: 0px 10px;
+}
+
+section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles #talle {
+     width: 50px;
+     height: 40px;
+     border: none;
+     border-radius: 8px;
+     background-color: rgb(251, 251, 251);
+     text-align: center;
+     padding-left: 10px;
+}
+
+section.vistaResumen .producto .precioYeliminar{
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     flex-grow: 2;
+     padding: 50px 0px;
+}
+
+section.vistaResumen .producto .precioYeliminar h3 {
+     background-color: rgb(50, 50, 50);
+     color: white;
+     padding: 10px 30px;
+     border-radius: 10px;
+}
+
+section.vistaResumen .producto .precioYeliminar a{
+}
+section.vistaResumen .producto .precioYeliminar a img{
+     width: 20px;
+     height: 20px;
+}
+
+
+/*---------------------------------*/
+section.vistaResumen .infoEnvio{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 20px 30px;
+     padding: 40px 0px;
+}
+section.vistaResumen .infoEnvio .envio{
+     width: 40%;
+     display: flex;
+     align-items: center;
+     
+}
+section.vistaResumen .infoEnvio .devolucion{
+     width: 40%;
+     display: flex ;
+     align-items: center;
+}
+
+
+section.vistaResumen .infoEnvio i {
+     padding-right: 10px;
+     font-size: 30px;
+}
+section.vistaResumen .infoEnvio{}
+
+
+/*---------------------------------*/
+
+section.vistaResumen .detalleTotal{
+     margin: 30px 0px;
+     padding: 20px 40px;
+     background-color: #F8F7F7;
+     box-shadow: 0px 3px 2px #ebeaea;
+     
+}
+section.vistaResumen .detalleTotal .subtotal{
+     display: flex;
+     justify-content: space-between;
+     padding: 15px 0px 15px 0px;
+}
+section.vistaResumen .detalleTotal .costoEnvio{
+     display: flex;
+     justify-content: space-between;
+     padding: 15px 0px 15px 0px;
+     
+}
+section.vistaResumen .detalleTotal .totalPedido{
+     display: flex;
+     justify-content: space-between;
+     padding: 15px 0px 15px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------*/
+
+
+section.pago{
+     width: 50%;
+     position: fixed;
+     right: 0px;
+     top: 0px;
+}
+

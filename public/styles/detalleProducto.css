@@ -1,15 +1,5 @@
 
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    text-decoration: none;
-    padding: 0px;
-    font-family: 'Montserrat', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-* a {
+ a {
     color: black;
 }
 
@@ -17,7 +7,7 @@
 /*===========ESTRUCTURA PRINCIPAL===========*/
 
 body {
-    background-color: #faf9f8;
+    background-color: #fff;
 }
 
 main {
