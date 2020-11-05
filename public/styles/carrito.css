@@ -194,6 +194,11 @@ section.pago .seccionFija {
      top:10vh;
 }
 
+section.pago .seccionFija .preFormulario{
+     display: flex;
+     justify-content: space-between;
+     
+}
 
 /*-----------------.preFormulario------------------*/
 section.pago .seccionFija .preFormulario{
@@ -219,7 +224,16 @@ section.pago .seccionFija p.datos{
 
 }
 
+section.pago .seccionFija .formulario .completar label{
+     display: flex;
+     flex-direction: column;
+     width: 50%;
+     padding:10px 10px 0px 0px;
+     font-size: 0.9rem;
+     color: #363636;
+     
 
+}
 
 /*-----------------.formulario------------------*/
 section.pago .seccionFija .formulario .completar label{
