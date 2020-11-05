@@ -5,10 +5,12 @@ div.contenedorLoginPrincipal{
     position: relative;
     display: flex;
     align-items: center;
-    border: solid red 1px;
+    flex-direction: row;
 }
 
-div.contenedorLoginPrincipal div.joinUs{
+div.contenedorLoginPrincipal div.subcontenedorPrincipal{
     box-sizing: border-box;
-    left: 50%;
+    display: flex;
+    position: relative;
+    left: 40%;
 }
