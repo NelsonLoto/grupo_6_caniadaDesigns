@@ -10,7 +10,7 @@ body {
     background-color: #fff;
 }
 
-main {
+main .detalleProducto{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -18,7 +18,7 @@ main {
     width: 100%;
 }
 
-main div {
+main.detalleProducto div {
     display: flex;
     flex-wrap: nowrap;
 }

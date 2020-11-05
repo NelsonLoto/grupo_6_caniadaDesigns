@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="precioYeliminar">
-                         <h3>$10</h3>
+                         <h3>$500</h3>
                          <a href=""><img src="/images/eliminar.svg" alt=""></a>
                     </div>
                </div>
@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="precioYeliminar">
-                         <h3>$10</h3>
+                         <h3>$500</h3>
                          <a href=""><img src="/images/eliminar.svg" alt=""></a>
                     </div>
 
@@ -119,7 +119,7 @@
                     </div>
 
                     <div class="precioYeliminar">
-                         <h3>$10</h3>
+                         <h3>$500</h3>
                          <a href=""><img src="/images/eliminar.svg" alt=""></a>
                     </div>
                </div>
@@ -154,7 +154,7 @@
                     </div>
 
                     <div class="precioYeliminar">
-                         <h3>$10</h3>
+                         <h3>$500</h3>
                          <a href=""><img src="/images/eliminar.svg" alt=""></a>
                     </div>
                </div>
@@ -173,7 +173,7 @@
                <div class="detalleTotal">
                     <div class="subtotal">
                          <h5>Total</h5>
-                         <h5>$40</h5>
+                         <h5>$2000</h5>
                     </div>
                     <div class="costoEnvio">
                          <h5>Envío</h5>
@@ -181,7 +181,7 @@
                     </div>
                     <div class="totalPedido">
                          <h4>Total del pedido</h4>
-                         <h4>$40</h4>
+                         <h4>$2000</h4>
                     </div>
                </div>
                
@@ -191,70 +191,124 @@
                <div class="seccionFija">
                     <div class="preFormulario">
                          <h4><a href="">Seguir comprando</a></h4>
-                         <p><a href="">Tenés un código promocional?</a></p>
+                         <p><a href="">Tengo un código promocional</a></p>
                     </div>
+
+                    <p class="datos">Datos de facturación</p>
 
                     <div class="formulario">
                          <form action="">
                               <div class="completar">
-                                   <h4>Datos de facturación</h4>
 
-                                   <label>Email
+                                   <label class="nombre">Nombre
+                                   <input type="text"></label>
+                                   
+                                   <label class="apellido">Apellido
+                                   <input type="text"></label>
+
+                                   <label class="localidad">Localidad
+                                   <input type="text"></label>
+     
+                                   <label class="zip">Código postal
+                                   <input type="text"></label>
+                                   
+                                   <label class="calle">Calle
+                                   <input type="text"></label>
+                                   
+                                   <label class="numeracion">Nº
+                                   <input type="text"></label>
+                                   
+                                   <label class="masInfo">Otra información
+                                   <input type="text"></label>
+
+                                   <label class="email">Email
                                    <input type="email"></label>
 
-                                   <label>Teléfono
+                                   <label class="phone">Teléfono
                                    <input type="phone"></label>
-
-                                   <label>Nombre
-                                   <input type="text"></label>
-                                   
-                                   <label>Apellido
-                                   <input type="text"></label>
-                                   
-                                   <label>Calle
-                                   <input type="text"></label>
-                                   
-                                   <label>Nº
-                                   <input type="text"></label>
-                                   
-                                   <label>Otra información
-                                   <input type="text"></label>
-
-                                   <label>Localidad
-                                   <input type="text"></label>
-
-                                   <label>Código postal
-                                   <input type="text"></label>
+     
                                    
                               </div>
                     
                               <div class="seleccionEnvio">
-                                   <input type="radio" name="" id="">Entrega a Domicilio
-                                   <input type="radio" name="" id="">Otra dirección
-                                   <input type="radio" name="" id="">Retiro en sucursal
+                                   <p><input type="radio" name="domicilio" id="domicilio">Entrega a Domicilio</p>
+                                   <p><input type="radio" name="otra" id="otra">Otra dirección</p>
+                                   <p><input type="radio" name="sucursal" id="sucursal">Retiro en sucursal</p>
                                    
                               </div>
 
                               <div class="newsletterAceptar">
-                                   <input type="radio" name="" id="">Acepto que me manden promos y novedades a mi mail.
+                                   <p><input type="radio" name="newslatter" id="newsletter">Acepto que me manden promos y novedades por e-mail.</p>
                               </div>
 
                               <div class="total">
-                                   <h4></h4>
-                                   <p><a href=""></a></p>
+                                   <h4>Total impuestos incluidos</h4>
+                                   <p><a href="">Ver detalles</a></p>
                               </div>
 
                               <h3 class="montoAPagar">$2000</h3>
 
-                              <a href=""><button type="submit"><p>Pagar con</p><img src="/images/mercadoPago.svg" alt=""></button></a>
-
+                              <div class="botonPagar">
+                                   <button type="submit">
+                                        <a href="">
+                                             <p>Pagar con</p>
+                                             <img src="/images/mercadoPago.svg" alt="">
+                                        </a>
+                                   </button>
+                              </div>   
                          </form>
                     </div>
                </div>
           </section>
      </main>
-     <footer>
-
+     <footer  class="">
+          <div class="fila1">
+               <img class="logo" src="/images/logos/isoLogoTipo.svg" alt=""> <!--logo-->
+     
+               <div class="derecha">
+                    <div class="nav">
+                         <h4>Caniada</h4>
+                         <ul>
+                              <li><a href="">Link 1</a></li>
+                              <li><a href="">Link 2</a></li>
+                              <li><a href="">Link 3</a></li>
+                         </ul>
+                    </div>
+     
+                    <div class="colecciones">
+                         <h4>Colecciones</h4>
+                         <ul>
+                              <li><a href="">Link 1</a></li>
+                              <li><a href="">Link 2</a></li>
+                              <li><a href="">Link 3</a></li>
+                         </ul>
+                    </div>
+     
+                    <div class="nosotros">
+                         <h4>Nosotros</h4>
+                         <ul>
+                              <li><a href="">Quiénes somos</a></li>
+                              <li><a href="">Contactanos</a></li>
+                         </ul>
+                    </div>
+     
+                    <div class="usuario">
+                         <a href="" class="registro">Registrarme</a>
+                         <a href="" class="logIn">Iniciar sesión</a>
+                         
+                    </div>
+               </div>
+          </div> 
+     
+          <div class="fila2">
+               <h4>© grupo6 DH</h4>
+               <div class="redes">
+                    <p>Seguinos</p>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+               </div>
+          </div>
      </footer>
      
 </body>
