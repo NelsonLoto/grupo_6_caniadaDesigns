@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,61 +37,94 @@
 
      </header>
 
-     <div class="contenedorLoginPrincipal">
-          <div class="subcontenedorPrincipal">
-               <div class="logIn">
-                    <h2 class="tituloLogin">LOG IN</h2>
+     <main class="contenedor">
+          
+               <section class="logIn">
+                    <h2 class="tituloLogIn">INICIAR SESIÓN</h2>
 
-                    <div class="cajaFormLogin">
+                    <div class="cajaFormLogIn">
                          <form class="formularioLogin" action="" method="POST">
-                              <p>
-                                   <label for="mail">Email</label><br>
-                                   <input type="email" name="mail" id="mail">
-                              </p>
-                              <p>
-                                   <label for="contraseña">Contraseña</label><br>
-                                   <input type="password" name="contraseña" id="contraseña">
-                              </p>
-                              <p>
-                                   <input type="checkbox" name="remember" value="rememberMe">
-                                   <label for="remember">Recuérdame</label>
-                              </p>
-                              <p>
-                                   <input type="submit" value="Enviar">
-                              </p>
+
+                              <div class="email">
+                                   <label class="campoDatos"for="email">Email o Usuario
+                                        <input type="email" name="email" id="email">
+                                   </label>
+
+                                   <div class="olvide">
+                                        <a href="">Olvidé mi usuario</a>
+                                   </div>
+
+                              </div>
+
+                              <div class="contraseña">
+                                   <label class="campoDatos" for="contraseña">Contraseña
+                                        <input type="password" name="contraseña" id="contraseña">
+                                   </label>
+
+                                   <div class="olvide">
+                                        <a href="">Olvidé mi contraseña</a>
+                                   </div>
+
+                              </div>
+
+                              <div class="acciones">
+
+                                   
+                                        <div class="recuerdame">
+                                             <input type="checkbox" name="remember" value="rememberMe">Recuérdame
+                                        </div>
+
+                              </div>
+
+                              <div>
+                                   <button type="submit"> 
+                                        <a href="">INGRESAR</a>
+                                   </button>
+                              </div>   
                          </form>
                     </div>
+               </section>
 
-               </div>
+               <section class="joinUs">
+                    <h2 class="tituloJoinUs">REGISTRO</h2>
 
-               <div class="joinUs">
-                    <h2 class="tituloJoinus">JOIN US</h2>
+                    <div class="formRegistro">
 
-                    <div class="joinGoogleFacebook">
-                         <form class="formularioJoinusFast" action="" method="POST">
-                              <label for="modoConexion">Con:</label>
-                              <input type="submit" value="Google">
-                              <input type="submit" value="Facebook">
+                         <form class="formFast" action="" method="POST">
+                              
+                              <div class="redes">
+                                   <button class="google" type="submit" value="Google">Google  <i class="fab fa-google"></i></button>
+                                   <button class="facebook" type="submit" value="facebook">Facebook <i class="fab fa-facebook"></i></button>
+                              </div>
+                              
                          </form>
+
                          <p>o</p>
-                         <form class="formularioJoinus" action="" method="POST">
-                              <p>
-                                   <label for="mail">Email</label><br>
-                                   <input type="email" name="mail" id="mail">
-                              </p>
-                              <p>
-                                   <label for="contraseña">Contraseña</label><br>
-                                   <input type="password" name="contraseña" id="contraseña">
-                              </p>
-                              <p>
-                                   <input type="submit" value="Crear cuenta">
-                              </p>
+
+                         <form class="formJoinUs" action="" method="POST">
+                              <div class="email">
+                                   <label class="campoDatos"for="email">Email
+                                        <input type="email" name="email" id="email">
+                                   </label>
+                              </div>
+
+                              <div class="contraseña">
+                                   <label class="campoDatos" for="contraseña">Contraseña
+                                        <input type="password" name="contraseña" id="contraseña">
+                                   </label>
+                              </div>
+
+                              <div class="button">
+                                   <button type="submit"> 
+                                        <a href="">REGISTRARSE</a>
+                                   </button>
+                              </div>   
+
                          </form>
                     </div>
-               </div>
-          </div>
-
-     </div>
+               </section>
+          
+     </main>
 
      <footer>
           <div class="fila1">
