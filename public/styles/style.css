@@ -36,6 +36,9 @@
      
       /*-----LOGIN----*/
       @import url(/styles/logIn.css);
+
+      /*-----CREATEACCOUNT----*/
+      @import url(/styles/crearCuenta.css);
 /* ---------------------------
 ----------GENERALES-----------
 ----------------------------*/
