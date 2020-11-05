@@ -72,11 +72,12 @@ section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles{
      justify-content: space-between;
      border: solid 1px #b9b9b9;
      border-radius: 8px;
+     margin-left: 5px;
 
 }
 
 section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles p{
-     padding: 0px 10px;
+     padding: 0px 5px;
 }
 
 section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles #talle {
@@ -86,7 +87,7 @@ section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles #talle {
      border-radius: 8px;
      background-color: rgb(251, 251, 251);
      text-align: center;
-     padding-left: 10px;
+     padding-left: 5px;
 }
 
 section.vistaResumen .producto .precioYeliminar{
@@ -174,7 +175,11 @@ section.vistaResumen .detalleTotal .totalPedido{
 section.pago .seccionFija a{
      color: #1a2cf3;
      font-size: 14px;
-     border-bottom: solid 1px #5168fc;
+     
+}
+
+section.pago .seccionFija a:hover{
+     text-decoration:underline;
 }
 
 section.pago{
@@ -188,7 +193,7 @@ section.pago .seccionFija {
      box-shadow: -3px 3px 2px #ebeaea;
      margin: 20px;
      padding: 10px 30px 0px 30px;
-     height: 90vh;
+     height: 100vh;
      background-color: #fff;
      position: sticky;
      top:10vh;
@@ -204,6 +209,7 @@ section.pago .seccionFija .preFormulario{
 section.pago .seccionFija .preFormulario{
      display: flex;
      justify-content: space-between;
+     padding-top: 10px;
      
 }
 
@@ -215,12 +221,13 @@ section.pago .seccionFija .formulario form .completar {
      
 }
 section.pago .seccionFija .preFormulario{
-     margin: 0px 0px 10px 0px;
+     margin: 0px 0px 8px 0px;
 }
 
 section.pago .seccionFija p.datos{
-     padding: 10px 0px;
+     padding: 5px 0px 5px 0px;
      font-weight: 600;
+     font-size: 0.9rem;
 
 }
 
@@ -228,7 +235,7 @@ section.pago .seccionFija .formulario .completar label{
      display: flex;
      flex-direction: column;
      width: 50%;
-     padding:10px 10px 0px 0px;
+     padding:8px 10px 0px 0px;
      font-size: 0.9rem;
      color: #363636;
      
@@ -240,8 +247,8 @@ section.pago .seccionFija .formulario .completar label{
      display: flex;
      flex-direction: column;
      width: 50%;
-     padding:10px 10px 0px 0px;
-     font-size: 0.9rem;
+     padding:8px 10px 0px 0px;
+     font-size: 0.8rem;
      color: #363636;
      
 
@@ -250,8 +257,8 @@ section.pago .seccionFija .formulario .completar label{
 section.pago .seccionFija .formulario .completar label input {
      border: solid 0.5px #B3ABBC;
      border-radius: 8px;
-     padding: 5px 5px;
-     margin-top: 5px;
+     padding: 4px 5px;
+     margin-top: 3px;
 }
 
 
@@ -262,6 +269,7 @@ section.pago .seccionFija .formulario .completar label.numeracion{
      width: 33.3%;}
 section.pago .seccionFija .formulario .completar label.masInfo{
      width: 33.3%;
+     
 }
 
 
@@ -269,8 +277,8 @@ section.pago .seccionFija .formulario .seleccionEnvio{
      display: flex;
      justify-content: space-between;
      align-items: center;
-     
-     padding: 10px 0px;
+     font-size: 0.9rem;
+     padding: 5px 0px;
 }
 
 section.pago .seccionFija .formulario p input{
@@ -283,7 +291,8 @@ section.pago .seccionFija .formulario .newsletterAceptar{
      width: 100%;
      border: solid 0.5px #B3ABBC;
      border-radius: 8px;
-     padding: 10px 0px
+     padding: 5px 0px;
+     font-size: 0.9rem;
 }
 
 
@@ -304,7 +313,7 @@ section.pago .seccionFija .formulario .total h4{
 
 section.pago .seccionFija .formulario .total p{
      width: 33.3% ;
-    text-align: center;
+     text-align: center;
 }
 
 
@@ -327,13 +336,17 @@ section.pago .seccionFija .formulario .botonPagar button {
      justify-content: center;
      width: 50%;
      padding: 10px 0px;
-     background: #6FCF97;
+     background: #50b87b;
      border: none;
      border-radius: 8px;
-
-
-
 }
+
+section.pago .seccionFija .formulario .botonPagar button:hover {
+     
+     background: #6FCF97;
+}
+
+
 section.pago .seccionFija .formulario .botonPagar button a {
      border-bottom: none;
      display:flex;
@@ -341,7 +354,10 @@ section.pago .seccionFija .formulario .botonPagar button a {
      align-items: center;
      padding: 5px 0px;
      color: white;
+}
 
+section.pago .seccionFija .formulario .botonPagar button a:hover {
+     text-decoration: none;
 }
 
 section.pago .seccionFija .formulario .botonPagar button a img{
@@ -419,7 +435,9 @@ footer.footerCarrito .fila1 .derecha ul li a{
      display: flex;
      flex-direction: column;
 }
-
+.fila1 div.derecha div.nosotros ul{
+     
+}
 
 .fila1 div.derecha div.usuario {
      margin: 10px 0px 10px 0px;

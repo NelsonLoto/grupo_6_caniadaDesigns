@@ -94,8 +94,12 @@ main.contenedor section.logIn div.cajaFormLogIn form .contraseña{
     main.contenedor section.logIn div.cajaFormLogIn form .contraseña .olvide a{
         color: #1a2cf3;
         font-weight: normal;
-        text-decoration: underline;
         font-size: 0.8rem;  
+    }
+
+    main.contenedor section.logIn div.cajaFormLogIn form .email .olvide a:hover ,
+    main.contenedor section.logIn div.cajaFormLogIn form .contraseña .olvide a:hover{
+        text-decoration: underline; 
     }
 
     
@@ -131,6 +135,12 @@ main.contenedor section.joinUs form.formJoinUs div button {
     border:none;
     background-color: #363636;
     padding: 10px;
+}
+
+main.contenedor section.logIn div.cajaFormLogIn form button:hover,
+main.contenedor section.joinUs form.formJoinUs div button:hover {
+    background-color: #424141;
+    
 }
 main.contenedor section.logIn div.cajaFormLogIn form button a, 
 main.contenedor section.joinUs form.formJoinUs div button a{
@@ -183,16 +193,24 @@ main.contenedor section.joinUs .formRegistro .formFast .redes button {
     padding: 10px;
     border-radius: 8px;
     border:none;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 main.contenedor section.joinUs .formRegistro .formFast .redes button.google{
     background-color: #ea4335;
     color: white;
 }
+
+main.contenedor section.joinUs .formRegistro .formFast .redes button.google:hover{
+    background-color: #f55a4c;
+}
 main.contenedor section.joinUs .formRegistro .formFast .redes button.facebook{
-    background-color: #576b95;
+    background-color: #3a599c;
     color: white;
+}
+
+main.contenedor section.joinUs .formRegistro .formFast .redes button.facebook:hover{
+    background-color: #4a69ac;
 }
 
 main.contenedor section.joinUs .formRegistro p{
@@ -207,5 +225,5 @@ main.contenedor section.joinUs .formRegistro .formJoinUs{
 
         main.contenedor section.joinUs form.formJoinUs div.button {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 15px;
         }
