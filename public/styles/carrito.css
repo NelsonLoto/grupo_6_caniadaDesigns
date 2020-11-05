@@ -1,6 +1,12 @@
 main.contenedorCarrito {
      display: flex;
+<<<<<<< HEAD
      justify-content: space-evenly;     
+=======
+     justify-content: space-evenly;
+     position: relative
+     
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
 }
 
 /*---------------------------------------------------*/
@@ -137,6 +143,10 @@ section.vistaResumen .infoEnvio i {
      padding-right: 10px;
      font-size: 30px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
 
 
 
@@ -166,9 +176,13 @@ section.vistaResumen .detalleTotal .totalPedido{
      padding: 15px 0px 15px 0px;
 }
 
+<<<<<<< HEAD
 /*---------------------------------------------------*/
 /*----------------FACTURACIÓN / PAGO-----------------*/
 /*---------------------------------------------------*/
+=======
+/*---------------------------------*/
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
 
 /*-----------------GENERALIZADO------------------*/
 section.pago .seccionFija a{
@@ -179,10 +193,20 @@ section.pago .seccionFija a{
 
 section.pago{
      width: 50%;
+<<<<<<< HEAD
 }
 
 section.pago .seccionFija {
      width: 100%;
+=======
+    
+     
+}
+
+section.pago .seccionFija {
+     max-width: 50%;
+     position: fixed;
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
      top:10px;
      right: 0px;
      box-shadow: -3px 3px 2px #ebeaea;
@@ -190,16 +214,31 @@ section.pago .seccionFija {
      padding: 10px 30px 0px 30px;
      height: 90vh;
      background-color: #fff;
+<<<<<<< HEAD
      position: sticky;
      top:10vh;
+=======
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
 }
 
+section.pago .seccionFija .preFormulario{
+     display: flex;
+     justify-content: space-between;
+     
+}
 
+<<<<<<< HEAD
 /*-----------------.preFormulario------------------*/
 section.pago .seccionFija .preFormulario{
      display: flex;
      justify-content: space-between;
      
+=======
+section.pago .seccionFija a{
+     color: #1a2cf3;
+     font-size: 14px;
+     border-bottom: solid 1px #5168fc;
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
 }
 
 
@@ -219,9 +258,6 @@ section.pago .seccionFija p.datos{
 
 }
 
-
-
-/*-----------------.formulario------------------*/
 section.pago .seccionFija .formulario .completar label{
      display: flex;
      flex-direction: column;
@@ -233,6 +269,18 @@ section.pago .seccionFija .formulario .completar label{
 
 }
 
+<<<<<<< HEAD
+/*-----------------.formulario------------------*/
+section.pago .seccionFija .formulario .completar label{
+     display: flex;
+     flex-direction: column;
+     width: 50%;
+     padding:10px 10px 0px 0px;
+     font-size: 0.9rem;
+     color: #363636;
+     
+
+=======
 section.pago .seccionFija .formulario .completar label input {
      border: solid 0.5px #B3ABBC;
      border-radius: 8px;
@@ -240,6 +288,25 @@ section.pago .seccionFija .formulario .completar label input {
      margin-top: 5px;
 }
 
+s
+section.pago .seccionFija .formulario .completar label.calle{
+     width: 33.3%;
+}
+section.pago .seccionFija .formulario .completar label.numeracion{
+     width: 33.3%;}
+section.pago .seccionFija .formulario .completar label.masInfo{
+     width: 33.3%;
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
+}
+
+section.pago .seccionFija .formulario .completar label input {
+     border: solid 0.5px #B3ABBC;
+     border-radius: 8px;
+     padding: 5px 5px;
+     margin-top: 5px;
+}
+
+<<<<<<< HEAD
 
 section.pago .seccionFija .formulario .completar label.calle{
      width: 33.3%;
@@ -251,6 +318,8 @@ section.pago .seccionFija .formulario .completar label.masInfo{
 }
 
 
+=======
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
 section.pago .seccionFija .formulario .seleccionEnvio{
      display: flex;
      justify-content: space-between;
@@ -306,6 +375,11 @@ section.pago .seccionFija .formulario .botonPagar{
      align-items: center;
      width: 100%;
      
+<<<<<<< HEAD
+=======
+     
+     
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
 }
  
 section.pago .seccionFija .formulario .botonPagar button {
@@ -318,6 +392,10 @@ section.pago .seccionFija .formulario .botonPagar button {
      border-radius: 8px;
 
 
+<<<<<<< HEAD
+=======
+     
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
 
 }
 section.pago .seccionFija .formulario .botonPagar button a {
@@ -338,6 +416,7 @@ section.pago .seccionFija .formulario .botonPagar button a img{
 section.pago .seccionFija .formulario .botonPagar button a p{
      padding: 0px 10px;
      
+<<<<<<< HEAD
 }
 
 
@@ -433,10 +512,13 @@ footer.footerCarrito .fila1 .derecha ul li a{
 .fila1 div.derecha div.usuario a.logIn{
      background-color: white;
      color: #363636;
+=======
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
 }
 
 
 
+<<<<<<< HEAD
 /* Footer inferior */
 
 footer.footerCarrito .fila2 {
@@ -464,4 +546,11 @@ footer .fila2 .redes a{
 footer .fila2 .redes a i{
      color: #363636;
      font-size: 25px;
+=======
+
+footer.footerCarrito{
+     position: relative;
+     z-index: 3;
+     background-color: white;
+>>>>>>> ead21d46d604bdccc883acbdd9c3c86cbc2f58f3
 }
