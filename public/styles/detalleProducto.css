@@ -13,12 +13,17 @@
     color: black;
 }
 
+header{
+    position: relative;
+}
 
 /*===========ESTRUCTURA PRINCIPAL===========*/
 
 body {
     background-color: #fff;
 }
+
+
 
 main .detalleProducto{
     display: flex;
@@ -78,8 +83,11 @@ main div.panelIzquierdo {
 }
 
 main div .panelDerecho {
+    margin-bottom: 90px;
+    position:sticky;
+    top: 0px;
     width: 30%;
-    height: 70vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
 }
@@ -104,7 +112,7 @@ main div.panelIzquierdo section.vidriera div.imagenes {
 main div.panelIzquierdo section.vidriera div.imagenes div {
     display: flex;
     justify-content: center;
-    width: 40%;
+    width: 42%;
     height: 100%;
 }
 
@@ -116,13 +124,12 @@ main div.panelIzquierdo section.vidriera div.imagenes div img {
 }
 
 main div.panelIzquierdo section.vidriera div.imagenes div.botonIzq {
-    width: 10%;
+    width: 5%;
     align-items: center;
-
 }
 
 main div.panelIzquierdo section.vidriera div.imagenes div.botonDer {
-    width: 10%;
+    width: 5%;
     align-items: center;
 }
 
@@ -135,8 +142,14 @@ main div.panelIzquierdo section.vidriera div.imagenes button i{
     font-size: 28px;
 }
 
+main div.panelIzquierdo section.vidriera div.imagenes button i:hover{
+    transform: scale(1.025); 
+}
+
+
 /*===========SECTION CARACTERÍSTICAS===========*/
 main div.panelIzquierdo section.caracteristicasProducto {
+    width: 88%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,7 +158,8 @@ main div.panelIzquierdo section.caracteristicasProducto {
     padding: 15px;
     top: 15px;
     line-height: 1.8;
-    background-color: #ECEBE9
+    background-color: #f4f2f7;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
 }
 
 main div.panelIzquierdo section.caracteristicasProducto div.opinionTalles{
@@ -161,6 +175,8 @@ main div.panelIzquierdo section.caracteristicasProducto div.opinionTalles img{
 /*===========DIV PANEL DERECHO===========*/
 main div.panelDerecho{
     justify-content: space-between;
+    padding: 25px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
 }
 
 ul > li {
@@ -182,7 +198,7 @@ main div.panelDerecho div.coloresProducto{
     height: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-around;;
 }
 
 main div.panelDerecho div.coloresProducto div{
@@ -211,15 +227,17 @@ main div.panelDerecho div.coloresProducto button {
 
 main div.panelDerecho div.seleccionTalles select {
     border-radius: 0px;
-    border: 1;
+    border-right: black;
+    border-left: black;
     width: 100%;
     height: 30px;
+    cursor: pointer;
 }
 
 /*===========DIV BOTÓN AÑADIR===========*/
 
 
-main div.panelDerecho button{
+main div.panelDerecho a.boton{
     word-spacing: 10px;
     border: none;
     padding: 5px;
@@ -227,17 +245,18 @@ main div.panelDerecho button{
     color: inherit;
     font-size: 18px;
     border-radius: 3px;
+    text-align: center;
 }
-main div.panelDerecho button:hover{
+main div.panelDerecho a.boton:hover{
     cursor:pointer;
 }
 
-main div.panelDerecho button i{
+main div.panelDerecho a.boton i{
     font-size: 18px;
     color: white
 }
 
-main div.panelDerecho button a{
+main div.panelDerecho a.boton{
     color: white;
 }
 
@@ -245,13 +264,16 @@ main div.panelDerecho button a{
 /*===========DIV SIMILARES===========*/
 
 main div.similaresProducto{
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
     margin-left: 35px;
     margin-right:15px ;
+    margin-bottom: 35px;
 }
 
 main div.similaresProducto div.recomendaciones{
+    margin-top: 15px;
     display: flex;
     justify-content: space-around;
     height: 100%;
@@ -264,11 +286,19 @@ main div.similaresProducto div.recomendaciones div{
     justify-content: center;
     width: 20%;
     height: 100%;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    align-items: center;
+}
+
+main div.similaresProducto div.recomendaciones div:hover{
+        transform: scale(1.025); 
 }
 
 main div.similaresProducto div.recomendaciones div img{
     width: auto;
     height: auto;
+    border-radius: 10px;
     max-width: 100%;
     max-height: 100%;
 }
