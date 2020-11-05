@@ -1,5 +1,8 @@
 
-footer {}
+footer {
+     box-shadow: -1px -1px 4px #a7a5a5;
+     margin-top: 20px;
+}
 
 
 
@@ -7,9 +10,9 @@ footer {}
 footer .fila1 {
      display: flex;
      justify-content: space-between;
-     margin: 20px 50px;
-     border-bottom: solid 1px #363636;
-     padding-bottom: 30px;
+     margin: 0px 50px;
+     border-bottom: solid 1px #908f8f;
+     padding: 20px 0px;
 }
 
 footer .fila1 img.logo {
@@ -91,7 +94,7 @@ footer .fila2 {
      display: flex;
      justify-content: space-between;
      align-items: center;
-     margin: 30px 50px;
+     padding: 30px 50px;
      
 }
 footer .fila2 h4{

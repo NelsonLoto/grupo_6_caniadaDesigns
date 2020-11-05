@@ -11,37 +11,40 @@
 
 <body>
      <header>
-          <div class="principal_header">
-
-               <img class="logo_superior" src="/images/logoNPM.svg" alt="">
-
-               <div class="caja_navegacion">
-                    <nav class="menu">
-                         <li><a href="">Item 1</a></li>
-                         <li><a href="">Item 2</a></li>
-                         <li><a href="">Item 3</a></li>
-                         <li><a href="">Item 4</a></li>
-                    </nav>
+               <div class="logo">
+                    <a href="/" >
+                         <img class="header" src="/images//logos/isoLogoTipoBlanco.svg" alt="">
+                    </a>
                </div>
+               
+              
+               <nav class="menu">
+                    <ul>
+                         <li><a href="">Categorías</a></li>
+                         <li><a href="#seccionTres">Destacados</a></li>
+                         <li><a href="">Colecciones</a></li>
+                         
+                    </ul>
+               </nav>
+               
 
-               <div class="caja_navegacion_derecha">
-                    <nav class="user">
-                         <li><a href="#"><i class="fas fa-search"></i></a></li>
-                         <li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
-                         <li><a href="#"><i class="fas fa-user"></i></a></li>
-                    </nav>
-               </div>
-
-          </div>
+               <nav class="user">
+                    <ul>
+                         <li><a href=""><i class="fas fa-search"></i></a></li>
+                         <li><a href="/carrito"><i class="fas fa-shopping-bag"></i></a></li>
+                         <li><a href="/usuario"><i class="fas fa-user"></i></a></li>
+                    </ul>
+               </nav>
+     
      </header>
 
-//Aca Arranco Shaggy
 
+<main>
 
      <section class="seccionUno">
           <div class="tituloSeccionUno">
                <h1>Caniada Ropa Informal</h1>
-               <button class="callToAction">Texto Acción 1</button>
+               <button class="callToAction"><a href="/productos">Ver productos</a></button>
           </div>
           <div class="flechaScroll">
                <span><i id="flechaTop" class="fas fa-arrow-down"></i></span>
@@ -49,6 +52,7 @@
           </div>
 
      </section>
+
      <section class="seccionDos">
           <div class="divSeccionDos izquierda">
                <div class="izquierda">
@@ -67,7 +71,8 @@
      </section>
      <section class="seccionTres">
           <div>
-               <h2>Más Vendidos</h2>
+               <a name="seccionTres"></a>
+               <h2>MÁS VENDIDOS</h2>
           </div>
           <div>
                <div class="flechaIzqCarrousel"></div>
@@ -79,14 +84,14 @@
                <li class="item-uno">
                     <div class="box">
                          <div class="slide-img">
-                              <img src="images/Ecommerce-Item/zapatoscuero.jpg" alt="">
+                              <img src="images/producto1/coltrane.png" alt="">
                          </div>
                          <div class="detail-box">
                               <div class="descripcionProducto">
                                    <p>Descripcion del producto</p>
                               </div>
                               <div class="precioYoferta">
-                                   <div class="precio">$1599</div>
+                                   <div class="precio">$500</div>
                                    <div class="oferta"> 50% Off</div>
                               </div>
                               <div class="envio">
@@ -107,14 +112,14 @@
                <li class="item-uno">
                     <div class="box">
                          <div class="slide-img">
-                              <img src="images/Ecommerce-Item/zapatoscuero.jpg" alt="">
+                              <img src="images/producto1/ledZep.jpg" alt="">
                          </div>
                          <div class="detail-box">
                               <div class="descripcionProducto">
                                    <p>Descripcion del producto</p>
                               </div>
                               <div class="precioYoferta">
-                                   <div class="precio">$1599</div>
+                                   <div class="precio">$500</div>
                                    <div class="oferta"> 50% Off</div>
                               </div>
                               <div class="envio">
@@ -135,14 +140,15 @@
                <li class="item-uno">
                     <div class="box">
                          <div class="slide-img">
-                              <img src="images/Ecommerce-Item/zapatoscuero.jpg" alt="">
+                              <img src="/images/producto1/helpBlanca.jpg" alt="">
+                              
                          </div>
                          <div class="detail-box">
                               <div class="descripcionProducto">
                                    <p>Descripcion del producto</p>
                               </div>
                               <div class="precioYoferta">
-                                   <div class="precio">$1599</div>
+                                   <div class="precio">$500</div>
                                    <div class="oferta"> 50% Off</div>
                               </div>
                               <div class="envio">
@@ -163,14 +169,14 @@
                <li class="item-uno">
                     <div class="box">
                          <div class="slide-img">
-                              <img src="images/Ecommerce-Item/zapatoscuero.jpg" alt="">
+                              <img src="images/producto1/pinkFloyd.png" alt="">
                          </div>
                          <div class="detail-box">
                               <div class="descripcionProducto">
                                    <p>Descripcion del producto</p>
                               </div>
                               <div class="precioYoferta">
-                                   <div class="precio">$1599</div>
+                                   <div class="precio">$500</div>
                                    <div class="oferta"> 50% Off</div>
                               </div>
                               <div class="envio">
@@ -207,8 +213,7 @@
      </section>
      <section></section>
      
-
-// aca termino Shaggy
+</main>
 <footer>
      <div class="fila1">
           <img class="logo" src="/images/logos/isoLogoTipo.svg" alt=""> <!--logo-->

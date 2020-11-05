@@ -1,6 +1,6 @@
 
 .seccionUno{
-    height: 70vh;
+    height: 88vh;
     background-color: #e5e5e5 ;
     background-image: url(/images/home-imgs/fondoseccionuno.jpg);
     background-repeat: no-repeat;
@@ -19,18 +19,24 @@
     
 }
 .tituloSeccionUno h1{
-    font-family: SF Pro Display;
+    font-family: 'Montserrat' Verdana, Geneva, Tahoma, sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 32px;
     line-height: 140%;
+    color: #363636;
 }
 .callToAction{
-    border-radius: 5px;
-    background-color: black;
+    border: none;
+    border-radius: 8px;
+    background-color: #363636;
     color: #fff;
     padding: 10px 20px;
     margin-top: 10px;
+}
+
+.callToAction a{
+    color: white;
 }
 
 .flechaScroll{
@@ -72,10 +78,15 @@
     
 }
 
-
+.seccionTres{
+    height: 100vh;
+    /*background-color: #212121;*/
+}
 .seccionTres h2{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 15vh;
+    padding-bottom: 30px;
+    color:#363636
 }
 
 

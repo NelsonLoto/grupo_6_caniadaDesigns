@@ -1,31 +1,72 @@
 
-header .principal_header{
+header {
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    box-shadow: 1px 2px 4px #919191;
+    background:white;
+    z-index:2;
+    position:sticky;
+    top:0px;
+    background-color: rgba(16, 16, 16, 0.95);
+
+}
+
+header div.logo{
+    height: 100%;
+    width: 33.3%;
+    padding-left: 10vw;
+}
+
+header div.logo img.header {
+    height: 90%;
+    padding: 10px 0px 10px 0px;
+    
+}
+
+header nav.menu{
+    width: 33.3%;
+    
+    
+}
+
+header nav.menu ul{
     display: flex;
     justify-content: space-between;
-    margin: 20px 50px;
-    border-bottom: solid 1px #363636;
-    padding-bottom: 30px;
-}
-
-header .principal_header img.logo_superior {
-    width: 5%;
-    height: 10%;
-    margin:10px 50px;
-}
-
-header .principal_header div.caja_navegacion nav.menu{
-    display: flex;
     list-style: none;
 }
 
-header .principal_header div.caja_navegacion{
-    display: flex;
-    list-style: none;
-    align-items: flex-start;
+header nav.menu ul li{
+    font-size: 1rem;
+    color: #fafafa;
 }
 
-header .principal_header div.caja_navegacion_derecha nav.user{
+header nav.menu ul li a{
+    font-size: 1rem;
+    color: #fafafa;
+}
+
+header nav.user{
+
+    width: 33.3%;
+    padding-right: 10vw;
+}
+header nav.user ul{
     display: flex;
+    justify-content: flex-end;
+    text-align: right;
     list-style: none;
-    color: black;
+    color: #363636;
+}
+
+header nav.user ul li {
+    padding-left: 50px;
+    font-size: 1.1rem;
+    color: #fafafa;
+}
+
+header nav.user ul li a{
+    color: #fafafa;
 }
