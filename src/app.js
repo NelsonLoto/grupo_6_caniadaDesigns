@@ -26,6 +26,10 @@
           res.sendFile(path.join(__dirname, '/views/loginRegister.html'))
      }) //funciona OK
 
+     app.get('/crear-usuario', function (req, res) {
+          res.sendFile(path.join(__dirname, '/views/createAccount.html'))
+     }) //funciona OK
+
 
 ////////////---------------PUERTO:3000-----------------////////////
      app.listen(process.env.PORT || 3000, function(){

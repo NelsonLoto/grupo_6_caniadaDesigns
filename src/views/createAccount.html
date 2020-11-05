@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Crear Cuenta</title>
+</head>
+<body>
+    <header></header>
+
+    <div class="cajaCrearCuentaPrincipal">
+
+        <div class="cajaDatosUsuario">
+            <h2>Datos Usuario</h2>
+            <div class="datosUsuarioFormulario">
+                <form class="datosUsuario" action="" method="POST">
+                    <p>
+                        <label for="nombre">Nombre:</label><br>
+                        <input type="text" name="nombre" id="nombre">
+                    </p>
+                    <p>
+                        <label for="apellido">Apellido:</label><br>
+                        <input type="text" name="apellido" id="apellido">
+                    </p>
+                    <p>
+                        <label for="pais">Pais:</label><br>
+                        <input type="text" name="pais" id="pais">
+                    </p>
+                    <p>
+                        <label for="provincia">Provincia:</label><br>
+                        <input type="text" name="provincia" id="provincia">
+                    </p>
+                    <p>
+                        <label for="ciudad">Ciudad:</label><br>
+                        <input type="text" name="ciudad" id="ciudad">
+                    </p>
+                    <p>
+                        <label for="cPostal">Código Postal:</label><br>
+                        <input type="text" name="cPostal" id="cPostal">
+                    </p>
+                    <p>
+                        <label for="direccion">Dirección:</label><br>
+                        <input type="text" name="direccion" id="direccion">
+                    </p>
+                    <p>
+                        <label for="telefono">Apellido:</label><br>
+                        <input type="number" name="telefono" id="telefono">
+                    </p>
+                    <p>
+                        <input type="checkbox" name="novedades" value="novedades">
+                        <label for="novedades">Enviarme novedades</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="politicas" value="politicas">
+                        <label for="politicas">Acepto los términos de plítica y privacidad</label>
+                    </p>
+                    <p>
+                        <input type="submit" value="Guardar usuario">
+                    </p>
+                </form>
+            </div>
+            <div class="datosTarjeta">
+                <h2>Información de tarjeta</h2>
+                <div class="subcontenedorDatosTarjeta">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque, molestiae? Cupiditate explicabo, ducimus quibusdam doloribus modi incidunt. Aliquam, fugiat minus!</p>
+                    <form class="formularioTarjeta" action="" method="POST">
+                        <p>
+                            <label for="numeroTarjeta">Número de tarjeta:</label><br>
+                            <input type="number" name="numeroTarjeta" id="numeroTarjeta">
+                        </p>
+                        <p>
+                            <label for="codigoSeguridad">Código de seguridad de tarjeta:</label><br>
+                            <input type="number" name="codigoSeguridad" id="codigoSeguridad">
+                        </p>
+                        <p>
+                            <label for="fechaVencimiento">Fecha de Vencimiento:</label><br>
+                            <input type="date" name="fechaVencimiento" id="fechaVencimiento">
+                        </p>
+                        <p>
+                            <label for="nombreDueño">Nobre que figura en la tarjeta:</label><br>
+                            <input type="text" name="nombreDueño" id="nombreDueño">
+                        </p>
+                        <p>
+                            <input type="submit" value="Guardar tarjeta">
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer></footer>
+</body>
+</html>
