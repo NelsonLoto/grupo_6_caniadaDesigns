@@ -1,4 +1,7 @@
-
+html {
+    scroll-behavior: smooth;
+  }
+  
 .seccionUno{
     height: 88vh;
     background-color: #e5e5e5 ;
@@ -52,6 +55,12 @@
     padding:7px;
     border-radius: 100%;
 }
+.flechaSeccion{
+    color: #fff;
+    background-color: black;
+    padding:7px;
+    border-radius: 100%;
+}
 
 
 .seccionDos{
@@ -81,15 +90,21 @@
 
 .seccionTres{
     height: 100vh;
-    /*background-color: #212121;*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .seccionTres h2{
     text-align: center;
-    padding-top: 90px;
+    padding-top: 30px;
     padding-bottom: 30px;
     color:#363636
 }
-
+.carrouselDeProductos{
+    display: flex;
+    justify-content: center;
+}
 
 
 /* ----------- Slider ---------- */
@@ -256,26 +271,38 @@ text-align: center;
 
 
 /*------------ termina slider ---------^*/
+
+.flechaScrollSeccionTres{
+    text-align: center;
+    position: absolute;
+    padding-bottom: 5px;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
 .seccionCuatro{
     height: 100vh;
     background-color:#fff;
     display: flex;
     overflow: hidden;
-    
+    padding-top: 10px;
 }
 .divSeccionCuatro{
     width: 50%;
     background-color: #fff;
-    display: flex;
-    align-items: center;
+
 }
 .divSeccionCuatro img{
     width: 100%;
     height: auto;
+
     
 }
 .seccionCuatro .columnaDerecha{
     padding-left: 10%;
-    
+    display: flex;
+    align-items: center;    
     
 }
