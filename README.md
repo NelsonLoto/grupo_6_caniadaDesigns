@@ -37,3 +37,18 @@ Caniada Designs es un e-commerce de indumentaria casual. Su target son hombres y
 - ridestore.com: Nos pareció una buena estética para mostrar el detalle de sus productos.
 - minimalismbrand.com: La estética de la página también corresponde a una linea minimalista.
 - hollisterco.com: La funcionalidad de agregar al carrito y checkout nos pareció muy pertinente.
+
+## Tablero de trabajo en JIRA - Metodología ágil
+
+- https://grupo6dh.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=EC&view=planning.nodetail&issueLimit=100
+
+## HEROKU APP
+
+     Versión de escritorio (no es responsive todavía).
+
+- https://grupo6-caniada.herokuapp.com/ HOME
+- https://grupo6-caniada.herokuapp.com/usuario LOG IN - REGISTRO
+- https://grupo6-caniada.herokuapp.com/productos DETALLE DE PRODUCTO
+- https://grupo6-caniada.herokuapp.com/carrito CARRITO 
+
+     
