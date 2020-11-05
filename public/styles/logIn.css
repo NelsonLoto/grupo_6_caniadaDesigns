@@ -1,16 +1,211 @@
-div.contenedorLoginPrincipal{
-    box-sizing: border-box;
+main.contenedor{
+    color: #363636;
+}
+main.contenedor{
     width: 100%;
-    height: 800px;
-    position: relative;
+    height: 85vh;
     display: flex;
     align-items: center;
-    flex-direction: row;
+
 }
 
-div.contenedorLoginPrincipal div.subcontenedorPrincipal{
-    box-sizing: border-box;
+main.contenedor section{
+    width: 50%;
+    height: 80%;
     display: flex;
-    position: relative;
-    left: 40%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    
+    
+
 }
+
+main.contenedor section.logIn{
+    margin: 100px 0px 100px 0px;
+    border-right: solid 0.5px #afafaf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main.contenedor section.logIn h2.tituloLogIn {
+    text-align: center;
+    color: #363636
+}
+
+main.contenedor section.logIn div.cajaFormLogIn {
+    width: 40%;
+    
+}
+main.contenedor section.logIn div.cajaFormLogIn form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width:100%
+}
+main.contenedor section.logIn div.cajaFormLogIn form div,
+main.contenedor section.joinUs div.formRegistro form.formJoinUs div{
+    padding: 10px 0px;
+}
+
+
+        main.contenedor section div form .campoDatos{
+            width: 100%;
+        }
+        main.contenedor section div label input,
+        main.contenedor section div label.campoDatos input {
+            margin-top: 10px;
+        }
+        main.contenedor section div form label.campoDatos{
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        main.contenedor section div form label.campoDatos input{
+            border-radius: 8px;
+            border: solid 0.5px #adadad;
+            height: 30px;
+        }
+
+
+
+main.contenedor section.logIn div.cajaFormLogIn form .email{
+    width: 100%;
+            
+}
+
+
+main.contenedor section.logIn div.cajaFormLogIn form .contraseña{
+    width: 100%;
+}
+
+
+    main.contenedor section.logIn div.cajaFormLogIn form .email .olvide,
+    main.contenedor section.logIn div.cajaFormLogIn form .contraseña .olvide { 
+        
+        text-align: right;
+    }
+
+
+    main.contenedor section.logIn div.cajaFormLogIn form .email .olvide a ,
+    main.contenedor section.logIn div.cajaFormLogIn form .contraseña .olvide a{
+        color: #1a2cf3;
+        font-weight: normal;
+        text-decoration: underline;
+        font-size: 0.8rem;  
+    }
+
+    
+
+    
+main.contenedor section.logIn .cajaFormLogIn form div.acciones{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+
+main.contenedor section.logIn .cajaFormLogIn form div.acciones .recuerdame {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+    
+}
+
+main.contenedor section.logIn .cajaFormLogIn form .acciones div input{
+    margin-right:10px;
+
+
+}
+
+
+main.contenedor section.logIn div.cajaFormLogIn form button,
+main.contenedor section.joinUs form.formJoinUs div button {
+    border-radius: 8px;
+    border:none;
+    background-color: #363636;
+    padding: 10px;
+}
+main.contenedor section.logIn div.cajaFormLogIn form button a, 
+main.contenedor section.joinUs form.formJoinUs div button a{
+    padding: 0px 30px;
+    color: white;
+    
+}
+
+
+
+
+
+
+
+
+main.contenedor section.joinUs{
+    margin: 100px 0px 100px 0px;
+    border-left: solid 0.5px #afafaf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main.contenedor section.joinUs h2.tituloJoinUs{
+    text-align: center;
+}
+main.contenedor section.joinUs div.formRegistro{
+    width: 40%;
+}
+main.contenedor section.joinUs div.formRegistro form.formFast{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main.contenedor section.joinUs div.formRegistro form.formFast p{
+    margin-top: 10px;
+}
+main.contenedor section.joinUs .formRegistro .formFast .redes{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+main.contenedor section.joinUs .formRegistro .formFast .redes button {
+    margin: 10px 5px;
+    width: 50%;
+    padding: 10px;
+    border-radius: 8px;
+    border:none;
+    font-size: 1.1rem;
+}
+
+main.contenedor section.joinUs .formRegistro .formFast .redes button.google{
+    background-color: #ea4335;
+    color: white;
+}
+main.contenedor section.joinUs .formRegistro .formFast .redes button.facebook{
+    background-color: #576b95;
+    color: white;
+}
+
+main.contenedor section.joinUs .formRegistro p{
+    text-align: center;
+}
+
+main.contenedor section.joinUs .formRegistro .formJoinUs{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+
+        main.contenedor section.joinUs form.formJoinUs div.button {
+            text-align: center;
+            margin-top: 10px;
+        }

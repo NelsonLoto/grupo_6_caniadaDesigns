@@ -19,26 +19,28 @@
 @import url(/styles/footer.css);
 
 
-
 /* ---------------------------
 -------ESTILOS DE VISTAS------
 ----------------------------*/
 
      /*-----HOJA DE PRODUCTOS----*/
 
-     @import url(/styles/detalleProducto.css);
-     @import url('https://use.fontawesome.com/releases/v5.15.1/css/all.css');
-
+          @import url(/styles/detalleProducto.css);
+          @import url('https://use.fontawesome.com/releases/v5.15.1/css/all.css');
 
      /*-----CARRITO----*/
 
-     @import url(/styles/carrito.css);
+          @import url(/styles/carrito.css);
      
-      /*-----LOGIN----*/
-      @import url(/styles/logIn.css);
+     /*-----LOGIN----*/
+          @import url(/styles/logIn.css);
 
-      /*-----CREATEACCOUNT----*/
-      @import url(/styles/crearCuenta.css);
+     /*-----CREATEACCOUNT----*/
+          @import url(/styles/crearCuenta.css);
+
+
+
+
 /* ---------------------------
 ----------GENERALES-----------
 ----------------------------*/
@@ -52,8 +54,9 @@
 
 * {
      box-sizing: border-box;
-     margin: 0;
+     margin: 0px;
      text-decoration: none;
      padding: 0px;
      font-family: 'Montserrat', 'Roboto', 'Segoe UI', Tahoma, Geneva,Verdana, sans-serif;  
 }
+
