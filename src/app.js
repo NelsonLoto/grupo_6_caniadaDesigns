@@ -5,30 +5,26 @@
      const fs = require('fs');
      const path = require('path')
 
+     let rutasProductos = require ('./routes/productos')
+     let rutasCarrito = require('./routes/carrito')
+     let rutasCrearUsuario = require ('./routes/crearUsuario')
+     let rutasMain = require ('./routes/main')
+     let rutasLoginRegister = require ('./routes/loginRegister')
+
 
 ////////////-----------------PUBLIC--------------------////////////
      app.use(express.static(path.join(__dirname, '../public')));
 
 ////////////------------------RUTAS--------------------////////////
-     app.get('/', function (req, res) {
-          res.sendFile(path.join(__dirname, '/views/index.html'))
-     }) //funciona OK
+     app.use('/', rutasMain) //funciona OK
 
-     app.get('/carrito', function (req, res) {
-          res.sendFile(path.join(__dirname, '/views/carrito.html'))
-     }) //funciona OK
+     app.get('/carrito', rutasCarrito) //funciona OK
 
-     app.get('/productos', function (req, res) {
-          res.sendFile(path.join(__dirname, '/views/detalleProducto.html'))
-     }) //funciona OK
+    app.use('/productos', rutasProductos) //funciona OK
 
-     app.get('/usuario', function (req, res) {
-          res.sendFile(path.join(__dirname, '/views/loginRegister.html'))
-     }) //funciona OK
+     app.use('/usuario', rutasLoginRegister) //funciona OK
 
-     app.get('/crear-usuario', function (req, res) {
-          res.sendFile(path.join(__dirname, '/views/createAccount.html'))
-     }) //funciona OK
+     app.use('/crear-usuario', rutasCrearUsuario ) //funciona OK
 
 
 ////////////---------------PUERTO:3000-----------------////////////
