@@ -32,7 +32,7 @@
           <nav class="user">
                <ul>
                     <li><a href=""><i class="fas fa-search"></i></a></li>
-                    <li class="bag"><span>4</span><a href="/carrito"><i class="fas fa-shopping-bag"></i></a></li>
+                    <li class="bag"><span class="notificacion">4</span><a href="/carrito"></a><i class="fas fa-shopping-bag"></i></a></li>
                     <li><a href="/usuario"><i class="fas fa-user"></i></a></li>
                </ul>
           </nav>
@@ -42,6 +42,9 @@
      <main class="contenedorCarrito">
 
           <section class="vistaResumen">
+               <div class="tituloSeccion">
+                    <h2>Productos en tu carrito: </h2>
+               </div>
                <div class="producto 1">
                     <div class="imagenProducto">
                          <img class="imgProducto" src="/images/producto1/Talking Heads.png" alt="">
@@ -215,8 +218,8 @@
           <section class="pago">
                <div class="seccionFija">
                     <div class="preFormulario">
-                         <h4><a href="/productos">Seguir comprando</a></h4>
-                         <p><a href="">Tengo un código promocional</a></p>
+                         <h6><a href="/productos">Agregar más productos</a></h6>
+                         <p><a class="codigo" href="">Tengo un código promocional</a></p>
                     </div>
 
                     <p class="datos">Datos de facturación</p>
@@ -256,19 +259,27 @@
                               </div>
                     
                               <div class="seleccionEnvio">
-                                   <p><input type="radio" name="envio" id="domicilio">Entrega a Domicilio</p>
-                                   <p><input type="radio" name="envio" id="otra">Otra dirección</p>
-                                   <p><input type="radio" name="envio" id="sucursal">Retiro en sucursal</p>
+                                   <label for="domicilio">
+                                        <p><input type="radio" name="envio" id="domicilio">Entrega a Domicilio</p>
+                                   </label>
+                                   <label for="otra">
+                                        <p><input type="radio" name="envio" id="otra">Otra dirección</p>
+                                   </label>
+                                   <label for="sucursal">
+                                        <p><input type="radio" name="envio" id="sucursal">Retiro en sucursal</p>
+                                   </label>
                                    
                               </div>
 
                               <div class="newsletterAceptar">
-                                   <p><input type="checkbox" name="newslatter" id="newsletter">Acepto que me manden promos y novedades por e-mail.</p>
+                                   <p>
+                                        <label for="newsletter"><input type="checkbox" name="newslatter" id="newsletter">Acepto que me manden promos y novedades por e-mail.</label>
+                                   </p>
                               </div>
 
                               <div class="total">
                                    <h4>Total impuestos incluidos</h4>
-                                   <p><a href="">Ver detalles</a></p>
+                                   <p><a class="detalles" href="">Ver detalles</a></p>
                               </div>
 
                               <h3 class="montoAPagar">$2000</h3>
@@ -291,7 +302,8 @@
           <div class="fila1">
                <img class="logo" src="/images/logos/isoLogoTipo.svg" alt=""> <!--logo-->
      
-               <div class="derecha">
+               
+               <div class="menu">
                     <div class="nav">
                          <h4>Caniada</h4>
                          <ul>
@@ -300,7 +312,6 @@
                               <li><a href="">Link 3</a></li>
                          </ul>
                     </div>
-     
                     <div class="colecciones">
                          <h4>Colecciones</h4>
                          <ul>
@@ -309,7 +320,6 @@
                               <li><a href="">Link 3</a></li>
                          </ul>
                     </div>
-     
                     <div class="nosotros">
                          <h4>Nosotros</h4>
                          <ul>
@@ -317,15 +327,15 @@
                               <li><a href="">Contactanos</a></li>
                          </ul>
                     </div>
-     
-                    <div class="usuario">
-                         <a href="/usuario" class="registro">Registrarme</a>
-                         <a href="/usuario" class="logIn">Iniciar sesión</a>
+               </div>         
+                    
+               <div class="usuario">
+                         <a href="" class="registro">Registrarme</a>
+                         <a href="" class="logIn">Iniciar sesión</a>
                          
-                    </div>
                </div>
-          </div> 
-     
+               
+          </div>
           <div class="fila2">
                <h4>© grupo6 DH</h4>
                <div class="redes">

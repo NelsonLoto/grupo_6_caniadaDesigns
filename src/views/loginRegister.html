@@ -30,7 +30,7 @@
           <nav class="user">
                <ul>
                     <li><a href=""><i class="fas fa-search"></i></a></li>
-                    <li class="bag"><span>4</span><a href="/carrito"><i class="fas fa-shopping-bag"></i></a></li>
+                    <li class="bag"><a href="/carrito"><span class="notificacion">4</span></a><i class="fas fa-shopping-bag"></i></a></li>
                     <li><a href="/usuario"><i class="fas fa-user"></i></a></li>
                </ul>
           </nav>
@@ -39,90 +39,89 @@
 
      <main class="contenedor">
           
-               <section class="logIn">
-                    <h2 class="tituloLogIn">INICIAR SESIÓN</h2>
+          <section class="logIn" id="logIn">
 
-                    <div class="cajaFormLogIn">
-                         <form class="formularioLogin" action="" method="POST">
+               
+               <div class="caja formLogIn">
+                    <h2 class="titulo">INICIAR SESIÓN</h2>
 
-                              <div class="email">
-                                   <label class="campoDatos"for="email">Email o Usuario
-                                        <input type="email" name="email" id="email">
-                                   </label>
-
-                                   <div class="olvide">
-                                        <a href="">Olvidé mi usuario</a>
-                                   </div>
-
-                              </div>
-
-                              <div class="contraseña">
-                                   <label class="campoDatos" for="contraseña">Contraseña
-                                        <input type="password" name="contraseña" id="contraseña">
-                                   </label>
-
-                                   <div class="olvide">
-                                        <a href="">Olvidé mi contraseña</a>
-                                   </div>
-
-                              </div>
-
-                              <div class="acciones">
-
-                                   
-                                        <div class="recuerdame">
-                                             <input type="checkbox" name="remember" value="rememberMe">Recuérdame
-                                        </div>
-
-                              </div>
-
-                              <div>
-                                   <button type="submit"> 
-                                        <a href="">INGRESAR</a>
-                                   </button>
-                              </div>   
-                         </form>
-                    </div>
-               </section>
-
-               <section class="joinUs">
-                    <h2 class="tituloJoinUs">REGISTRO</h2>
-
-                    <div class="formRegistro">
-
-                         <form class="formFast" action="" method="POST">
-                              
-                              <div class="redes">
-                                   <button class="google" type="submit" value="Google">Google  <i class="fab fa-google"></i></button>
-                                   <button class="facebook" type="submit" value="facebook">Facebook <i class="fab fa-facebook"></i></button>
-                              </div>
-                              
-                         </form>
+                    <form class="form formularioLogIn" action=""method="POST">
+                         <div class="redes">
+                         
+                              <button class="google" type="submit"value="Google"><i class="fab fa-google"></i> Google</button>
+                              <button class="facebook" type="submit"value="facebook"><i class="fab fa-facebook"></i> Facebook</button>
+                             
+                         </div>
 
                          <p>o</p>
 
-                         <form class="formJoinUs" action="" method="POST">
-                              <div class="email">
-                                   <label class="campoDatos"for="email">Email
-                                        <input type="email" name="email" id="email">
-                                   </label>
+                         <div class="email">
+                              <label class="campoDatos"for="email">Email o Usuario
+                                   <input type="email" name="email"id="email">
+                              </label>
+                              <div class="olvide">
+                                   <a href="">Olvidé mi usuario</a>
                               </div>
+                         </div>
 
-                              <div class="contraseña">
-                                   <label class="campoDatos" for="contraseña">Contraseña
-                                        <input type="password" name="contraseña" id="contraseña">
-                                   </label>
+                         <div class="contraseña">
+                              <label class="campoDatos"for="contraseña">Contraseña
+                                   <input type="password" name="contraseña"id="contraseña">
+                              </label>
+                              <div class="olvide">
+                                   <a href="">Olvidé mi contraseña</a>
                               </div>
+                         </div>
 
-                              <div class="button">
-                                   <button type="submit"> 
-                                        <a href="">REGISTRARSE</a>
-                                   </button>
-                              </div>   
+                         <div class="recuerdame" for="remember">
+                              <label for="remember">
+                                   <input type="checkbox" name="remember"value="rememberMe" id="remember">
+                                   Recuérdame
+                              </label>
+                         </div> 
+                    </form>
+                    <div class="submit">
+                         <button type="submit" class="usuario inicio"> 
+                              <a href="">INGRESAR</a>
+                         </button>
+                    </div> 
+               </div>
+          </section>
 
-                         </form>
+          <section class="registro" id="registro">
+               
+               
+               <div class="caja formRegistro">
+                    <h2 class="titulo">REGISTRO</h2>
+                    
+                    <form class="form formularioRegistro" action="" method="POST">
+                         
+                         <div class="redes">
+                              <button class="google" type="submit" value="Google"><i class="fab fa-google"></i>  Google</button>
+                              <button class="facebook" type="submit" value="facebook"><i class="fab fa-facebook"></i>  Facebook</button>
+                         </div>
+                         
+                         <p>o</p>
+
+                         <div class="email">
+                              <label class="campoDatos" for="emailRegistro"name="emailRegistro">Email
+                                   <input type="emailRegistro"name="emailRegistro" id="emailRegistro">
+                              </label>
+                         </div>
+
+                         <div class="contraseña">
+                              <label class="campoDatos"for="contraseñaRegistro"name="contraseñaRegistro">Contraseña
+                                   <input type="password"name="contraseñaRegistro"id="contraseñaRegistro">
+                              </label>
+                         </div>
+                    </form>
+                    <div class="submit">
+                         <button type="submit" class="usuario registro"> 
+                              <a href="">REGISTRARSE</a>
+                         </button>
                     </div>
-               </section>
+               </div>
+          </section>
           
      </main>
 
@@ -175,6 +174,33 @@
                </div>
           </div>
      </footer>
+
+     <script>
+     let hoverRegistro = document.getElementById("registro");
+     let opacidadLogIn = document.getElementById("logIn");
+
+     hoverRegistro.addEventListener("mouseover", () => {
+          opacidadLogIn.className = "opacity logIn";
+     }, false)
+     
+     hoverRegistro.addEventListener("mouseout", () => {
+          opacidadLogIn.className = "logIn";
+     }, false)
+
+     let hoverLogIn = document.getElementById("logIn");
+     let opacidadRegistro = document.getElementById("registro");
+
+     hoverLogIn.addEventListener("mouseover", () => {
+          opacidadRegistro.className = "opacity registro";
+     }, false)
+          
+     hoverLogIn.addEventListener("mouseout", () => {
+          opacidadRegistro.className = "registro";
+     }, false)
+     
+     
+
+     </script>
 
 </body>
 

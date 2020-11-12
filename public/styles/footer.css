@@ -1,8 +1,13 @@
 
 footer {
      /*box-shadow: -1px -1px 4px #a7a5a5;*/
-     margin-top: 0px;
-     border-top: solid 0.2px #363636;
+     margin-top: 20px;
+     border-top: solid 0.2px #d8d6d6;
+     z-index: 5;
+     position: relative;
+     background-color: rgb(250, 250, 250);
+     
+
 }
 
 
@@ -14,6 +19,7 @@ footer .fila1 {
      margin: 0px 50px;
      border-bottom: solid 1px #908f8f;
      padding: 20px 0px;
+     flex-wrap: wrap;
 }
 
 footer .fila1 img.logo {
@@ -21,54 +27,57 @@ footer .fila1 img.logo {
      width: 150px;
      margin:10px 0px 0px 50px;
 }
-footer .fila1 div.derecha{
-     margin: 0px 50px;
+
+.fila1 div.menu {
      display: flex;
-     justify-content: space-between;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     margin: 0px 50px;
+     flex-grow: 1;
+     
 }
 
-footer .fila1 .derecha h4 {
+
+footer .fila1 .menu h4 {
      margin: 10px 0px 20px 0px;
 }
-footer .fila1 .derecha ul {
+footer .fila1 .menu ul {
      list-style-type: none;
 }
-footer .fila1 .derecha ul li {
+footer .fila1 .menu ul li {
      padding-top: 15px;
 }
-footer .fila1 .derecha ul li a{
+footer .fila1 .menu ul li a{
      color: #363636
 }
 
-.fila1 div.derecha div.nav {
-     margin: 0px 60px 0px 0px;
+.fila1 div.menu div.nav {
+     margin: 0px 20px;
      display: flex;
      flex-direction: column;   
 }
 
-.fila1 div.derecha div.colecciones {
-     margin: 0px 60px 0px 0px;
+.fila1 div.menu div.colecciones {
+     margin: 0px 20px;
      display: flex;
      flex-direction: column;
 }
 
-.fila1 div.derecha div.nosotros {
-     margin: 0px 60px 0px 0px;
+.fila1 div.menu div.nosotros {
+     margin: 0px 20px;
      display: flex;
      flex-direction: column;
 }
-.fila1 div.derecha div.nosotros ul{
-     
-}
 
-.fila1 div.derecha div.usuario {
-     margin: 10px 0px 10px 0px;
+
+.fila1 div.usuario {
+     margin: 10px 50px 10px 0px;
      display: flex;
      flex-direction: column;
      align-items: center;
 }
 
-.fila1 div.derecha div.usuario a{
+.fila1 div.usuario a{
      margin-bottom: 20px;
      padding: 10px 20px;
      width: 160px;
@@ -77,12 +86,12 @@ footer .fila1 .derecha ul li a{
      text-align: center;
      font-size: 15px;
 }
-.fila1 div.derecha div.usuario a.registro{
+.fila1 div.usuario a.registro{
      background-color: #363636;
      color: white;
 }
 
-.fila1 div.derecha div.usuario a.logIn{
+.fila1 div.usuario a.logIn{
      background-color: white;
      color: #363636;
 }
@@ -120,3 +129,100 @@ footer .fila2 .redes a i{
 footer .fila2 .redes a i.fa-facebook{}
 footer .fila2 .redes a i.fa-instagram{}
 footer .fila2 .redes a i.fa-pinterest{}
+
+
+@media screen and (max-width: 1024px){
+
+     .fila1  {
+          align-content: space-between;
+          flex-wrap: nowrap;
+     
+     }
+     footer .fila1 img.logo {
+          margin:0px 10px;
+     }
+     footer .fila1 div.menu {
+          display: flex;
+          flex-wrap: nowrap;
+          order: 1
+     
+     }
+
+     footer .fila1 div.usuario {
+          order: 0;
+          margin:0px 10px;
+     }
+}
+
+@media screen and (max-width: 700px){
+
+     footer .fila1  {
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: column;
+          align-items: center;
+          margin: 0px 0px
+     
+     }
+     footer .fila1 img.logo {
+          margin:0px 0px;
+          justify-self: center;
+     }
+     footer .fila1 div.menu {
+          display: flex;
+          flex-wrap: wrap;
+          order: 1;
+          flex-direction: column;
+          justify-self: center;
+          align-content: center;
+          margin: 10px 10px;
+          width: 100%;
+     }
+
+     footer .fila1 div.menu:nth-child(){
+          display: flex;
+          width: 100%;
+     }
+
+     footer .fila1 div.menu .nav,
+     footer .fila1 div.menu .colecciones,
+     footer .fila1 div.menu .nosotros{
+          width: 80%;
+          text-align: center;
+     }
+
+     footer .fila1 div.menu h4{
+          margin: 5px 0px;
+     }
+
+     footer .fila1 div.menu .nav ul,
+     footer .fila1 div.menu .colecciones ul,
+     footer .fila1 div.menu .nosotros ul{
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+     }
+
+     footer .fila1 div.menu .nav ul li,
+     footer .fila1 div.menu .colecciones ul li,
+     footer .fila1 div.menu .nosotros ul li{
+          margin: 0px 20xpx;
+     }
+
+     footer .fila1 div.usuario {
+          order: 0;
+          margin:20px 0px;
+     }
+
+
+     footer .fila2{
+          flex-direction: column;
+     }
+
+     footer .fila2 h4{
+          order: 1;
+     }
+     footer .fila2 .redes{
+          margin: 20px 0px;
+     }
+}

@@ -51,12 +51,15 @@
 /*fuente INTER: Usada para detalle de productos, precio... tanto en las cajas como en el carrito.*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap');
 
+/*fuente ROBOTO CONDENSED y RAJDHANI: Prueba.*/
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 
 * {
      box-sizing: border-box;
      margin: 0px;
      text-decoration: none;
      padding: 0px;
-     font-family: 'Montserrat', 'Roboto', 'Segoe UI', Tahoma, Geneva,Verdana, sans-serif;  
+     font-family: /*'Rajdhani',*/'Roboto Condensed', 'Roboto', 'Segoe UI', Tahoma, Geneva,Verdana, sans-serif;  
 }
 

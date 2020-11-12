@@ -1,6 +1,8 @@
 main.contenedorCarrito {
      display: flex;
-     justify-content: space-evenly;     
+     justify-content: space-evenly; 
+     flex-wrap: wrap;
+     
 }
 
 /*---------------------------------------------------*/
@@ -9,6 +11,7 @@ main.contenedorCarrito {
 section.vistaResumen{
      width: 40%;
      margin: 30px;
+     justify-self: start;
      
 }
 
@@ -18,16 +21,21 @@ section.vistaResumen{
 
 section.vistaResumen .producto{
      display: flex;
-     justify-content: stretch;
-     margin-bottom: 30px;
-    
+     justify-content: space-between;
+     width: 100%;
+     background-color: #f8f8f87f;
+     box-shadow: 0px 0px 4px rgb(238, 238, 238);
+     border-radius: 4px;
+     margin: 20px 0px;
+     padding: 12px;
 }
 
 
 section.vistaResumen .producto img.imgProducto{
-     width: 220px;
-     box-shadow: -2px 0px 4px #dedddd;
+     width: 180px;
+     box-shadow: 0px 0px 40px rgb(224, 224, 224);
      border-radius: 8px;
+     border: solid 0px rgba(63, 63, 63, 0.196);
      
 }
 
@@ -44,10 +52,13 @@ section.vistaResumen .producto .detalleProducto{
      .detalleProducto .nombreDescripcion p{
           padding: 0px 0px;
      }
+     .precioYeliminar h3, 
      .detalleProducto .nombreDescripcion h4, 
      .detalleProducto .nombreDescripcion p {
           font-family: 'Inter';
-          padding: 10px 0px;
+          padding: 5px 0px;
+          font-size: 14px;
+          color: #363636;
      } 
 
 
@@ -55,23 +66,32 @@ section.vistaResumen .producto .detalleProducto .cantidadYtalle{
      display: flex;
      justify-content: space-between;
      align-items: center;
+     font-size: 12px;
 }
 
 section.vistaResumen .producto .detalleProducto .cantidadYtalle input {
-     width: 50px;
-     height: 40px;
-     background-color: #f2f2f2;
-     border: solid 1px #b9b9b9;
-     border-radius: 8px;
+     width: 30px;
+     height: 30px;
+     background-color: #ffffff;
+     border: solid 1px #d6d6d6;
+     border-radius: 4px;
      text-align: center;
+     font-size: 12px;
+     outline: none;
+     font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
+
+section.vistaResumen .producto .detalleProducto .cantidadYtalle input:focus{
+     box-shadow: 0px 0px 8px #c3c7fc;
+}
+
 
 section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles{
      display: flex;
      align-items: center;
      justify-content: space-between;
      border: solid 1px #b9b9b9;
-     border-radius: 8px;
+     border-radius: 4px;
      margin-left: 5px;
 
 }
@@ -82,12 +102,13 @@ section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles p{
 
 section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles #talle {
      width: 50px;
-     height: 40px;
+     height: 28px;
      border: none;
      border-radius: 8px;
      background-color: rgb(251, 251, 251);
      text-align: center;
      padding-left: 5px;
+     outline: none;
 }
 
 section.vistaResumen .producto .precioYeliminar{
@@ -95,21 +116,29 @@ section.vistaResumen .producto .precioYeliminar{
      flex-direction: column;
      justify-content: space-around;
      align-items: center;
-     flex-grow: 2;
      padding: 50px 0px;
 }
 
 section.vistaResumen .producto .precioYeliminar h3 {
-     background-color: rgb(50, 50, 50);
+     background-color: rgb(239, 239, 239);
      color: white;
      padding: 10px 30px;
      border-radius: 10px;
+     font-size: 14px;
+     color: #363636
 }
 
 
 section.vistaResumen .producto .precioYeliminar a img{
      width: 20px;
      height: 20px;
+     opacity: 0.8;
+     
+}
+
+section.vistaResumen .producto .precioYeliminar a img:hover{
+     filter: invert(tomato);
+     opacity: 1;
 }
 
 
@@ -146,7 +175,7 @@ section.vistaResumen .infoEnvio i {
 section.vistaResumen .detalleTotal{
      margin: 30px 0px;
      padding: 20px 40px;
-     background-color: #F8F7F7;
+     background-color: #f8f8f8;
      box-shadow: 0px 3px 2px #ebeaea;
      
 }
@@ -172,19 +201,38 @@ section.vistaResumen .detalleTotal .totalPedido{
 /*---------------------------------------------------*/
 
 /*-----------------GENERALIZADO------------------*/
-section.pago .seccionFija a{
-     color: #1a2cf3;
+section.pago{
+     width: 40%;
+}
+
+section.pago .seccionFija .preFormulario h6 a{
+     background-color: #50b87b;
+     color: white;
+     padding: 5px 10px;
      font-size: 14px;
+     font-weight: normal;
+     border-radius: 4px;
+     box-shadow: 0px 0px 8px rgb(197, 197, 197);
+}
+
+section.pago .seccionFija a.codigo,
+section.pago .seccionFija a.detalles{
+     color: #bebfbf;
+     font-size: 14px;
+     text-decoration: underline;
      
 }
 
 section.pago .seccionFija a:hover{
      text-decoration:underline;
+     color: rgb(62, 73, 228);
 }
 
-section.pago{
-     width: 50%;
+section.pago .seccionFija h6 a:hover{
+     text-decoration:none;
+     background-color: #6FCF97;
 }
+
 
 section.pago .seccionFija {
      width: 100%;
@@ -194,7 +242,7 @@ section.pago .seccionFija {
      margin: 20px;
      padding: 10px 30px 0px 30px;
      height: 100vh;
-     background-color: #fff;
+     background-color: #f8f8f87f;
      position: sticky;
      top:10vh;
 }
@@ -210,6 +258,7 @@ section.pago .seccionFija .preFormulario{
      display: flex;
      justify-content: space-between;
      padding-top: 10px;
+     
      
 }
 
@@ -255,10 +304,16 @@ section.pago .seccionFija .formulario .completar label{
 }
 
 section.pago .seccionFija .formulario .completar label input {
-     border: solid 0.5px #B3ABBC;
+     border: solid 0.5px #c1c1c2;
      border-radius: 8px;
      padding: 4px 5px;
      margin-top: 3px;
+     outline: none;
+     
+}
+
+section.pago .seccionFija .formulario .completar label input:focus{
+     box-shadow: 0px 0px 8px #c3c7fc;
 }
 
 
@@ -337,6 +392,7 @@ section.pago .seccionFija .formulario .botonPagar button {
      width: 50%;
      padding: 10px 0px;
      background: #50b87b;
+     box-shadow: 0px 0px 8px rgb(197, 197, 197);
      border: none;
      border-radius: 8px;
 }
@@ -372,126 +428,3 @@ section.pago .seccionFija .formulario .botonPagar button a p{
 
 
 
-
-
-
-/*--------------------------------------------------------*/
-/*-----------------FOOTER CARRITO PRUEBA------------------*/
-/*--------------------------------------------------------*/
-
-
-footer.footerCarrito{
-     background-color: #232323;
-}
-
-
-/* Footer superior */
-footer.footerCarrito .fila1 {
-     display: flex;
-     justify-content: space-between;
-     margin: 10px 50px;
-     border-bottom: solid 1px white;
-     padding: 30px 0px;
-}
-
-footer.footerCarrito .fila1 img.logo {
-     background-color: rgba(255, 255, 255, 0.7);
-     border-radius: 10px;
-}
-footer .fila1 div.derecha{
-     margin: 0px 50px;
-     display: flex;
-     justify-content: space-between;
-}
-
-footer.footerCarrito .fila1 .derecha h4 {
-     margin: 10px 0px 20px 0px;
-     color: white;
-}
-footer .fila1 .derecha ul {
-     list-style-type: none;
-}
-footer .fila1 .derecha ul li {
-     padding-top: 15px;
-}
-footer.footerCarrito .fila1 .derecha ul li a{
-     color: white
-}
-
-.fila1 div.derecha div.nav {
-     margin: 0px 60px 0px 0px;
-     display: flex;
-     flex-direction: column;   
-}
-
-.fila1 div.derecha div.colecciones {
-     margin: 0px 60px 0px 0px;
-     display: flex;
-     flex-direction: column;
-}
-
-.fila1 div.derecha div.nosotros {
-     margin: 0px 60px 0px 0px;
-     display: flex;
-     flex-direction: column;
-}
-.fila1 div.derecha div.nosotros ul{
-     
-}
-
-.fila1 div.derecha div.usuario {
-     margin: 10px 0px 10px 0px;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-}
-
-.fila1 div.derecha div.usuario a{
-     margin-bottom: 20px;
-     padding: 10px 20px;
-     width: 160px;
-     border: solid 1px #363636;
-     border-radius: 8px;
-     text-align: center;
-     font-size: 15px;
-}
-.fila1 div.derecha div.usuario a.registro{
-     background-color: #363636;
-     color: white;
-}
-
-.fila1 div.derecha div.usuario a.logIn{
-     background-color: white;
-     color: #363636;
-}
-
-
-
-/* Footer inferior */
-
-footer.footerCarrito .fila2 {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     margin: 0px 50px;
-     padding: 20px 0px;
-}
-footer.footerCarrito .fila2 h4{
-     margin: 0px 50px;
-}
-footer .fila2 .redes{
-     margin: 0px 50px;
-     display: flex;
-     justify-items: space-around;
-     align-items: center;
-}
-footer .fila2 .redes p{
-     padding: 0px 0px 0px 30px;
-}
-footer .fila2 .redes a{
-     margin: 0px 0px 0px 30px;
-}
-footer .fila2 .redes a i{
-     color: #363636;
-     font-size: 25px;
-}
