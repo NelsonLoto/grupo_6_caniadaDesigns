@@ -24,7 +24,7 @@
 
      app.use('/usuario', rutasLoginRegister) //funciona OK
 
-     app.use('/crear-usuario', rutasCrearUsuario ) //funciona OK
+     app.use('/crearUsuario', rutasCrearUsuario ) //funciona OK
 
 
 ////////////---------------PUERTO:3000-----------------////////////
