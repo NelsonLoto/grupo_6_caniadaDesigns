@@ -12,6 +12,11 @@
      let rutasLoginRegister = require ('./routes/loginRegister')
 
 
+     ////////////////////-EJS-///////////////////////
+     app.set('view engine' , 'ejs')
+     app.set('views', path.join(__dirname, 'views'));
+
+
 ////////////-----------------PUBLIC--------------------////////////
      app.use(express.static(path.join(__dirname, '../public')));
 

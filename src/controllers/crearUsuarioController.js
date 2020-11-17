@@ -3,7 +3,7 @@ const path = require('path')
 let crearUsuario = {
     
     crearUsuario: function (req, res) {
-        res.sendFile(path.join(__dirname, '../views/createAccount.html'))
+        res.render('createAccount', { title: 'Caniada - Crear Usuario' })
    }
     
 }
