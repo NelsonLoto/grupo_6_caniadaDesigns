@@ -11,13 +11,13 @@ header {
     position:sticky;
     top:0px;
     background-color: rgba(16, 16, 16, 0.95);
-
+    box-sizing: border-box;
 }
 
 header div.logo{
     height: 100%;
     width: 33.3%;
-    padding-left: 10vw;
+    padding-left: 5vw; /*Originalmente estaba en 10vw*/
 }
 
 header div.logo img.header {
@@ -28,12 +28,26 @@ header div.logo img.header {
 
 header nav.menu{
     width: 33.3%;
-    
-    
+    /*height: 100%;*/
+}
+
+header nav.menu div.boton-menu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    color: #fafafa;
+}
+
+header nav.menu div.boton-menu i{
+    align-self: center;
+    font-size: 3rem;
+    display: none;
 }
 
 header nav.menu ul{
-    display: flex;
+    display: flex; /*Estaba en flezflex*/
     justify-content: space-between;
     list-style: none;
 }
@@ -178,4 +192,47 @@ header nav.menu ul li a:hover {
 
 header nav.user ul li a{
     color: #fafafa;
+}
+
+@media screen and (max-width: 860px){
+    header div.logo{
+        padding-left: 2vw;
+    }
+}
+
+@media screen and (max-width: 768px){
+    header nav.menu ul{
+        display: none;
+    }
+
+    header nav.menu div.boton-menu i{
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 600px){
+    header nav.user ul li{
+        padding-left: 20%;
+    }
+
+    header nav.menu div.boton-menu i{
+        font-size: 2rem;
+    }
+
+    header div.logo{
+        display: flex;
+        align-content: center;
+        align-items: center;
+    }
+    header div.logo img.header {
+        width: 100%;
+        height: auto;
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 350px){
+    header nav.menu div.boton-menu i{
+        font-size: 1.5rem;
+    }
 }
