@@ -167,7 +167,7 @@ header nav.user ul li span.notificacion{
 
 header nav.user ul{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     text-align: right;
     list-style: none;
     color: #363636;
