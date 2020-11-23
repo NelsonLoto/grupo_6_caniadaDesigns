@@ -332,7 +332,8 @@ main div.similaresProducto div.recomendaciones div a:hover {
     main div.panelDerecho {
         width: 105%;
         height: auto;
-        position: relative;
+        position: sticky;
+        bottom: 0px;
         background-color: white;
         align-self: center;
         margin-bottom: 0px;
@@ -386,8 +387,39 @@ main div.similaresProducto div.recomendaciones div a:hover {
         height: fit-content;
         width: 40%;
     }
-
-    main div.panelIzquierdo section.vidriera{
+    main div.panelIzquierdo section.vidriera {
         height: fit-content;
     }
+}
+
+@media screen and (max-width: 375px) {
+
+    main div.panelDerecho{
+        padding: 10px;
+        padding-bottom: 10px;
+    }
+
+    main div.panelDerecho h2 {
+        font-size: 1em;
+    }
+    main div.panelDerecho p {
+        font-size: .7em;
+    }
+    main div.panelDerecho a.boton {
+        padding: 5px;
+    }
+
+    main div.panelDerecho div.coloresProducto div img {
+        height: auto;
+        width: 77%;
+    }
+    main div.panelDerecho h2 a i {
+        display: none;
+    }
+
+    main div.panelDerecho div.coloresProducto {
+        justify-content: flex-start;
+    }
+
+
 }
