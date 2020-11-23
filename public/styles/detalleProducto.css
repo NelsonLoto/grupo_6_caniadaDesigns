@@ -367,6 +367,8 @@ main div.similaresProducto div.recomendaciones div a:hover {
     }
     main div.panelIzquierdo section.vidriera div.imagenes div.img_principal {
         width: 80%;
+        height: auto;
+        align-items: center;
     }
     main div.panelDerecho a.boton {
         padding: 10px;
@@ -381,6 +383,11 @@ main div.similaresProducto div.recomendaciones div a:hover {
         display: none;
     }
     main div.similaresProducto div.recomendaciones div {
+        height: fit-content;
         width: 40%;
+    }
+
+    main div.panelIzquierdo section.vidriera{
+        height: fit-content;
     }
 }
