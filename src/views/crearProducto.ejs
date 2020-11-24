@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+    <main>
+        <h1>Crear un nuevo producto.</h1>
+        <form action="" method="POST">
+            <div class="categoria">
+                <label for="categoria">Categoría</label>
+                <select name="categoria" id="categoria">
+                    <option value="seleccionar_categoria" selected disabled hidden>Seleccione categoria</option>
+                    <option value="remeras">Remeras</option>
+                    <option value="buzos">Buzos</option>
+                    <option value="camperas">Camperas</option>
+                    <option value="vestidos">Vestidos</option>
+                    <option value="jeans">Jeans</option>
+                    <option value="pantalones">Pantalones</option>
+                    <option value="shorts">Shorts</option>
+                    <option value="bermudas">Bermudas</option>
+                    <option value="trajes_de_baño">Trajes de baño</option>
+                    <option value="Bikini">Bikinis</option>
+                </select>
+            </div>
+            <div class="genero">
+                <label for="genero">Género</label>
+                <input type="radio" name="masculino" id="masculino">Masculino
+                <input type="radio" name="femenino" id="femenino">Femenino
+                <input type="radio" name="unisex" id="unisex">Unisex
+            </div>
+            <div class="nombre">
+                <label for="nombre">Nombre del producto</label>
+                <input type="text" name="nombre" id="nombre">
+            </div>
+            <div class="color">
+                <label for="color">Color</label>
+                <select name="color" id="color">
+                    <option value="seleccionar_color" selected disabled hidden>Seleccione color</option>
+                    <option value="negro">Negro</option>
+                    <option value="azul">Azul</option>
+                    <option value="rojo">Rojo</option>
+                    <option value="violeta">Violeta</option>
+                    <option value="marron">Marrón</option>
+                    <option value="verde">Verde</option>
+                    <option value="naranja">Naranja</option>
+                    <option value="celeste">Celeste</option>
+                    <option value="rosa">Rosa</option>
+                    <option value="dorado">Dorado</option>
+                    <option value="amarillo">Amarillo</option>
+                    <option value="gris">Gris</option>
+                    <option value="blanco">Blanco</option>
+                    <option value="azul_acero">Azul acero</option>
+                    <option value="azul_claro">Azul claro</option>
+                    <option value="azul_marino">Azul marino</option>
+                    <option value="azul_oscuro">Azul oscuro</option>
+                    <option value="bordo">Bordo</option>
+                    <option value="coral">Coral</option>
+                    <option value="coral_claro">Coral claro</option>
+                    <option value="lila">Lila</option>
+                    <option value="beige">Beige</option>
+                    <option value="marron_claro">Marrón claro</option>
+                    <option value="verde_claro">Verde claro</option>
+                    <option value="verde_oscuro">Verde oscuro</option>
+                    <option value="chocolate">Chocolate</option>
+                    <option value="caqui">Caqui</option>
+                    <option value="gris_oscuro">Gris oscuro</option>
+                </select>
+            </div>
+            <div class="talle">
+                <label for="talle">Talle</label>
+                <select name="talle" id="talle">
+                    <option value="seleccionar_talle" selected disabled hidden>Seleccione talle</option>
+                    <option value="xs">XS</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
+                </select>
+            </div>
+            <div class="cantidad">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" name="cantidad" id="catidad">
+            </div>
+            <div class="precio">
+                <label for="precio">Precio</label>
+                <input type="number" name="precio" id="precio">
+            </div>
+            <div class="descripcion">
+                <label for="descripcion_general">Descripción general</label>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción"></textarea>
+            </div>
+            <div class="info_complementaria">
+                <label for="modelo">Modelo</label>
+                <input type="text" placeholder="Slim/Regular Fit">
+                <label for="composicion">Composición</label>
+                <input type="text" name="composicion" id="composicion">
+                <label for="sku">SKU</label>
+                <input type="number" name="" id="">
+            </div>
+            <div class="fotos">
+                <label for="fotos">Fotos</label>
+                <input type="file" name="fotos" id="fotos">
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+        <form action="" method="POST">
+            <input type="text" name="prueba">
+            <button type="submit">submit</button>
+        </form>
+    </main>
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+</body>
+</html>
