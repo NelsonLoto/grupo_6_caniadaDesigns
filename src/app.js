@@ -20,6 +20,11 @@ app.set('views', path.join(__dirname, 'views'));
 ////////////-----------------PUBLIC--------------------////////////
 app.use(express.static(path.join(__dirname, '../public')));
 
+
+////////////---------------GUARDANDO METHOD=POST EN JSON DB-----------------//////////// 
+app.use(express.urlencoded({extended : false}))
+app.use(express.json())
+
 ////////////------------------RUTAS--------------------////////////
 app.use('/', rutasMain) //funciona OK
 
@@ -30,10 +35,6 @@ app.use('/productos', rutasProductos) //funciona OK
 app.use('/usuario', rutasLoginRegister) //funciona OK
 
 app.use('/crearUsuario', rutasCrearUsuario) //funciona OK
-
-////////////---------------GUARDANDO METHOD=POST EN JSON DB-----------------//////////// 
-app.use(express.urlencoded({extended : false}))
-app.use(express.json())
 
 ////////////---------------PUERTO:3000-----------------////////////
 app.listen(process.env.PORT || 3000, function () {

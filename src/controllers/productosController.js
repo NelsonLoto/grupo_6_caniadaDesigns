@@ -16,11 +16,9 @@ let productosController = {
         res.render ('crearProducto', { title: 'Caniada - Crear Producto'})
     },
     crear : function (req, res){
-        res.send(req.body)
-        // productosDB.push(req.body)
-        // fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productosDB, null, 4))
-        // res.send('Producto creado con éxito')
-        // res.redirect ('/productos/crear/success')
+        productosDB.push(req.body)
+        fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productosDB, null, 4))
+        res.redirect ('/productos/crear/success')
     },
     success : function (req, res){
         res.render('crearProductoSuccess', {title: 'Caniada - Producto creado'})

@@ -28,9 +28,12 @@
             </div>
             <div class="genero">
                 <label for="genero">Género</label>
-                <input type="radio" name="masculino" id="masculino">Masculino
-                <input type="radio" name="femenino" id="femenino">Femenino
-                <input type="radio" name="unisex" id="unisex">Unisex
+                <select name="genero" id="genero">
+                    <option value="seleccionar_genero" selected disabled hidden>Seleccione genero</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="unisex">Unisex</option>
+                </select>
             </div>
             <div class="nombre">
                 <label for="nombre">Nombre del producto</label>
@@ -107,10 +110,6 @@
                 <input type="file" name="fotos" id="fotos">
             </div>
             <input type="submit" value="Enviar">
-        </form>
-        <form action="" method="POST">
-            <input type="text" name="prueba">
-            <button type="submit">submit</button>
         </form>
     </main>
     <footer>
