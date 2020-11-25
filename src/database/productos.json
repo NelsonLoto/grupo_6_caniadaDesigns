@@ -1,42 +1,16 @@
 [
     {
-        "nombre": "",
-        "cantidad": "",
-        "precio": "",
-        "descripcion": "",
-        "modelo": "",
-        "composicion": "",
-        "sku": "",
-        "fotos": ""
-    },
-    {
-        "nombre": "",
-        "cantidad": "",
-        "precio": "",
-        "descripcion": "",
-        "modelo": "",
-        "composicion": "",
-        "sku": "",
-        "fotos": ""
-    },
-    {
-        "nombre": "",
-        "cantidad": "",
-        "precio": "",
-        "descripcion": "",
-        "modelo": "",
-        "composicion": "",
-        "sku": "",
-        "fotos": ""
-    },
-    {
-        "nombre": "",
-        "cantidad": "",
-        "precio": "",
-        "descripcion": "",
-        "modelo": "",
-        "composicion": "",
-        "sku": "",
-        "fotos": ""
+        "categoria": "remeras",
+        "genero": "masculino",
+        "nombre": "RemeraStones",
+        "color": "gris",
+        "talle": "xxl",
+        "cantidad": "1",
+        "precio": "500",
+        "descripcion": "remera",
+        "modelo": "regular",
+        "composicion": "Algodón",
+        "sku": "1234567",
+        "fotoProducto": "RemeraStones-1606343443220.jpg"
     }
 ]
