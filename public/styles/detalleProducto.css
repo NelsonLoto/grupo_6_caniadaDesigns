@@ -1,6 +1,6 @@
 @import url('https://use.fontawesome.com/releases/v5.15.1/css/all.css');
 @import url(/styles/style.css);
-* {
+* .detalleProducto {
     box-sizing: border-box;
     margin: 0;
     text-decoration: none;
@@ -12,9 +12,7 @@
     color: black;
 }
 
-header {
-    position: relative;
-}
+
 
 /*===========ESTRUCTURA PRINCIPAL===========*/
 
@@ -237,12 +235,13 @@ main div.panelDerecho div.seleccionTalles select {
 main div.panelDerecho a.boton {
     word-spacing: 10px;
     border: none;
-    padding: 5px;
-    background: #363636;
+    background: #fc5e5e;
     color: inherit;
     font-size: 18px;
-    border-radius: 3px;
+    border-radius: 30px;
     text-align: center;
+    height: 40px;
+    line-height: 40px;
 }
 
 main div.panelDerecho a.boton:hover {

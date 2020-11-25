@@ -73,13 +73,13 @@ main.contenedor section div form label.campoDatos{
 }
 main.contenedor section div form label.campoDatos input {
     margin-top: 10px;
-    border-radius: 8px;
+    border-radius: 30px;
     border: solid 1px #c2c1c1;
-    height: 30px;
+    height: 40px;
     outline: none;
 }
 main.contenedor section div form label.campoDatos input:focus{
-    box-shadow: 0px 1px 8px rgb(194, 194, 240);
+    box-shadow: 0px 1px 8px #f5b2b2;
 }
 
 
@@ -100,11 +100,11 @@ main.contenedor section div .submit {
 }
 
 main.contenedor section div button.usuario{
-    border-radius: 8px;
+    border-radius: 30px;
     border:none;
     background-color: #363636;
     height: 40px;
-    width: 100%;
+    width: 50%;
 }
 
 
@@ -137,7 +137,7 @@ main.contenedor section .redes button {
     margin: 10px 5px;
     width: 50%;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 30px;
     border:none;
     font-size: 0.9rem;
 }
@@ -146,7 +146,7 @@ main.contenedor section .redes button {
 
 main.contenedor .redes button.google{
     background-color: white;
-    color:  #ea4335;
+    color:  #fc5e5e;
     border: solid 1px;
 }
 

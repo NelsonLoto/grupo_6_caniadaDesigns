@@ -37,6 +37,9 @@
 
      /*-----CREATEACCOUNT----*/
           @import url(/styles/crearCuenta.css);
+     
+     /*-----CREAR PRODUCTO----*/
+          @import url(/styles/crearProducto.css);
 
 
 

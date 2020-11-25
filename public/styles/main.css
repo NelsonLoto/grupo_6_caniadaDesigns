@@ -31,8 +31,8 @@ html {
 }
 .callToAction{
     border: none;
-    border-radius: 8px;
-    background-color: #363636;
+    border-radius: 20px;
+    background-color: #fc5e5e;
     color: #fff;
     padding: 10px 20px;
     margin-top: 10px;

@@ -81,13 +81,13 @@ footer .fila1 .menu ul li a{
      margin-bottom: 20px;
      padding: 10px 20px;
      width: 160px;
-     border: solid 1px #363636;
-     border-radius: 8px;
+     border: solid 1px #fc5e5e;
+     border-radius: 20px;
      text-align: center;
      font-size: 15px;
 }
 .fila1 div.usuario a.registro{
-     background-color: #363636;
+     background-color: #fc5e5e;
      color: white;
 }
 
@@ -206,7 +206,7 @@ footer .fila2 .redes a i.fa-pinterest{}
      footer .fila1 div.menu .nav ul li,
      footer .fila1 div.menu .colecciones ul li,
      footer .fila1 div.menu .nosotros ul li{
-          margin: 0px 20xpx;
+          margin: 0px 40px;
      }
 
      footer .fila1 div.usuario {

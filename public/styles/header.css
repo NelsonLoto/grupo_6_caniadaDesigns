@@ -7,9 +7,6 @@ header {
     height: 12vh;
     box-shadow: 1px 2px 4px #919191;
     background:white;
-    z-index:2;
-    position:sticky;
-    top:0px;
     background-color: rgba(16, 16, 16, 0.95);
     box-sizing: border-box;
 }

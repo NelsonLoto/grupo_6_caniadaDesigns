@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="detalleProducto" lang="es">
 
 <head>
     <%- include('./partials/head') %>
@@ -7,10 +7,23 @@
 
 <body>
     <%- include('./partials/header') %>
-    <main>
-        <h1>Crear un nuevo producto.</h1>
+    <main class="cargar">
         <form action="" method="POST">
-            <div class="categoria">
+        <div class="header">
+        <div class="titulo">
+            <h1>Nuevo producto</h1>
+        </div>
+        <div class="submit">
+            <i class="fas fa-upload"></i>
+            <button type="submit" value="Enviar">
+                Cargar nuevo producto
+            </button>
+        </div>
+        </div>
+        <div class="form">
+            
+            <section class="col1">
+                <div class="categorias">
                 <label for="categoria">Categoría</label>
                 <select name="categoria" id="categoria">
                     <option value="seleccionar_categoria" selected disabled hidden>Seleccione categoria</option>
@@ -25,8 +38,9 @@
                     <option value="trajes_de_baño">Trajes de baño</option>
                     <option value="Bikini">Bikinis</option>
                 </select>
-            </div>
-            <div class="genero">
+                </div>
+
+                <div class="genero">
                 <label for="genero">Género</label>
                 <select name="genero" id="genero">
                     <option value="seleccionar_genero" selected disabled hidden>Seleccione genero</option>
@@ -34,12 +48,14 @@
                     <option value="masculino">Masculino</option>
                     <option value="unisex">Unisex</option>
                 </select>
-            </div>
-            <div class="nombre">
+                </div>
+
+                <div class="nombre">
                 <label for="nombre">Nombre del producto</label>
                 <input type="text" name="nombre" id="nombre">
-            </div>
-            <div class="color">
+                </div>
+
+                <div class="color">
                 <label for="color">Color</label>
                 <select name="color" id="color">
                     <option value="seleccionar_color" selected disabled hidden>Seleccione color</option>
@@ -72,8 +88,11 @@
                     <option value="caqui">Caqui</option>
                     <option value="gris_oscuro">Gris oscuro</option>
                 </select>
-            </div>
-            <div class="talle">
+                </div>
+            </section>
+
+            <section class="col2">
+                <div class="talle">
                 <label for="talle">Talle</label>
                 <select name="talle" id="talle">
                     <option value="seleccionar_talle" selected disabled hidden>Seleccione talle</option>
@@ -84,32 +103,49 @@
                     <option value="xl">XL</option>
                     <option value="xxl">XXL</option>
                 </select>
-            </div>
-            <div class="cantidad">
+                </div>
+
+                <div class="cantidad">
                 <label for="cantidad">Cantidad</label>
                 <input type="number" name="cantidad" id="catidad">
-            </div>
-            <div class="precio">
+                </div>
+
+                <div class="precio">
                 <label for="precio">Precio</label>
                 <input type="number" name="precio" id="precio">
-            </div>
-            <div class="descripcion">
-                <label for="descripcion_general">Descripción general</label>
-                <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción"></textarea>
-            </div>
-            <div class="info_complementaria">
+                </div>
+
+                <div class="descripcion">
+                <label for="descripcion">Descripción general</label>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="5" placeholder="Descripción"></textarea>
+                </div>
+            </section>
+
+            <section class="col3">
+                <div class="modelo">
                 <label for="modelo">Modelo</label>
-                <input type="text" placeholder="Slim/Regular Fit">
+                <input type="text" placeholder="Slim/Regular Fit"name="modelo">
+                </div>
+
+                <div class="composicion">
                 <label for="composicion">Composición</label>
                 <input type="text" name="composicion" id="composicion">
+                </div>
+
+                <div class="sku">
                 <label for="sku">SKU</label>
-                <input type="number" name="" id="">
-            </div>
-            <div class="fotos">
-                <label for="fotos">Fotos</label>
+                <input type="number" name="sku" id="sku">
+                </div>
+
+
+                <div class="fotos">
+                <label for="fotos"><i class="fas fa-plus-circle"></i> Fotos</label>
                 <input type="file" name="fotos" id="fotos">
-            </div>
-            <input type="submit" value="Enviar">
+                </div>
+            </section>
+            
+        </div>   
+
         </form>
     </main>
     <footer>
