@@ -10,7 +10,7 @@ let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/p
 
 let productosController = {
     productos: function (req, res) {
-        res.render('detalleproducto',  { title: 'Caniada - Productos' })
+        res.render('productos', {title: 'Caniada - Productos'})
     },
     crearView : function (req, res){ //Ruta por GET para llegar a la carga.
         res.render ('crearProducto', { title: 'Caniada - Crear Producto'})
@@ -45,8 +45,15 @@ let productosController = {
     },
 
     detalle: function (req, res) {
-        
-        res.render('detalleProducto', {productosDB: productosDB, title : productosDB[i].nombre})
+        for (let i = 0; i < productosDB.length; i++) {
+            console.log(req.params.sku);
+            if(req.params.sku == productosDB[i].sku){
+           return res.render('detalleProducto', {productosDB: productosDB[i], title : productosDB[i].nombre})
+            }           
+            
+            
+        }
+        res.send("No encontramos ese producto")
     }
 
 }
