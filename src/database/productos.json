@@ -26,7 +26,17 @@
         "descripcion": "",
         "modelo": "",
         "composicion": "",
-        "sku": "548920",
+        "sku": "",
+        "fotos": ""
+    },
+    {
+        "nombre": "",
+        "cantidad": "",
+        "precio": "",
+        "descripcion": "",
+        "modelo": "",
+        "composicion": "",
+        "sku": "",
         "fotos": ""
     }
 ]
