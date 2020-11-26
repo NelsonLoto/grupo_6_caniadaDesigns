@@ -297,26 +297,22 @@ text-align: center;
 }
 .divSeccionCuatro{
     background-color: #fff;
+    width: 50%;
 
 }
-.divSeccionCuatro video{
-    width: 50%;
+.divSeccionCuatro img{
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    top: 0px;
-    left: 0;
 }
 .seccionCuatro .columnaDerecha{
-    width: 100%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;    
     background-color: rgba(255, 255, 255, 0.267) ;
-    z-index: 1;
     
 }
 .seccionCuatro .columnaDerecha div.coleccionTitulo{
     text-align: right;
-    transform: translateX(100%);
 }
