@@ -10,10 +10,9 @@
     <main class="detalleProducto">
         <div class="rutaProducto">
             <ul>
-                <li><a href="#"><% productosDB.genero %></a></li>
-                <li><a href="#">/ categoría</a></li>
-                <li><a href="#">/ subcategoría</a></li>
-                <li><a href="#">/ producto</a></li>
+                <li><a href="#"><%= productoSKU.genero %></a></li>
+                <li><a href="#">/ <%= productoSKU.categoria %></a></li>
+                <li><a href="#">/ <%= productoSKU.modelo %></a></li>
             </ul>
         </div>
         <div class="contenedorDetalle">
@@ -23,11 +22,11 @@
                         <div class="botonIzq">
                             <button><a href=""><i class="fas fa-arrow-left"></i></a></button>
                         </div>
-                        <div class="img_principal"><img src= <%= `/images/fotosProductos/${productosDB.fotoProducto}` %>   alt="<%= productosDB.fotoProducto %>"></div>
-                        <div class="img_secundaria">
-                            <img src="/images/producto1/remeraLisaBlanca2.jpeg" alt="remeraLisaBlanca2">
-                        </div>
+                        
+                        <div class="img_principal"><img src= <%= `/images/fotosProductos/${productoSKU.fotoProducto}` %>   alt="<%= productoSKU.fotoProducto %>"></div>
+
                         <div class="botonDer">
+                            
                             <button><a href=""><i class="fas fa-arrow-right"></i></a></button>
                         </div>
                     </div>
@@ -35,13 +34,13 @@
                 <section class="caracteristicasProducto">
                     <h3><Descripción del producto></h3>
                     <h4>Talla</h4>
-                    <p>El/la modelo mide x y lleva talle x</p>
+                    <p>El/la modelo mide x y lleva talle <%= productoSKU.talle %></p>
                     <h4>Modelo</h4>
-                    <p> <%= productosDB.modelo %>  </p>
+                    <p> <%= productoSKU.modelo %>  </p>
                     <h4>Composicion</h4>
-                    <p>Tipo de composición</p>
+                    <p><%= productoSKU.composicion %></p>
                     <h4>Art. N°</h4>
-                    <p>123456</p>
+                    <p><%= productoSKU.sku %></p>
                     <div class="opinionTalles">
                         <h4>Talle según XX opiniones</h4>
                         <img src="/images/medidorTalles.jpg" alt="">
@@ -49,8 +48,8 @@
                 </section>
             </div>
             <div class="panelDerecho">
-                    <h2>Nombre del producto&emsp;&emsp;<a href=""><i class="far fa-heart"></i></a></h2>
-                    <h2>Precio</h2>
+                    <h2><%= productoSKU.nombre %>&emsp;&emsp;<a href=""><i class="far fa-heart"></i></a></h2>
+                    <h2>$<%= productoSKU.precio %></h2>
                     <p class="medios_de_pago">Hasta en <strong>12 cuotas sin interés</strong> con los mejores bancos </p>
                     <br>
                     <p><strong>Colores/Diseños</strong></strong></p>
@@ -79,16 +78,12 @@
                     </ul>
             </div>
         </div>
-        <div class="similaresProducto">
-            <h3>Otros también compraron</h3>
-            <div class="recomendaciones">
-                <div class="recom_1"><a href=""><img src="images/producto1/coltrane.png" alt="recom1"></a><a href=""><p>Producto</p></a><p>Precio</p></div>
-                <div class="recom_2"><a href=""><img src="/images/producto1/ledZep.jpg" alt="recom2"></a><a href=""><p>Producto</p></a><p>Precio</p></div>
-                <div class="recom_3"><a href=""><img src="images/producto1/helpBlanca.jpg" alt="recom3"></a><a href=""><p>Producto</p></a><p>Precio</p></div>
-                <div class="recom_4"><a href=""><img src="/images/producto1/pinkFloyd.png" alt="recom4"></a><a href=""><p>Producto</p></a><p>Precio</p></div>
-                <button><i class="fas fa-arrow-right"></i></button>
-            </div>
-        </div>
+
+
+        <%- include ('./partials/carrousel') %> 
+
+
+
     </main>
 
 
@@ -99,3 +94,4 @@
 </body>
 
 </html>
+

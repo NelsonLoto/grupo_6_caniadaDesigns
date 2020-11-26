@@ -10,9 +10,10 @@ var storage = multer.diskStorage({
        cb(null, path.join(__dirname,'../../public/images/fotosProductos'))
      },
      filename: function (req, file, cb) {
-          
-          
-       cb(null, req.body.nombre + '-' + Date.now() + path.extname(file.originalname))
+        
+      let nombreLimpio = req.body.nombre.split(" ").join("")
+
+       cb(null, nombreLimpio + '-' + Date.now() + path.extname(file.originalname))
      }
    })
     

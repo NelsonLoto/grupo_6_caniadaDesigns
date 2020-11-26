@@ -11,6 +11,12 @@
 
 @import url(/styles/main.css);
 
+/* ---------------------------
+----------NEWSLETTER----------
+----------------------------*/
+
+@import url(/styles/newsletter.css);
+
 
 /* ---------------------------
 ------------FOOTER------------
@@ -63,6 +69,13 @@
      margin: 0px;
      text-decoration: none;
      padding: 0px;
-     font-family: /*'Rajdhani',*/'Roboto Condensed', 'Roboto', 'Segoe UI', Tahoma, Geneva,Verdana, sans-serif;  
+     font-family: /*'Rajdhani',*/'Roboto Condensed', 'Roboto', 'Segoe UI', Tahoma, Geneva,Verdana, sans-serif;
+     outline:none;
 }
+
+*:focus{
+     outline-style: solid;
+     outline-color: #fa5252;
+}
+
 

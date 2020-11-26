@@ -1,0 +1,70 @@
+<section id="seccionTres" class="seccionTres">
+     <div>
+          <a name="seccionTres"></a>
+          <h2>MÁS VENDIDOS</h2>
+     </div>
+     <div class="carrouselDeProductos">
+          <div class="flechaIzqCarrousel"></div>
+          <div class="slider">
+
+               <ul id="autoWidth" class="cs-hidden">
+<!--1------------------------------------>
+     <% for (let i = 0; i < 4; i++) { %> 
+          <% let iRandom = Math.floor(Math.random() * 10); %>
+          <% (iRandom >= productosDB.length) ? iRandom = iRandom - 2 : iRandom %>   <!-- Filtro por si la BD es menor a 9-->
+
+                   
+                    <li class="item-uno">
+                         <div class="box">
+                              <div class="slide-img">
+                                   <img src= <%= `/images/fotosProductos/${productosDB[iRandom].fotoProducto}` %>   alt=<%= productosDB[iRandom].fotoProducto %>>
+                                    <div class="overlay">
+                                        <!--buy-btn------>	
+                                              <a href="#" class="carritoOverlay"><i class="far fa-heart">
+                                                  <span class="tooltiptext">Whislist</span>
+                                              </i></a>	
+                                              <a href="/carrito" class="whislistOverlay"><i class="fas fa-shopping-cart"><span class="tooltiptext">Agregar al Carrito</span></i></a>	
+                                              <a href=<%=`/productos/${productosDB[iRandom].sku}`%> class="vistaRapida"><i class="far fa-eye"><span class="tooltiptext">Ver Producto</span></i></a>	
+                                        </div>
+                              </div>
+                             
+                              <div class="detail-box">
+                                   <div class="descripcionProducto">
+                                        <a href=<%=`/productos/${productosDB[iRandom].sku}`%>><p><%=productosDB[iRandom].nombre%></p></a>
+                                   </div>
+                                   <div class="precioYoferta">
+                                        <div class="precio"><%=`$${productosDB[iRandom].precio}`%></div>
+                                        <div class="oferta"> 50% Off</div>
+                                   </div>
+                                   <div class="envio">
+                                        <p>Envío Gratis</p>
+                                   </div>
+                                   <div class="lineaInferior">
+                                        <div><span class="fa fa-star checked"></span>
+                                             <span class="fa fa-star checked"></span>
+                                             <span class="fa fa-star checked"></span>
+                                             <span class="fa fa-star"></span>
+                                             <span class="fa fa-star"></span></div>
+                                        <div class="carritoYWhislist">
+                                             
+                                         
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                    </li>
+
+                    <% } %> 
+
+                   
+               </ul>
+         
+          </div>
+          <div class="flechaDerCarrousel"></div>
+     </div>
+     <div class="flechaScrollSeccionTres">
+          <a href="#seccionCuatro"> <span><i  class="fas fa-arrow-down flechaSeccion"></i></span></a>
+      </div>
+    
+</section>

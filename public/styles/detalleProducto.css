@@ -28,7 +28,7 @@ main .detalleProducto {
     width: 100%;
 }
 
-main.detalleProducto div {
+main.detalleProducto > div {
     display: flex;
     flex-wrap: nowrap;
 }

@@ -114,10 +114,10 @@ body main.cargar form .form section div textarea:focus{
 }
 
 body main.cargar form .form section .fotos input{
-
+     display: none;
 } 
 body main.cargar form .form section .fotos label{
-     width: 10%;
+     width: 100%;
      border-radius: 30px;
      border-bottom: solid 1px #fc5e5e
 }

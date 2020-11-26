@@ -1,7 +1,7 @@
 // Requiriendo módulos
 const path = require('path')
 const fs = require('fs')
-const express = require('express')
+
 
 //Leyendo JSON DB
 let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'), 'utf8'))
@@ -10,7 +10,9 @@ let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/p
 
 let productosController = {
     productos: function (req, res) {
-        res.render('productos', {title: 'Caniada - Productos'})
+        res.render('productos', {
+                                    title: 'Caniada - Productos', 
+                                    productosDB : productosDB})
     },
     crearView : function (req, res){ //Ruta por GET para llegar a la carga.
         res.render ('crearProducto', { title: 'Caniada - Crear Producto'})
@@ -48,12 +50,13 @@ let productosController = {
         for (let i = 0; i < productosDB.length; i++) {
             console.log(req.params.sku);
             if(req.params.sku == productosDB[i].sku){
-           return res.render('detalleProducto', {productosDB: productosDB[i], title : productosDB[i].nombre})
-            }           
-            
-            
+           return res.render('detalleProducto', {
+                                                    productoSKU: productosDB[i], 
+                                                    title : productosDB[i].nombre, 
+                                                    productosDB : productosDB})
+            }
         }
-        res.send("No encontramos ese producto")
+        res.redirect('/productos/0')
     }
 
 }

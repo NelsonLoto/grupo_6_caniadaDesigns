@@ -1,7 +1,14 @@
 const path = require('path')
+const fs = require('fs')
+
+
+//Leyendo JSON DB
+let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'), 'utf8'))
 let mainController = {
     index :  function (req, res) {
-        res.render('index', { title: 'Caniada' })
+        res.render('index', { 
+                                productosDB : productosDB, 
+                                title: 'Caniada' })
    }
 }
 
