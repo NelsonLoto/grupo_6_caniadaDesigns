@@ -10,7 +10,7 @@ main.contenedorCarrito {
 /*---------------------------------------------------*/
 section.vistaResumen{
      width: 40%;
-     margin: 30px;
+     margin: 30px 15px;
      justify-self: start;
      
 }
@@ -21,40 +21,45 @@ section.vistaResumen{
 
 section.vistaResumen .producto{
      display: flex;
-     justify-content: space-between;
+     justify-content: space-evenly;
      width: 100%;
+     min-width: 70%;
      background-color: #f8f8f87f;
      box-shadow: 0px 0px 4px rgb(238, 238, 238);
      border-radius: 4px;
      margin: 20px 0px;
-     padding: 12px;
+     padding: 5px;
+     position: relative;
 }
-
+ section.vistaResumen div.imagenProducto{
+      width: 30%;
+ }
 
 section.vistaResumen .producto img.imgProducto{
-     width: 180px;
+     width: 100%;
+     min-width: 100px;
      box-shadow: 0px 0px 40px rgb(224, 224, 224);
      border-radius: 8px;
      border: solid 0px rgba(63, 63, 63, 0.196);
      
 }
 
-section.vistaResumen .producto .detalleProducto{
-     flex-grow: 1.8;
+section.vistaResumen .producto .detalleProductoCarrito{
+
      display: flex;
      flex-direction: column;
      justify-content: space-between;
-     margin: 0px 30px;
+     margin: 0px 20px;
      padding: 10px 0px;
      
 }
 
-     .detalleProducto .nombreDescripcion p{
+     .detalleProductoCarrito .nombreDescripcion p{
           padding: 0px 0px;
      }
      .precioYeliminar h3, 
-     .detalleProducto .nombreDescripcion h4, 
-     .detalleProducto .nombreDescripcion p {
+     .detalleProductoCarrito .nombreDescripcion h4, 
+     .detalleProductoCarrito .nombreDescripcion p {
           font-family: 'Inter';
           padding: 5px 0px;
           font-size: 14px;
@@ -62,14 +67,14 @@ section.vistaResumen .producto .detalleProducto{
      } 
 
 
-section.vistaResumen .producto .detalleProducto .cantidadYtalle{
+section.vistaResumen .producto .detalleProductoCarrito .cantidadYtalle{
      display: flex;
      justify-content: space-between;
      align-items: center;
      font-size: 12px;
 }
 
-section.vistaResumen .producto .detalleProducto .cantidadYtalle input {
+section.vistaResumen .producto .detalleProductoCarrito .cantidadYtalle input {
      width: 30px;
      height: 30px;
      background-color: #ffffff;
@@ -81,12 +86,12 @@ section.vistaResumen .producto .detalleProducto .cantidadYtalle input {
      font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
-section.vistaResumen .producto .detalleProducto .cantidadYtalle input:focus{
+section.vistaResumen .producto .detalleProductoCarrito .cantidadYtalle input:focus{
      box-shadow: 0px 0px 8px #c3c7fc;
 }
 
 
-section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles{
+section.vistaResumen .producto .detalleProductoCarrito .cantidadYtalle .talles{
      display: flex;
      align-items: center;
      justify-content: space-between;
@@ -97,11 +102,11 @@ section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles{
 
 }
 
-section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles p{
+section.vistaResumen .producto .detalleProductoCarrito .cantidadYtalle .talles p{
      padding: 0px 5px;
 }
 
-section.vistaResumen .producto .detalleProducto .cantidadYtalle .talles #talle {
+section.vistaResumen .producto .detalleProductoCarrito .cantidadYtalle .talles #talle {
      width: 50px;
      height: 28px;
      border: none;
@@ -203,7 +208,7 @@ section.vistaResumen .detalleTotal .totalPedido{
 
 /*-----------------GENERALIZADO------------------*/
 section.pago{
-     width: 40%;
+     width: 50%;
 }
 
 section.pago .seccionFija .preFormulario h6 a{
@@ -317,16 +322,12 @@ section.pago .seccionFija .formulario .completar label input:focus{
      box-shadow: 0px 0px 8px #c3c7fc;
 }
 
-
+section.pago .seccionFija .formulario .completar label.masInfo,
+section.pago .seccionFija .formulario .completar label.numeracion,
 section.pago .seccionFija .formulario .completar label.calle{
      width: 33.3%;
 }
-section.pago .seccionFija .formulario .completar label.numeracion{
-     width: 33.3%;}
-section.pago .seccionFija .formulario .completar label.masInfo{
-     width: 33.3%;
-     
-}
+
 
 
 section.pago .seccionFija .formulario .seleccionEnvio{
@@ -429,3 +430,126 @@ section.pago .seccionFija .formulario .botonPagar button a p{
 
 
 
+@media screen and (max-width: 900px){
+     section.vistaResumen {
+          width: 40%;
+     }
+     section.vistaResumen .producto{
+          display: flex;
+          justify-content: flex-start;
+          height: 180px;
+          margin: 10px 0px;
+          padding: 5px;
+          position: relative;
+     }
+
+     section.vistaResumen .producto .imagenProducto{
+          width: 40%;
+     }
+
+     section.vistaResumen .producto img.imgProducto{
+          width: 40%;
+          min-width: 80px;
+          box-shadow: 0px 0px 40px rgb(224, 224, 224);
+          border-radius: 8px;
+          border: solid 0px rgba(63, 63, 63, 0.196);
+          
+     }
+
+     section.vistaResumen .producto .detalleProductoCarrito{
+          width: 40%;
+
+          margin: 0px 10px;
+          padding: 5px 0px;
+          
+
+     }
+
+     section.vistaResumen .producto .precioYeliminar{
+          position: absolute;
+          bottom: 5px;
+          left: 5px;
+          padding: 5px 0px;
+     }
+
+     section.pago {
+          width: 50%;
+     }
+} 
+
+
+@media screen and (max-width: 770px){
+
+     main.contenedorCarrito {
+          flex-direction: column;
+          align-items: center;
+     }
+
+     main.contenedorCarrito section{
+          width: 90%;
+     }
+
+     section.vistaResumen .producto{
+          display: flex;
+          justify-content: space-evenly;
+          height: 180px;
+          margin: 20px 0px;
+          padding: 10px;
+          position: relative;
+          width: auto;
+     }
+
+     section.vistaResumen .producto .imagenProducto{
+          width: 30%;
+     }
+
+     section.vistaResumen .producto .precioYeliminar{
+          padding: 5px 0px;
+          position: relative;
+     }
+
+     section.pago .seccionFija {
+          width: 100%;
+          height: auto;
+          position: relative;
+          top: 2vh;
+          margin: auto;
+          margin-bottom: 20px;
+          box-shadow: 0px 0px 8px #ebeaea;
+          padding: 20px;
+          background-color: #f8f8f87f;
+     }
+     section.pago .seccionFija .formulario .completar label{
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          padding:8px 10px 0px 0px;
+          font-size: 0.8rem;
+          color: #363636;
+     }
+
+     section.pago .seccionFija .preFormulario {
+          flex-direction: column;
+          justify-content: space-between;
+          height: 70px;
+          margin-top: 10px;
+     }
+
+     section.pago .seccionFija .formulario .completar label.zip,
+     section.pago .seccionFija .formulario .completar label.masInfo,
+     section.pago .seccionFija .formulario .completar label.numeracion,
+     section.pago .seccionFija .formulario .completar label.calle{
+          width: 50%;
+     }
+     
+     section.pago .seccionFija .formulario .botonPagar button {
+          display: flex;
+          justify-content: center;
+          width: 90%;
+          padding: 10px 0px;
+          background: #f89a9a;
+          box-shadow: 0px 0px 8px rgb(197, 197, 197);
+          border: none;
+          border-radius: 40px;
+     }
+}
