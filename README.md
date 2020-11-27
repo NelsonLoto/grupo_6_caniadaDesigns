@@ -48,7 +48,9 @@ Caniada Designs es un e-commerce de indumentaria casual. Su target son hombres y
 
 - https://grupo6-caniada.herokuapp.com/ HOME
 - https://grupo6-caniada.herokuapp.com/usuario LOG IN - REGISTRO
-- https://grupo6-caniada.herokuapp.com/productos DETALLE DE PRODUCTO
-- https://grupo6-caniada.herokuapp.com/carrito CARRITO 
+- https://grupo6-caniada.herokuapp.com/productos/:id DETALLE DE PRODUCTO
+- https://grupo6-caniada.herokuapp.com/productos/crear CREAR NUEVO PRODUCTO
+- https://grupo6-caniada.herokuapp.com/productos/editar/:id EDITAR PRODUCTO
+
 
      

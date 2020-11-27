@@ -7,15 +7,7 @@ body main.cargar {
 
 }
 
-/* SECCIÓN DE FOTOS - EDICIÓN */
-article.fotosCargadas{
-     width: 130px;
-     height: auto
-}
 
-article.fotosCargadas img{
-     max-width: 100%;
-}
 
 body main.cargar form{
      display: flex;
@@ -34,6 +26,7 @@ body main.cargar form .header{
      padding: 15px 0px;
      border-bottom: solid 1px #dddcdc;
 }
+
 body main.cargar form .header .titulo h1 {
      color: wheat;
      opacity: 1;
@@ -46,6 +39,24 @@ body main.cargar form .header .titulo h1::after{
      position: absolute;
      color: #fc5e5e;
 }
+
+/* SECCIÓN DE FOTOS - EDICIÓN */
+
+body main.cargar form div.header div.cardEditarProducto{
+     display: flex;
+
+}
+
+article.fotosCargadas{
+     width: 130px;
+     height: auto
+}
+
+article.fotosCargadas img{
+     max-width: 100%;
+}
+
+
 
 
 body main.cargar form .form{
