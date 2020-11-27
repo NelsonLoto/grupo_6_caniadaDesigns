@@ -7,6 +7,16 @@ body main.cargar {
 
 }
 
+/* SECCIÓN DE FOTOS - EDICIÓN */
+article.fotosCargadas{
+     width: 130px;
+     height: auto
+}
+
+article.fotosCargadas img{
+     max-width: 100%;
+}
+
 body main.cargar form{
      display: flex;
      flex-direction: column;

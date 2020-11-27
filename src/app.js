@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const path = require('path')
+const methodOverride = require ('method-override')
 
 let rutasProductos = require('./routes/productos')
 let rutasCarrito = require('./routes/carrito')
@@ -11,6 +12,10 @@ let rutasCrearUsuario = require('./routes/crearUsuario')
 let rutasMain = require('./routes/main')
 let rutasLoginRegister = require('./routes/loginRegister')
 
+
+////////////////////- USING OVERRIDEMETHOD -///////////////
+
+app.use(methodOverride('_method'));
 
 ////////////////////-EJS-///////////////////////
 app.set('view engine', 'ejs')

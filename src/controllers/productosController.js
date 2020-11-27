@@ -57,6 +57,27 @@ let productosController = {
             }
         }
         res.redirect('/productos/0')
+    },
+    editarView : function (req, res){
+        for (let i = 0; i < productosDB.length; i++) {
+            if (req.params.sku == productosDB[i].sku){
+                return res.render('editarProducto',
+                    {title: 'Caniada - Editar producto',
+                    categoria: productosDB[i].categoria,
+                    genero: productosDB[i].genero ,
+                    nombre: productosDB[i].nombre,
+                    color: productosDB[i].color,
+                    talle: productosDB[i].talle,
+                    cantidad: productosDB[i].cantidad,
+                    precio: productosDB[i].precio,
+                    descripcion: productosDB[i].descripcion,
+                    modelo: productosDB[i].modelo,
+                    composicion: productosDB[i].composicion,
+                    sku: productosDB[i].sku,
+                    fotoProducto: productosDB[i].fotoProducto
+                        })
+            }
+        }
     }
 
 }

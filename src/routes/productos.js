@@ -24,6 +24,7 @@ router.get ('/crear', productosController.crearView) //funciona OK
 router.post ('/crear', upload.single('fotoProducto'),productosController.crear)
 router.get ('/crear/success', productosController.success)
 router.get ('/:sku', productosController.detalle)
+router.get ('/editar/:sku', productosController.editarView)
 
 module.exports = router
 
