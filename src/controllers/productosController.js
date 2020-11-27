@@ -6,16 +6,28 @@ const fs = require('fs')
 //Leyendo JSON DB
 let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'), 'utf8'))
 
+//Leyendo CATEGORIAS JSON DB para pasarle a los SELECTs 
+let categoriasDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/categoriasProductos.json'), 'utf8'))
+
+const categoriaDB = categoriasDB[0]
+const generoDB = categoriasDB[1]
+const coloresDB = categoriasDB[2]
+const tallesDB = categoriasDB[3]
+ 
+let skuDisponible = productosDB.length+1
+
+
+
 //Funcionalidad
 
 let productosController = {
-    productos: function (req, res) {
-        res.render('productos', {
+    productos: function (req, res) {    
+            res.render('productos', {
                                     title: 'Caniada - Productos', 
                                     productosDB : productosDB})
     },
     crearView : function (req, res){ //Ruta por GET para llegar a la carga.
-        res.render ('crearProducto', { title: 'Caniada - Crear Producto'})
+            res.render ('crearProducto', { title: 'Caniada - Crear Producto',skuDisponible})
     },
 
     crear : function (req, res){ //Ruta por POST al enviar formulario.
@@ -74,32 +86,42 @@ let productosController = {
                     modelo: productosDB[i].modelo,
                     composicion: productosDB[i].composicion,
                     sku: productosDB[i].sku,
-                    fotoProducto: productosDB[i].fotoProducto
+                    fotoProducto: productosDB[i].fotoProducto,
+                    categoriaDB,
+                    generoDB ,
+                    coloresDB,
+                    tallesDB,
                         })
             }
         }
     },
     editarSave : function(req, res){
+        
+        
         //ELIMINANDO VERSIÓN ANTIGUA
         for (let i = 0; i < productosDB.length; i++) {
             if (req.params.sku == productosDB[i].sku){
                 productosDB.splice([i],1)
+
             }
     }
-        //CREANDO VERSIÓN NUEVA
-        let productoCargado = {
-            categoria: req.body.categoria,
-            genero: req.body.genero ,
-            nombre: req.body.nombre,
-            color: req.body.color,
-            talle: req.body.talle,
-            cantidad: req.body.cantidad,
-            precio: req.body.precio,
-            descripcion: req.body.descripcion,
-            modelo: req.body.modelo,
-            composicion: req.body.composicion,
-            sku: req.body.sku
-        }
+        
+    //CREANDO VERSIÓN NUEVA
+      
+    let productoCargado = {
+        categoria: req.body.categoria,
+        genero: req.body.genero ,
+        nombre: req.body.nombre,
+        color: req.body.color,
+        talle: req.body.talle,
+        cantidad: req.body.cantidad,
+        precio: req.body.precio,
+        descripcion: req.body.descripcion,
+        modelo: req.body.modelo,
+        composicion: req.body.composicion,
+        sku: req.body.sku,
+        fotoProducto: req.body.fotoProducto // viaja en el body porque esta en un input 
+    }
         
             productosDB.push(productoCargado);
 

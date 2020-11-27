@@ -1,0 +1,47 @@
+[
+
+     [   
+          "Bermudas",
+          "Buzos",
+          "Camperas",
+          "Jeans",
+          "Pantalones",
+          "Remeras",
+          "Shorts",
+          "Vestidos"
+     ],
+     [
+         "Femenino",
+         "Masculino",
+         "Unisex"
+     ],
+     [
+          "Amarillo",
+          "Azul",
+          "Beige",
+          "Blanco",
+          "Bordo",
+          "Caqui",
+          "Celeste",
+          "Chocolate",
+          "Coral",
+          "Dorado",
+          "Gris",
+          "Lila",
+          "Marron",
+          "Naranja",
+          "Negro",
+          "Rosa",
+          "Rojo",
+          "Verde",
+          "Violeta"
+     ],
+     [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+     ]
+]

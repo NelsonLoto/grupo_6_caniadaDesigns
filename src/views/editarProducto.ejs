@@ -8,43 +8,63 @@
 <body>
     <%- include('./partials/header') %>
     <main class="cargar">
-        <form action="?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form action="?_method=PUT" method="POST">
         <div class="header">
-        <div class="tituloEditar">
-            <h1>Editar producto: <%= nombre %></h1>
-        </div>
-        <div class="submit">
-            <i class="fas fa-upload"></i>
-            <button type="submit" value="Enviar">
-                Editar producto
-            </button>
-        </div>
+            <div class="tituloEditar">
+                <h4>Editar producto: <%= nombre %></h4>
+            </div>
+
+            <div class="cardEditarProducto">
+                <article class= "fotosCargadas">
+                    <img src="/images/fotosProductos/<%= fotoProducto %>" alt="">
+                </article>
+                <div>
+                    <p><%= nombre %></p>
+                    <p><%= color %></p>
+                    <p><%= modelo %></p>
+                    <p>$<%= precio %></p>
+                    <p><%= composicion %></p>
+                    <p>SKU:<%= sku %></p>
+
+                </div>
+            </div>
+            <div class="submit">
+                <i class="fas fa-edit"></i>
+                <button type="submit" value="Enviar">
+                    Editar producto
+                </button>
+            </div>
         </div>
         <div class="form">
-            
+
+
+
+
             <section class="col1">
                 <div class="categorias">
                 <label for="categoria">Categoría</label>
                 <select name="categoria" id="categoria" value = "<%= categoria %>">
-                    <option value="Remeras">Remeras</option>
-                    <option value="Buzos">Buzos</option>
-                    <option value="Camperas">Camperas</option>
-                    <option value="Vestidos">Vestidos</option>
-                    <option value="Jeans">Jeans</option>
-                    <option value="Pantalones">Pantalones</option>
-                    <option value="Shorts">Shorts</option>
-                    <option value="Bermudas">Bermudas</option>
-                    <option value="Trajes_de_baño">Trajes de baño</option>
-                    <option value="Bikini">Bikinis</option>
+                    <% for(let i= 0; i<categoriaDB.length;i++ ){ %>
+                        <% if (categoriaDB[i] == categoria) { %>
+                             <option value="<%= categoria%>" selected><%= categoria%></option> 
+                       <%  } else { %>
+                             <option value="<%= categoriaDB[i]%>"><%= categoriaDB[i]%></option>
+                        <% } %>
+                     <% } %>
+                    
                 </select>
                 </div>
 
                 <div class="genero">
                 <label for="genero">Género</label>
                 <select type="text" name="genero" id="genero" value = "<%= genero %>">
-                    <option value="Femenino">Femenino</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Unisex">Unisex</option>
+                    <% for(let i= 0; i<generoDB.length;i++ ){ %>
+                        <% if (generoDB[i] == genero) { %>
+                             <option value="<%= genero%>" selected><%= genero%></option> 
+                       <%  } else { %>
+                             <option value="<%= generoDB[i]%>"><%= generoDB[i]%></option>
+                        <% } %>
+                     <% } %>
                 </select>
                 </div>
 
@@ -55,35 +75,14 @@
 
                 <div class="color">
                 <label for="color">Color</label>
-                <select name="color" id="color" value= " <%= color %>">
-                    <option value="Negro">Negro</option>
-                    <option value="Azul">Azul</option>
-                    <option value="Rojo">Rojo</option>
-                    <option value="Violeta">Violeta</option>
-                    <option value="Marron">Marrón</option>
-                    <option value="Verde">Verde</option>
-                    <option value="Naranja">Naranja</option>
-                    <option value="Celeste">Celeste</option>
-                    <option value="Rosa">Rosa</option>
-                    <option value="Dorado">Dorado</option>
-                    <option value="Amarillo">Amarillo</option>
-                    <option value="Gris">Gris</option>
-                    <option value="Blanco">Blanco</option>
-                    <option value="Azul_acero">Azul acero</option>
-                    <option value="Azul_claro">Azul claro</option>
-                    <option value="Azul_marino">Azul marino</option>
-                    <option value="Azul_oscuro">Azul oscuro</option>
-                    <option value="Bordo">Bordo</option>
-                    <option value="Coral">Coral</option>
-                    <option value="Coral_claro">Coral claro</option>
-                    <option value="Lila">Lila</option>
-                    <option value="Beige">Beige</option>
-                    <option value="Marron_claro">Marrón claro</option>
-                    <option value="Verde_claro">Verde claro</option>
-                    <option value="Verde_oscuro">Verde oscuro</option>
-                    <option value="Chocolate">Chocolate</option>
-                    <option value="Caqui">Caqui</option>
-                    <option value="Gris_oscuro">Gris oscuro</option>
+                <select name="color" id="color" value= "<%= color %>">
+                    <% for(let i= 0; i<coloresDB.length;i++ ){ %>
+                        <% if (coloresDB[i] == color) { %>
+                             <option value="<%= color%>" selected><%=color%></option> 
+                       <%  } else { %>
+                             <option value="<%= coloresDB[i]%>"><%= coloresDB[i]%></option>
+                        <% } %>
+                     <% } %>
                 </select>
                 </div>
             </section>
@@ -92,12 +91,13 @@
                 <div class="talle">
                 <label for="talle">Talle</label>
                 <select name="talle" id="talle" value= "<%= talle %>">
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
+                    <% for(let i= 0; i<tallesDB.length;i++ ){ %>
+                        <% if (tallesDB[i] == talle) { %>
+                             <option value="<%= talle%>" selected><%=talle%></option> 
+                       <%  } else { %>
+                             <option value="<%= tallesDB[i]%>"><%= tallesDB[i]%></option>
+                        <% } %>
+                     <% } %>
                 </select>
                 </div>
 
@@ -130,16 +130,15 @@
 
                 <div class="sku">
                 <label for="sku">SKU</label>
-                <input type="number" name="sku" id="sku" value="<%= sku %>">
+                <input type="number" name="sku" id="sku" value="<%= sku %>" readonly>
                 </div>
 
-                <article class= "fotosCargadas">
-                    <img src="/images/fotosProductos/<%= fotoProducto %>" alt="">
-                </article>
-                <div class="fotos">
-                <label for="fotoProducto"><i class="fas fa-plus-circle"></i>Agregar Fotos</label>
-                <input type="file" name="fotoProducto" id="fotoProducto" value = "<%= fotoProducto %>">
+                <div class="composicion" style="display:none">
+                    <label for="fotoProducto">Composición</label>
+                    <input type="text" name="fotoProducto" id="fotoProducto" value = "<%= fotoProducto %>">
                 </div>
+
+                
             </section>
             
         </div>   
