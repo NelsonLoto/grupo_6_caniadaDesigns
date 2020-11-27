@@ -245,8 +245,8 @@ section.pago .seccionFija {
      top:10px;
      right: 0px;
      box-shadow: -3px 3px 2px #ebeaea;
-     margin: 20px;
-     padding: 10px 30px 0px 30px;
+     margin: 20px 10px 20px 0px;
+     padding: 10px 20px;
      height: 100vh;
      background-color: #f8f8f87f;
      position: sticky;
