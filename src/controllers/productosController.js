@@ -78,8 +78,34 @@ let productosController = {
                         })
             }
         }
+    },
+    editarSave : function(req, res){
+        //ELIMINANDO VERSIÓN ANTIGUA
+        for (let i = 0; i < productosDB.length; i++) {
+            if (req.params.sku == productosDB[i].sku){
+                productosDB.splice([i],1)
+            }
     }
+        //CREANDO VERSIÓN NUEVA
+        let productoCargado = {
+            categoria: req.body.categoria,
+            genero: req.body.genero ,
+            nombre: req.body.nombre,
+            color: req.body.color,
+            talle: req.body.talle,
+            cantidad: req.body.cantidad,
+            precio: req.body.precio,
+            descripcion: req.body.descripcion,
+            modelo: req.body.modelo,
+            composicion: req.body.composicion,
+            sku: req.body.sku
+        }
+        
+            productosDB.push(productoCargado);
 
+        fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productosDB, null, 4));
+        res.redirect('/productos/crear/success')
+}
 }
 
 module.exports = productosController

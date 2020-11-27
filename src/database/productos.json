@@ -15,20 +15,6 @@
     },
     {
         "categoria": "Remeras",
-        "genero": "Masculino",
-        "nombre": "Remera Talking Heads",
-        "color": "Blanca",
-        "talle": "L",
-        "cantidad": "1",
-        "precio": "520",
-        "descripcion": "Remera de Talking Head",
-        "modelo": "Regular",
-        "composicion": "Algodón",
-        "sku": "1",
-        "fotoProducto": "RemeraTalkingHeads-1606343443224.png"
-    },
-    {
-        "categoria": "Remeras",
         "genero": "masculino",
         "nombre": "Remera Miles Davis",
         "color": "Roja",
@@ -138,7 +124,8 @@
         "composicion": "Algodón estampado en serigrafía",
         "sku": "9",
         "fotoProducto": "RemeraBlur-1606367826404.jpg"
-    },{
+    },
+    {
         "categoria": "Remeras",
         "genero": "Masculino",
         "nombre": "Remera Rolling Stones",
@@ -151,6 +138,18 @@
         "composicion": "Algodón",
         "sku": "10",
         "fotoProducto": "RemeraStones-1606343443220.jpg"
+    },
+    {
+        "categoria": "Camperas",
+        "genero": "Femenino",
+        "nombre": "Remera Talking Heads",
+        "color": "Negro",
+        "talle": "XS",
+        "cantidad": "1",
+        "precio": "520",
+        "descripcion": "  Remera de Talking Head  ",
+        "modelo": "Regular",
+        "composicion": "Algodón",
+        "sku": "1"
     }
-    
 ]
