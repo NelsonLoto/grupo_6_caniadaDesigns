@@ -7,9 +7,8 @@ const path = require('path')
 const methodOverride = require ('method-override')
 
 let rutasMain = require('./routes/main')
-let rutasProductos = require('./routes/productos')
-let rutasCrearUsuario = require('./routes/crearUsuario')
-let rutasUsuarios = require('./routes/usuarios')
+let rutasProductos = require('./routes/productos');
+let rutasUsuarios = require('./routes/usuarios');
 
 
 ////////////////////- USING OVERRIDEMETHOD -///////////////
