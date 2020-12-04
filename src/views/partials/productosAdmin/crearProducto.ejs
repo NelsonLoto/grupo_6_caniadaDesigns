@@ -1,0 +1,139 @@
+<form action="" method="POST" enctype="multipart/form-data">
+     <div class="header">
+     <div class="titulo">
+         <h1>Nuevo producto</h1>
+     </div>
+     <div class="submit">
+         <i class="fas fa-upload"></i>
+         <button type="submit" value="Enviar">
+             Cargar nuevo producto
+         </button>
+     </div>
+     </div>
+     <div class="form">
+         
+         <section class="col1">
+             <div class="categorias">
+             <label for="categoria">Categoría</label>
+             <select name="categoria" id="categoria">
+                 <option value="seleccionar_categoria" selected disabled hidden>Seleccione categoria</option>
+                 <option value="Remeras">Remeras</option>
+                 <option value="Buzos">Buzos</option>
+                 <option value="Camperas">Camperas</option>
+                 <option value="Vestidos">Vestidos</option>
+                 <option value="Jeans">Jeans</option>
+                 <option value="Pantalones">Pantalones</option>
+                 <option value="Shorts">Shorts</option>
+                 <option value="Bermudas">Bermudas</option>
+                 <option value="Trajes_de_baño">Trajes de baño</option>
+                 <option value="Bikini">Bikinis</option>
+             </select>
+             </div>
+
+             <div class="genero">
+             <label for="genero">Género</label>
+             <select type="text" name="genero" id="genero">
+                 <option value="seleccionar_genero" selected disabled hidden required>Seleccione genero</option>
+                 <option value="Femenino">Femenino</option>
+                 <option value="Masculino">Masculino</option>
+                 <option value="Unisex">Unisex</option>
+             </select>
+             </div>
+
+             <div class="nombre">
+             <label for="nombre">Nombre del producto</label>
+             <input type="text" name="nombre" id="nombre">
+             </div>
+
+             <div class="color">
+             <label for="color">Color</label>
+             <select name="color" id="color">
+                 <option value="seleccionar_color" selected disabled hidden>Seleccione color</option>
+                 <option value="Negro">Negro</option>
+                 <option value="Azul">Azul</option>
+                 <option value="Rojo">Rojo</option>
+                 <option value="Violeta">Violeta</option>
+                 <option value="Marron">Marrón</option>
+                 <option value="Verde">Verde</option>
+                 <option value="Naranja">Naranja</option>
+                 <option value="Celeste">Celeste</option>
+                 <option value="Rosa">Rosa</option>
+                 <option value="Dorado">Dorado</option>
+                 <option value="Amarillo">Amarillo</option>
+                 <option value="Gris">Gris</option>
+                 <option value="Blanco">Blanco</option>
+                 <option value="Azul_acero">Azul acero</option>
+                 <option value="Azul_claro">Azul claro</option>
+                 <option value="Azul_marino">Azul marino</option>
+                 <option value="Azul_oscuro">Azul oscuro</option>
+                 <option value="Bordo">Bordo</option>
+                 <option value="Coral">Coral</option>
+                 <option value="Coral_claro">Coral claro</option>
+                 <option value="Lila">Lila</option>
+                 <option value="Beige">Beige</option>
+                 <option value="Marron_claro">Marrón claro</option>
+                 <option value="Verde_claro">Verde claro</option>
+                 <option value="Verde_oscuro">Verde oscuro</option>
+                 <option value="Chocolate">Chocolate</option>
+                 <option value="Caqui">Caqui</option>
+                 <option value="Gris_oscuro">Gris oscuro</option>
+             </select>
+             </div>
+         </section>
+
+         <section class="col2">
+             <div class="talle">
+             <label for="talle">Talle</label>
+             <select name="talle" id="talle">
+                 <option value="seleccionar_talle" selected disabled hidden>Seleccione talle</option>
+                 <option value="XS">XS</option>
+                 <option value="S">S</option>
+                 <option value="M">M</option>
+                 <option value="L">L</option>
+                 <option value="XL">XL</option>
+                 <option value="XXL">XXL</option>
+             </select>
+             </div>
+
+             <div class="cantidad">
+             <label for="cantidad">Cantidad</label>
+             <input type="number" name="cantidad" id="catidad">
+             </div>
+
+             <div class="precio">
+             <label for="precio">Precio</label>
+             <input type="number" name="precio" id="precio">
+             </div>
+
+             <div class="descripcion">
+             <label for="descripcion">Descripción general</label>
+             <textarea name="descripcion" id="descripcion" cols="30" rows="5" placeholder="Descripción"></textarea>
+             </div>
+         </section>
+
+         <section class="col3">
+             <div class="modelo">
+             <label for="modelo">Modelo</label>
+             <input type="text" placeholder="Slim/Regular Fit"name="modelo">
+             </div>
+
+             <div class="composicion">
+             <label for="composicion">Composición</label>
+             <input type="text" name="composicion" id="composicion">
+             </div>
+
+             <div class="sku">
+             <label for="sku">SKU</label>
+             <input type="number" name="sku" id="sku" value="<%= skuDisponible %>" readonly>
+             </div>
+
+
+             <div class="fotos">
+             <label for="fotoProducto"><i class="fas fa-plus-circle"></i> Fotos</label>
+             <input type="file" name="fotoProducto" id="fotoProducto">
+             </div>
+         </section>
+         
+     </div>   
+
+     </form>

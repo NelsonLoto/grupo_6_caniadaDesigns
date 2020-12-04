@@ -4,10 +4,16 @@ const path = require ('path')
 
 let loginRegister = {
     login: function (req, res) {
-        res.render('loginRegister',  { title: 'Caniada - Registro' })
+        res.render('templateView',  { 
+            title: 'Caniada - Login',
+            view: '/usuario/login'
+        })
     },
     register: function (req, res) {
-    res.render('loginRegister', { title: 'Caniada - Crear Usuario' })
+    res.render('templateView', { 
+            title: 'Caniada - Crear cuenta',
+            view: '/usuario/register'
+        })
 }
 }
 

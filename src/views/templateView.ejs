@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+     <head>
+          <%- include('./partials/head') %>
+       </head>
+
+<body>
+     <%- include('./partials/header') %>
+
+     <main class="cargar contenedor">
+          
+               <%- include(`./partials/${view}`) %> 
+          
+     </main>
+     
+     <footer>
+          <%- include('./partials/footer') %>
+     </footer>
+
+
+     <!-- <script>
+     let hoverRegistro = document.getElementById("registro");
+     let opacidadLogIn = document.getElementById("logIn");
+
+     hoverRegistro.addEventListener("mouseover", () => {
+          opacidadLogIn.className = "opacity logIn";
+     }, false)
+     
+     hoverRegistro.addEventListener("mouseout", () => {
+          opacidadLogIn.className = "logIn";
+     }, false)
+
+     let hoverLogIn = document.getElementById("logIn");
+     let opacidadRegistro = document.getElementById("registro");
+
+     hoverLogIn.addEventListener("mouseover", () => {
+          opacidadRegistro.className = "opacity registro";
+     }, false)
+          
+     hoverLogIn.addEventListener("mouseout", () => {
+          opacidadRegistro.className = "registro";
+     }, false)
+     
+     
+
+     </script> -->
+
+</body>
+
+</html>

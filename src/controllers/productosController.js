@@ -26,13 +26,30 @@ let productosController = {
                                     title: 'Caniada - Productos', 
                                     productosDB : productosDB})
     },
-    crearView : function (req, res){ //Ruta por GET para llegar a la carga.
-            res.render ('crearProducto', { title: 'Caniada - Crear Producto',skuDisponible})
+    
+    detalle: function (req, res) {
+        for (let i = 0; i < productosDB.length; i++) {
+            console.log(req.params.sku);
+            if(req.params.sku == productosDB[i].sku){
+           return res.render('detalleProducto', {
+                                                    productoSKU: productosDB[i], 
+                                                    title : productosDB[i].nombre, 
+                                                    productosDB : productosDB})
+            }
+        }
+        res.redirect('/productos')
     },
     carrito : function (req, res) {
         res.render('carrito',  { title: 'Caniada - Carrito' })
     },
-    crear : function (req, res){ //Ruta por POST al enviar formulario.
+    crearView : function (req, res){ //Ruta por GET para llegar a la carga.
+            res.render ('templateView', { 
+                    title: 'Caniada - Crear Producto',
+                    skuDisponible,
+                    view: '/productosAdmin/crearProducto'
+                })
+    },
+    crearSave : function (req, res){ //Ruta por POST al enviar formulario.
 
         let productoCargado = {
             categoria: req.body.categoria,
@@ -57,26 +74,18 @@ let productosController = {
     },
 
     success : function (req, res){
-        res.render('crearProductoSuccess', {title: 'Caniada - Producto creado'})
+        res.render('templateView', {
+                    title: 'Caniada - Producto creado',
+                    view: '/productosAdmin/crearProductoSuccess'
+                })
     },
 
-    detalle: function (req, res) {
-        for (let i = 0; i < productosDB.length; i++) {
-            console.log(req.params.sku);
-            if(req.params.sku == productosDB[i].sku){
-           return res.render('detalleProducto', {
-                                                    productoSKU: productosDB[i], 
-                                                    title : productosDB[i].nombre, 
-                                                    productosDB : productosDB})
-            }
-        }
-        res.redirect('/productos/0')
-    },
     editarView : function (req, res){
         for (let i = 0; i < productosDB.length; i++) {
             if (req.params.sku == productosDB[i].sku){
-                return res.render('editarProducto',
+                return res.render('templateView',
                     {title: 'Caniada - Editar producto',
+                    view: '/productosAdmin/editarProducto',
                     categoria: productosDB[i].categoria,
                     genero: productosDB[i].genero ,
                     nombre: productosDB[i].nombre,

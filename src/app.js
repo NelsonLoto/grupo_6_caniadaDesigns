@@ -30,13 +30,7 @@ app.use(express.json())
 
 ////////////------------------RUTAS--------------------////////////
 app.use('/', rutasMain) //funciona OK
-
-app.get('/productos', rutasProductos) //funciona OK
-
 app.use('/productos', rutasProductos) //funciona OK
-
-app.use('/usuarios', rutasUsuarios) //funciona OK
-
 app.use('/usuarios', rutasUsuarios) //funciona OK
 
 ////////////---------------PUERTO:3000-----------------////////////

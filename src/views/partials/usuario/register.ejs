@@ -1,0 +1,85 @@
+<section class="registro" id="registro">
+               
+               
+     <div class="caja formRegistro">
+          <div class="heading">
+               <h1 class="titulo">REGISTRARSE</h1>
+               <p>Ya estás registrado? <a href="/usuarios/login">Iniciá sesión</a></p>
+          </div>
+          
+          <form class="form formularioRegistro" action="" method="POST">
+               
+
+               <div class="nombres">
+                    <div class="nombre">
+                         <label class="campoDatos"for="nombre"name="nombre">
+                              <p>Nombre</p>
+                              <i class="fas fa-user-tag"></i>
+                              <input type="text"name="nombre"id="nombre">
+                         </label>
+                    </div>
+
+                    <div class="apellido">
+                         <label class="campoDatos"for="apellido"name="apellido">
+                              <p>Apellido</p>
+                              <i class="fas fa-user-tag"></i>
+                              <input type="text"name="apellido"id="apellido">
+                         </label>
+                    </div>
+               </div>
+
+               <div class="email">
+                    <label class="campoDatos" for="email"name="email">
+                         <p>Email</p>
+                         <i class="fas fa-envelope"></i>
+                         <input type="email"name="email" id="email">
+                    </label>
+               </div>
+
+               <div class="contraseña">
+                    <label class="campoDatos"for="password"name="password">
+                         <p>Contraseña</p>
+                         <i class="fas fa-key"></i>
+                         <input type="password"name="password"id="password">
+                    </label>
+               </div>
+
+               <div class="contraseña">
+                    <label class="campoDatos"for="repassword"name="repassword">
+                         <p>Confirma tu contraseña</p>
+                         <i class="fas fa-key"></i>
+                         <input type="repassword"name="repassword"id="repassword">
+                    </label>
+               </div>
+
+               <div class="checkbox">
+                    <label class="legal"for="legal"name="legal">
+                         <input type="checkbox" value="Si" name="legal" id="legal" >
+                         Acepto la
+                         <a href="">Política de privacidad de datos</a> y los <a href="">Términos y condiciones.</a>
+                    </label>
+
+                    <label class="newsletter"for="newsletter"name="newsletter">
+                         <input type="checkbox" value="Si" name="newsletter" id="newsletter" checked>
+                         Acepto que me manden mails promocionales.
+                    </label>
+               </div>
+
+
+               <div class="submit">
+                    <button type="submit" class="usuario registro"> 
+                         <a href=""><i class="fas fa-sign-in-alt"></i>  Registrarse</a>
+                    </button>
+               </div>
+
+               <p>o</p>
+               
+          </form>
+
+          <div class="redes">
+               <button class="google" type="submit" value="Google"><i class="fab fa-google"></i>  Google</button>
+               <button class="facebook" type="submit" value="facebook"><i class="fab fa-facebook"></i>  Facebook</button>
+          </div>
+          
+     </div>
+</section>

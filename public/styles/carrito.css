@@ -311,11 +311,11 @@ section.pago .seccionFija .formulario .completar label{
 
 section.pago .seccionFija .formulario .completar label input {
      border: solid 0.5px #c1c1c2;
-     border-radius: 12px;
-     padding: 4px 5px;
+     border-radius: 15px;
+     padding-left: 15px;
      margin-top: 3px;
      outline: none;
-     
+     height: 30px;
 }
 
 section.pago .seccionFija .formulario .completar label input:focus{

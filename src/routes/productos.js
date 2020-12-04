@@ -20,11 +20,11 @@ var storage = multer.diskStorage({
    var upload = multer({ storage: storage })
 
 router.get('/', productosController.productos ) //funciona OK
-router.get('/carrito', productosController.carrito)
-router.get ('/crear', productosController.crearView) //funciona OK
-router.post ('/crear', upload.single('fotoProducto'),productosController.crear)
+router.get ('/:sku?', productosController.detalle)
+router.get('/ver/carrito', productosController.carrito)
+router.get ('/crear/nuevo', productosController.crearView) //funciona OK
+router.post ('/crear/nuevo', upload.single('fotoProducto'),productosController.crearSave)
 router.get ('/crear/success', productosController.success)
-router.get ('/:sku', productosController.detalle)
 router.get ('/editar/:sku', productosController.editarView)
 router.put ('/editar/:sku', productosController.editarSave)
 //no tiene middleware de multer porque no subimos archivo al editar, solo lo mostramos en la vista. Lo que enviamos al hacer submit de la edicion es un INPUT hidden que es tipo texto que tiene el nombre del archivo. UN QUILOMBO

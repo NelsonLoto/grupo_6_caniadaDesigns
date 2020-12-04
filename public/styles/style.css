@@ -38,8 +38,9 @@
 
           @import url(/styles/carrito.css);
      
-     /*-----LOGIN----*/
-          @import url(/styles/logIn.css);
+     /*-----USUARIO----*/
+          @import url(/styles/login.css);
+          @import url(/styles/register.css);
 
      /*-----CREATEACCOUNT----*/
           @import url(/styles/crearCuenta.css);
@@ -69,13 +70,27 @@
      margin: 0px;
      text-decoration: none;
      padding: 0px;
-     font-family: /*'Rajdhani',*/'Roboto Condensed', 'Roboto', 'Segoe UI', Tahoma, Geneva,Verdana, sans-serif;
+     font-family: /*'Rajdhani',*/'Roboto Condensed', 'Roboto', 'Segoe UI', Oxygen, Ubuntu, Cantarell,-apple-system,BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
      outline:none;
+     
 }
 
 *:focus{
      outline-style: solid;
      outline-color: #fa5252;
+}
+
+html{
+
+     overscroll-behavior-y: none;
+     position: fixed;
+     overflow: hidden;
+}
+body {
+     scroll-behavior: smooth;
+     overflow-y: scroll;
+     height: 100vh;
+     width: 100vw;
 }
 
 
