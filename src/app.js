@@ -6,11 +6,10 @@ const fs = require('fs');
 const path = require('path')
 const methodOverride = require ('method-override')
 
-let rutasProductos = require('./routes/productos')
-let rutasCarrito = require('./routes/carrito')
-let rutasCrearUsuario = require('./routes/crearUsuario')
 let rutasMain = require('./routes/main')
-let rutasLoginRegister = require('./routes/loginRegister')
+let rutasProductos = require('./routes/productos')
+let rutasCrearUsuario = require('./routes/crearUsuario')
+let rutasUsuarios = require('./routes/usuarios')
 
 
 ////////////////////- USING OVERRIDEMETHOD -///////////////
@@ -33,13 +32,13 @@ app.use(express.json())
 ////////////------------------RUTAS--------------------////////////
 app.use('/', rutasMain) //funciona OK
 
-app.get('/carrito', rutasCarrito) //funciona OK
+app.get('/productos', rutasProductos) //funciona OK
 
 app.use('/productos', rutasProductos) //funciona OK
 
-app.use('/usuario', rutasLoginRegister) //funciona OK
+app.use('/usuarios', rutasUsuarios) //funciona OK
 
-app.use('/crearUsuario', rutasCrearUsuario) //funciona OK
+app.use('/usuarios', rutasUsuarios) //funciona OK
 
 ////////////---------------PUERTO:3000-----------------////////////
 app.listen(process.env.PORT || 3000, function () {

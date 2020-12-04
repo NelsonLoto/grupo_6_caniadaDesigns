@@ -29,7 +29,9 @@ let productosController = {
     crearView : function (req, res){ //Ruta por GET para llegar a la carga.
             res.render ('crearProducto', { title: 'Caniada - Crear Producto',skuDisponible})
     },
-
+    carrito : function (req, res) {
+        res.render('carrito',  { title: 'Caniada - Carrito' })
+    },
     crear : function (req, res){ //Ruta por POST al enviar formulario.
 
         let productoCargado = {

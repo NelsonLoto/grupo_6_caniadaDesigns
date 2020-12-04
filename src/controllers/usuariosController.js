@@ -1,7 +1,13 @@
 const path = require ('path')
+
+
+
 let loginRegister = {
-    usuario: function (req, res) {
+    login: function (req, res) {
         res.render('loginRegister',  { title: 'Caniada - Registro' })
+    },
+    register: function (req, res) {
+    res.render('loginRegister', { title: 'Caniada - Crear Usuario' })
 }
 }
 
