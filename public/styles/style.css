@@ -40,7 +40,7 @@
      
      /*-----USUARIO----*/
      @import url(/styles/register.css);
-     @import url(/styles/login.css);
+     @import url(/styles/logIn.css);
 
      /*-----CREATEACCOUNT----*/
           @import url(/styles/crearCuenta.css);
