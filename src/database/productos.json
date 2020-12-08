@@ -180,5 +180,19 @@
         "composicion": "Algodón estampado en serigrafía",
         "sku": "13",
         "fotoProducto": "RemeraCharlyGarcía-1606465701527.png"
+    },
+    {
+        "categoria": "Vestidos",
+        "genero": "Unisex",
+        "nombre": "asdasdasd",
+        "color": "Violeta",
+        "talle": "M",
+        "cantidad": "20",
+        "precio": "123123",
+        "descripcion": "asdasd",
+        "modelo": "asdasd",
+        "composicion": "asdasd",
+        "sku": "14",
+        "fotoProducto": "asdasdasd-1607431785130.jpg"
     }
 ]

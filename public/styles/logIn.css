@@ -155,7 +155,7 @@ main.contenedor section.logIn div.submit button:hover {
     background-color: #eb5757;
     
 }
-main.contenedor section.logIn div.submit button a{
+main.contenedor section.logIn div.submit button{
     padding: 0px 30px;
     color: white;
     width: 40%;

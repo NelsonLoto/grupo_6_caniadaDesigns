@@ -12,7 +12,6 @@ let rutasUsuarios = require('./routes/usuarios');
 
 
 ////////////////////- USING OVERRIDEMETHOD -///////////////
-
 app.use(methodOverride('_method'));
 
 ////////////////////-EJS-///////////////////////
@@ -24,9 +23,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, '../public')));
 
 
-////////////---------------GUARDANDO METHOD=POST EN JSON DB-----------------//////////// 
+
+////////////---------------MIDDLEWARES-----------------//////////// 
 app.use(express.urlencoded({extended : false}))
 app.use(express.json())
+
+
 
 ////////////------------------RUTAS--------------------////////////
 app.use('/', rutasMain) //funciona OK

@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "flete",
+        "apellido": "flete",
+        "password": "$2a$10$qrShwYbKQjKSH/NUpKmI6.gKe08xThvA2KNOFAEE5XjcK8i05qQsq",
+        "avatar": "flete4@gmail.com.png"
+    },
+    {
+        "nombre": "victoria",
+        "apellido": "capella",
+        "password": "$2a$10$GiloCkIcK.LxOxQmUVTSJOjL6NzUr9MXSvjxKichcPFNbD9T6uctK",
+        "avatar": "mvictoriacapella@gmail.com.jpg"
+    }
+]

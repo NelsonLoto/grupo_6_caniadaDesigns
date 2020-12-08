@@ -7,7 +7,7 @@
                <p>Ya estás registrado? <a href="/usuarios/login">Iniciá sesión</a></p>
           </div>
           
-          <form class="form formularioRegistro" action="" method="POST">
+          <form class="form formularioRegistro" action="" method="POST"  enctype="multipart/form-data">
                
 
                <div class="nombres">
@@ -48,7 +48,15 @@
                     <label class="campoDatos"for="repassword"name="repassword">
                          <p>Confirma tu contraseña</p>
                          <i class="fas fa-key"></i>
-                         <input type="repassword"name="repassword"id="repassword">
+                         <input type="password"name="repassword"id="repassword">
+                    </label>
+               </div>
+
+               <div class="avatar">
+                    <label class="campoDatos" for="avatar"name="avatar">
+                         <p>Subí tu imagen de perfil</p>
+                         <i class="fas fa-image"></i>
+                         <input type="file" name="avatar"id="avatar">
                     </label>
                </div>
 
@@ -68,7 +76,7 @@
 
                <div class="submit">
                     <button type="submit" class="usuario registro"> 
-                         <a href=""><i class="fas fa-sign-in-alt"></i>  Registrarse</a>
+                         <i class="fas fa-sign-in-alt"></i>  Registrarse
                     </button>
                </div>
 
