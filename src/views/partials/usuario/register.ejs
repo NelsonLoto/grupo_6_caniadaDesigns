@@ -9,24 +9,26 @@
           
           <form class="form formularioRegistro" action="" method="POST"  enctype="multipart/form-data">
                
-
-               <div class="nombres">
-                    <div class="nombre">
+               
+               <div class="field">
+                    <div class="nombres">
                          <label class="campoDatos"for="nombre"name="nombre">
                               <p>Nombre</p>
-                              <i class="fas fa-user-tag"></i>
+                              <i class="fas fa-id-card"></i>
                               <input type="text"name="nombre"id="nombre">
                          </label>
                     </div>
 
-                    <div class="apellido">
+                    <div class="nombres">
                          <label class="campoDatos"for="apellido"name="apellido">
                               <p>Apellido</p>
-                              <i class="fas fa-user-tag"></i>
+                              <i class="far fa-id-card"></i>
                               <input type="text"name="apellido"id="apellido">
                          </label>
                     </div>
                </div>
+
+               <% if (typeof errors != 'undefined') { %>
 
                <div class="email">
                     <label class="campoDatos" for="email"name="email">
@@ -35,22 +37,67 @@
                          <input type="email"name="email" id="email">
                     </label>
                </div>
-
-               <div class="contraseña">
-                    <label class="campoDatos"for="password"name="password">
-                         <p>Contraseña</p>
-                         <i class="fas fa-key"></i>
-                         <input type="password"name="password"id="password">
-                    </label>
+               
+               <div class="error">
+                    <small class="error"><%= errors[0].msg%> </small>
                </div>
 
-               <div class="contraseña">
-                    <label class="campoDatos"for="repassword"name="repassword">
-                         <p>Confirma tu contraseña</p>
-                         <i class="fas fa-key"></i>
-                         <input type="password"name="repassword"id="repassword">
-                    </label>
+               <div class="field">
+                    <div class="contraseñas">
+                         <label class="campoDatos"for="password"name="password">
+                              <p>Contraseña</p>
+                              <i class="fas fa-key"></i>
+                              <input type="password"name="password"id="password">
+                         </label>
+                         <div class="error">
+                              <small class="error"><%= errors[1].msg %> </small>
+                         </div>
+                    </div>
+
+                    
+
+                    <div class="contraseñas">
+                         <label class="campoDatos"for="repassword"name="repassword">
+                              <p>Confirma tu contraseña</p>
+                              <i class="fas fa-key"></i>
+                              <input type="password"name="repassword"id="repassword">
+                         </label>
+                         <div class="error">   
+                              <small class="error"><%= errors[2].msg %> </small>
+                         </div>
+                    </div>
+
+                    
                </div>
+
+               <% } else {%>
+                    <div class="email">
+                         <label class="campoDatos" for="email"name="email">
+                              <p>Email</p>
+                              <i class="fas fa-envelope"></i>
+                              <input type="email"name="email" id="email">
+                         </label>
+                    </div>
+     
+                    <div class="field">
+                         <div class="contraseñas">
+                              <label class="campoDatos"for="password"name="password">
+                                   <p>Contraseña</p>
+                                   <i class="fas fa-key"></i>
+                                   <input type="password"name="password"id="password">
+                              </label>
+                         </div>
+     
+                         <div class="contraseñas">
+                              <label class="campoDatos"for="repassword"name="repassword">
+                                   <p>Confirma tu contraseña</p>
+                                   <i class="fas fa-key"></i>
+                                   <input type="password"name="repassword"id="repassword">
+                              </label>
+                         </div>
+                    </div>
+               <% } %>
+
 
                <div class="avatar">
                     <label class="campoDatos" for="avatar"name="avatar">
