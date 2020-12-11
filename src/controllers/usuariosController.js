@@ -8,6 +8,7 @@ let users = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.j
 
 let loginRegister = {
     login: function (req, res) {
+        console.log(req.session.newUser)
         res.render('templateView',  { 
             title: 'Caniada - Login',
             view: '/usuario/login',
@@ -60,6 +61,9 @@ let loginRegister = {
         })
     },
     registerPost: function(req, res) {
+
+        // NOdemon se reinicia al hacer el fr.writeFileSync. No se puede loguear al usuario recien registrado. NO persiste la session. 
+        
         let errors = validationResult(req)
         if(errors.isEmpty()){
 
@@ -71,12 +75,13 @@ let loginRegister = {
                 avatar: req.file.filename || " ",
             }
             users.push(newUser);
+            
+            res.cookie('loginCookie', newUser.email, {maxAge: 60000} )
+            req.session.newUser = [newUser.nombre,newUser.email,newUser.avatar]
 
             fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(users, null,4));
-
-            // req.session.newUser = [newUser.nombre,newUser.email,newUser.avatar]
+            
             console.log(req.session.newUser)
-            res.cookie('loginCookie', newUser.email, {maxAge: 60000} )
             
             return res.redirect('/usuarios/login')
 

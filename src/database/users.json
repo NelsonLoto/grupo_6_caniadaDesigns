@@ -5,5 +5,26 @@
         "email": "facugarciacac@gmail.com",
         "password": "$2a$10$pSN2QONK3VpUUxjsyNpUK.S9C2gnG1nDrEiB3gBr0MYA/NmeLsXXC",
         "avatar": "facugarciacac@gmail.com.png"
+    },
+    {
+        "nombre": "juampi",
+        "apellido": "juampi",
+        "email": "juampi@gmail.com",
+        "password": "$2a$10$T7FiJiqQhXUIQtVgVqLgGuRf4GNaHFsuMCw6zvB.mNnYRpvcmRpW.",
+        "avatar": "juampi@gmail.com.jpg"
+    },
+    {
+        "nombre": "nelson",
+        "apellido": "nelson",
+        "email": "nelson@gmail.com",
+        "password": "$2a$10$Yav.wvow.ftbTU1DA6a21e8Z9aWVEuxzoGzXesMFZ5njewAOvcEje",
+        "avatar": "nelson@gmail.com.jpg"
+    },
+    {
+        "nombre": "vic",
+        "apellido": "vic",
+        "email": "vic@gmail.com",
+        "password": "$2a$10$q6j2OW.U6vPACNEJrNQbpe0XuOoM1VnkHFn7DBaOuUF0v9y/b1iYC",
+        "avatar": "vic@gmail.com.JPG"
     }
 ]
