@@ -1,50 +1,63 @@
-<section class="logIn" id="logIn">
+<section class="login">
        
-     <div class="caja formLogIn">
+     <div class="cajaLogin">
 
           <div class="heading">
                <h2 class="titulo">INICIAR SESIÓN</h2>
                <% if (bienvenida == undefined) { %>
                     <p>Todavía no estás registrado? <a href="/usuarios/register">Crear una cuenta.</a></p>
-               <% } else {%>
-                    <h3><%= bienvenida %> </h3>
-               <% }%>
-          </div>
-     <form class="form formularioLogIn" action="" method="POST">
-
-          <div class="email">
+               <% } else if ( error ){%>
+                    <p><%= bienvenida %><a href="/usuarios/register"> haciendo click aquí</a></p>
+                    <%}else{%>
                
-               <label class="campoDatos"for="email">
-                    <p>Email</p>
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" name="email"id="email">
-               </label>
+                    <% }%>
           </div>
 
-          <div class="contraseña">
-               
-               <label class="campoDatos"for="contraseña"><i class="fas fa-key"></i>
-                    <p>Contraseña</p>
-                    <input type="password" name="contraseña"id="contraseña">
-               </label>
-               <div class="olvide">
-                    <a href="">Olvidé mi contraseña</a>
+          <form class="formLogin" action="" method="POST">
+
+               <div class="email">
+
+                    <label class="campoDatos"for="email">
+                         <p>Email</p>
+                         <i class="fas fa-envelope"></i>
+                         <input type="email" name="email"id="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : ""%>">
+                    </label>
+                    <div class="error">
+                         <small class="error"><%=(locals.errors && errors.email) ? errors.email.msg : ""%></small>
+                    </div>
                </div>
-          </div>
 
-          <div class="recuerdame" for="remember">
-               <label for="remember">
-                    <input type="checkbox" name="remember"value="rememberMe" id="remember">
-                    Recuérdame
-               </label>
-          </div>
-          <div class="submit">
-               <button type="submit" class="usuario inicio"> 
-                    <i class="fas fa-sign-in-alt"></i>  Ingresar
-               </button>
-          </div>  
-          <p>o</p>
-     </form>
+               <div class="contraseña">
+
+                    <label class="campoDatos"for="password"><i class="fas fa-key"></i>
+                         <p>Contraseña</p>
+                         <input type="password" name="password"id="password">
+                    </label>
+
+                    <div class="error">
+                         <small class="error"><%=(locals.errors && errors.password) ? errors.password.msg : ""%></small>
+                    </div>
+
+                    <div class="olvide">
+                         <a href="">Olvidé mi contraseña</a>
+                    </div>
+               </div>
+
+               <div class="recuerdame" for="remember">
+                    <label for="remember">
+                         <input type="checkbox" name="remember" value="remember" id="remember">
+                         Recuérdame
+                    </label>
+               </div>
+
+               <div class="submit">
+                    <button type="submit" class="usuario inicio"> 
+                         <i class="fas fa-sign-in-alt"></i>  Ingresar
+                    </button>
+               </div> 
+                
+               <p>o</p>
+          </form>
      
 
      <div class="redes">

@@ -1,72 +1,52 @@
-/*------------------------------
---------------------------------
-MAIN
---------------------------------
-------------------------------*/
-
-main.contenedor{
-    color: #363636;
-}
-main.contenedor{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    /*background-color: rgb(250, 250, 250);*/
-}
-
-/*-------------------------------------------
----------------------------------------------
-SECTION (estilos que aplican a ambas Section)
----------------------------------------------
--------------------------------------------*/
-main.contenedor section.logIn{
+/*-----------------------------------------------------
+SECTION (contenida en main class= " cargar contenedor")
+-----------------------------------------------------*/
+section.login{
    /* background-color: rgb(250, 250, 250);*/
     width: 50%;
-    height: 90%;
     display: flex;
-    justify-content:space-between;
     flex-direction: column;
     align-items:center;
-    flex-wrap: wrap;
-    position: relative;
+    margin-top: 20px;
 }
-
-main.contenedor section.logIn div.heading{
-    text-align: center;
-    margin-top: 10px;
-}
-
-main.contenedor section.logIn div.heading h2.titulo {
-    text-align: center;
-    color: #363636;
-    margin: 20px 0px;
-}
-
-main.contenedor section.logIn div.heading p {
-    color: #363636;
-    margin: 10px 0px;
-}
-
-main.contenedor section.logIn div.heading p a{
-    color: #fc5e5e;
-}
-
-main.contenedor section.logIn div.caja{
-    height: 90%;
+section.login div.cajaLogin{
     width: 80%;
-    padding: 0px 10%;
+    padding: 20px 40px;
     position:relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: white;
     border-radius: 8px;
-    /*box-shadow: -1px 1px 40px rgb(207, 206, 206)*/
+    box-shadow: -1px 1px 4px rgb(207, 206, 206),
+    1px 1px 4px rgb(207, 206, 206);
     
 }
 
-main.contenedor section.logIn div.caja .form{
+section.login div.heading{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section.login div.heading h2.titulo {
+    text-align: center;
+    color: #363636;
+    margin-bottom: 10px;
+    font-size:1.8rem;
+
+
+}
+
+section.login div.heading p {
+    color: #363636;
+}
+
+section.login div.heading p a{
+    color: #fc5e5e;
+}
+
+
+section.login div.cajaLogin .formLogin{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -74,19 +54,28 @@ main.contenedor section.logIn div.caja .form{
     width:100%;
 }
 
+section.login div.cajaLogin .formLogin .email, 
+section.login div.cajaLogin .formLogin .contraseña
+{
+    width: 100%;
+    position: relative;
+}
 
-main.contenedor section.logIn div form label.campoDatos{
+/*-------------------------------------------
+LABEL e INPUTS de EMAIL y CONTRASEÑA
+-------------------------------------------*/
+
+section.login div.cajaLogin .formLogin label.campoDatos{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin:15px 0px;
     width: 100%;
     height: 60px;
+    position: relative;
     border-radius: 30px;
 }
-main.contenedor section.logIn div form label.campoDatos input {
-    position: relative;
-    right: 0px;
+section.login div.cajaLogin .formLogin label.campoDatos input {
     height: 40px;
     width: 100%;
     outline: none;
@@ -99,18 +88,18 @@ main.contenedor section.logIn div form label.campoDatos input {
     color: #363636;
 
 }
-main.contenedor section.logIn div form label.campoDatos p {
+section.login div.cajaLogin .formLogin label.campoDatos p {
     color: #706e6e;
     font-size: 0.8rem;
     padding: 0px 0px 10px 5px;
 
 }
 
-main.contenedor section.logIn div form label.campoDatos i {
+section.login div.cajaLogin .formLogin label.campoDatos i {
     position: absolute;
     left: 15px;
-    bottom: 12px;
-    height: 30px;
+    bottom: 0px;
+    height: 25px;
     width: 5%;
     outline: none;
     font-size: 1rem;
@@ -119,131 +108,51 @@ main.contenedor section.logIn div form label.campoDatos i {
 
 }
 
-main.contenedor section.logIn div form label.campoDatos input:focus{
+section.login div.cajaLogin .formLogin label.campoDatos input:focus{
     box-shadow: 0px 1px 8px #f5b2b2;
     border: solid 1px #ecebeb;
     
 }
 
-
-
-main.contenedor section.logIn div form .email,.contraseña{
+section.login div.cajaLogin .formLogin div.error{
     width: 100%;
-    position: relative;
 }
-
-
-
-main.contenedor section.logIn div .submit {
-    
-    width: 100%;
-    text-align: center;
-    margin: 20px 0px;
-
+section.login div.cajaLogin .formLogin div.error small.error{
+    color: #fc5e5e;
+    font-size: 12px;
+    text-align: left;
 }
-
-main.contenedor section.logIn div button.usuario{
-    border-radius: 30px;
-    border:none;
-    background-color: #fc5e5e;
-    height: 40px;
-    width: 50%;
-}
-
-
-main.contenedor section.logIn div.submit button:hover {
-    background-color: #eb5757;
-    
-}
-main.contenedor section.logIn div.submit button{
-    padding: 0px 30px;
-    color: white;
-    width: 40%;
-    font-size: 1rem;
-}
-
-
-
-
-
-
-
-main.contenedor section.logIn .redes{
+section.login div.cajaLogin .formLogin .legal small{
+    text-align: left;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 10px 0px;
-    padding: 10px 0px
+    justify-content: center;
 }
 
-main.contenedor section.logIn .redes button {
-    margin: 10px 5px;
-    width: 50%;
-    padding: 10px;
-    border-radius: 30px;
-    border:none;
-    font-size: 0.9rem;
-}
-
-
-
-main.contenedor section.logIn .redes button.google{
-    background-color: white;
-    color:  #ea4345;
-    border: solid 1px #ea4345;
-}
-
-main.contenedor section.logIn .redes button.google:hover{
-    background-color: #ea4345;
-    color: white;
-}
-main.contenedor section.logIn .redes button.facebook{
-    background-color:white;
-    color: #3a599c;
-    border: solid 1px #3a599c;
-}
-
-main.contenedor section.logIn .redes button.facebook:hover{
-    background-color: #4a69ac;
-    color: white;
-}
-
-
-
-
-
-
-/*------------------------------
-SECTION Log In
-------------------------------*/
-
-
-
-main.contenedor section.logIn.logIn div.caja form .email .olvide,
-main.contenedor section.logIn.logIn div.caja form .contraseña .olvide { 
+/*-------------------------------------------
+OLVIDÉ MI CONTRASEÑA Y RECUÉRDAME
+-------------------------------------------*/
+section.login .cajaLogin .formLogin .contraseña .olvide { 
     padding-bottom: 0;
     text-align: right;
     position: absolute;
     right: 0px;
     bottom:-5px
 }
-main.contenedor section.logIn.logIn div.caja form .email .olvide a ,
-main.contenedor section.logIn.logIn div.caja form .contraseña .olvide a{
+
+section.login .cajaLogin .formLogin .contraseña .olvide a{
     color: #afacac;
     font-weight: normal;
     font-size: 0.7rem;  
     text-decoration: underline;
     
 }
-main.contenedor section.logIn.logIn div.caja form .email .olvide a:hover,
-main.contenedor section.logIn.logIn div.caja form .contraseña .olvide a:hover{
+section.login .cajaLogin .formLogin .contraseña .olvide a:hover{
     color: rgb(55, 55, 242);
     z-index:1;
 }
 
 
-main.contenedor section.logIn.logIn .caja form .recuerdame{
+section.login .cajaLogin .formLogin div.recuerdame{
     display: flex;
     align-items: center;
     font-size: 0.7rem;
@@ -252,21 +161,88 @@ main.contenedor section.logIn.logIn .caja form .recuerdame{
     
 }
 
-main.contenedor section.logIn.logIn .caja form .recuerdame label{
+section.login .cajaLogin .formLogin div.recuerdame label{
     cursor:pointer;
 }
-main.contenedor section.logIn.logIn .cajaFormLogIn form .recuerdame:hover{
+section.login .cajaLogin .formLogin div.recuerdame:hover{
     color: rgb(55, 55, 242);
 }
 
+/*-------------------------------------------
+BUTTON SUBMIT
+-------------------------------------------*/
+section.login div.cajaLogin .submit {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0px;
+}
 
-    input[type=checkbox]{
-        transform: translateY(15%) scale(0.8);
-    }
+section.login div.cajaLogin .submit button.usuario{
+    border-radius: 30px;
+    border:none;
+    background-color: #fc5e5e;
+    height: 40px;
+    width: 50%;
+}
 
 
+section.login div.cajaLogin .submit button:hover {
+    background-color: #eb5757;
+}
+section.login div.cajaLogin .submit button{
+    padding: 0px 30px;
+    color: white;
+    width: 40%;
+    font-size: 1rem;
+}
+
+/*-------------------------------------------
+LOGIN CON REDES SOCIALES
+-------------------------------------------*/
+
+section.login .redes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px 0px
+}
+
+section.login .redes button {
+    margin: 10px 5px;
+    width: 50%;
+    padding: 10px;
+    border-radius: 30px;
+    border:none;
+    font-size: 0.9rem;
+}
+
+section.login .redes button.google{
+    background-color: white;
+    color:  #ea4345;
+    border: solid 1px #ea4345;
+}
+
+section.login .redes button.google:hover{
+    background-color: #ea4345;
+    color: white;
+}
+section.login .redes button.facebook{
+    background-color:white;
+    color: #3a599c;
+    border: solid 1px #3a599c;
+}
+
+section.login .redes button.facebook:hover{
+    background-color: #4a69ac;
+    color: white;
+}
 
 
+/*-------------------------------------------
+MEDIAS QUERIES
+-------------------------------------------*/
  @media screen and (max-width: 850px){
     main.contenedor{
         width: 100%;
@@ -278,7 +254,7 @@ main.contenedor section.logIn.logIn .cajaFormLogIn form .recuerdame:hover{
     
     }
 
-    main.contenedor section.logIn.logIn, main.contenedor section.logIn.registro {
+    section.login, section.registro {
         background-color: rgb(250, 250, 250);
         width:100%;
         height: auto;
@@ -292,7 +268,7 @@ main.contenedor section.logIn.logIn .cajaFormLogIn form .recuerdame:hover{
     }
    
 
-    main.contenedor section.logIn .caja{  
+    section.login .cajaLogin{  
         height: 100%;
     }
 

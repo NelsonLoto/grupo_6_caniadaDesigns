@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "nombre": "Facundo",
+        "apellido": "Garcia",
+        "email": "facugarciacac@gmail.com",
+        "password": "$2a$10$pSN2QONK3VpUUxjsyNpUK.S9C2gnG1nDrEiB3gBr0MYA/NmeLsXXC",
+        "avatar": "facugarciacac@gmail.com.png"
+    }
+]

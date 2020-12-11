@@ -1,7 +1,7 @@
-<section class="registro" id="registro">
+<section class="registro">
                
                
-     <div class="caja formRegistro">
+     <div class="cajaRegistro">
           <div class="heading">
                <h1 class="titulo">REGISTRARSE</h1>
                <p>Ya estás registrado? <a href="/usuarios/login">Iniciá sesión</a></p>
@@ -15,42 +15,47 @@
                          <label class="campoDatos"for="nombre"name="nombre">
                               <p>Nombre</p>
                               <i class="fas fa-id-card"></i>
-                              <input type="text"name="nombre"id="nombre">
+                              <input type="text"name="nombre"id="nombre" value="<%= (typeof old != 'undefined' && !errors.nombre) ? old.nombre : ""%>">
                          </label>
+                         <div class="error">
+                              <small class="error"><%=(locals.errors && errors.nombre) ? errors.nombre.msg : "" %> </small>
+                         </div>
                     </div>
-
+                         
                     <div class="nombres">
                          <label class="campoDatos"for="apellido"name="apellido">
                               <p>Apellido</p>
                               <i class="far fa-id-card"></i>
-                              <input type="text"name="apellido"id="apellido">
+                              <input type="text"name="apellido"id="apellido" value="<%= (typeof old != 'undefined' && !errors.apellido) ? old.apellido : ""%>">
                          </label>
+                         <div class="error">
+                              <small class="error"><%=(locals.errors && errors.apellido) ? errors.apellido.msg : ""%></small>
+                         </div>
                     </div>
                </div>
 
-               <% if (typeof errors != 'undefined') { %>
 
                <div class="email">
                     <label class="campoDatos" for="email"name="email">
                          <p>Email</p>
                          <i class="fas fa-envelope"></i>
-                         <input type="email"name="email" id="email">
+                         <input type="email"name="email" id="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : ""%>">
                     </label>
+                    <div class="error">
+                         <small class="error"><%=(locals.errors && errors.email) ? errors.email.msg : ""%></small>
+                    </div>
                </div>
                
-               <div class="error">
-                    <small class="error"><%= errors[0].msg%> </small>
-               </div>
 
                <div class="field">
                     <div class="contraseñas">
                          <label class="campoDatos"for="password"name="password">
                               <p>Contraseña</p>
                               <i class="fas fa-key"></i>
-                              <input type="password"name="password"id="password">
+                              <input type="password"name="password"id="password" value="<%= (typeof old != 'undefined' && !errors.password) ? old.password : ""%>" >
                          </label>
                          <div class="error">
-                              <small class="error"><%= errors[1].msg %> </small>
+                              <small class="error"><%=(locals.errors && errors.password) ? errors.password.msg : ""%></small>
                          </div>
                     </div>
 
@@ -62,41 +67,13 @@
                               <i class="fas fa-key"></i>
                               <input type="password"name="repassword"id="repassword">
                          </label>
-                         <div class="error">   
-                              <small class="error"><%= errors[2].msg %> </small>
+                         <div class="error">
+                              <small class="error"><%=(locals.errors && errors.repassword) ? errors.repassword.msg : ""%></small>
                          </div>
                     </div>
 
                     
                </div>
-
-               <% } else {%>
-                    <div class="email">
-                         <label class="campoDatos" for="email"name="email">
-                              <p>Email</p>
-                              <i class="fas fa-envelope"></i>
-                              <input type="email"name="email" id="email">
-                         </label>
-                    </div>
-     
-                    <div class="field">
-                         <div class="contraseñas">
-                              <label class="campoDatos"for="password"name="password">
-                                   <p>Contraseña</p>
-                                   <i class="fas fa-key"></i>
-                                   <input type="password"name="password"id="password">
-                              </label>
-                         </div>
-     
-                         <div class="contraseñas">
-                              <label class="campoDatos"for="repassword"name="repassword">
-                                   <p>Confirma tu contraseña</p>
-                                   <i class="fas fa-key"></i>
-                                   <input type="password"name="repassword"id="repassword">
-                              </label>
-                         </div>
-                    </div>
-               <% } %>
 
 
                <div class="avatar">
@@ -109,16 +86,21 @@
 
                <div class="checkbox">
                     <label class="legal"for="legal"name="legal">
-                         <input type="checkbox" value="Si" name="legal" id="legal" >
+                         <input type="checkbox" value="Si" name="legal" id="legal" value="<%= (typeof old != 'undefined' && !errors.legal) ? old.legal : ""%>">
                          Acepto la
                          <a href="">Política de privacidad de datos</a> y los <a href="">Términos y condiciones.</a>
                     </label>
+
+                    <div class="error legal">
+                         <small class="error "><%=(locals.errors && errors.legal) ? errors.legal.msg : ""%></small>
+                    </div>
 
                     <label class="newsletter"for="newsletter"name="newsletter">
                          <input type="checkbox" value="Si" name="newsletter" id="newsletter" checked>
                          Acepto que me manden mails promocionales.
                     </label>
                </div>
+               
 
 
                <div class="submit">

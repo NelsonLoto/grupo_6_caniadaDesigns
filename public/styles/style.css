@@ -40,7 +40,7 @@
      
      /*-----USUARIO----*/
      @import url(/styles/register.css);
-     @import url(/styles/logIn.css);
+     @import url(/styles/login.css);
 
      /*-----CREATEACCOUNT----*/
           @import url(/styles/crearCuenta.css);
@@ -91,6 +91,26 @@ body {
      overflow-y: scroll;
      height: 100vh;
      width: 100vw;
+}
+/*------------------------------
+--------------------------------
+MAIN - Template de vistas
+--------------------------------
+------------------------------*/
+
+
+body main.cargar,
+body main.contenedor {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     align-items: center;
+     min-height: 90vh;
+     height: auto;
+     width: 100%;
+     color: #363636;
+     position: relative;
+
 }
 
 

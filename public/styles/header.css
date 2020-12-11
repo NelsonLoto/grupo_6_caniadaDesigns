@@ -4,7 +4,7 @@ header {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    height: 12vh;
+    height: 10vh;
     box-shadow: 1px 2px 4px #919191;
     background:white;
     background-color: rgba(16, 16, 16, 0.95);
