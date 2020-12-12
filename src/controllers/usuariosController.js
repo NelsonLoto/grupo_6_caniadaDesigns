@@ -36,7 +36,7 @@ let loginRegister = {
                                 res.render('templateView', { 
                                     title: 'Caniada - Crear cuenta',
                                     view: '/usuario/login',
-                                    bienvenida: `Lo lamentamos ${req.body.email}. Igual podés crear una cuenta`,
+                                    bienvenida: `Parece que ${req.body.email} o la constraseña no son correctos. Si todavía no tenés una cuenta, podés crear una`,
                                     error: true
                             })
                         }
@@ -48,7 +48,8 @@ let loginRegister = {
                     view: '/usuario/login',
                     errors: errors.mapped(),
                     old: req.body,
-                    bienvenida: 'Intentá nuevamente'
+                    error: false,
+                    bienvenida: 'No ingresaste datos válidos. Intentalo nuevamente, o crea una nueva cuenta '
                 })
                 console.log(errors.mapped())
             }
