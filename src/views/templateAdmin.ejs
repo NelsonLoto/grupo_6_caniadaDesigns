@@ -4,18 +4,77 @@
           <%- include('./partials/head') %>
        </head>
 
-<body>
-     <%- include('./partials/header') %>
+<body id="admin">
 
-     <main class="cargar contenedor">
+     <section class="panelAdmin">
+
+          <div class="top">
+               <a href="/">
+               <img src="/images/logos/isoLogoTipoBlanco.svg" alt="">
+               </a>
+          </div>
+
+          <nav>
+               <p>Productos</p>
+               <ul>
+                    <li>
+                         <a href="/productos"><i class="fas fa-th-list"></i>Ver todos</a>
+                    </li>
+                    <li>
+                         <a href="/productos/crear/nuevo"><i class="fas fa-plus-square" style="color:rgb(230, 138, 132)"></i>Nuevo producto</a>
+                    </li>
+                    <li>
+                         <a href="/productos/editar/5"><i class="fas fa-edit" style="color:rgb(240, 107, 107)"></i>Editar productos</a>
+                    </li>
+                    <li>
+                         <a href="/productos/editar/1" style="color:rgb(231, 61, 61)"><i class="fas fa-minus-circle" style="color:rgb(231, 61, 61)"></i>Eliminar productos</a>
+                    </li>
+               </ul>
+          </nav>
+          <div class="footer">
+               <a href="https://github.com/NelsonLoto/grupo_6_caniadaDesigns"><i class="fab fa-github"></i></a>
+               <p>©caniada - grupo6 
+               </p>
+               <p>Digital House 2020.</p>
+               <p><strong>Desarrollo web full stack</strong></p>
+          </div>
+
+
+     </section>
+     <main class="mainAdmin">
+
+          <header class="adminHeader">
+               <p><a href="/"><i class="fas fa-chevron-left"></i> Home</a></p>
+
+               <div>
+
+                    <a href=""><i class="fas fa-inbox"></i></a>
+                    
+                    <a href=""><i class="fas fa-info-circle"></i></a>
+                    <% if(admin) {%> 
+                    <a href="">
+                              <img src="/images/avatars/facugarciacac@gmail.com.png" alt="">
+                    </a>
+                    <% } else {%> 
+                    <a href=""><i class="fas fa-sign-in-alt"></i></a>
+                    <% } %> 
+               </div>
+          </header>
           
-               <%- include(`./partials/${view}`) %> 
-          
+
+          <section class="cargar contenedor">
+
+                    <%- include(`./partials/${view}`) %> 
+
+          </section>
+
+
+          <!-- <footer class="admin"> 
+               
+          </footer> -->
      </main>
      
-     <footer>
-          <%- include('./partials/footer') %>
-     </footer>
+     
 
 
 </body>

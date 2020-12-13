@@ -43,10 +43,11 @@ let productosController = {
         res.render('carrito',  { title: 'Caniada - Carrito' })
     },
     crearView : function (req, res){ //Ruta por GET para llegar a la carga.
-            res.render ('templateView', { 
-                    title: 'Caniada - Crear Producto',
+            res.render ('templateAdmin', { 
+                    title: 'Admin - Nuevo producto',
                     skuDisponible,
-                    view: '/productosAdmin/crearProducto'
+                    view: '/productosAdmin/crearProducto',
+                    admin: true
                 })
     },
     crearSave : function (req, res){ //Ruta por POST al enviar formulario.
@@ -74,8 +75,9 @@ let productosController = {
     },
 
     success : function (req, res){
-        res.render('templateView', {
-                    title: 'Caniada - Producto creado',
+        res.render('templateAdmin', {
+                    admin: true,
+                    title: 'Admin - Producto creado',
                     view: '/productosAdmin/crearProductoSuccess'
                 })
     },
@@ -83,8 +85,10 @@ let productosController = {
     editarView : function (req, res){
         for (let i = 0; i < productosDB.length; i++) {
             if (req.params.sku == productosDB[i].sku){
-                return res.render('templateView',
-                    {title: 'Caniada - Editar producto',
+                return res.render('templateAdmin',
+                    {
+                    admin: true,
+                    title: 'Admin - Editar producto',
                     view: '/productosAdmin/editarProducto',
                     categoria: productosDB[i].categoria,
                     genero: productosDB[i].genero ,

@@ -1,5 +1,5 @@
 
-header {
+header.template {
     width:100%;
     display:flex;
     justify-content: space-between;
@@ -11,24 +11,26 @@ header {
     box-sizing: border-box;
 }
 
-header div.logo{
+header.template div.logo{
     height: 100%;
     width: 33.3%;
-    padding-left: 5vw; /*Originalmente estaba en 10vw*/
+    display: flex;
+    padding-left: 10vw;
+
 }
 
-header div.logo img.header {
+header.template div.logo img.header {
     height: 90%;
     padding: 10px 0px 10px 0px;
     
 }
 
-header nav.menu{
+header.template nav.menu{
     width: 33.3%;
     /*height: 100%;*/
 }
 
-header nav.menu div.boton-menu{
+header.template nav.menu div.boton-menu{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -37,29 +39,29 @@ header nav.menu div.boton-menu{
     color: #fafafa;
 }
 
-header nav.menu div.boton-menu i{
+header.template nav.menu div.boton-menu i{
     align-self: center;
     font-size: 3rem;
     display: none;
 }
 
-header nav.menu ul{
+header.template nav.menu ul{
     display: flex; /*Estaba en flezflex*/
     justify-content: space-between;
     list-style: none;
 }
 
-header nav.menu ul li{
+header.template nav.menu ul li{
     font-size: 1rem;
     color: #fafafa;
 }
 
-header nav.menu ul li a{
+header.template nav.menu ul li a{
     font-size: 1rem;
     color: #fafafa;
 }
 
-header nav.user{
+header.template nav.user{
 
     width: 33.3%;
     padding-right: 10vw;
@@ -140,11 +142,11 @@ form input:valid + label::after{
 
 
 /*icono CARRITO*/
-header nav.user ul li.bag{
+header.template nav.user ul li.bag{
     position: relative;
 }
 
-header nav.user ul li span.notificacion{
+header.template nav.user ul li span.notificacion{
     width: 16px;
     line-height: 16px;
     background-color: tomato;
@@ -162,7 +164,7 @@ header nav.user ul li span.notificacion{
     cursor: pointer;
 }
 
-header nav.user ul{
+header.template nav.user ul{
     display: flex;
     justify-content: flex-end;
     text-align: right;
@@ -170,72 +172,72 @@ header nav.user ul{
     color: #363636;
 }
 
-header nav.user ul li {
+header.template nav.user ul li {
     padding-left: 50px;
     font-size: 1.1rem;
     color: #fafafa;
 }
 
-header nav.user ul li a:hover {
+header.template nav.user ul li a:hover {
     transition: all ease-out 0.1s;
     
 }
 
-header nav.menu ul li a:hover {
+header.template nav.menu ul li a:hover {
     transition: all ease-out 0.1s;
     /*color: rgb(248, 233, 222);*/
     
 }
 
-header nav.user ul li a{
+header.template nav.user ul li a{
     color: #fafafa;
 }
 
 @media screen and (max-width: 860px){
-    header div.logo{
+    header.template div.logo{
         padding-left: 2vw;
     }
 }
 
 @media screen and (max-width: 768px){
-    header nav.menu ul{
+    header.template nav.menu ul{
         display: none;
     }
 
-    header nav.menu div.boton-menu i{
+    header.template nav.menu div.boton-menu i{
         display: flex;
     }
 }
 
 @media screen and (max-width: 600px){
-    header nav.user ul li{
+    header.template nav.user ul li{
         padding-left: 20%;
     }
 
-    header nav.menu div.boton-menu i{
+    header.template nav.menu div.boton-menu i{
         font-size: 2rem;
     }
 
-    header div.logo{
+    header.template div.logo{
         display: flex;
         align-content: center;
         align-items: center;
     }
-    header div.logo img.header {
+    header.template div.logo img.header.template {
         width: 100%;
         height: auto;
         align-self: center;
     }
-    header nav.user ul {
+    header.template nav.user ul {
         justify-content: space-between;
     }
 }
 
 @media screen and (max-width: 350px){
-    header nav.menu div.boton-menu i{
+    header.template nav.menu div.boton-menu i{
         font-size: 1.5rem;
     }
-    header nav.user ul {
+    header.template nav.user ul {
         justify-content: space-between;
     }
 }

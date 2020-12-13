@@ -194,5 +194,19 @@
         "composicion": "asdasd",
         "sku": "14",
         "fotoProducto": "asdasdasd-1607431785130.jpg"
+    },
+    {
+        "categoria": "Remeras",
+        "genero": "Unisex",
+        "nombre": "John Lennon",
+        "color": "Blanco",
+        "talle": "XL",
+        "cantidad": "2",
+        "precio": "700",
+        "descripcion": "Lennon - Working Class Hero",
+        "modelo": "",
+        "composicion": "Algodón estampado en vinilo",
+        "sku": "15",
+        "fotoProducto": "JohnLennon-1607827762873.png"
     }
 ]

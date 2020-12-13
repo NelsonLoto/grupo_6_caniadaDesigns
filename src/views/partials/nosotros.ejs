@@ -1,0 +1,27 @@
+<section class="nosotros">
+     <div class="titulo">
+          <h1>Los que hacemos Caniada posible...</h1>
+          <!-- <p>Reunidos virtualmente, con el mismo fin: Poder entregar un producto de calidad a quienes en distintos contextos tuvieran que evaluarnos, ya sea desde un punto de vista académico, o un reclutador, como así también simplemente un amigo compartiendo su experiencia de usuario. Gracias por haber llegado hasta acá. <i>Grupo 6</i></p> -->
+     </div>
+     <div class="cards">
+          <% for( let i = 0; i < 4; i++ ) { %>
+          <div class="card <%= [i+1] %>">
+               <div class="imagen" >
+                    <img src="/images/nosotros/<%= nosotros[i].avatar %>" alt="">
+               </div>
+               <div class="description">
+                    <h3><%= nosotros[i].nombre %> </h3>
+                    <figcaption>
+                         <%= nosotros[i].description %>
+                    </figcaption>
+               </div>
+               <div class="contacto">
+                    <a href="<%= nosotros[i].gitHub %>"><i class="fab fa-github"></i></a>
+                    <a href="<%= nosotros[i].linkedin %>"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:<%= nosotros[i].mail %>"><i class="fas fa-envelope"></i></a>
+               </div>
+          </div>
+          
+          <% } %>
+     </div>
+</section>
