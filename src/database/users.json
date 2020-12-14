@@ -1,10 +1,29 @@
 [
     {
+        "id": 1,
         "nombre": "Facundo",
         "apellido": "Garcia",
         "email": "facugarciacac@gmail.com",
-        "password": "$2a$10$aVa5TArrplCfQfx6EAcXt.wiOmptYdWztCv0Jd1mnjS5PlImQQ5vS",
+        "password": "$2a$10$9l6uYNHxYqZq1P/GumOSkONUmvaRxlgUX4F3OQJ3/nwYGvaWtt5F6",
         "avatar": "facugarciacac@gmail.com.png",
+        "rol": 1
+    },
+    {
+        "id": 2,
+        "nombre": "Flete",
+        "apellido": "Flete",
+        "email": "flete@gmail.com",
+        "password": "$2a$10$RtuE/lmm2JMwQnCqE0VDs.qxgpcTV7Ez/hq/IxWYfFuGwZ.X2vVgC",
+        "avatar": "flete@gmail.com.JPG",
+        "rol": 1
+    },
+    {
+        "id": 3,
+        "nombre": "Victoria",
+        "apellido": "Capella",
+        "email": "mvictoriacapella@gmail.com",
+        "password": "$2a$10$RQDGHQZoHuH0lZLfFnfhfehEH5SE8btakzubvVNmezHCrinNTemWW",
+        "avatar": "mvictoriacapella@gmail.com.jpg",
         "rol": 1
     }
 ]

@@ -22,6 +22,7 @@ let storage = multer.diskStorage({
 
 router.get ('/login', usuarioRegistrado, usuariosController.login )
 router.post ('/login',loginValidation ,usuariosController.loginPost )
+router.get ('/logout',usuariosController.logout )
 router.get('/register', usuariosController.register) //funciona OK
 router.post('/register', upload.single('avatar'), registerValidation ,usuariosController.registerPost) //funciona OK
 

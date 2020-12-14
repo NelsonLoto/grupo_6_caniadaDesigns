@@ -26,13 +26,20 @@
                         <li><a href="">Contactanos</a></li>
                    </ul>
               </div>
-         </div>         
               
-         <div class="usuario">
-                   <a href="" class="registro">Registrarme</a>
-                   <a href="" class="logIn">Iniciar sesión</a>
+          </div>  
+
+          <% if (locals.usuarioLogueado == undefined) { %>
+          <div class="usuario">
+               <a href="" class="registro">Registrarme</a>
+               <a href="" class="logIn">Iniciar sesión</a>
+          </div>
+          <% }else { %>
+
+          <% } %>
+         
                    
-         </div>
+                   
          
     </div>
     <div class="fila2">

@@ -4,15 +4,15 @@ const fs = require ('fs')
 let users = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf8'))
 
 function recordameMiddleware( req,res,next){
-     let usuarioALoguearse
+
      if (req.cookies.remember != undefined){
                for (let i = 0; i < users.length; i++) {
                if (users[i].email == req.cookies.remember){
-                    usuarioALoguearse= users[i];
+                    req.session.usuarioLogueado= users[i];
                } 
                }
+               res.locals.usuarioLogueado = req.session.usuarioLogueado;
           }
-          req.session.usuarioLogueado = usuarioALoguearse;
           next();
 }
 

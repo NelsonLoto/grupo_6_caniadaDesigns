@@ -9,7 +9,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
 const recordameMiddleware = require ('./middlewares/recordameMiddleware')
-
+const usuarioLogueado = require ('./middlewares/usuarioLogueado')
 
 
 let rutasMain = require('./routes/main')
@@ -20,6 +20,7 @@ let rutasUsuarios = require('./routes/usuarios');
 
 ////////////////////- USING OVERRIDEMETHOD -///////////////
 app.use(methodOverride('_method'));
+
 
 ////////////////////-EJS-///////////////////////
 app.set('view engine', 'ejs')
@@ -37,6 +38,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(session({secret: "laSalNoSalaYElAzucarNoEndulza"}));
 app.use(recordameMiddleware);
+app.use(usuarioLogueado);
 
 
 
