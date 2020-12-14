@@ -44,20 +44,6 @@
     {
         "categoria": "Remeras",
         "genero": "Masculino",
-        "nombre": "Remera Led Zeppelin",
-        "color": "Negro",
-        "talle": "XXL",
-        "cantidad": "1",
-        "precio": "500",
-        "descripcion": "Remera",
-        "modelo": "Regular",
-        "composicion": "Algodón",
-        "sku": "5",
-        "fotoProducto": "RemeraLedZep-1606543443720.jpg"
-    },
-    {
-        "categoria": "Remeras",
-        "genero": "Masculino",
         "nombre": "Remera The Beatles",
         "color": "Blanco",
         "talle": "L",
@@ -128,20 +114,6 @@
     {
         "categoria": "Remeras",
         "genero": "Masculino",
-        "nombre": "Remera Rolling Stones",
-        "color": "Gris",
-        "talle": "S",
-        "cantidad": "1",
-        "precio": "500",
-        "descripcion": " Remera ",
-        "modelo": "Regular",
-        "composicion": "Algodón",
-        "sku": "10",
-        "fotoProducto": "RemeraStones-1606343443220.jpg"
-    },
-    {
-        "categoria": "Remeras",
-        "genero": "Masculino",
         "nombre": "Remera Miles Davis",
         "color": "Rojo",
         "talle": "XXL",
@@ -182,20 +154,6 @@
         "fotoProducto": "RemeraCharlyGarcía-1606465701527.png"
     },
     {
-        "categoria": "Vestidos",
-        "genero": "Unisex",
-        "nombre": "asdasdasd",
-        "color": "Violeta",
-        "talle": "M",
-        "cantidad": "20",
-        "precio": "123123",
-        "descripcion": "asdasd",
-        "modelo": "asdasd",
-        "composicion": "asdasd",
-        "sku": "14",
-        "fotoProducto": "asdasdasd-1607431785130.jpg"
-    },
-    {
         "categoria": "Remeras",
         "genero": "Unisex",
         "nombre": "John Lennon",
@@ -208,5 +166,47 @@
         "composicion": "Algodón estampado en vinilo",
         "sku": "15",
         "fotoProducto": "JohnLennon-1607827762873.png"
+    },
+    {
+        "categoria": "Remeras",
+        "genero": "Unisex",
+        "nombre": "Remera Jefferson Airplane",
+        "color": "Blanco",
+        "talle": "XL",
+        "cantidad": "2",
+        "precio": "550",
+        "descripcion": "Jefferson Airplane",
+        "modelo": "",
+        "composicion": "Algodón estampado en serigrafía",
+        "sku": "16",
+        "fotoProducto": "RemeraJeffersonAirplane-1607944679213.png"
+    },
+    {
+        "categoria": "Remeras",
+        "genero": "Unisex",
+        "nombre": "Remera Rolling Stones",
+        "color": "Gris",
+        "talle": "S",
+        "cantidad": "1",
+        "precio": "520",
+        "descripcion": "   Remera   ",
+        "modelo": "Regular",
+        "composicion": "Algodón",
+        "sku": "10",
+        "fotoProducto": "RemeraStones-1606343443220.jpg"
+    },
+    {
+        "categoria": "Remeras",
+        "genero": "Unisex",
+        "nombre": "Remera Led Zeppelin",
+        "color": "Negro",
+        "talle": "XXL",
+        "cantidad": "5",
+        "precio": "500",
+        "descripcion": "  Remera  ",
+        "modelo": "Regular",
+        "composicion": "Algodón",
+        "sku": "5",
+        "fotoProducto": "RemeraLedZep-1606543443720.jpg"
     }
 ]

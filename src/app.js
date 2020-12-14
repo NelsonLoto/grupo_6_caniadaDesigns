@@ -13,6 +13,7 @@ const recordameMiddleware = require ('./middlewares/recordameMiddleware')
 
 
 let rutasMain = require('./routes/main')
+let rutasAdmin = require('./routes/admin');
 let rutasProductos = require('./routes/productos');
 let rutasUsuarios = require('./routes/usuarios');
 
@@ -44,6 +45,7 @@ app.use(recordameMiddleware);
 app.use('/', rutasMain) //funciona OK
 app.use('/productos', rutasProductos) //funciona OK
 app.use('/usuarios', rutasUsuarios) //funciona OK
+app.use('/admin', rutasAdmin)
 
 ////////////---------------PUERTO:3000-----------------////////////
 app.listen(process.env.PORT || 3000, function () {

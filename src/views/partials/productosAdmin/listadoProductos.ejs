@@ -1,0 +1,16 @@
+<section class="productosAdmin">
+     <div class="caja">
+          <ul>
+          <% for( let i = 0; i < productosDB.length; i++ ) { %>
+               <li>
+                    <p><%= productosDB[i].nombre %> </p>
+                    <div class="accion">
+                         <a href="/admin/productos/editar/<%=productosDB[i].sku%> "> Editar </a>
+                         <a href=""> Eliminar</a>
+                    </div>
+               </li>
+               <hr>
+          <% } %>
+          </ul>
+     </div>
+</section>

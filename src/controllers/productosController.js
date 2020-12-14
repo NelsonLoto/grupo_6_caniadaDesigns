@@ -4,7 +4,7 @@ const fs = require('fs')
 
 
 //Leyendo JSON DB
-let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'), 'utf8'))
+let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'), 'utf8')) // 
 
 //Leyendo CATEGORIAS JSON DB para pasarle a los SELECTs 
 let categoriasDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/categoriasProductos.json'), 'utf8'))
@@ -15,7 +15,6 @@ const coloresDB = categoriasDB[2]
 const tallesDB = categoriasDB[3]
  
 let skuDisponible = productosDB.length+1
-
 
 
 //Funcionalidad
@@ -41,6 +40,14 @@ let productosController = {
     },
     carrito : function (req, res) {
         res.render('carrito',  { title: 'Caniada - Carrito' })
+    },
+    productosAdmin: function ( req, res ){
+        res.render('templateAdmin', {
+            admin: true,
+            productosDB,
+            view: '/productosAdmin/listadoProductos',
+            title: 'Admin - Productos'
+        })
     },
     crearView : function (req, res){ //Ruta por GET para llegar a la carga.
             res.render ('templateAdmin', { 
@@ -71,17 +78,14 @@ let productosController = {
 
         fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productosDB, null, 4));
 
-        res.redirect('/productos/crear/success')
-    },
-
-    success : function (req, res){
         res.render('templateAdmin', {
-                    admin: true,
-                    title: 'Admin - Producto creado',
-                    view: '/productosAdmin/crearProductoSuccess'
-                })
+            accion: 'Crear nuevo producto',
+            admin: true,
+            path: '/admin/productos/nuevo',
+            title: 'Producto creado con éxito',
+            view: '/productosAdmin/success',
+        })
     },
-
     editarView : function (req, res){
         for (let i = 0; i < productosDB.length; i++) {
             if (req.params.sku == productosDB[i].sku){
@@ -141,8 +145,16 @@ let productosController = {
             productosDB.push(productoCargado);
 
         fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productosDB, null, 4));
-        res.redirect('/productos/crear/success')
+
+        res.render('templateAdmin', {
+            accion: 'Editar otro producto',
+            admin: true,
+            path: '/admin/productos/editar/10',
+            title: 'Producto editado con éxito',
+            view: '/productosAdmin/success',
+        })
 }
 }
+
 
 module.exports = productosController

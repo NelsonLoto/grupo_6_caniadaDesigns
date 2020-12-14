@@ -1,0 +1,25 @@
+section.productosAdmin{
+}
+
+section.productosAdmin div.caja {
+     width: 600px;
+     overflow: visible;
+     
+}
+
+section.productosAdmin div.caja ul li {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     padding: 5px 0px;
+}
+section.productosAdmin div.caja ul li p{
+     width: 60%;
+}
+
+section.productosAdmin div.caja ul li div.accion {
+     width: 40%;
+     display: flex;
+     justify-content: space-between;
+}
+

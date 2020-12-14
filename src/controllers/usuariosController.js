@@ -6,7 +6,7 @@ const { validationResult } = require('express-validator');
 
 let users = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf8'))
 
-let loginRegister = {
+let usuarios = {
     login: function (req, res) {
         console.log(req.session.newUser)
         res.render('templateView',  { 
@@ -31,20 +31,28 @@ let loginRegister = {
                                     res.cookie('remember', req.body.email,    {maxAge: 60000000000} )
                             }
                                 res.redirect('/')
-                            }
+                        }else{
+                            res.render('templateView', { 
+                                title: 'Caniada - Iniciar sesión',
+                                view: '/usuario/login',
+                                bienvenida: `Parece que ${req.body.email} o la constraseña no son correctos. Si todavía no tenés una cuenta, podés crear una`,
+                                error: true
+                            })}
                     } else {
                                 res.render('templateView', { 
-                                    title: 'Caniada - Crear cuenta',
+                                    title: 'Caniada - Iniciar sesión',
                                     view: '/usuario/login',
-                                    bienvenida: `Parece que ${req.body.email} o la constraseña no son correctos. Si todavía no tenés una cuenta, podés crear una`,
-                                    error: true
+                                    errors: errors.mapped(),
+                                    old: req.body,
+                                    error: false,
+                                    bienvenida: 'No ingresaste datos válidos. Intentalo nuevamente, o crea una nueva cuenta '
                             })
                         }
                     }
              
             }else {
                 res.render('templateView', { 
-                    title: 'Caniada - Crear cuenta',
+                    title: 'Caniada - Iniciar sesión',
                     view: '/usuario/login',
                     errors: errors.mapped(),
                     old: req.body,
@@ -74,17 +82,22 @@ let loginRegister = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 avatar: req.file.filename || " ",
+                rol: 1
             }
             users.push(newUser);
             
             res.cookie('loginCookie', newUser.email, {maxAge: 60000} )
             req.session.newUser = [newUser.nombre,newUser.email,newUser.avatar]
 
+            if(req.body.remember != 'undefined'){
+                res.cookie('remember', req.body.email,    {maxAge: 60000000000})
+            }
+
             fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(users, null,4));
             
             console.log(req.session.newUser)
             
-            return res.redirect('/usuarios/login')
+            return res.redirect('/')
 
         } else {
             res.render('templateView', { 
@@ -98,4 +111,4 @@ let loginRegister = {
     }
 }
 
-module.exports = loginRegister
+module.exports = usuarios

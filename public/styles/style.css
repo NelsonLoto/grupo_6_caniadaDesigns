@@ -29,6 +29,7 @@
 ----------------------------*/
 
 @import url(/styles/templateAdmin.css);
+@import url(/styles/productosAdmin.css);
 
 
 /* ---------------------------
@@ -51,12 +52,9 @@
      @import url(/styles/register.css);
      @import url(/styles/logIn.css);
 
-     /*-----CREATEACCOUNT----*/
-          @import url(/styles/crearCuenta.css);
      
      /*-----CREAR PRODUCTO----*/
           @import url(/styles/crearProducto.css);
-
 
 
 
