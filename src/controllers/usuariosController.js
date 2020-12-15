@@ -2,8 +2,9 @@ const path = require ('path');
 const bcrypt = require ('bcryptjs');
 const fs = require ('fs')
 const { validationResult } = require('express-validator');
+const { toUnicode } = require('punycode');
 
-
+let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'), 'utf8'));
 let users = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf8'))
 
 let ultimoId = 0;
@@ -23,6 +24,9 @@ let usuarios = {
         })
     },
     loginPost: function(req, res){
+            // login como el de formularios de repaso de Express que subieron Herni y Uri
+            //funciona bien, excepto que si uno ingresa un mail que no está registrado y una contraseña errónea devuelve un error que dice: localHost no devolvio ninguna respuesta. 
+            //TODO: chequear qué pasa acá...
         
             let errors = validationResult(req)
             let { email, password, remember } = req.body;
@@ -134,25 +138,31 @@ let usuarios = {
             }
             users.push(newUser);
             
-            // res.cookie('loginCookie', newUser.email, {maxAge: 60000} )
             req.session.user = newUser.email
+            //apenas se termina de registrar se crea una sesión que va a persistir siempre y cuando no se cierre el navegador. Pero por el momento no funciona porque el servidor se reinicia debido a que se reescribe la base de datos al hacer fs.writeFileSync(), entonces la session se cae. Para eso: 
+            
+             
+            res.cookie('loguearANewUser', req.body.email, {maxAge: 10000} )//se crea una cookie que dura 10 segundos y que es procesada por el middleware loguearANewUserMiddleware.js y lo que hace es preguntar: existe una cookie llamada req.cookies.loguearANewUser? en caso de que sí, compara el mail de la cookie con los de la Base de datos y si hace match, crea una session.
 
-            if(req.body.remember != 'undefined'){
-                res.cookie('remember', req.body.email,    {maxAge: 6000000000})
-            }
+            if(typeof req.body.remember != 'undefined'){
+                res.cookie('remember', req.body.email, {maxAge: 60000000000})
+            }//en caso de que el usuario antes de registrarse haya clickeado en "RECORDAME", se crea una cookie que almacena el mail del usuario registrado y por mas que se cierre el navegador, se va a poder loguear automaticamente cuando vuelva a entrar gracias al MIDDLEWARE de aplicacion llamado: recordameMiddleware .--- ver funcionalidad. (es el mismo para el REMEMBER de Login.)
 
+            
             fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(users, null,4));
             
             console.log(req.session.user)
-            
-            return res.redirect('/')
+
+            res.locals.usuarioLogueado = newUser
+            res.redirect('/')
+
 
         } else {
             res.render('templateView', { 
                 title: 'Caniada - Crear cuenta',
                 view: '/usuario/register',
                 errors: errors.mapped(),
-                old: req.body
+                datosYaCargados: req.body
             })
             console.log(errors.mapped())
         }

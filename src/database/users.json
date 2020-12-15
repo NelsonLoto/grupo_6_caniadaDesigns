@@ -5,7 +5,7 @@
         "apellido": "Garcia",
         "email": "flete@caniada.com",
         "password": "$2a$10$9l6uYNHxYqZq1P/GumOSkONUmvaRxlgUX4F3OQJ3/nwYGvaWtt5F6",
-        "repassword" : "admin123",
+        "repassword": "admin123",
         "avatar": "flete@caniada.com.png",
         "rol": 9
     },
@@ -15,7 +15,7 @@
         "apellido": "Jepik",
         "email": "juanpi@caniada.com",
         "password": "$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq",
-        "repassword" : "admin123",
+        "repassword": "admin123",
         "avatar": "juanpi@caniada.com.webp",
         "rol": 9
     },
@@ -25,7 +25,7 @@
         "apellido": "Loto",
         "email": "nelson@caniada.com",
         "password": "$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq",
-        "repassword" : "admin123",
+        "repassword": "admin123",
         "avatar": "nelson@caniada.com.webp",
         "rol": 9
     },
@@ -35,18 +35,28 @@
         "apellido": "Shaggy",
         "email": "shaggy@caniada.com",
         "password": "$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq",
-        "repassword" : "admin123",
+        "repassword": "admin123",
         "avatar": "shaggy@caniada.com.webp",
         "rol": 9
     },
     {
-        "id": 5,
+        "id": 6,
         "nombre": "Usuario",
         "apellido": "Default",
         "email": "user@caniada.com",
         "password": "$2a$10$zux14WSXwv54OdkuAuC0LO.2IYHeiBa/SRgRAa.dVm2b6TGG0BOYu",
-        "repassword" : "user123",
+        "repassword": "user123",
         "avatar": "user@caniada.com.jpg",
         "rol": 1
+    },
+    {
+        "id": 7,
+        "nombre": "Admin",
+        "apellido": "Caniada",
+        "email": "admin@caniada.com",
+        "password": "$2a$10$7SJzEfeMJDCZlldTFcJKwO8Ng870vHYUfBBlq2I3yr2vAxnFF40pm",
+        "repassword": "admin123",
+        "avatar": "admin@caniada.com.svg",
+        "rol": 9
     }
 ]

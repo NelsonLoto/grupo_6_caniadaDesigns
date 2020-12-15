@@ -9,6 +9,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
 const recordameMiddleware = require ('./middlewares/recordameMiddleware')
+const loguearANewUserMiddleware = require ('./middlewares/loguearANewUserMiddleware')
 const usuarioLogueado = require ('./middlewares/usuarioLogueado')
 
 
@@ -23,7 +24,7 @@ app.use(methodOverride('_method'));
 
 
 ////////////////////-EJS-///////////////////////
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 
@@ -37,6 +38,7 @@ app.use(express.urlencoded({extended : false}))
 app.use(express.json());
 app.use(cookieParser());
 app.use(session({secret: "laSalNoSalaYElAzucarNoEndulza"}));
+app.use(loguearANewUserMiddleware);
 app.use(recordameMiddleware);
 app.use(usuarioLogueado);
 
