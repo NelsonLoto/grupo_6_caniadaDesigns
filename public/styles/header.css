@@ -21,7 +21,7 @@ header.template div.logo{
 
 header.template div.logo img.header {
     height: 90%;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 0px;
     
 }
 
@@ -41,7 +41,7 @@ header.template nav.menu div.boton-menu{
 
 header.template nav.menu div.boton-menu i{
     align-self: center;
-    font-size: 3rem;
+    font-size: 2.4rem;
     display: none;
 }
 
@@ -62,9 +62,11 @@ header.template nav.menu ul li a{
 }
 
 header.template nav.user{
-
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
     width: 33.3%;
-    padding-right: 10vw;
 }
 /*ICONO BÚSQUEDA*/
 /*
@@ -145,7 +147,7 @@ form input:valid + label::after{
 header.template nav.user ul li.bag,
 header.template nav.user ul li.search{
     position: relative;
-    padding: 20px 0px;
+    padding: 0px 0px;
 }
 
 header.template nav.user ul li span.notificacion{
@@ -155,7 +157,7 @@ header.template nav.user ul li span.notificacion{
     z-index: 2;
     position: absolute;
     right: -12px;
-    top:20px;
+    top:0px;
     color:white;
     border-radius: 10px;
     text-align: center;
@@ -167,11 +169,13 @@ header.template nav.user ul li span.notificacion{
 }
 
 header.template nav.user ul{
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
-    list-style: none;
     color: #363636;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    width: 33.3%;
+    margin-right: 10vw;
 }
 
 header.template nav.user ul li {
@@ -198,58 +202,90 @@ header.template nav.user ul li a{
 
 header.template nav.user ul.userMenu li.usuario{
     position: relative;
+    width: 2.5rem;
 }
 header.template nav.user ul.userMenu li.user{
     padding: 20px 0px;
 }
 header.template nav.user ul li.usuario div.perfil {
     padding: 20px 0px;
+    cursor: pointer;
+    position: relative;
 }
 header.template nav.user ul li.usuario div.perfil div.avatar{
-    width:2rem;
-    height: 2rem;
+    width:40px;
+    height: 40px;
 }
 header.template nav.user ul li.usuario div.perfil div.avatar img{
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
+    border-radius: 20px;
+    border: solid 1px#f09292;
+}
+
+header.template nav.user ul.userMenu li.usuario div.flecha{
+    position: absolute;
+    top:40%;
+    right: -15px;
+    font-size: 10px;
+    cursor: pointer;
+    height: 60%;
+    width: 40px;
+    text-align: right;
+    color: #f3c3c3;
+}
+header.template nav.user ul.userMenu li.usuario div.flecha i{ 
+    
+    color: #f09292;
 }
 
 header.template nav.user ul.userMenu li.usuario div.dropdown{
-    cursor: pointer;
     font-size: 0.8rem;
     display: none;
     position: absolute;
     top:60px;
     left: -20px;
-    width: 130px;
+    width: 150px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     background-color: #303030;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
     padding: 8px 0px;
+    box-shadow: 1px 15px 10px #dddcdc;;
 }
-
-header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option {
+header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option{
+    padding: 1px 15px;
+    margin: 3px 0px;
+    width: 100%;
+    cursor: pointer;
+}
+header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option a{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 2px 15px;
+    width: 100%;
 }
 
-header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option a{
-    padding-left: 10px
+header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option a i{
+    text-align: left;
+    color: #f56c6c;
+    width: 15%
+}
+
+header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option p{
+    margin-left: 10px;
 }
 
 
 
 
 header.template nav.user ul.userMenu li.usuario:hover div.dropdown,
-header.template nav.user ul.userMenu li.usuario div.perfil:focus + div.dropdown{
+header.template nav.user ul.userMenu li.usuario div.flecha:focus a:focus + div.dropdown{
     display: flex;
     z-index: 1;
-    box-shadow: 1px 4px 10px #919191;
 }
 
 @media screen and (max-width: 860px){
@@ -282,7 +318,7 @@ header.template nav.user ul.userMenu li.usuario div.perfil:focus + div.dropdown{
         align-content: center;
         align-items: center;
     }
-    header.template div.logo img.header.template {
+    header.template div.logo img.header {
         width: 100%;
         height: auto;
         align-self: center;

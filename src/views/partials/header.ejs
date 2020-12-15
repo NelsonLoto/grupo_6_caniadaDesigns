@@ -34,14 +34,67 @@
               </li> -->
               
               <% if( locals.usuarioLogueado == undefined) {%>
+
                <ul class="userMenu">
+
                     <li class="search"> <a href=""><i class="content-search fas fa-search"></i></a></li>
 
                     <li class="bag"><a href="/productos/ver/carrito"><span class="notificacion">4</span><i class="fas fa-shopping-bag"></i></a></li>
 
                     <li class="user"><a href="/usuarios/login"><i class="fas fa-sign-in-alt"></i></a></li>
                </ul>
+
+               <% } else if (locals.usuarioLogueado.rol === 9){ %>
+               
+                    <ul class="userMenu">
+          
+                         <li class="usuario">
+     
+                              <div class="perfil">
+                                   <div class="avatar">     
+                                        <img src="/images/avatars/<%= usuarioLogueado.avatar %> " alt="">
+                                   </div>
+                              </div>
+     
+                              <div class="flecha">
+                                   <a href="#">
+                                        <i class="fas fa-chevron-down"></i>
+                                   </a>
+                              </div>
+     
+                              <div class="dropdown">
+     
+                                   <div class="dropdown-option">
+                                        <a href="/admin/productos/nuevo">
+                                        <i class="fas fa-briefcase"></i>
+                                        <p>Ir a Panel Admin</p>
+                                        </a>
+                                   </div>
+     
+                                   <div class="dropdown-option">
+                                        <a href="/">
+                                        <i class="fas fa-user-cog"></i>
+                                        <p>Configuración</p>
+                                        </a>
+                                   </div>
+     
+                                   <div class="dropdown-option">
+                                        <a href="/usuarios/logout">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <p>Cerrar sesión</p>
+                                        </a>
+                                   </div>
+     
+                              </div>  
+     
+     
+                         </li>
+                         
+                    </ul>
+               
+
                <% } else { %>
+
                <ul class="userMenu">
 
                     <li class="search"> <a href=""><i class="content-search fas fa-search"></i></a></li>
@@ -56,23 +109,40 @@
                               </div>
                          </div>
 
+                         <div class="flecha">
+                              <a href="#">
+                                   <i class="fas fa-chevron-down"></i>
+                              </a>
+                         </div>
+
                          <div class="dropdown">
 
                               <div class="dropdown-option">
+                                   <a href="#">
                                    <i class="fas fa-eye"></i>
-                                   <a href="#">Ver perfil</a>
-                                   
+                                   <p>Ver perfil</p>
+                                   </a>
                               </div>
 
                               <div class="dropdown-option">
-                                   <i class="fas fa-edit"></i>
-                                   <a href="#">Editar</a>
+                                   <a href="/">
+                                   <i class="fas fa-history"></i>
+                                   <p>Mis compras</p>
+                                   </a>
                               </div>
 
                               <div class="dropdown-option">
+                                   <a href="/">
+                                   <i class="fas fa-user-cog"></i>
+                                   <p>Configuración</p>
+                                   </a>
+                              </div>
+
+                              <div class="dropdown-option">
+                                   <a href="/usuarios/logout">
                                    <i class="fas fa-sign-out-alt"></i>
-                                   <a href="/usuarios/logout">Cerrar sesión</a>
-                                   
+                                   <p>Cerrar sesión</p>
+                                   </a>
                               </div>
 
                          </div>  

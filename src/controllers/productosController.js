@@ -43,7 +43,6 @@ let productosController = {
     },
     productosAdmin: function ( req, res ){
         res.render('templateAdmin', {
-            admin: true,
             productosDB,
             view: '/productosAdmin/listadoProductos',
             title: 'Admin - Productos'
@@ -54,7 +53,6 @@ let productosController = {
                     title: 'Admin - Nuevo producto',
                     skuDisponible,
                     view: '/productosAdmin/crearProducto',
-                    admin: true
                 })
     },
     crearSave : function (req, res){ //Ruta por POST al enviar formulario.
@@ -80,7 +78,6 @@ let productosController = {
 
         res.render('templateAdmin', {
             accion: 'Crear nuevo producto',
-            admin: true,
             path: '/admin/productos/nuevo',
             title: 'Producto creado con éxito',
             view: '/productosAdmin/success',
@@ -91,7 +88,6 @@ let productosController = {
             if (req.params.sku == productosDB[i].sku){
                 return res.render('templateAdmin',
                     {
-                    admin: true,
                     title: 'Admin - Editar producto',
                     view: '/productosAdmin/editarProducto',
                     categoria: productosDB[i].categoria,
@@ -149,7 +145,7 @@ let productosController = {
         res.render('templateAdmin', {
             accion: 'Editar otro producto',
             admin: true,
-            path: '/admin/productos/editar/10',
+            path: '/admin/productos/all',
             title: 'Producto editado con éxito',
             view: '/productosAdmin/success',
         })

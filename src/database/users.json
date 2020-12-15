@@ -3,27 +3,50 @@
         "id": 1,
         "nombre": "Facundo",
         "apellido": "Garcia",
-        "email": "facugarciacac@gmail.com",
+        "email": "flete@caniada.com",
         "password": "$2a$10$9l6uYNHxYqZq1P/GumOSkONUmvaRxlgUX4F3OQJ3/nwYGvaWtt5F6",
-        "avatar": "facugarciacac@gmail.com.png",
-        "rol": 1
+        "repassword" : "admin123",
+        "avatar": "flete@caniada.com.png",
+        "rol": 9
     },
     {
         "id": 2,
-        "nombre": "Flete",
-        "apellido": "Flete",
-        "email": "flete@gmail.com",
-        "password": "$2a$10$RtuE/lmm2JMwQnCqE0VDs.qxgpcTV7Ez/hq/IxWYfFuGwZ.X2vVgC",
-        "avatar": "flete@gmail.com.JPG",
-        "rol": 1
+        "nombre": "Juanpi",
+        "apellido": "Jepik",
+        "email": "juanpi@caniada.com",
+        "password": "$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq",
+        "repassword" : "admin123",
+        "avatar": "juanpi@caniada.com.webp",
+        "rol": 9
     },
     {
         "id": 3,
-        "nombre": "Victoria",
-        "apellido": "Capella",
-        "email": "mvictoriacapella@gmail.com",
-        "password": "$2a$10$RQDGHQZoHuH0lZLfFnfhfehEH5SE8btakzubvVNmezHCrinNTemWW",
-        "avatar": "mvictoriacapella@gmail.com.jpg",
+        "nombre": "Nelson",
+        "apellido": "Loto",
+        "email": "nelson@caniada.com",
+        "password": "$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq",
+        "repassword" : "admin123",
+        "avatar": "nelson@caniada.com.webp",
+        "rol": 9
+    },
+    {
+        "id": 4,
+        "nombre": "Guido",
+        "apellido": "Shaggy",
+        "email": "shaggy@caniada.com",
+        "password": "$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq",
+        "repassword" : "admin123",
+        "avatar": "shaggy@caniada.com.webp",
+        "rol": 9
+    },
+    {
+        "id": 5,
+        "nombre": "Usuario",
+        "apellido": "Default",
+        "email": "user@caniada.com",
+        "password": "$2a$10$zux14WSXwv54OdkuAuC0LO.2IYHeiBa/SRgRAa.dVm2b6TGG0BOYu",
+        "repassword" : "user123",
+        "avatar": "user@caniada.com.jpg",
         "rol": 1
     }
 ]

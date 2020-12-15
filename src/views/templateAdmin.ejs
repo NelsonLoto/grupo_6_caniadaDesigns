@@ -15,21 +15,36 @@
           </div>
 
           <nav>
-               <p>Productos</p>
+               <p style="color: lightcoral;">Administrar Productos</p>
                <ul>
                     <li>
-                         <a href="/admin/productos/all"><i class="fas fa-th-list"></i>Ver todos</a>
+                         <a href="/admin/productos/all" style="color:rgb(97, 176, 255)"><i class="fas fa-th" style="color:dodgerblue"></i>Ver todos</a>
                     </li>
                     <li>
-                         <a href="/admin/productos/nuevo"><i class="fas fa-plus-square" style="color:rgb(230, 138, 132)"></i>Nuevo producto</a>
+                         <a href="/admin/productos/nuevo" ><i class="fas fa-plus-circle" style="color:rgb(163, 253, 201)"></i>Nuevo producto</a>
                     </li>
                     <li>
-                         <a href="/admin/productos/all"><i class="fas fa-edit" style="color:rgb(240, 107, 107)"></i>Editar productos</a>
+                         <a href="/admin/productos/all" ><i class="fas fa-pen-square" style="color:rgb(245, 247, 164)"></i>Editar productos</a>
                     </li>
                     <li>
-                         <a href="/admin/productos/all" style="color:rgb(231, 61, 61)"><i class="fas fa-minus-circle" style="color:rgb(231, 61, 61)"></i>Eliminar productos</a>
+                         <a href="/admin/productos/all" ><i class="fas fa-minus-circle" style="color:rgb(231, 61, 61)"></i>Eliminar productos</a>
                     </li>
                </ul>
+               <br>
+               <br>
+               <p style="color: lightcoral;">Administrar Usuarios</p>
+               <ul>
+                    <li>
+                         <a href="/admin/usuarios/all" style="color:rgb(97, 176, 255)"><i class="fas fa-th-list" style="color:dodgerblue"></i>Ver todos</a>
+                    </li>
+                    <li>
+                         <a href="/admin/usuarios/all" ><i class="fas fa-user-cog" style="color:rgb(245, 247, 164)"></i>Editar usuarios</a>
+                    </li>
+                    <li>
+                         <a href="/admin/usuarios/all" ><i class="fas fa-user-minus" style="color:rgb(231, 61, 61)"></i>Eliminar usuarios</a>
+                    </li>
+               </ul>
+
           </nav>
           <div class="footer">
                <a href="https://github.com/NelsonLoto/grupo_6_caniadaDesigns"><i class="fab fa-github"></i></a>
@@ -45,20 +60,127 @@
 
           <header class="adminHeader">
                <p><a href="javascript:history.back()"><i class="fas fa-chevron-left"></i> Volver</a></p>
-
-               <div>
-
-                    <a href=""><i class="fas fa-inbox"></i></a>
+               <nav class="user">
+         
+              
+                    <!-- <li> <a href=""><i class="content-search fas fa-search"></i></a>
+      
+                         <form action="/productos" method="GET">
+                              <input type="text" name="search" autocomplete="off" required >
+                              <label for="search" class="label-name "><button type="submit"><i class="content-search fas fa-search"></i></span></label>
+                         </form>
+      
+                    </li> -->
                     
-                    <a href=""><i class="fas fa-info-circle"></i></a>
-                    <% if(admin) {%> 
-                    <a href="">
-                              <img src="/images/avatars/facugarciacac@gmail.com.png" alt="">
-                    </a>
-                    <% } else {%> 
-                    <a href=""><i class="fas fa-sign-in-alt"></i></a>
-                    <% } %> 
-               </div>
+      
+                     <% if (locals.usuarioLogueado && locals.usuarioLogueado.rol === 9){ %>
+                     
+                          <ul class="userMenu">
+                              <li class="search">
+                                   <a href=""><i class="fas fa-inbox"></i></a>
+                              </li>  
+
+                              <li class="bag">
+                                   <a href=""><i class="fas fa-info-circle"></i></a>
+                              </li>
+
+                              <li class="bag">
+                                   <a href=""><i class="fas fa-receipt"></i></a>
+                              </li>
+
+                              <li class="bag">
+                                   <a href=""><i class="fas fa-chart-line"></i></a>
+                              </li>
+
+                               <li class="usuario">
+                                    
+           
+                                    <div class="perfil">
+                                         <div class="avatar">     
+                                              <img src="/images/avatars/<%= usuarioLogueado.avatar %> " alt="">
+                                         </div>
+                                    </div>
+           
+                                    <div class="flecha">
+                                         <a href="#">
+                                              <i class="fas fa-chevron-down"></i>
+                                         </a>
+                                    </div>
+           
+                                    <div class="dropdown">
+           
+                                         <div class="dropdown-option">
+                                              <a href="/admin/productos/nuevo">
+                                              <i class="fas fa-eye"></i>
+                                              <p>Ver perfil</p>
+                                              </a>
+                                         </div>
+           
+                                         <div class="dropdown-option">
+                                              <a href="/">
+                                              <i class="fas fa-th"></i>
+                                              <p>Productos</p>
+                                              </a>
+                                         </div>
+
+                                         <div class="dropdown-option">
+                                             <a href="/">
+                                             <i class="fas fa-users"></i>
+                                             <p>Usuarios</p>
+                                             </a>
+                                        </div>
+           
+                                         <div class="dropdown-option">
+                                              <a href="/usuarios/logout">
+                                              <i class="fas fa-sign-out-alt"></i>
+                                              <p>Cerrar sesión</p>
+                                              </a>
+                                         </div>
+           
+                                    </div>  
+           
+           
+                               </li>
+                               
+                          </ul>
+                     
+      
+                     <% } else { %>
+      
+                     <ul class="userMenu">
+      
+                          <li class="usuario">
+      
+                               <div class="perfil">
+                                    <div class="avatar">     
+                                         A
+                                    </div>
+                               </div>
+      
+                               <div class="flecha">
+                                    <a href="#">
+                                         <i class="fas fa-chevron-down"></i>
+                                    </a>
+                               </div>
+      
+                               <div class="dropdown">
+      
+                                    <div class="dropdown-option">
+                                         <a href="/usuarios/login">
+                                         <i class="fas fa-sign-out-alt"></i>
+                                         <p>Iniciar sesión</p>
+                                         </a>
+                                    </div>
+      
+                               </div>  
+      
+      
+                          </li>
+                          
+                     </ul>
+                     <% } %>
+          </nav>
+               
           </header>
           
 

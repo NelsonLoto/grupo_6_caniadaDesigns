@@ -2,34 +2,6 @@
     {
         "categoria": "Remeras",
         "genero": "Masculino",
-        "nombre": "Remera The Strokes",
-        "color": "Rojo",
-        "talle": "M",
-        "cantidad": "1",
-        "precio": "500",
-        "descripcion": "",
-        "modelo": "Slim",
-        "composicion": "Algodón estampado en serigrafía",
-        "sku": "11",
-        "fotoProducto": "RemeraTheStrokes-1606368168600.png"
-    },
-    {
-        "categoria": "Remeras",
-        "genero": "Masculino",
-        "nombre": "Remera Pink Floyd",
-        "color": "Negro",
-        "talle": "S",
-        "cantidad": "1",
-        "precio": "500",
-        "descripcion": "Remera",
-        "modelo": "Regular",
-        "composicion": "Algodón",
-        "sku": "3",
-        "fotoProducto": "RemeraPinkFloyd-1606343443223.png"
-    },
-    {
-        "categoria": "Remeras",
-        "genero": "Masculino",
         "nombre": "Remera Rolling Stones",
         "color": "Negro",
         "talle": "M",
@@ -208,5 +180,33 @@
         "composicion": "Algodón",
         "sku": "5",
         "fotoProducto": "RemeraLedZep-1606543443720.jpg"
+    },
+    {
+        "categoria": "Remeras",
+        "genero": "Masculino",
+        "nombre": "Remera The Strokes",
+        "color": "Rojo",
+        "talle": "M",
+        "cantidad": "3",
+        "precio": "500",
+        "descripcion": "  ",
+        "modelo": "Slim",
+        "composicion": "Algodón estampado en serigrafía",
+        "sku": "11",
+        "fotoProducto": "RemeraTheStrokes-1606368168600.png"
+    },
+    {
+        "categoria": "Remeras",
+        "genero": "Masculino",
+        "nombre": "Remera Pink Floyd",
+        "color": "Negro",
+        "talle": "M",
+        "cantidad": "1",
+        "precio": "500",
+        "descripcion": " Remera ",
+        "modelo": "Regular",
+        "composicion": "Algodón",
+        "sku": "3",
+        "fotoProducto": "RemeraPinkFloyd-1606343443223.png"
     }
 ]

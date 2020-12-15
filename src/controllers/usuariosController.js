@@ -40,7 +40,7 @@ let usuarios = {
                     res.render('templateView', { 
                         title: 'Caniada - Iniciar sesión',
                         view: '/usuario/login',
-                        bienvenida: `Parece que ${req.body.email} o la constraseña no son correctos. Si todavía no tenés una cuenta, podés crear una`,
+                        bienvenida: `Parece que ${email} o la constraseña no son correctos. Si todavía no tenés una cuenta, podés crear una`,
                         error: true
                     })
                 } 
@@ -52,37 +52,37 @@ let usuarios = {
                 
                 return res.redirect('/');
                 
-                //
-                for (let i = 0; i < users.length; i++) {
+                
+                // for (let i = 0; i < users.length; i++) {
                  
-                    if (users[i].email == req.body.email){
+                //     if (users[i].email == req.body.email){
                         
-                        if( bcrypt.compareSync(req.body.password, users[i].password)){
-                            req.session.usuarioLogueado = req.body.email;
+                //         if( bcrypt.compareSync(req.body.password, users[i].password)){
+                //             req.session.usuarioLogueado = req.body.email;
 
-                            if(req.body.remember != 'undefined'){
-                                    res.cookie('remember', req.body.email,    {maxAge: 6000000000} )
-                            }
-                        res.redirect('/')
+                //             if(req.body.remember != 'undefined'){
+                //                     res.cookie('remember', req.body.email,    {maxAge: 6000000000} )
+                //             }
+                //         res.redirect('/')
 
-                        }else{
-                            res.render('templateView', { 
-                                title: 'Caniada - Iniciar sesión',
-                                view: '/usuario/login',
-                                bienvenida: `Parece que ${req.body.email} o la constraseña no son correctos. Si todavía no tenés una cuenta, podés crear una`,
-                                error: true
-                            })}
-                    } else {
-                                res.render('templateView', { 
-                                    title: 'Caniada - Iniciar sesión',
-                                    view: '/usuario/login',
-                                    errors: errors.mapped(),
-                                    old: req.body,
-                                    error: false,
-                                    bienvenida: 'No ingresaste datos válidos. Intentalo nuevamente, o crea una nueva cuenta '
-                            })
-                    }
-                    }
+                //         }else{
+                //             res.render('templateView', { 
+                //                 title: 'Caniada - Iniciar sesión',
+                //                 view: '/usuario/login',
+                //                 bienvenida: `Parece que ${req.body.email} o la constraseña no son correctos. Si todavía no tenés una cuenta, podés crear una`,
+                //                 error: true
+                //             })}
+                //     } else {
+                //                 res.render('templateView', { 
+                //                     title: 'Caniada - Iniciar sesión',
+                //                     view: '/usuario/login',
+                //                     errors: errors.mapped(),
+                //                     old: req.body,
+                //                     error: false,
+                //                     bienvenida: 'No ingresaste datos válidos. Intentalo nuevamente, o crea una nueva cuenta '
+                //             })
+                //     }
+                //     }
              
             }else {
                 res.render('templateView', { 
@@ -98,6 +98,7 @@ let usuarios = {
         
     },
     logout: function (req, res) {
+        //copiado de stackOverFlow literal
         console.log(req.cookies)
         cookie = req.cookies;
        for (var prop in cookie) {
@@ -127,13 +128,14 @@ let usuarios = {
                 apellido: req.body.apellido,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
+                repassword: req.body.password,
                 avatar: req.file.filename || " ",
                 rol: 1
             }
             users.push(newUser);
             
             // res.cookie('loginCookie', newUser.email, {maxAge: 60000} )
-            // req.session.newUser = newUser.email
+            req.session.user = newUser.email
 
             if(req.body.remember != 'undefined'){
                 res.cookie('remember', req.body.email,    {maxAge: 6000000000})
@@ -141,7 +143,7 @@ let usuarios = {
 
             fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(users, null,4));
             
-            console.log(req.session.newUser)
+            console.log(req.session.user)
             
             return res.redirect('/')
 
@@ -154,6 +156,13 @@ let usuarios = {
             })
             console.log(errors.mapped())
         }
+    },
+    users: function (req, res) {
+    res.render('templateAdmin', { 
+            title: 'Admin',
+            view: '/usuariosAdmin/listadoUsuarios',
+            users
+        })
     }
 }
 

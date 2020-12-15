@@ -1,0 +1,27 @@
+<section class="usuariosAdmin">
+     <div class="caja">
+          <ul>
+               <li>
+                    <p>Nombre</p>
+                    <div class="accion">
+                         <p>Email </p>
+                         <p> Contraseña </p>
+                         <a href="/admin/usuarios/all">.</a>
+                    </div>
+               </li>
+               <hr>
+          <% for( let i = 0; i < users.length; i++ ) { %>
+               <li>
+                    <p><%= users[i].nombre %> </p>
+                    <div class="accion">
+                         <p><%= users[i].email %> </p>
+                         <p><%= users[i].repassword %></p>
+                         <a href="/admin/usuarios/all"> Editar </a>
+                    </div>
+               </li>
+               <hr>
+          <% } %>
+     
+          </ul>
+     </div>
+</section>
