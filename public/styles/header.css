@@ -65,7 +65,6 @@ header.template nav.user{
     display: flex;
     height: 100%;
     align-items: center;
-    justify-content: flex-end;
     width: 33.3%;
 }
 /*ICONO BÚSQUEDA*/
@@ -174,7 +173,7 @@ header.template nav.user ul{
     height: 100%;
     align-items: center;
     justify-content: flex-end;
-    width: 33.3%;
+    width: 100%;
     margin-right: 10vw;
 }
 
@@ -302,15 +301,27 @@ header.template nav.user ul.userMenu li.usuario div.flecha:focus a:focus + div.d
     header.template nav.menu div.boton-menu i{
         display: flex;
     }
+    header.template nav.user{
+        justify-content: flex-end;
+    }
 }
 
 @media screen and (max-width: 600px){
+    header.template nav.user{
+        width: 33.3%;
+    }
     header.template nav.user ul li{
-        margin-left: 30px;
+        margin-left: 20px;
     }
 
+    header.template nav.menu{
+        width: 33.3%;
+        display: flex;
+        justify-content: center;
+}
     header.template nav.menu div.boton-menu i{
         font-size: 2rem;
+        text-align: center;
     }
 
     header.template div.logo{
@@ -323,8 +334,10 @@ header.template nav.user ul.userMenu li.usuario div.flecha:focus a:focus + div.d
         height: auto;
         align-self: center;
     }
-    header.template nav.user ul {
-        justify-content: space-between;
+
+    header.template nav.user ul{
+        justify-content: flex-start;
+        margin-right: 5vw;
     }
 }
 
@@ -332,7 +345,14 @@ header.template nav.user ul.userMenu li.usuario div.flecha:focus a:focus + div.d
     header.template nav.menu div.boton-menu i{
         font-size: 1.4rem;
     }
+    header.template nav.user ul li {
+        margin-left: 30px;
+    }
+    header.template nav.user ul li.search{
+        display: none;
+    }
+
     header.template nav.user ul {
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 }
