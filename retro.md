@@ -7,3 +7,10 @@
      Pudimos ir avanzando con buen ritmo debido a que en los sprints anteriores construimos componentes consistentes que sólo hay que ir mejorándolos a medida que incorporamos nuevos conceptos. 
 
      Por otro lado la comunicación se fortalece a medida que nos vamos conociendo más y eso va generando una buena sinergia. 
+
+## Retro SPRINT 4 : "Aprendiendo de equivocarse. Arriesgarse a intentar"
+          Meter mano en el código, hacer, rehacer, probar, intentar. Volver a cero. Mejorar. Arriesgarse. 
+     Implementamos solo un meeting que nos hizo decir: Estamos bien parados. Ajustemosnos a lo que nos piden en este sprint y no aflojemos el ritmo. 
+
+     Features: 
+          · Implementación de templates: uno para renderizar las vistas de usuario(templateView.ejs) y otra para renderizar las de admin (templateAdmin.ejs) en las que se puede administrar productos y usuarios.

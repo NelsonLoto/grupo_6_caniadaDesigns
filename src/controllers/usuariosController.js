@@ -151,8 +151,8 @@ let usuarios = {
             
             fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(users, null,4));
             
-            console.log(req.session.user)
 
+            req.session.user = newUser.email
             res.locals.usuarioLogueado = newUser
             res.redirect('/')
 

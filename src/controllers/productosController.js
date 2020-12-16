@@ -28,7 +28,6 @@ let productosController = {
     
     detalle: function (req, res) {
         for (let i = 0; i < productosDB.length; i++) {
-            console.log(req.params.sku);
             if(req.params.sku == productosDB[i].sku){
            return res.render('detalleProducto', {
                                                     productoSKU: productosDB[i], 
@@ -36,6 +35,7 @@ let productosController = {
                                                     productosDB : productosDB})
             }
         }
+
         res.redirect('/productos')
     },
     carrito : function (req, res) {

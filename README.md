@@ -9,7 +9,7 @@ Caniada Designs es un e-commerce de indumentaria casual. Su target son hombres y
 **Facundo Garcia**
 
 * Apodo: Flete.
-* Residencia: Gotenburgo, Suecia.
+* Viviendo en Suecia / Extrañando Argentina
 * Ocupación: Chef a punto de colgar los cuchillos para poner manos en el teclado. 
 
 **Guido Magaldi**
@@ -42,15 +42,25 @@ Caniada Designs es un e-commerce de indumentaria casual. Su target son hombres y
 
 - https://grupo6dh.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=EC&view=planning.nodetail&issueLimit=100
 
+
 ## HEROKU APP
 
-     Versión de escritorio (no es responsive todavía).
+     Versión de escritorio (no es del todo responsive todavía).
 
 - https://grupo6-caniada.herokuapp.com/ HOME
-- https://grupo6-caniada.herokuapp.com/usuario LOG IN - REGISTRO
-- https://grupo6-caniada.herokuapp.com/productos/:id DETALLE DE PRODUCTO
-- https://grupo6-caniada.herokuapp.com/productos/crear CREAR NUEVO PRODUCTO
-- https://grupo6-caniada.herokuapp.com/productos/editar/:id EDITAR PRODUCTO
+- https://grupo6-caniada.herokuapp.com/nosotros NOSOTROS
+- https://grupo6-caniada.herokuapp.com/usuarios/register REGISTRO (1º)
+- https://grupo6-caniada.herokuapp.com/usuarios/login LOGIN (2º)
+- https://grupo6-caniada.herokuapp.com/productos/:sku DETALLE DE PRODUCTO
+- https://grupo6-caniada.herokuapp.com/admin/productos/all VER LISTADO de PRODUCTOS
+- https://grupo6-caniada.herokuapp.com/admin/productos/nuevo CREAR NUEVO PRODUCTO
+- https://grupo6-caniada.herokuapp.com/admin/productos/editar/:id EDITAR PRODUCTO
 
+- (1º): En Heroku no se puede registar un usuario. 
+- (2º): 
+     Para poder hacer login de admin usar: 
+     - admin@caniada.com / admin123
 
+     Para poder hacer login de user usar: 
+     - user@caniada.com / user123
      

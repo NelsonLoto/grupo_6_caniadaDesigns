@@ -6,7 +6,7 @@
               <div class="nav">
                    <h4>Caniada</h4>
                    <ul>
-                        <li><a href="/nosotros">Nosotros</a></li>
+                        <li><a href="/nosotros">Link 1</a></li>
                         <li><a href="">Link 2</a></li>
                         <li><a href="">Link 3</a></li>
                    </ul>
@@ -22,7 +22,7 @@
               <div class="nosotros">
                    <h4>Nosotros</h4>
                    <ul>
-                        <li><a href="">Quiénes somos</a></li>
+                        <li><a href="/nosotros">Quiénes somos</a></li>
                         <li><a href="">Contactanos</a></li>
                    </ul>
               </div>
@@ -31,8 +31,8 @@
 
           <% if (locals.usuarioLogueado == undefined) { %>
           <div class="usuario">
-               <a href="" class="registro">Registrarme</a>
-               <a href="" class="logIn">Iniciar sesión</a>
+               <a href="/usuarios/register" class="registro">Registrarme</a>
+               <a href="/usuarios/login" class="logIn">Iniciar sesión</a>
           </div>
           <% }else { %>
 

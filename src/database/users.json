@@ -58,5 +58,15 @@
         "repassword": "admin123",
         "avatar": "admin@caniada.com.svg",
         "rol": 9
+    },
+    {
+        "id": 8,
+        "nombre": "Nachito",
+        "apellido": "Garcia",
+        "email": "nachito@iacc.com",
+        "password": "$2a$10$94Rz0G096ekOvE9twtIAt.hbcRYbLOuucKiXuPnBn1MknN3cOLeKm",
+        "repassword": "achito",
+        "avatar": "nachito@iacc.com.jpg",
+        "rol": 1
     }
 ]
