@@ -40,7 +40,7 @@ Caniada Designs es un e-commerce de indumentaria casual. Su target son hombres y
 
 ## Tablero de trabajo en JIRA - Metodología ágil
 
-- https://grupo6dh.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=EC&view=planning.nodetail&issueLimit=100
+- https://id.atlassian.com/invite/p/jira-software?id=XUkbbkzZQYKV0w8jKcvC2Q
 
 
 ## HEROKU APP
