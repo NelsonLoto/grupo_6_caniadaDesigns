@@ -36,19 +36,25 @@ let usuarios = {
 
                 users.forEach(user => {
                     if (user.email === email && bcrypt.compareSync(password, user.password)) {
-                         usuarioALoguearse = user;
+                        usuarioALoguearse = user;
+                        req.session.user = usuarioALoguearse.email;
+                        
+
                     }
+                    
                 });
 
+                
+
                 if (usuarioALoguearse == undefined) {
-                    res.render('templateView', { 
+                    return res.render('templateView', { 
                         title: 'Caniada - Iniciar sesión',
                         view: '/usuario/login',
                         bienvenida: `Parece que ${email} o la constraseña no son correctos. Si todavía no tenés una cuenta, podés crear una`,
                         error: true
                     })
                 } 
-                req.session.user = usuarioALoguearse.email;
+
                 
                 if (remember != undefined) {
                     res.cookie('remember', usuarioALoguearse.email, { maxAge: 600000000 });
