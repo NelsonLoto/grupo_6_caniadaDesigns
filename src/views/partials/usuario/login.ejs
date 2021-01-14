@@ -20,7 +20,7 @@
                     <label class="campoDatos"for="email">
                          <p>Email</p>
                          <i class="fas fa-envelope"></i>
-                         <input type="email" name="email"id="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : ""%>">
+                         <input type="email" name="email"id="email" value="<%= (typeof datosYaCargados != 'undefined' && !errors.email) ? datosYaCargados.email : ""%>">
                     </label>
                     <div class="error">
                          <small class="error"><%=(locals.errors && errors.email) ? errors.email.msg : ""%></small>

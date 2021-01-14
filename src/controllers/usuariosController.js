@@ -25,8 +25,6 @@ let usuarios = {
     },
     loginPost: function(req, res){
             // login como el de formularios de repaso de Express que subieron Herni y Uri
-            //funciona bien, excepto que si uno ingresa un mail que no está registrado y una contraseña errónea devuelve un error que dice: localHost no devolvio ninguna respuesta. 
-            //TODO: chequear qué pasa acá...
         
             let errors = validationResult(req)
             let { email, password, remember } = req.body;
@@ -51,7 +49,7 @@ let usuarios = {
                         title: 'Caniada - Iniciar sesión',
                         view: '/usuario/login',
                         bienvenida: `Parece que ${email} o la constraseña no son correctos. Si todavía no tenés una cuenta, podés crear una`,
-                        error: true
+                        error: true,
                     })
                 } 
 
@@ -62,44 +60,13 @@ let usuarios = {
                 
                 return res.redirect('/');
                 
-                
-                // for (let i = 0; i < users.length; i++) {
-                 
-                //     if (users[i].email == req.body.email){
-                        
-                //         if( bcrypt.compareSync(req.body.password, users[i].password)){
-                //             req.session.usuarioLogueado = req.body.email;
-
-                //             if(req.body.remember != 'undefined'){
-                //                     res.cookie('remember', req.body.email,    {maxAge: 6000000000} )
-                //             }
-                //         res.redirect('/')
-
-                //         }else{
-                //             res.render('templateView', { 
-                //                 title: 'Caniada - Iniciar sesión',
-                //                 view: '/usuario/login',
-                //                 bienvenida: `Parece que ${req.body.email} o la constraseña no son correctos. Si todavía no tenés una cuenta, podés crear una`,
-                //                 error: true
-                //             })}
-                //     } else {
-                //                 res.render('templateView', { 
-                //                     title: 'Caniada - Iniciar sesión',
-                //                     view: '/usuario/login',
-                //                     errors: errors.mapped(),
-                //                     old: req.body,
-                //                     error: false,
-                //                     bienvenida: 'No ingresaste datos válidos. Intentalo nuevamente, o crea una nueva cuenta '
-                //             })
-                //     }
-                //     }
              
             }else {
                 res.render('templateView', { 
                     title: 'Caniada - Iniciar sesión',
                     view: '/usuario/login',
                     errors: errors.mapped(),
-                    old: req.body,
+                    datosYaCargados: req.body,//en esta variable se guarda todo lo que llega del login que intentó hacer el usuario pero fue erróneo
                     error: false,
                     bienvenida: 'No ingresaste datos válidos. Intentalo nuevamente, o crea una nueva cuenta '
                 })
