@@ -95,18 +95,23 @@ let usuarios = {
     registerPost: function(req, res) {
 
         // NOdemon se reinicia al hacer el fs.writeFileSync. No se puede loguear al usuario recien registrado. NO persiste la session. 
-        
+        let newUser = {};
         let errors = validationResult(req)
         if(errors.isEmpty()){
-
-            let newUser = {
+            
+            if(req.file == undefined){
+                req.file = {filename : "default@caniada.com.svg"};
+                console.log(req.file.filename)
+            };//si no hay una imagen subida, multer no crea el req.file. Se asigna en esta instancia el valor por defecto en caso de que no se cargue una imagen al crear la cuenta. 
+            
+            newUser = {
                 id : ultimoId + 1,
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 repassword: req.body.password,
-                avatar: req.file.filename || " ",
+                avatar: req.file.filename,
                 rol: 1
             }
             users.push(newUser);
@@ -129,7 +134,7 @@ let usuarios = {
             res.locals.usuarioLogueado = newUser
             res.redirect('/')
 
-
+        
         } else {
             res.render('templateView', { 
                 title: 'Caniada - Crear cuenta',
@@ -138,15 +143,16 @@ let usuarios = {
                 datosYaCargados: req.body
             })
             console.log(errors.mapped())
-        }
-    },
+        }},
     users: function (req, res) {
-    res.render('templateAdmin', { 
-            title: 'Admin',
-            view: '/usuariosAdmin/listadoUsuarios',
-            users
-        })
+        res.render('templateAdmin', { 
+                title: 'Admin',
+                view: '/usuariosAdmin/listadoUsuarios',
+                users
+            })
+        }
     }
-}
+    
+
 
 module.exports = usuarios

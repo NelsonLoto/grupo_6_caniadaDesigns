@@ -9,15 +9,19 @@ const loginValidation = require('../validator/loginValidation')
 
 
 let storage = multer.diskStorage({
-     destination: function (req, file, cb) {
+    destination: function (req, file, cb) {
        cb(null, path.join(__dirname,'../../public/images/avatars'))
-     },
-     filename: function (req, file, cb) {
-       cb(null, req.body.email + path.extname(file.originalname))
-     }
-   })
-    
-   var upload = multer({ storage: storage })
+    },
+    filename: function (req, file, cb) {
+
+         cb(null, req.body.email + path.extname(file.originalname))
+      }
+      
+  })
+ 
+  var upload = multer({ storage: storage })
+   
+  
 
 router.get ('/login', usuariosController.login )
 router.post ('/login',loginValidation ,usuariosController.loginPost )

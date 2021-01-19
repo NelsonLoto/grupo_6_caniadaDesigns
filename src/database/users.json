@@ -58,5 +58,15 @@
         "repassword": "admin123",
         "avatar": "admin@caniada.com.svg",
         "rol": 9
+    },
+    {
+        "id": 8,
+        "nombre": "Prueba",
+        "apellido": "Prueba",
+        "email": "prueba@caniada.com",
+        "password": "$2a$10$jwg0cUaT3/CPzNzFbhalFOM5dJD0J0gmOVtFJFhGq80E0Drao07Qm",
+        "repassword": "admin123",
+        "avatar": "default@caniada.com.svg",
+        "rol": 1
     }
 ]
