@@ -1,9 +1,5 @@
-const {
-  DataTypes
-} = require('sequelize');
-
-module.exports = sequelize => {
-  const attributes = {
+module.exports = (sequelize, DataTypes) => {
+  const cols = {
     id_provincia: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -36,7 +32,7 @@ module.exports = sequelize => {
       }
     }
   };
-  const options = {
+  const config = {
     tableName: "provincias",
     comment: "",
     indexes: [{
@@ -46,6 +42,6 @@ module.exports = sequelize => {
       fields: ["paises_id_pais"]
     }]
   };
-  const ProvinciasModel = sequelize.define("provincias_model", attributes, options);
+  const ProvinciasModel = sequelize.define("provincias_model", cols, config);
   return ProvinciasModel;
 };

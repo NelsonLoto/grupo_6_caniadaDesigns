@@ -1,9 +1,5 @@
-const {
-  DataTypes
-} = require('sequelize');
-
-module.exports = sequelize => {
-  const attributes = {
+module.exports = (sequelize, DataTypes) => {
+  const cols = {
     id_forma: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -32,11 +28,11 @@ module.exports = sequelize => {
       field: "cuota"
     }
   };
-  const options = {
+  const config = {
     tableName: "formas_de_pago",
     comment: "",
     indexes: []
   };
-  const FormasDePagoModel = sequelize.define("formas_de_pago_model", attributes, options);
+  const FormasDePagoModel = sequelize.define("formas_de_pago_model", cols, config);
   return FormasDePagoModel;
 };

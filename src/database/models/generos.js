@@ -1,9 +1,5 @@
-const {
-  DataTypes
-} = require('sequelize');
-
-module.exports = sequelize => {
-  const attributes = {
+module.exports = (sequelize, DataTypes) => {
+  const cols = {
     id_genero: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -23,11 +19,11 @@ module.exports = sequelize => {
       field: "nombre_genero"
     }
   };
-  const options = {
+  const config = {
     tableName: "generos",
     comment: "",
     indexes: []
   };
-  const GenerosModel = sequelize.define("generos_model", attributes, options);
+  const GenerosModel = sequelize.define("generos_model", cols, config);
   return GenerosModel;
 };

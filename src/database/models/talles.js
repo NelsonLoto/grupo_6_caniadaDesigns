@@ -1,9 +1,5 @@
-const {
-  DataTypes
-} = require('sequelize');
-
-module.exports = sequelize => {
-  const attributes = {
+module.exports = (sequelize, DataTypes) => {
+  const cols = {
     id_talle: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -23,11 +19,11 @@ module.exports = sequelize => {
       field: "nombre"
     }
   };
-  const options = {
+  const config = {
     tableName: "talles",
     comment: "",
     indexes: []
   };
-  const TallesModel = sequelize.define("talles_model", attributes, options);
+  const TallesModel = sequelize.define("talles_model", cols, config);
   return TallesModel;
 };

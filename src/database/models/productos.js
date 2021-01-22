@@ -1,9 +1,5 @@
-const {
-  DataTypes
-} = require('sequelize');
-
-module.exports = sequelize => {
-  const attributes = {
+module.exports = (sequelize, DataTypes) => {
+  const cols = {
     id_producto: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -130,7 +126,7 @@ module.exports = sequelize => {
       field: "id_categoria",
       references: {
         key: "id_categoria",
-        model: "categorias_model"
+        model: "Categorias"
       }
     },
     id_talle: {
@@ -156,7 +152,7 @@ module.exports = sequelize => {
       field: "estado"
     }
   };
-  const options = {
+  const config = {
     tableName: "productos",
     comment: "",
     indexes: [{
@@ -181,6 +177,9 @@ module.exports = sequelize => {
       fields: ["id_talle"]
     }]
   };
-  const ProductosModel = sequelize.define("productos_model", attributes, options);
+  const ProductosModel = sequelize.define("productos_model", cols, config);
+  ProductosModel.associate = function(models){
+    ProductosModel.belongsTo(models.colores_model)
+  }
   return ProductosModel;
 };

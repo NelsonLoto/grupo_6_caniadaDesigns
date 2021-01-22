@@ -1,9 +1,5 @@
-const {
-  DataTypes
-} = require('sequelize');
-
-module.exports = sequelize => {
-  const attributes = {
+module.exports = (sequelize, DataTypes) => {
+  const cols = {
     id_usuario: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -81,7 +77,7 @@ module.exports = sequelize => {
       field: "estado"
     }
   };
-  const options = {
+  const config = {
     tableName: "usuarios",
     comment: "",
     indexes: [{
@@ -91,6 +87,7 @@ module.exports = sequelize => {
       fields: ["id_rol"]
     }]
   };
-  const UsuariosModel = sequelize.define("usuarios_model", attributes, options);
+  const UsuariosModel = sequelize.define("usuarios_model", cols, config);
+  
   return UsuariosModel;
 };

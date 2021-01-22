@@ -1,9 +1,5 @@
-const {
-  DataTypes
-} = require('sequelize');
-
-module.exports = sequelize => {
-  const attributes = {
+module.exports = (sequelize, DataTypes) => {
+  const cols = {
     id_detalle: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -71,7 +67,7 @@ module.exports = sequelize => {
       field: "monto_parcial"
     }
   };
-  const options = {
+  const config = {
     tableName: "detalles_ventas",
     comment: "",
     indexes: [{
@@ -86,6 +82,6 @@ module.exports = sequelize => {
       fields: ["id_venta"]
     }]
   };
-  const DetallesVentasModel = sequelize.define("detalles_ventas_model", attributes, options);
+  const DetallesVentasModel = sequelize.define("detalles_ventas_model", cols, config);
   return DetallesVentasModel;
 };
