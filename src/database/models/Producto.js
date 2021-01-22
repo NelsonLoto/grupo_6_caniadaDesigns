@@ -100,7 +100,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "id_color",
       references: {
         key: "id_color",
-        model: "colores_model"
+        model: "Color"
       }
     },
     id_genero: {
@@ -113,7 +113,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "id_genero",
       references: {
         key: "id_genero",
-        model: "generos_model"
+        model: "Genero"
       }
     },
     id_categoria: {
@@ -126,7 +126,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "id_categoria",
       references: {
         key: "id_categoria",
-        model: "Categorias"
+        model: "Categoria"
       }
     },
     id_talle: {
@@ -139,7 +139,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "id_talle",
       references: {
         key: "id_talle",
-        model: "talles_model"
+        model: "Talle"
       }
     },
     estado: {
@@ -177,9 +177,32 @@ module.exports = (sequelize, DataTypes) => {
       fields: ["id_talle"]
     }]
   };
-  const ProductosModel = sequelize.define("productos_model", cols, config);
-  ProductosModel.associate = function(models){
-    ProductosModel.belongsTo(models.colores_model)
+  const Producto = sequelize.define("Producto", cols, config);
+  Producto.associate = function(models){
+    Producto.belongsTo(models.Color, {
+      foreignKey : 'id_color',
+      as : 'color'
+    }),
+    Producto.belongsTo(models.Genero, {
+      foreignKey : 'id_genero',
+      as : 'genero'
+    }),
+    Producto.belongsTo(models.Categorias, {
+      foreignKey : 'id_categoria',
+      as : 'categoria'
+    }),
+    Producto.belongsTo(models.Talle, {
+      foreignKey : 'id_talle',
+      as : 'talle'
+    }),
+    Producto.hasMany(models.DetalleVenta, {
+      foreignKey : 'id_producto',
+      as : 'detallesVentasPorId'
+    }),
+    Producto.hasMany(models.DetalleVenta,{
+      foreignKey : 'sku',
+      as : 'detallesVentasPorSku'
+    })
   }
-  return ProductosModel;
+  return Producto;
 };

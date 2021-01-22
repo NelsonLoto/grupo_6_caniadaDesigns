@@ -1,29 +1,35 @@
 module.exports = (sequelize, DataTypes) => {
   const cols = {
-    id_pais: {
+    id_genero: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       defaultValue: null,
       primaryKey: true,
       autoIncrement: true,
       comment: null,
-      field: "id_pais"
+      field: "id_genero"
     },
-    nombre_pais: {
+    nombre_genero: {
       type: DataTypes.STRING(45),
       allowNull: true,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "nombre_pais"
+      field: "nombre_genero"
     }
   };
   const config = {
-    tableName: "paises",
+    tableName: "generos",
     comment: "",
     indexes: []
   };
-  const PaisesModel = sequelize.define("paises_model", cols, config);
-  return PaisesModel;
+  const Genero = sequelize.define("Genero", cols, config);
+  Genero.associate = function(models){
+    Genero.hasMany(models.Producto, {
+      foreignKey : 'id_genero',
+      as : 'productos'
+    })
+  }
+  return Genero;
 };

@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "id_usuario",
       references: {
         key: "id_usuario",
-        model: "usuarios_model"
+        model: "Usuario"
       }
     },
     fecha_venta: {
@@ -86,7 +86,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "id_ciudad",
       references: {
         key: "id_ciudad",
-        model: "ciudades_model"
+        model: "Ciudad"
       }
     },
     id_forma_pago: {
@@ -99,7 +99,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "id_forma_pago",
       references: {
         key: "id_forma",
-        model: "formas_de_pago_model"
+        model: "FormaDePago"
       }
     },
     id_descuento: {
@@ -112,7 +112,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "id_descuento",
       references: {
         key: "id_descuento",
-        model: "Descuentos_model"
+        model: "Descuento"
       }
     }
   };
@@ -141,7 +141,24 @@ module.exports = (sequelize, DataTypes) => {
       fields: ["id_descuento"]
     }]
   };
-  const VentasModel = sequelize.define("ventas_model", cols, options);
-  
-  return VentasModel;
+  const Venta = sequelize.define("Venta", cols, options);
+  Venta.associate = function(models){
+    Venta.hasMany(models.DetalleVenta,{
+      foreignKey : 'id_venta',
+      as : 'detallesVentas'
+    }),
+    Venta.belongsTo(models.Usuario, {
+      foreignKey : 'id_usuario',
+      as : 'usuario'
+    }),
+    Venta.belongsTo(models.FormaDePago, {
+      foreignKey : 'id_forma_pago',
+      as : 'formaDePago'
+    }),
+    Venta.belongsTo(models.Ciudad,{
+      foreignKey : 'id_ciudad',
+      as : 'ciudad'
+    })
+  }
+  return Venta;
 };

@@ -64,7 +64,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "id_rol",
       references: {
         key: "id_rol",
-        model: "roles_model"
+        model: "Rol"
       }
     },
     estado: {
@@ -87,7 +87,16 @@ module.exports = (sequelize, DataTypes) => {
       fields: ["id_rol"]
     }]
   };
-  const UsuariosModel = sequelize.define("usuarios_model", cols, config);
-  
-  return UsuariosModel;
+  const Usuario = sequelize.define("Usuario", cols, config);
+  Usuario.associate = function (models){
+    Usuario.hasMany(models.Venta,{
+      foreignKey : 'id_usuario',
+      as : 'ventas'
+    }),
+    Usuario.belongsTo(models.Rol,{
+      foreignKey : 'id_rol',
+      as : 'rol'
+    })
+  }
+  return Usuario;
 };

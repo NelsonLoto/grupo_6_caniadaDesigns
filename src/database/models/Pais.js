@@ -1,29 +1,35 @@
 module.exports = (sequelize, DataTypes) => {
   const cols = {
-    id_color: {
+    id_pais: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       defaultValue: null,
       primaryKey: true,
       autoIncrement: true,
       comment: null,
-      field: "id_color"
+      field: "id_pais"
     },
-    nombre_color: {
+    nombre_pais: {
       type: DataTypes.STRING(45),
       allowNull: true,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "nombre_color"
+      field: "nombre_pais"
     }
   };
   const config = {
-    tableName: "colores",
+    tableName: "paises",
     comment: "",
     indexes: []
   };
-  const ColoresModel = sequelize.define("colores_model", cols, config);
-  return ColoresModel;
+  const Pais = sequelize.define("Pais", cols, config);
+  Pais.associate = function(models){
+    Pais.hasMany(models.Provincia, {
+      foreignKey : 'paises_id_pais',
+      as : 'provincias'
+    })
+  }
+  return Pais;
 };

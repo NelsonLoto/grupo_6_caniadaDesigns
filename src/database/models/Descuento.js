@@ -33,6 +33,6 @@ module.exports = (sequelize, DataTypes) => {
     comment: "",
     indexes: []
   };
-  const DescuentosModel = sequelize.define("Descuentos_model", cols, config);
-  return DescuentosModel;
+  const Descuento = sequelize.define("Descuento", cols, config);
+  return Descuento;
 };

@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "id_venta",
       references: {
         key: "id_venta",
-        model: "ventas_model"
+        model: "Venta"
       }
     },
     id_producto: {
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "id_producto",
       references: {
         key: "id_producto",
-        model: "productos_model"
+        model: "Producto"
       }
     },
     sku: {
@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "sku",
       references: {
         key: "sku",
-        model: "productos_model"
+        model: "Producto"
       }
     },
     cantidad: {
@@ -82,6 +82,20 @@ module.exports = (sequelize, DataTypes) => {
       fields: ["id_venta"]
     }]
   };
-  const DetallesVentasModel = sequelize.define("detalles_ventas_model", cols, config);
-  return DetallesVentasModel;
+  const DetalleVenta = sequelize.define("DetalleVenta", cols, config);
+  DetalleVenta.associate = function(models){
+    DetalleVenta.belongsTo(models.Venta, {
+      foreignKey : 'id_venta',
+      as : 'venta'
+    }),
+    DetalleVenta.belongsTo(models.Producto, {
+      foreignKey : 'id_producto',
+      as : 'producto'
+    }),
+    DetalleVenta.belongsTo(models.Producto,{
+      foreignKey : 'sku',
+      as : 'sku'
+    })
+  }
+  return DetalleVenta;
 };

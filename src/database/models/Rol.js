@@ -24,6 +24,19 @@ module.exports = (sequelize, DataTypes) => {
     comment: "",
     indexes: []
   };
-  const RolesModel = sequelize.define("roles_model", cols, config);
-  return RolesModel;
+  const Rol = sequelize.define("Rol", cols, config);
+  Rol.associate = function(models){
+    Rol.hasMany(models.Usuario,{
+      foreignKey : 'id_rol',
+      as : 'usuarios'
+    }),
+    Rol.belongsToMany(models.Permiso,{
+      as : 'permisos',
+      through : 'permisos_x_rol',
+      foreignKey : 'id_rol',
+      otherKey : 'id_permiso',
+      timestamps : false
+    })
+  }
+  return Rol;
 };

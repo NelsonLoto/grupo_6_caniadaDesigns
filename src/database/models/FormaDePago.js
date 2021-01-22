@@ -1,47 +1,44 @@
 module.exports = (sequelize, DataTypes) => {
   const cols = {
-    id_ciudad: {
+    id_forma: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       defaultValue: null,
       primaryKey: true,
       autoIncrement: true,
       comment: null,
-      field: "id_ciudad"
+      field: "id_forma"
     },
-    nombre_ciudad: {
+    nombre_forma: {
       type: DataTypes.STRING(45),
       allowNull: true,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "nombre_ciudad"
+      field: "nombre_forma"
     },
-    provincias_id_provincia: {
+    cuota: {
       type: DataTypes.INTEGER(11),
-      allowNull: false,
+      allowNull: true,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "provincias_id_provincia",
-      references: {
-        key: "id_provincia",
-        model: "provincias_model"
-      }
+      field: "cuota"
     }
   };
   const config = {
-    tableName: "ciudades",
+    tableName: "formas_de_pago",
     comment: "",
-    indexes: [{
-      name: "fk_ciudades_provincias1_idx",
-      unique: false,
-      type: "BTREE",
-      fields: ["provincias_id_provincia"]
-    }]
+    indexes: []
   };
-  const CiudadesModel = sequelize.define("ciudades_model", cols, config);
-  return CiudadesModel;
+  const FormaDePago = sequelize.define("FormaDePago", cols, config);
+  FormaDePago.associate = function(models){
+    FormaDePago.hasMany(models.Venta, {
+      foreignKey : 'id_forma_pago',
+      as : 'ventas'
+    })
+  }
+  return FormaDePago;
 };

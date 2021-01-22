@@ -1,47 +1,57 @@
 module.exports = (sequelize, DataTypes) => {
   const cols = {
-    id_provincia: {
+    id_ciudad: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       defaultValue: null,
       primaryKey: true,
       autoIncrement: true,
       comment: null,
-      field: "id_provincia"
+      field: "id_ciudad"
     },
-    nombre_provincia: {
+    nombre_ciudad: {
       type: DataTypes.STRING(45),
       allowNull: true,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "nombre_provincia"
+      field: "nombre_ciudad"
     },
-    paises_id_pais: {
+    provincias_id_provincia: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "paises_id_pais",
+      field: "provincias_id_provincia",
       references: {
-        key: "id_pais",
-        model: "paises_model"
+        key: "id_provincia",
+        model: "Provincia"
       }
     }
   };
   const config = {
-    tableName: "provincias",
+    tableName: "ciudades",
     comment: "",
     indexes: [{
-      name: "fk_provincias_paises1_idx",
+      name: "fk_ciudades_provincias1_idx",
       unique: false,
       type: "BTREE",
-      fields: ["paises_id_pais"]
+      fields: ["provincias_id_provincia"]
     }]
   };
-  const ProvinciasModel = sequelize.define("provincias_model", cols, config);
-  return ProvinciasModel;
+  const Ciudad = sequelize.define("Ciudad", cols, config);
+  Ciudad.associate = function(models){
+    Ciudad.hasMany(models.Venta,{
+      foreignKey : 'id_ciudad',
+      as : 'ventas'
+    }),
+    Ciudad.belongsTo(models.Provincia, {
+      foreignKey : 'provincias_id_provincia',
+      as : 'provincia'
+    })
+  }
+  return Ciudad;
 };
