@@ -67,3 +67,41 @@ INSERT INTO `caniada`.`productos` (`id_producto`, `sku`, `nombre_producto`, `des
 INSERT INTO `caniada`.`productos` (`id_producto`, `sku`, `nombre_producto`, `descripcion`, `precio_unitario`, `cantidad`, `imagen_1`, `id_color`, `id_genero`, `id_categoria`, `id_talle`, `estado`) VALUES ('13', '5', 'Remera Led Zeppelin', 'Remera', '500', '1', 'RemeraLedZep-1606543443720.jpg', '1', '3', '1', '6', '1');
 INSERT INTO `caniada`.`productos` (`id_producto`, `sku`, `nombre_producto`, `descripcion`, `precio_unitario`, `cantidad`, `imagen_1`, `id_color`, `id_genero`, `id_categoria`, `id_talle`, `estado`) VALUES ('14', '11', 'Remera The Strokes', 'Remera', '500', '1', 'RemeraTheStrokes-1606368168600.png', '2', '2', '1', '3', '1');
 INSERT INTO `caniada`.`productos` (`id_producto`, `sku`, `nombre_producto`, `descripcion`, `precio_unitario`, `cantidad`, `imagen_1`, `id_color`, `id_genero`, `id_categoria`, `id_talle`, `estado`) VALUES ('15', '3', 'Remera Pink Floyd', 'Remera', '500', '1', 'RemeraPinkFloyd-1606343443223.png', '1', '2', '1', '3', '1');
+
+
+
+-- FLETE 22-01 
+
+--Modificación de Categorias de productos, agregando columna Estado para poder hacer soft delete de alguna categoria. 
+ALTER TABLE `caniada`.`categorias` 
+ADD COLUMN `estado` VARCHAR(1) NOT NULL AFTER `nombre_categoria`;
+UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '1');
+UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '2');
+UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '3');
+UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '4');
+UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '5');
+UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '6');
+UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '7');
+
+
+-- Inserciones referidas a Usuarios: 
+INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('1', 'Admin');
+INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('3', 'Propietario');
+INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('5', 'Editor');
+INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('7', 'Development');
+INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('9', 'Usuario');
+
+ALTER TABLE `caniada`.`usuarios`
+CHANGE COLUMN `telefono` `avatar` VARCHAR(50) NULL DEFAULT NULL ;
+
+ALTER TABLE `caniada`.`usuarios` 
+CHANGE COLUMN `contraseña` `contraseña` VARCHAR(99) NULL DEFAULT NULL ;
+
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`, `estado`) VALUES ('1', 'Admin', 'Caniada', 'admin@caniada.com', '$2a$10$7SJzEfeMJDCZlldTFcJKwO8Ng870vHYUfBBlq2I3yr2vAxnFF40pm', 'admin@caniada.com.svg', '1', '1');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`, `estado`) VALUES ('2', 'Propietario', 'Caniada', 'propietario@caniada.com', '$2a$10$gYuar7L5/T9K503m7l1ftul9mkl5o6N/hVh7cp6v8.mdznXUyB/9C', 'admin@caniada.com.svg', '3', '1');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`, `estado`) VALUES ('3', 'Editor', 'Caniada', 'editor@caniada.com', '$2a$10$syND9.2wZG.MSskBPb0rou5CRGxJby0p4Z.XMZtcJBQdwgMPuZc3m', 'default@caniada.com.svg', '5', '1');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`, `estado`) VALUES ('4', 'Juanpi', 'Jepik', 'juanpi@caniada.com', '$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq', 'juanpi@caniada.com.webp', '7', '1');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`, `estado`) VALUES ('5', 'Nelson', 'Loto', 'nelson@caniada.com', '$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq', 'nelson@caniada.com.webp', '7', '1');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`, `estado`) VALUES ('6', 'Guido', 'Shaggy', 'shaggy@caniada.com', '$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq', 'shaggy@caniada.com.webp', '7', '1');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`, `estado`) VALUES ('7', 'Facundo', 'Garcia', 'flete@caniada.com', '$2a$10$9l6uYNHxYqZq1P/GumOSkONUmvaRxlgUX4F3OQJ3/nwYGvaWtt5F6', 'flete@caniada.com.png', '7', '1');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`, `estado`) VALUES ('8', 'Usuario', 'Default', 'user@caniada.com', '$2a$10$zux14WSXwv54OdkuAuC0LO.2IYHeiBa/SRgRAa.dVm2b6TGG0BOYu', 'user@caniada.com.jpg', '9', '1');

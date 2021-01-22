@@ -68,5 +68,25 @@
         "repassword": "admin123",
         "avatar": "default@caniada.com.svg",
         "rol": 1
+    },
+    {
+        "id": 9,
+        "nombre": "Editor",
+        "apellido": "Caniada",
+        "email": "editor@caniada.com",
+        "password": "$2a$10$syND9.2wZG.MSskBPb0rou5CRGxJby0p4Z.XMZtcJBQdwgMPuZc3m",
+        "repassword": "editor123",
+        "avatar": "default@caniada.com.svg",
+        "rol": 1
+    },
+    {
+        "id": 10,
+        "nombre": "Propietario",
+        "apellido": "Caniada",
+        "email": "propietario@caniada.com",
+        "password": "$2a$10$gYuar7L5/T9K503m7l1ftul9mkl5o6N/hVh7cp6v8.mdznXUyB/9C",
+        "repassword": "propietario123",
+        "avatar": "default@caniada.com.svg",
+        "rol": 1
     }
 ]
