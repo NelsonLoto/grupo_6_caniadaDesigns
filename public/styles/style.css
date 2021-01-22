@@ -6,12 +6,6 @@
 @import url(/styles/header.css);
 
 /* ---------------------------
--------------MAIN-------------
-----------------------------*/
-
-@import url(/styles/main.css);
-
-/* ---------------------------
 ----------NEWSLETTER----------
 ----------------------------*/
 
@@ -40,6 +34,11 @@
 /* ---------------------------
 -------ESTILOS DE VISTAS------
 ----------------------------*/
+
+     /*-----HOME----*/
+
+     @import url(/styles/home.css);
+
      /*-----NOSOTROS----*/
 
      @import url(/styles/nosotros.css);
@@ -47,7 +46,6 @@
      /*-----PRODUCTOS----*/
 
           @import url(/styles/detalleProducto.css);
-          @import url('https://use.fontawesome.com/releases/v5.15.1/css/all.css');
 
      /*-----CARRITO----*/
 
