@@ -45,15 +45,15 @@
      
      /*-----PRODUCTOS----*/
 
-          @import url(/styles/detalleProducto.css);
+     @import url(/styles/detalleProducto.css);
 
      /*-----CARRITO----*/
 
-          @import url(/styles/carrito.css);
+     @import url(/styles/carrito.css);
      
      /*-----USUARIO----*/
      @import url(/styles/register.css);
-     @import url(/styles/logIn.css);
+     @import url(/styles/login.css);
 
      
      /*-----CREAR PRODUCTO----*/
