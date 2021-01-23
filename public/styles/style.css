@@ -86,7 +86,8 @@
 
 *:focus{
      outline-style: solid;
-     outline-color: #fa5252;
+     outline-width:1px;
+     outline-color: #f57c7c;
 }
 
 html{

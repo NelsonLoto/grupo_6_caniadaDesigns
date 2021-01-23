@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       field: "mail"
     },
     contraseña: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.STRING(99),
       allowNull: true,
       defaultValue: null,
       primaryKey: false,
@@ -45,14 +45,14 @@ module.exports = (sequelize, DataTypes) => {
       comment: null,
       field: "contraseña"
     },
-    telefono: {
-      type: DataTypes.INTEGER(11),
+    avatar: {
+      type: DataTypes.STRING(50),
       allowNull: true,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "telefono"
+      field: "avatar"
     },
     id_rol: {
       type: DataTypes.INTEGER(11),

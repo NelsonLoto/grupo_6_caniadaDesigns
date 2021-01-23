@@ -19,6 +19,15 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: false,
       comment: null,
       field: "nombre_categoria"
+    },
+    estado: {
+      type: DataTypes.STRING(1),
+      allowNull: false,
+      defaultValue: "Y",
+      primaryKey: false,
+      autoIncrement: false,
+      comment: null,
+      field: "estado"
     }
   };
   const config = {
