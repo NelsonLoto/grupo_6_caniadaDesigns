@@ -66,18 +66,9 @@ module.exports = (sequelize, DataTypes) => {
         key: "id_rol",
         model: "Rol"
       }
-    },
-    estado: {
-      type: DataTypes.STRING(1),
-      allowNull: false,
-      defaultValue: "Y",
-      primaryKey: false,
-      autoIncrement: false,
-      comment: null,
-      field: "estado"
     }
   };
-  const config = {
+const config = {
     tableName: "usuarios",
     comment: "",
     indexes: [{
@@ -85,7 +76,13 @@ module.exports = (sequelize, DataTypes) => {
       unique: false,
       type: "BTREE",
       fields: ["id_rol"]
-    }]
+    }],
+    createdAt : 'created_at',
+    updatedAt : 'updated_at',
+    deletedAt : 'deleted_at',
+    timestamps:true,
+    underscored : true,
+    paranoid : true
   };
   const Usuario = sequelize.define("Usuario", cols, config);
   Usuario.associate = function (models){

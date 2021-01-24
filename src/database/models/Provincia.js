@@ -32,7 +32,8 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   };
-  const config = {
+const config = {
+    timestamps : false,
     tableName: "provincias",
     comment: "",
     indexes: [{
@@ -44,12 +45,12 @@ module.exports = (sequelize, DataTypes) => {
   };
   const Provincia = sequelize.define("Provincia", cols, config);
   Provincia.associate = function(models){
-    Pronvicia.hasMany(models.Ciudades, {
+    Provincia.hasMany(models.Ciudad, {
       foreignKey : 'provincias_id_provincia',
       as : 'ciudades'
     }),
-    Pronvicia.belongsTo(models.Pais, {
-      foreignKey : 'paieses_id_pais',
+    Provincia.belongsTo(models.Pais, {
+      foreignKey : 'paises_id_pais',
       as : 'pais'
     })
   }

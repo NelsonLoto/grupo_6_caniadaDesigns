@@ -32,7 +32,8 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   };
-  const config = {
+const config = {
+    timestamps : false,
     tableName: "ciudades",
     comment: "",
     indexes: [{

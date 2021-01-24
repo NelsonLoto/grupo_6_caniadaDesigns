@@ -67,7 +67,8 @@ module.exports = (sequelize, DataTypes) => {
       field: "monto_parcial"
     }
   };
-  const config = {
+const config = {
+    timestamps : false,
     tableName: "detalles_ventas",
     comment: "",
     indexes: [{
@@ -94,7 +95,7 @@ module.exports = (sequelize, DataTypes) => {
     }),
     DetalleVenta.belongsTo(models.Producto,{
       foreignKey : 'sku',
-      as : 'sku'
+      as : 'sku_id'
     })
   }
   return DetalleVenta;

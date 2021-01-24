@@ -28,7 +28,8 @@ module.exports = (sequelize, DataTypes) => {
       field: "porcentaje_descuento"
     }
   };
-  const config = {
+const config = {
+    timestamps : false,
     tableName: "Descuentos",
     comment: "",
     indexes: []

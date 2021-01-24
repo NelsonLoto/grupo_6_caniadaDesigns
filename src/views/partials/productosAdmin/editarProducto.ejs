@@ -1,21 +1,18 @@
 <form action="?_method=PUT" method="POST">
      <div class="header">
          <div class="tituloEditar">
-             <h3>Editar producto: <%= nombre %></h3>
+             <h3>Editar producto: <%= producto.nombre %></h3>
          </div>
 
          <div class="cardEditarProducto">
              <article class= "fotosCargadas">
-                 <img src="/images/fotosProductos/<%= fotoProducto %>" alt="">
+                 <img src="/images/fotosProductos/<%= producto.imagen_1 %>" alt="">
              </article>
              <div>
-                 <p><%= nombre %></p>
-                 <p><%= color %></p>
-                 <p><%= modelo %></p>
-                 <p>$<%= precio %></p>
-                 <p><%= composicion %></p>
-                 <p>SKU:<%= sku %></p>
-
+                 <p><%= producto.nombre %></p>
+                 <p><%= producto.color.nombre_color %></p>
+                 <p>$<%= producto.precio %></p>
+                 <p>SKU:<%= producto.sku %></p>
              </div>
          </div>
          <div class="submit">
@@ -26,109 +23,88 @@
          </div>
      </div>
      <div class="form">
-
-
-
-
          <section class="col1">
              <div class="categorias">
              <label for="categoria">Categoría</label>
-             <select name="categoria" id="categoria" value = "<%= categoria %>">
-                 <% for(let i= 0; i<categoriaDB.length;i++ ){ %>
-                     <% if (categoriaDB[i] == categoria) { %>
-                          <option value="<%= categoria%>" selected><%= categoria%></option> 
-                    <%  } else { %>
-                          <option value="<%= categoriaDB[i]%>"><%= categoriaDB[i]%></option>
-                     <% } %>
-                  <% } %>
-                 
+             <select name="categoria" id="categoria" value = "<%= producto.categoria.id_categoria %>">
+                <option value="<%= producto.categoria.id_categoria%>" selected><%=producto.categoria.nombre_categoria%></option> 
+                <% for (let categoria of categorias) { %>
+                    <option value="<%= categoria.id_categoria %> "><%= categoria.nombre_categoria %> </option>
+                <% } %> 
              </select>
              </div>
-
              <div class="genero">
              <label for="genero">Género</label>
-             <select type="text" name="genero" id="genero" value = "<%= genero %>">
-                 <% for(let i= 0; i<generoDB.length;i++ ){ %>
-                     <% if (generoDB[i] == genero) { %>
-                          <option value="<%= genero%>" selected><%= genero%></option> 
-                    <%  } else { %>
-                          <option value="<%= generoDB[i]%>"><%= generoDB[i]%></option>
-                     <% } %>
-                  <% } %>
-             </select>
+             <select name="genero" id="genero" value = "<%= producto.genero.id_genero %>">
+                <% for (let genero of generos) { %>
+                    <% if (genero.id_genero != producto.genero.id_genero){ %> 
+                        <option value="<%= genero.id_genero %> "><%= genero.nombre_genero %> </option>
+                    <% } else { %>
+                        <option value="<%= genero.id_genero%>" selected><%=genero.nombre_genero %></option>
+                    <% } %>   
+                <% } %> 
+         </select>
              </div>
 
              <div class="nombre">
              <label for="nombre">Nombre del producto</label>
-             <input type="text" name="nombre" id="nombre" value="<%= nombre %>">
+             <input type="text" name="nombre" id="nombre" value="<%= producto.nombre %>">
              </div>
 
              <div class="color">
              <label for="color">Color</label>
-             <select name="color" id="color" value= "<%= color %>">
-                 <% for(let i= 0; i<coloresDB.length;i++ ){ %>
-                     <% if (coloresDB[i] == color) { %>
-                          <option value="<%= color%>" selected><%=color%></option> 
-                    <%  } else { %>
-                          <option value="<%= coloresDB[i]%>"><%= coloresDB[i]%></option>
-                     <% } %>
-                  <% } %>
-             </select>
+             <select name="color" id="color" value = "<%= producto.color.id_color %>">
+                <% for (let color of colores) { %>
+                    <% if (color.id_color != producto.color.id_color){ %> 
+                        <option value="<%= color.id_color %> "><%= color.nombre_color %> </option>
+                    <% } else { %>
+                        <option value="<%= color.id_color%>" selected><%=color.nombre_color %></option>
+                    <% } %>   
+                <% } %> 
+         </select>
              </div>
          </section>
 
          <section class="col2">
              <div class="talle">
              <label for="talle">Talle</label>
-             <select name="talle" id="talle" value= "<%= talle %>">
-                 <% for(let i= 0; i<tallesDB.length;i++ ){ %>
-                     <% if (tallesDB[i] == talle) { %>
-                          <option value="<%= talle%>" selected><%=talle%></option> 
-                    <%  } else { %>
-                          <option value="<%= tallesDB[i]%>"><%= tallesDB[i]%></option>
-                     <% } %>
-                  <% } %>
+             <select name="talle" id="talle" value = "<%= producto.talle.id_talle %>">
+                    <% for (let talle of talles) { %>
+                        <% if (talle.id_talle != producto.talle.id_talle){ %> 
+                            <option value="<%= talle.id_talle %> "><%= talle.nombre %> </option>
+                        <% } else { %>
+                            <option value="<%= talle.id_talle%>" selected><%=talle.nombre%></option>
+                        <% } %>   
+                    <% } %> 
              </select>
              </div>
 
              <div class="cantidad">
              <label for="cantidad">Cantidad</label>
-             <input type="number" name="cantidad" id="catidad" value= "<%= cantidad %>">
+             <input type="number" name="cantidad" id="catidad" value= "<%= producto.cantidad %>">
              </div>
 
              <div class="precio">
              <label for="precio">Precio</label>
-             <input type="number" name="precio" id="precio" value="<%= precio %>">
+             <input type="number" name="precio" id="precio" value="<%= producto.precio %>">
              </div>
 
              <div class="descripcion">
              <label for="descripcion">Descripción general</label>
-             <textarea name="descripcion" id="descripcion" cols="30" rows="5" placeholder ="Descripción" > <%= descripcion %> </textarea>
+             <textarea name="descripcion" id="descripcion" cols="30" rows="5" placeholder ="Descripción" > <%= producto.descripcion %> </textarea>
              </div>
          </section>
 
          <section class="col3">
-             <div class="modelo">
-             <label for="modelo">Modelo</label>
-             <input type="text" placeholder="Slim/Regular Fit"name="modelo" value = "<%= modelo %>">
-             </div>
-
-             <div class="composicion">
-             <label for="composicion">Composición</label>
-             <input type="text" name="composicion" id="composicion" value = "<%= composicion %>">
-             </div>
-
              <div class="sku">
              <label for="sku">SKU</label>
-             <input type="number" name="sku" id="sku" value="<%= sku %>" readonly>
+             <input type="number" name="sku" id="sku" value="<%= producto.sku %>" readonly>
              </div>
 
              <div class="composicion" style="display:none">
                  <label for="fotoProducto">Composición</label>
-                 <input type="text" name="fotoProducto" id="fotoProducto" value = "<%= fotoProducto %>">
-             </div>
-
-             
+                 <input type="text" name="fotoProducto" id="fotoProducto" value = "<%= producto.imagen_1 %>">
+             </div>             
          </section>
          
      </div>   

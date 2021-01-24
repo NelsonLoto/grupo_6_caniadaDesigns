@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
       field: "nombre_permiso"
     }
   };
-  const config = {
+const config = {
+    timestamps : false,
     tableName: "permisos",
     comment: "",
     indexes: []

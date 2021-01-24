@@ -3,6 +3,7 @@ const bcrypt = require ('bcryptjs');
 const fs = require ('fs')
 const { validationResult } = require('express-validator');
 const { toUnicode } = require('punycode');
+const db = require('../database/models')
 
 let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'), 'utf8'));
 let users = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf8'))

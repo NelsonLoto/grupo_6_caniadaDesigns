@@ -19,21 +19,18 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: false,
       comment: null,
       field: "nombre_categoria"
-    },
-    estado: {
-      type: DataTypes.STRING(1),
-      allowNull: false,
-      defaultValue: "Y",
-      primaryKey: false,
-      autoIncrement: false,
-      comment: null,
-      field: "estado"
     }
   };
   const config = {
     tableName: "categorias",
     comment: "",
-    indexes: []
+    indexes: [],
+    createdAt : 'created_at',
+    updatedAt : 'updated_at',
+    deletedAt : 'deleted_at',
+    timestamps:true,
+    underscored : true,
+    paranoid : true
   };
   const Categoria = sequelize.define("Categoria", cols, config);
   Categoria.associate = function(models){

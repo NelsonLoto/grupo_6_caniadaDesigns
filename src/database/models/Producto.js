@@ -18,14 +18,14 @@ module.exports = (sequelize, DataTypes) => {
       comment: null,
       field: "sku"
     },
-    nombre_producto: {
+    nombre: {
       type: DataTypes.STRING(45),
       allowNull: true,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "nombre_producto"
+      field: "nombre"
     },
     descripcion: {
       type: DataTypes.TEXT,
@@ -36,14 +36,14 @@ module.exports = (sequelize, DataTypes) => {
       comment: null,
       field: "descripcion"
     },
-    precio_unitario: {
+    precio: {
       type: DataTypes.DECIMAL,
       allowNull: true,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "precio_unitario"
+      field: "precio"
     },
     cantidad: {
       type: DataTypes.INTEGER(11),
@@ -141,18 +141,10 @@ module.exports = (sequelize, DataTypes) => {
         key: "id_talle",
         model: "Talle"
       }
-    },
-    estado: {
-      type: DataTypes.STRING(1),
-      allowNull: false,
-      defaultValue: "Y",
-      primaryKey: false,
-      autoIncrement: false,
-      comment: null,
-      field: "estado"
     }
   };
-  const config = {
+const config = {
+    timestamps : false,
     tableName: "productos",
     comment: "",
     indexes: [{
@@ -175,7 +167,13 @@ module.exports = (sequelize, DataTypes) => {
       unique: false,
       type: "BTREE",
       fields: ["id_talle"]
-    }]
+    }],
+    createdAt : 'created_at',
+    updatedAt : 'updated_at',
+    deletedAt : 'deleted_at',
+    underscored : true,
+    timestamps:true,
+    paranoid : true
   };
   const Producto = sequelize.define("Producto", cols, config);
   Producto.associate = function(models){
@@ -187,7 +185,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey : 'id_genero',
       as : 'genero'
     }),
-    Producto.belongsTo(models.Categorias, {
+    Producto.belongsTo(models.Categoria, {
       foreignKey : 'id_categoria',
       as : 'categoria'
     }),

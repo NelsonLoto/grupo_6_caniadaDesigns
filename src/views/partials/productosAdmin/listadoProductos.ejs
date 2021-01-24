@@ -6,8 +6,10 @@
                <li>
                     <p><%= productosDB[i].nombre %> </p>
                     <div class="accion">
-                         <a href="/admin/productos/editar/<%=productosDB[i].sku%> "> Editar </a>
-                         <a href=""> Eliminar</a>
+                         <a href="/admin/productos/editar/<%=productosDB[i].id_producto%> "> Editar </a>
+                         <form action="/admin/productos/borrar/<%= productosDB[i].id_producto%>?_method=DELETE" method="POST">
+                              <button type="submit">Borrar</button>
+                         </form>
                     </div>
                </li>
                <hr>

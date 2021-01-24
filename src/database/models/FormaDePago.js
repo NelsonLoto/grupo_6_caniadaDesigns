@@ -28,7 +28,8 @@ module.exports = (sequelize, DataTypes) => {
       field: "cuota"
     }
   };
-  const config = {
+const config = {
+    timestamps : false,
     tableName: "formas_de_pago",
     comment: "",
     indexes: []
