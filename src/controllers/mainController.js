@@ -7,9 +7,10 @@ let mainController = {
     index :  function (req, res) {
         db.Producto.findAll()
         .then (function(productosDB){
+        console.log(res.locals.usuarioLogueado);
             res.render('home', { 
                 productosDB : productosDB, 
-                title: 'Caniada' })
+                title: 'Caniada'})
         })
    },
    nosotros :  function (req, res) {

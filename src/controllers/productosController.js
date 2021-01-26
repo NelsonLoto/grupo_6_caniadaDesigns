@@ -3,7 +3,8 @@ const path = require('path')
 const fs = require('fs')
 const db = require('../database/models')
 const { resolveSoa } = require('dns')
-
+const { QueryTypes } = require('sequelize')
+const { text } = require('express')
 //Leyendo JSON DB
 let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'), 'utf8')) // 
 
@@ -14,9 +15,6 @@ const categoriaDB = categoriasDB[0]
 const generoDB = categoriasDB[1]
 const coloresDB = categoriasDB[2]
 const tallesDB = categoriasDB[3]
- 
-let skuDisponible = productosDB.length+1
-
 
 //Funcionalidad
 
@@ -58,6 +56,9 @@ let productosController = {
         let generos = await db.Genero.findAll()
         let colores = await db.Color.findAll()
         let talles = await db.Talle.findAll()
+        let consultaSku = await db.sequelize.query ('SELECT MAX(id_producto) AS maxId FROM productos', {
+            type : QueryTypes.SELECT})
+        let skuDisponible = (consultaSku[0].maxId)+1
         res.render ('templateAdmin', { 
                     categorias : categorias,
                     generos : generos,
