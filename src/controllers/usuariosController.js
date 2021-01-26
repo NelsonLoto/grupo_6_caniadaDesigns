@@ -7,7 +7,6 @@ const db = require('../database/models');
 
 let usuarios = {
     login: function (req, res) {
-        console.log(req.session.newUser)
         res.render('templateView',  { 
             title: 'Caniada - Login',
             view: '/usuario/login',
@@ -51,8 +50,6 @@ let usuarios = {
         
     },
     logout: function (req, res) {
-        //copiado de stackOverFlow literal
-        console.log(req.cookies)
         cookie = req.cookies;
        for (var prop in cookie) {
            if (!cookie.hasOwnProperty(prop)) {
