@@ -24,6 +24,7 @@
                     </label>
                     <div class="error">
                          <small class="error"><%=(locals.errors && errors.email) ? errors.email.msg : ""%></small>
+                         <small class="errorEmailFront"></small>
                     </div>
                </div>
 
@@ -51,7 +52,7 @@
                </div>
 
                <div class="submit">
-                    <button type="submit" class="usuario inicio"> 
+                    <button type="submit" id="botonIngreso" class="usuario inicio"> 
                          <i class="fas fa-sign-in-alt"></i>  Ingresar
                     </button>
                </div> 

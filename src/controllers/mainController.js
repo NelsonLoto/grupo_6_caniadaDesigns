@@ -5,8 +5,14 @@ let nosotros = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/noso
 
 let mainController = {
     index :  function (req, res) {
-        db.Producto.findAll()
+        db.Producto.findAll({
+             limit: 8,
+            order: [ [ 'id_producto', 'DESC' ]]
+        
+        })
+           
         .then (function(productosDB){
+            
             res.render('home', { 
                 productosDB : productosDB, 
                 title: 'Caniada'})
