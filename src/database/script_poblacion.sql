@@ -83,17 +83,17 @@ UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '7');
 
 
 -- Inserciones referidas a Usuarios: 
-INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('1', 'Admin');
+INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('1', 'Usuario');
 INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('3', 'Propietario');
 INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('5', 'Editor');
 INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('7', 'Development');
-INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('9', 'Usuario');
+INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('9', 'Admin');
 
-INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`) VALUES ('1', 'Admin', 'Caniada', 'admin@caniada.com', '$2a$10$7SJzEfeMJDCZlldTFcJKwO8Ng870vHYUfBBlq2I3yr2vAxnFF40pm','admin@caniada.com.svg', '1');
-INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`) VALUES ('2', 'Propietario', 'Caniada', 'propietario@caniada.com', '$2a$10$gYuar7L5/T9K503m7l1ftul9mkl5o6N/hVh7cp6v8.mdznXUyB/9C' , 'admin@caniada.com.svg', '3');
-INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`) VALUES ('3', 'Editor', 'Caniada', 'editor@caniada.com', '$2a$10$syND9.2wZG.MSskBPb0rou5CRGxJby0p4Z.XMZtcJBQdwgMPuZc3m' , 'default@caniada.com.svg', '5');
-INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`) VALUES ('4', 'Juanpi', 'Jepik', 'juanpi@caniada.com', '$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq', 'juanpi@caniada.com.webp', '7');
-INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`) VALUES ('5', 'Nelson', 'Loto', 'nelson@caniada.com', '$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq', 'nelson@caniada.com.webp', '7');
-INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`) VALUES ('6', 'Guido', 'Shaggy', 'shaggy@caniada.com', '$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq', 'shaggy@caniada.com.webp', '7');
-INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`) VALUES ('7', 'Facundo', 'Garcia', 'flete@caniada.com', '$2a$10$9l6uYNHxYqZq1P/GumOSkONUmvaRxlgUX4F3OQJ3/nwYGvaWtt5F6', 'flete@caniada.com.png', '7');
-INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `mail`, `contraseña`, `avatar`, `id_rol`) VALUES ('8', 'Usuario', 'Default', 'user@caniada.com', '$2a$10$zux14WSXwv54OdkuAuC0LO.2IYHeiBa/SRgRAa.dVm2b6TGG0BOYu' ,'user@caniada.com.jpg', '9');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('1', 'Admin', 'Caniada', 'admin@caniada.com', '$2a$10$7SJzEfeMJDCZlldTFcJKwO8Ng870vHYUfBBlq2I3yr2vAxnFF40pm','admin@caniada.com.svg', '9');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('2', 'Propietario', 'Caniada', 'propietario@caniada.com', '$2a$10$gYuar7L5/T9K503m7l1ftul9mkl5o6N/hVh7cp6v8.mdznXUyB/9C' , 'admin@caniada.com.svg', '3');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('3', 'Editor', 'Caniada', 'editor@caniada.com', '$2a$10$syND9.2wZG.MSskBPb0rou5CRGxJby0p4Z.XMZtcJBQdwgMPuZc3m' , 'default@caniada.com.svg', '5');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('4', 'Juanpi', 'Jepik', 'juanpi@caniada.com', '$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq', 'juanpi@caniada.com.webp', '7');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('5', 'Nelson', 'Loto', 'nelson@caniada.com', '$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq', 'nelson@caniada.com.webp', '7');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('6', 'Guido', 'Shaggy', 'shaggy@caniada.com', '$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq', 'shaggy@caniada.com.webp', '7');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('7', 'Facundo', 'Garcia', 'flete@caniada.com', '$2a$10$9l6uYNHxYqZq1P/GumOSkONUmvaRxlgUX4F3OQJ3/nwYGvaWtt5F6', 'flete@caniada.com.png', '7');
+INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('8', 'Usuario', 'Default', 'user@caniada.com', '$2a$10$zux14WSXwv54OdkuAuC0LO.2IYHeiBa/SRgRAa.dVm2b6TGG0BOYu' ,'user@caniada.com.jpg', '1');
