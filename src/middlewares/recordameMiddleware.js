@@ -1,10 +1,4 @@
-const path = require ('path');
-const fs = require ('fs');
 const db = require('../database/models');
-const { log } = require('console');
-
-let users = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf8'))
-
 async function recordameMiddleware( req,res,next){
      if (req.cookies.remember != undefined){
           let usuario = await db.Usuario.findOne({
@@ -17,7 +11,4 @@ async function recordameMiddleware( req,res,next){
            }
            next();
      }
-     
-
-
 module.exports = recordameMiddleware

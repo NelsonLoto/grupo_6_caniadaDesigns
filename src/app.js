@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 
 const recordameMiddleware = require ('./middlewares/recordameMiddleware')
 const usuarioLogueado = require ('./middlewares/usuarioLogueado')
-
+const {guestAuth, userAuth, roleAuth} = require ('./middlewares/authMiddleware')
 
 let rutasMain = require('./routes/main')
 let rutasAdmin = require('./routes/admin');
@@ -47,7 +47,15 @@ app.use(usuarioLogueado);
 app.use('/', rutasMain) //funciona OK
 app.use('/productos', rutasProductos) //funciona OK
 app.use('/usuarios', rutasUsuarios) //funciona OK
-app.use('/admin', rutasAdmin)
+app.use('/admin', roleAuth, rutasAdmin)
+
+////////////////////- ERROR 404 -///////////////
+app.use((req, res, next) => {
+     res.status(404).render('not_found', {
+          title : 'Not found'
+     })
+})
+
 
 ////////////---------------PUERTO:3000-----------------////////////
 app.listen(process.env.PORT || 3000, function () {

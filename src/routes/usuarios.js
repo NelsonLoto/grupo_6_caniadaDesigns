@@ -6,6 +6,7 @@ const path = require('path');
 const usuariosController = require('../controllers/usuariosController')
 const registerValidation = require('../validator/registerValidation')
 const loginValidation = require('../validator/loginValidation')
+const {userAuth} = require ('../middlewares/authMiddleware')
 
 
 let storage = multer.diskStorage({
@@ -23,10 +24,10 @@ let storage = multer.diskStorage({
    
   
 
-router.get ('/login', usuariosController.login )
+router.get ('/login', userAuth ,usuariosController.login )
 router.post ('/login',loginValidation ,usuariosController.loginPost )
 router.get ('/logout',usuariosController.logout )
-router.get('/register', usuariosController.register) //funciona OK
+router.get('/register', userAuth ,usuariosController.register) //funciona OK
 router.post('/register', upload.single('avatar'), registerValidation , usuariosController.registerPost) //funciona OK
 
 module.exports = router

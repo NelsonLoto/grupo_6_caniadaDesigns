@@ -4,6 +4,7 @@ const multer = require('multer');
 const path = require('path');
 const productosController = require ('../controllers/productosController');
 const usuariosController = require ('../controllers/usuariosController');
+const {guestAuth, roleAuth} = require ('../middlewares/authMiddleware')
 
 
 var storage = multer.diskStorage({
@@ -23,7 +24,7 @@ var storage = multer.diskStorage({
 
 
 
-router.get ('/productos/all', productosController.productosAdmin) //funciona OK
+router.get ('/productos/all' , productosController.productosAdmin) //funciona OK
 router.get ('/productos/nuevo', productosController.crearView) //funciona OK
 router.post ('/productos/nuevo', upload.single('fotoProducto'),productosController.crearSave)
 router.get ('/productos/editar/:id', productosController.editarView)
