@@ -47,7 +47,7 @@ app.use(usuarioLogueado);
 app.use('/', rutasMain) //funciona OK
 app.use('/productos', rutasProductos) //funciona OK
 app.use('/usuarios', rutasUsuarios) //funciona OK
-app.use('/admin', roleAuth, rutasAdmin)
+app.use('/admin', rutasAdmin)
 
 ////////////////////- ERROR 404 -///////////////
 app.use((req, res, next) => {

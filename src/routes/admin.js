@@ -24,14 +24,14 @@ var storage = multer.diskStorage({
 
 
 
-router.get ('/productos/all' , productosController.productosAdmin) //funciona OK
-router.get ('/productos/nuevo', productosController.crearView) //funciona OK
-router.post ('/productos/nuevo', upload.single('fotoProducto'),productosController.crearSave)
-router.get ('/productos/editar/:id', productosController.editarView)
-router.put ('/productos/editar/:id', productosController.editarSave)
-router.get ('/usuarios/all',usuariosController.users) //funciona OK
+router.get ('/productos/all' ,roleAuth , productosController.productosAdmin) //funciona OK
+router.get ('/productos/nuevo', roleAuth ,productosController.crearView) //funciona OK
+router.post ('/productos/nuevo', roleAuth ,upload.single('fotoProducto'),productosController.crearSave)
+router.get ('/productos/editar/:id', roleAuth ,productosController.editarView)
+router.put ('/productos/editar/:id', roleAuth ,productosController.editarSave)
+router.get ('/usuarios/all',roleAuth ,usuariosController.users) //funciona OK
 //no tiene middleware de multer porque no subimos archivo al editar, solo lo mostramos en la vista. Lo que enviamos al hacer submit de la edicion es un INPUT hidden que es tipo texto que tiene el nombre del archivo. UN QUILOMBO
-router.delete('/productos/borrar/:id', productosController.borrar)
+router.delete('/productos/borrar/:id', roleAuth ,productosController.borrar)
 
 module.exports = router
 
