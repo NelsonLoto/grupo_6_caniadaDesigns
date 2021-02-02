@@ -7,7 +7,7 @@
                <p>Ya estás registrado? <a href="/usuarios/login">Iniciá sesión</a></p>
           </div>
           
-          <form class="form formularioRegistro" action="" method="POST"  enctype="multipart/form-data">
+          <form id="form" class="form formularioRegistro" action="" method="POST"  enctype="multipart/form-data">
                
                
                <div class="field">
@@ -16,9 +16,10 @@
                               <p>Nombre</p>
                               <i class="fas fa-id-card"></i>
                               <input type="text"name="nombre"id="nombre" value="<%= (typeof datosYaCargados != 'undefined' && !errors.nombre) ? datosYaCargados.nombre : ""%>">
+                              <small id="errorSmall" class="error"><%=(locals.errors && errors.nombre) ? errors.nombre.msg : "" %> </small>
                          </label>
                          <div class="error">
-                              <small class="error"><%=(locals.errors && errors.nombre) ? errors.nombre.msg : "" %> </small>
+                             
                          </div>
                     </div>
                          
@@ -27,9 +28,10 @@
                               <p>Apellido</p>
                               <i class="far fa-id-card"></i>
                               <input type="text"name="apellido"id="apellido" value="<%= (typeof datosYaCargados != 'undefined' && !errors.apellido) ? datosYaCargados.apellido : ""%>">
+                              <small id="errorSmall" class="error"><%=(locals.errors && errors.apellido) ? errors.apellido.msg : ""%></small>
                          </label>
                          <div class="error">
-                              <small class="error"><%=(locals.errors && errors.apellido) ? errors.apellido.msg : ""%></small>
+                             
                          </div>
                     </div>
                </div>
@@ -40,9 +42,10 @@
                          <p>Email</p>
                          <i class="fas fa-envelope"></i>
                          <input type="email"name="email" id="email" value="<%= (typeof datosYaCargados != 'undefined' && !errors.email) ? datosYaCargados.email : ""%>">
+                         <small class="error"><%=(locals.errors && errors.email) ? errors.email.msg : ""%></small>
                     </label>
                     <div class="error">
-                         <small class="error"><%=(locals.errors && errors.email) ? errors.email.msg : ""%></small>
+                        
                     </div>
                </div>
                
@@ -53,9 +56,10 @@
                               <p>Contraseña</p>
                               <i class="fas fa-key"></i>
                               <input type="password"name="password"id="password" value="<%= (typeof datosYaCargados != 'undefined' && !errors.password) ? datosYaCargados.password : ""%>" >
+                              <small class="error"><%=(locals.errors && errors.password) ? errors.password.msg : ""%></small>
                          </label>
                          <div class="error">
-                              <small class="error"><%=(locals.errors && errors.password) ? errors.password.msg : ""%></small>
+                              
                          </div>
                     </div>
 
@@ -66,9 +70,10 @@
                               <p>Confirma tu contraseña</p>
                               <i class="fas fa-key"></i>
                               <input type="password"name="repassword"id="repassword">
+                              <small class="error"><%=(locals.errors && errors.repassword) ? errors.repassword.msg : ""%></small>
                          </label>
                          <div class="error">
-                              <small class="error"><%=(locals.errors && errors.repassword) ? errors.repassword.msg : ""%></small>
+                             
                          </div>
                     </div>
 
