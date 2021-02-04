@@ -6,9 +6,113 @@ window.addEventListener('load', function(){
     const password = document.querySelector('#password')
     const password2 = document.querySelector('#repassword')
     const small = document.querySelectorAll('small')
+    const input = document.querySelectorAll('#form input')
 
+
+    const expresiones = {
+        usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+        password: /^.{4,12}$/, // 4 a 12 digitos.
+        correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+        telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+    }    
+    const validarFormulario = (e) => {
+        switch (e.target.name){
+            case "nombre":
+                if (expresiones.nombre.test(e.target.value)) {
+                    document.getElementById("nombre").classList.remove('incorrecto')
+                    document.getElementById("nombre").classList.add('correcto');
+                    document.querySelector('#cardNombre').classList.remove('desaprobado')
+                    document.querySelector('#cardNombre').classList.add('aprobado')
+                    document.querySelector('#errorNombre').innerText = ''
+                    
+                }else {
+                    document.getElementById("nombre").classList.add('incorrecto')
+                    document.querySelector('#cardNombre').classList.remove('aprobado')
+                    document.querySelector('#cardNombre').classList.add('desaprobado')
+                    document.querySelector('#errorNombre').innerText = ' El nombre debera tener entre 1 y 40 caracteres, sin signos'
+                }
+                break;
+             
+            case "apellido":
+                if (expresiones.nombre.test(e.target.value)) {
+                    document.getElementById("apellido").classList.remove('incorrecto')
+                    document.getElementById("apellido").classList.add('correcto');
+                    document.querySelector('#cardApellido').classList.remove('desaprobado')
+                    document.querySelector('#cardApellido').classList.add('aprobado')
+                    document.querySelector('#errorApellido').innerText = ''
+                    
+                }else {
+                    document.getElementById("apellido").classList.add('incorrecto')
+                    document.querySelector('#cardApellido').classList.remove('aprobado')
+                    document.querySelector('#cardApellido').classList.add('desaprobado')
+                    document.querySelector('#errorApellido').innerText = 'error'
+                }
+                break;
+             
+            case "email":
+                if (expresiones.correo.test(e.target.value)) {
+                    document.getElementById("email").classList.remove('incorrecto')
+                    document.getElementById("email").classList.add('correcto');
+                    document.querySelector('#cardEmail').classList.remove('desaprobado')
+                    document.querySelector('#cardEmail').classList.add('aprobado')
+                    document.querySelector('#errorEmail').innerText = ''
+                    
+                }else {
+                    document.getElementById("email").classList.add('incorrecto')
+                    document.querySelector('#cardEmail').classList.remove('aprobado')
+                    document.querySelector('#cardEmail').classList.add('desaprobado')
+                    document.querySelector('#errorEmail').innerText = 'Email Invalido'
+                }
+                break;
+             
+            case "password":
+                if (expresiones.password.test(e.target.value)) {
+                    document.getElementById("password").classList.remove('incorrecto')
+                    document.getElementById("password").classList.add('correcto');
+                    document.querySelector('#cardPass').classList.remove('desaprobado')
+                    document.querySelector('#cardPass').classList.add('aprobado')
+                    document.querySelector('#errorPass').innerText = ''
+                    
+                }else {
+                    document.getElementById("password").classList.add('incorrecto')
+                    document.querySelector('#cardPass').classList.remove('aprobado')
+                    document.querySelector('#cardPass').classList.add('desaprobado')
+                    document.querySelector('#errorPass').innerText = 'Contraseña debera contener blablabla'
+                }
+                break;
+             
+            case "repassword":
+               validarPassword()
+                break;
+             
+        }
+        console.log(e.target.name);
+    }
+
+    const validarPassword = () =>{
+        if (password.value !== password2.value){
+            document.getElementById("repassword").classList.add('incorrecto')
+            document.querySelector('#cardRePass').classList.remove('aprobado')
+            document.querySelector('#cardRePass').classList.add('desaprobado')
+            document.querySelector('#errorRePass').innerText = 'Las contraseñas no coinciden'
+        }else {
+             document.getElementById("repassword").classList.remove('incorrecto')
+                    document.getElementById("repassword").classList.add('correcto');
+                    document.querySelector('#cardRePass').classList.remove('desaprobado')
+                    document.querySelector('#cardRePass').classList.add('aprobado')
+                    document.querySelector('#errorRePass').innerText = ''
+
+        }
+    }
+
+    input.forEach(input => {
+        input.addEventListener('keyup', validarFormulario );
+        input.addEventListener('blur', validarFormulario );
+        })
+        
     
-    
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
     
@@ -65,6 +169,7 @@ window.addEventListener('load', function(){
         } else{
             setSuccessFor(password2);
         }
+        
     }
     
     function setErrorFor(input, message) {
@@ -90,5 +195,15 @@ window.addEventListener('load', function(){
         .test(password);
     }
 
-    console.log("hola");
 })
+
+
+
+
+
+//form.submit()
+
+
+
+//falcon master ]
+
