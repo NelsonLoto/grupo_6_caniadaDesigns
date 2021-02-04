@@ -18,7 +18,7 @@ module.exports = {
   "production": {
     "username": "root",
     "password": "root",
-    "database": "caniadauction",
+    "database": "caniada",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "port": "8889"
