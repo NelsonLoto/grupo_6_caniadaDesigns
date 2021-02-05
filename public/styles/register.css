@@ -168,15 +168,21 @@ main.contenedor section.registro div form div{
 
 main.contenedor section.registro div form div.checkbox{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 50%;
+    flex-direction: row;
+    width: 100%;
 }
-main.contenedor section.registro div form div.checkbox label{
+main.contenedor section.registro div form div.checkbox .terminos{
+    text-align: center;
+    width: 33.33%;
+}
+main.contenedor section.registro div form div.checkbox{
     font-size: 0.8rem;
     padding: 5px 0px;
 }
-main.contenedor section.registro div form div.checkbox label a{
+
+
+
+main.contenedor section.registro div form div.checkbox a{
     color: dodgerblue;
 }
 
@@ -239,6 +245,10 @@ main.contenedor section.registro .redes button.google{
     border: solid 1px #fc5e5e;
 }
 
+#avatar{
+    padding-top: 7px;
+}
+
 main.contenedor section.registro .redes button.google:hover{
     background-color: #f55a4c;
     color: white;
@@ -260,7 +270,8 @@ main.contenedor section.registro .redes button.facebook:hover{
 
 
     input[type=checkbox]{
-        transform: translateY(15%) scale(0.8);
+        transform: translateY(55%) scale(0.5);
+
     }
 
 
