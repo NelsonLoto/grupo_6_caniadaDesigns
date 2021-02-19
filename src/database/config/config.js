@@ -16,8 +16,8 @@ module.exports = {
     "port": "8889"
   },
   "production": {
-    "username": process.env.USERNAME,
-    "password": process.env.PASSWORD,
+    "username": '227510',
+    "password": 'grupo6DH',
     "database": "caniadagrupo6_db",
     "host": "mysql-caniadagrupo6.alwaysdata.net",
     "dialect": "mysql"

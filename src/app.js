@@ -7,8 +7,7 @@ const path = require('path')
 const methodOverride = require ('method-override')
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-let env = require('node-env-file'); // .env file
-env(__dirname + '/.env');
+
 
 const recordameMiddleware = require ('./middlewares/recordameMiddleware')
 const usuarioLogueado = require ('./middlewares/usuarioLogueado')
