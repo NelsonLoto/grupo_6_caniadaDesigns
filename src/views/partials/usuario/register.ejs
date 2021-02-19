@@ -88,6 +88,7 @@
                          <input type="file" name="avatar"id="avatar">
                     
                </div>
+<<<<<<< HEAD
 
                <div class="checkbox">
                     <label class="legal" for="legal" name="legal"></label>
@@ -124,16 +125,47 @@
                          </div>
                   
                </div>
+=======
+               
+                    <div class="checkbox">
+                         <div class="terminos">
+                               <label class="legal"for="legal"name="legal"></label>
+                                   <input type="checkbox" value="Si" name="legal" id="legal" value="<%= (typeof datosYaCargados != 'undefined' && !errors.legal) ? datosYaCargados.legal : ""%>">
+                                   Acepto la
+                                   <a href="">Política de privacidad de datos</a> y los <a href="">Términos y condiciones.</a>
+                              
+          
+                              <div class="error legal">
+                                   <small class="error "><%=(locals.errors && errors.legal) ? errors.legal.msg : ""%></small>
+                              </div>
+                        </div>
+                        <div class="terminos">
+                             <label class="newsletter"for="newsletter"name="newsletter"></label>
+                              <input type="checkbox" value="Si" name="newsletter" id="newsletter" checked>
+                              Acepto que me manden mails promocionales.
+                         </div>
+                         
+                         <div class="terminos">
+                              <label for="remember">  </label>
+                              <input type="checkbox" name="remember" value="remember" id="remember" checked>
+                              Mantener la sesión iniciada
+                         </div>
+                         
+                       
+                    </div>
+               
+               
+>>>>>>> 4872b10aced21e9e6651a9a989eab591327a2ebc
                
                
 
                <div class="submit">
-                    <button type="submit" class="usuario registro"> 
-                         <i class="fas fa-sign-in-alt"></i>  Registrarse
-                    </button>
+                    <input type="submit" class="usuario registro"> 
+                         <i class="fas fa-sign-in-alt"></i>Registrarse
+                    
                </div>
 
-               <p>o</p>
+               <p id="formEnviado"></p>
                
           </form>
 
