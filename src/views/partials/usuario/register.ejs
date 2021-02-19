@@ -7,68 +7,73 @@
                <p>Ya estás registrado? <a href="/usuarios/login">Iniciá sesión</a></p>
           </div>
           
-          <form class="form formularioRegistro" action="" method="POST"  enctype="multipart/form-data">
+          <form id="form" class="form formularioRegistro" action="" method="POST"  enctype="multipart/form-data">
                
                
                <div class="field">
                     <div class="nombres">
-                         <label class="campoDatos"for="nombre"name="nombre">
-                              <p>Nombre</p>
-                              <i class="fas fa-id-card"></i>
-                              <input type="text"name="nombre"id="nombre" value="<%= (typeof datosYaCargados != 'undefined' && !errors.nombre) ? datosYaCargados.nombre : ""%>">
-                         </label>
+                         <label class="campoDatos"for="nombre"name="nombre"></label>
+                          <p>Nombre</p>
+                         <input type="text"name="nombre"id="nombre" value="<%= (typeof datosYaCargados != 'undefined' && !errors.nombre) ? datosYaCargados.nombre : ""%>">
+                          <i id="cardNombre" class="fas fa-id-card"></i>
+                         <small id="errorNombre" class="error"><%=(locals.errors && errors.nombre) ? errors.nombre.msg : "" %> </small>
+                         
                          <div class="error">
-                              <small class="error"><%=(locals.errors && errors.nombre) ? errors.nombre.msg : "" %> </small>
+                             
                          </div>
                     </div>
                          
                     <div class="nombres">
-                         <label class="campoDatos"for="apellido"name="apellido">
+                         <label class="campoDatos"for="apellido"name="apellido"></label>
                               <p>Apellido</p>
-                              <i class="far fa-id-card"></i>
+                              <i id="cardApellido" class="far fa-id-card"></i>
                               <input type="text"name="apellido"id="apellido" value="<%= (typeof datosYaCargados != 'undefined' && !errors.apellido) ? datosYaCargados.apellido : ""%>">
-                         </label>
+                              <small id="errorApellido" class="error"><%=(locals.errors && errors.apellido) ? errors.apellido.msg : ""%></small>
+                         
                          <div class="error">
-                              <small class="error"><%=(locals.errors && errors.apellido) ? errors.apellido.msg : ""%></small>
+                             
                          </div>
                     </div>
                </div>
 
 
                <div class="email">
-                    <label class="campoDatos" for="email"name="email">
+                    <label class="campoDatos" for="email"name="email"> </label>
                          <p>Email</p>
-                         <i class="fas fa-envelope"></i>
+                         <i id="cardEmail" class="fas fa-envelope"></i>
                          <input type="email"name="email" id="email" value="<%= (typeof datosYaCargados != 'undefined' && !errors.email) ? datosYaCargados.email : ""%>">
-                    </label>
+                         <small id="errorEmail" class="error"><%=(locals.errors && errors.email) ? errors.email.msg : ""%></small>
+                   
                     <div class="error">
-                         <small class="error"><%=(locals.errors && errors.email) ? errors.email.msg : ""%></small>
+                        
                     </div>
                </div>
                
 
                <div class="field">
                     <div class="contraseñas">
-                         <label class="campoDatos"for="password"name="password">
+                         <label class="campoDatos"for="password"name="password"></label>
                               <p>Contraseña</p>
-                              <i class="fas fa-key"></i>
+                              <i id="cardPass" class="fas fa-key"></i>
                               <input type="password"name="password"id="password" value="<%= (typeof datosYaCargados != 'undefined' && !errors.password) ? datosYaCargados.password : ""%>" >
-                         </label>
+                              <small id="errorPass" class="error"><%=(locals.errors && errors.password) ? errors.password.msg : ""%></small>
+                         
                          <div class="error">
-                              <small class="error"><%=(locals.errors && errors.password) ? errors.password.msg : ""%></small>
+                              
                          </div>
                     </div>
 
                     
 
                     <div class="contraseñas">
-                         <label class="campoDatos"for="repassword"name="repassword">
+                         <label class="campoDatos"for="repassword"name="repassword"></label>
                               <p>Confirma tu contraseña</p>
-                              <i class="fas fa-key"></i>
+                              <i id="cardRePass" class="fas fa-key"></i>
                               <input type="password"name="repassword"id="repassword">
-                         </label>
+                              <small id="errorRePass" class="error"><%=(locals.errors && errors.repassword) ? errors.repassword.msg : ""%></small>
+                         
                          <div class="error">
-                              <small class="error"><%=(locals.errors && errors.repassword) ? errors.repassword.msg : ""%></small>
+                             
                          </div>
                     </div>
 
@@ -77,32 +82,47 @@
 
 
                <div class="avatar">
-                    <label class="campoDatos" for="avatar"name="avatar">
+                    <label class="campoDatos" for="avatar"name="avatar"></label>
                          <p>Subí tu imagen de perfil</p>
                          <i class="fas fa-image"></i>
                          <input type="file" name="avatar"id="avatar">
-                    </label>
+                    
                </div>
 
                <div class="checkbox">
-                    <label class="legal"for="legal"name="legal">
-                         <input type="checkbox" value="Si" name="legal" id="legal" value="<%= (typeof datosYaCargados != 'undefined' && !errors.legal) ? datosYaCargados.legal : ""%>">
-                         Acepto la
-                         <a href="">Política de privacidad de datos</a> y los <a href="">Términos y condiciones.</a>
-                    </label>
+                    <label class="legal" for="legal" name="legal"></label>
+
+                              <input type="checkbox" value="Si" name="legal" id="legal" value="<%= (typeof datosYaCargados != 'undefined' && !errors.legal) ? datosYaCargados.legal : ""%>">
+
+                         
+                         <div>
+                              <p> Acepto la
+                              <a href="">Política de privacidad de datos</a> y los <a href="">Términos y condiciones.</a>
+                              </p>
+                         </div>
+                    
 
                     <div class="error legal">
                          <small class="error "><%=(locals.errors && errors.legal) ? errors.legal.msg : ""%></small>
                     </div>
 
-                    <label class="newsletter"for="newsletter"name="newsletter">
-                         <input type="checkbox" value="Si" name="newsletter" id="newsletter" checked>
-                         Acepto que me manden mails promocionales.
-                    </label>
-                    <label for="remember">
-                         <input type="checkbox" name="remember" value="remember" id="remember" checked>
-                         Mantener la sesión iniciada
-                    </label>
+                    <label class="newsletter"for="newsletter"name="newsletter"></label>
+                         <div>
+                              <input type="checkbox" value="Si" name="newsletter" id="newsletter" checked>
+                         </div>
+                         <div>
+                              <p>Acepto que me manden mails promocionales.</p>
+                         </div>
+                         
+                    
+                    <label for="remember"></label>
+                         <div>
+                              <input type="checkbox" name="remember" value="remember" id="remember" checked>
+                         </div>
+                         <div>
+                              <p>Mantener la sesión iniciada</p>
+                         </div>
+                  
                </div>
                
                

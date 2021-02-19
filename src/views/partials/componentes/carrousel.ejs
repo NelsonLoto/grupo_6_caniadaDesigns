@@ -1,7 +1,7 @@
 <section id="seccionTres" class="seccionTres">
      <div>
           <a name="seccionTres"></a>
-          <h2>MÁS VENDIDOS</h2>
+          <h2>NUEVOS ARRIBOS</h2>
      </div>
      <div class="carrouselDeProductos">
           <div class="flechaIzqCarrousel"></div>
@@ -9,31 +9,28 @@
 
                <ul id="autoWidth" class="cs-hidden">
 <!--1------------------------------------>
-     <% for (let i = 0; i < 10; i++) { %> 
-          <% let iRandom = Math.floor(Math.random() * 10); %>
-          <% (iRandom >= productosDB.length) ? iRandom = iRandom - 2 : iRandom %>   <!-- Filtro por si la BD es menor a 9-->
-
-                   
+     <% for (let i = 0; i < 8; i++) { %> 
+            <!-- Filtro por si la BD es menor a 9-->
                     <li class="item-uno">
                          <div class="box">
                               <div class="slide-img">
-                                   <img src= <%= `/images/fotosProductos/${productosDB[iRandom].imagen_1}` %>   alt=<%= productosDB[iRandom].imagen_1 %>>
+                                   <img src= <%= `/images/fotosProductos/${productosDB[i].imagen_1}` %>   alt=<%= productosDB[i].imagen_1 %>>
                                     <div class="overlay">
                                         <!--buy-btn------>	
                                               <a href="#" class="carritoOverlay"><i class="far fa-heart">
                                                   <span class="tooltiptext">Whislist</span>
                                               </i></a>	
                                               <a href="/carrito" class="whislistOverlay"><i class="fas fa-shopping-cart"><span class="tooltiptext">Agregar al Carrito</span></i></a>	
-                                              <a href=<%=`/productos/${productosDB[iRandom].sku}`%> class="vistaRapida"><i class="far fa-eye"><span class="tooltiptext">Ver Producto</span></i></a>	
+                                              <a href=<%=`/productos/${productosDB[i].sku}`%> class="vistaRapida"><i class="far fa-eye"><span class="tooltiptext">Ver Producto</span></i></a>	
                                         </div>
                               </div>
                              
                               <div class="detail-box">
                                    <div class="descripcionProducto">
-                                        <a href=<%=`/productos/${productosDB[iRandom].sku}`%>><p><%=productosDB[iRandom].nombre%></p></a>
+                                        <a href=<%=`/productos/${productosDB[i].sku}`%>><p><%=productosDB[i].nombre%></p></a>
                                    </div>
                                    <div class="precioYoferta">
-                                        <div class="precio"><%=`$${productosDB[iRandom].precio}`%></div>
+                                        <div class="precio"><%=productosDB[i].precio%></div>
                                    </div>
                                    <div class="envio">
                                         <p>Envío Gratis</p>

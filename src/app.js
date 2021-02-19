@@ -7,11 +7,12 @@ const path = require('path')
 const methodOverride = require ('method-override')
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+let env = require('node-env-file'); // .env file
+env(__dirname + '/.env');
 
 const recordameMiddleware = require ('./middlewares/recordameMiddleware')
-const loguearANewUserMiddleware = require ('./middlewares/loguearANewUserMiddleware')
 const usuarioLogueado = require ('./middlewares/usuarioLogueado')
-
+const {guestAuth, userAuth, roleAuth} = require ('./middlewares/authMiddleware')
 
 let rutasMain = require('./routes/main')
 let rutasAdmin = require('./routes/admin');
@@ -38,7 +39,6 @@ app.use(express.urlencoded({extended : false}))
 app.use(express.json());
 app.use(cookieParser());
 app.use(session({secret: "laSalNoSalaYElAzucarNoEndulza"}));
-app.use(loguearANewUserMiddleware);
 app.use(recordameMiddleware);
 app.use(usuarioLogueado);
 
@@ -50,6 +50,14 @@ app.use('/', rutasMain) //funciona OK
 app.use('/productos', rutasProductos) //funciona OK
 app.use('/usuarios', rutasUsuarios) //funciona OK
 app.use('/admin', rutasAdmin)
+
+////////////////////- ERROR 404 -///////////////
+app.use((req, res, next) => {
+     res.status(404).render('not_found', {
+          title : 'Not found'
+     })
+})
+
 
 ////////////---------------PUERTO:3000-----------------////////////
 app.listen(process.env.PORT || 3000, function () {

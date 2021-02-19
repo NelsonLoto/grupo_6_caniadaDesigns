@@ -27,23 +27,23 @@ module.exports = (sequelize, DataTypes) => {
       comment: null,
       field: "apellido"
     },
-    mail: {
+    email: {
       type: DataTypes.STRING(45),
       allowNull: true,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "mail"
+      field: "email"
     },
-    contraseña: {
+    password: {
       type: DataTypes.STRING(99),
       allowNull: true,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
       comment: null,
-      field: "contraseña"
+      field: "password"
     },
     avatar: {
       type: DataTypes.STRING(50),
