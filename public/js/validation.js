@@ -21,7 +21,7 @@ window.addEventListener('load', function(){
         usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
         nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
         password: /^.{4,12}$/, // 4 a 12 digitos.
-        correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+        email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
         telefono: /^\d{7,14}$/ // 7 a 14 numeros.
     }    
     const validarFormulario = (e) => {
@@ -67,7 +67,7 @@ window.addEventListener('load', function(){
                 break;
              
             case "email":
-                if (expresiones.correo.test(e.target.value)) {
+                if (expresiones.email.test(e.target.value)) {
                     document.getElementById("email").classList.remove('incorrecto')
                     document.getElementById("email").classList.add('correcto');
                     document.querySelector('#cardEmail').classList.remove('desaprobado')

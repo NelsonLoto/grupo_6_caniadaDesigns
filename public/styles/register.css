@@ -171,7 +171,6 @@ main.contenedor section.registro div form div.checkbox{
     flex-direction: row;
     width: 100%;
 }
-<<<<<<< HEAD
 main.contenedor section.registro div form div.checkbox input{
     font-size: 0.5rem;
     padding: 5px 0px;
@@ -179,24 +178,20 @@ main.contenedor section.registro div form div.checkbox input{
 }
 
 main.contenedor section.registro div form div.checkbox p{
-=======
+}
 main.contenedor section.registro div form div.checkbox .terminos{
     text-align: center;
     width: 33.33%;
 }
 main.contenedor section.registro div form div.checkbox{
->>>>>>> 4872b10aced21e9e6651a9a989eab591327a2ebc
     font-size: 0.8rem;
     padding: 5px 0px;
 }
 
-<<<<<<< HEAD
 main.contenedor section.registro div form div.checkbox p a{
-=======
 
-
+}
 main.contenedor section.registro div form div.checkbox a{
->>>>>>> 4872b10aced21e9e6651a9a989eab591327a2ebc
     color: dodgerblue;
 }
 
