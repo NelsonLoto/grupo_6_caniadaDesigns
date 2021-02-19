@@ -95,11 +95,16 @@ let usuarios = {
             console.log(errors.mapped())
         }},
     users: function (req, res) {
-        res.render('templateAdmin', { 
+
+        db.Usuario.findAll()
+        .then(function (users){
+            res.render('templateAdmin', { 
                 title: 'Admin',
                 view: '/usuariosAdmin/listadoUsuarios',
                 users
             })
+        })
+        
         }
     }
 module.exports = usuarios

@@ -44,7 +44,11 @@
                     <li class="user"><a href="/usuarios/login"><i class="fas fa-sign-in-alt"></i></a></li>
                </ul>
 
-               <% } else if (locals.usuarioLogueado.rol === 9){ %>
+               <% } else if ( locals.usuarioLogueado.id_rol === 1 || 
+                              locals.usuarioLogueado.id_rol === 3 ||
+                              locals.usuarioLogueado.id_rol === 5 ||
+                              locals.usuarioLogueado.id_rol === 7 ){ 
+               %>
                
                     <ul class="userMenu">
           

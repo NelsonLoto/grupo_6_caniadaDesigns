@@ -52,8 +52,9 @@ app.use('/admin', rutasAdmin)
 
 ////////////////////- ERROR 404 -///////////////
 app.use((req, res, next) => {
-     res.status(404).render('not_found', {
-          title : 'Not found'
+     res.status(404).render('templateView', {
+          title: 'Caniada - Not found', 
+          view: 'not_found',
      })
 })
 
