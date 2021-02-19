@@ -53,7 +53,7 @@
      
      /*-----USUARIO----*/
      @import url(/styles/register.css);
-     @import url(/styles/login.css);
+     @import url(/styles/logIn.css);
           
      /*-----CREAR PRODUCTO----*/
           @import url(/styles/crearProducto.css);
