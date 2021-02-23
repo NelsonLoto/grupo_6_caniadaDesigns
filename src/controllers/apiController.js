@@ -22,6 +22,15 @@ let apiController = {
                 })
             })
         })
+    },
+    detalle: function(req,res){
+        db.Producto.findByPk(req.params.id)
+        .then(function(productoDetail){
+            res.json({
+                product: productoDetail,
+                url: `/public/images/fotosProductos/${productoDetail.imagen_1}`
+            })
+        })
     }
 }
 
