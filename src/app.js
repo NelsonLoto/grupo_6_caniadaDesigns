@@ -17,6 +17,7 @@ let rutasMain = require('./routes/main')
 let rutasAdmin = require('./routes/admin');
 let rutasProductos = require('./routes/productos');
 let rutasUsuarios = require('./routes/usuarios');
+let rutasApi = require('./routes/api')
 
 
 ////////////////////- USING OVERRIDEMETHOD -///////////////
@@ -49,6 +50,7 @@ app.use('/', rutasMain) //funciona OK
 app.use('/productos', rutasProductos) //funciona OK
 app.use('/usuarios', rutasUsuarios) //funciona OK
 app.use('/admin', rutasAdmin)
+app.use('/api', rutasApi)
 
 ////////////////////- ERROR 404 -///////////////
 app.use((req, res, next) => {
