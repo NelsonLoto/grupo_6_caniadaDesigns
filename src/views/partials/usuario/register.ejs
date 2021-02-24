@@ -91,10 +91,10 @@
                
                     <div class="checkbox">
                          <div class="terminos">
-                               <label class="legal"for="legal"name="legal"></label>
-                                   <input type="checkbox" value="Si" name="legal" id="legal" value="<%= (typeof datosYaCargados != 'undefined' && !errors.legal) ? datosYaCargados.legal : ""%>">
-                                   Acepto la
-                                   <a href="">Política de privacidad de datos</a> y los <a href="">Términos y condiciones.</a>
+                              <input type="checkbox" value="Si" name="legal" id="legal" value="<%= (typeof datosYaCargados != 'undefined' && !errors.legal) ? datosYaCargados.legal : ""%>">
+                               <label class="legal"for="legal"name="legal">Acepto la
+                                   <a href="">Política de privacidad de datos</a> y los <a href="">Términos y condiciones.</a></label>
+                                   
                               
           
                               <div class="error legal">
@@ -102,15 +102,15 @@
                               </div>
                         </div>
                         <div class="terminos">
-                             <label class="newsletter"for="newsletter"name="newsletter"></label>
-                              <input type="checkbox" value="Si" name="newsletter" id="newsletter" checked>
-                              Acepto que me manden mails promocionales.
+                             <input type="checkbox" value="Si" name="newsletter" id="newsletter" checked>
+                             <label class="newsletter"for="newsletter"name="newsletter">Acepto que me manden mails promocionales.</label>
+                              
                          </div>
                          
                          <div class="terminos">
-                              <label for="remember">  </label>
                               <input type="checkbox" name="remember" value="remember" id="remember" checked>
-                              Mantener la sesión iniciada
+                              <label for="remember">Mantener la sesión iniciada</label>
+                              
                          </div>
                          
                        

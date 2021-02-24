@@ -180,12 +180,13 @@ main.contenedor section.registro div form div.checkbox input{
 main.contenedor section.registro div form div.checkbox p{
 }
 main.contenedor section.registro div form div.checkbox .terminos{
-    text-align: center;
-    width: 33.33%;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
 }
 main.contenedor section.registro div form div.checkbox{
     font-size: 0.8rem;
-    padding: 5px 0px;
+    margin-bottom: 0px;
 }
 
 main.contenedor section.registro div form div.checkbox p a{
@@ -279,8 +280,7 @@ main.contenedor section.registro .redes button.facebook:hover{
 
 
     input[type=checkbox]{
-        transform: translateY(55%) scale(0.5);
-
+        transform:scale(0.8);
     }
 
 
