@@ -1,29 +1,51 @@
 const db = require('../database/models')
+const Sequelize = require ('sequelize')
 
 let apiController = {
     productos: function(req,res){
-        db.Producto.findAll()
-        .then(function(resultados){
-            db.sequelize.query('SELECT C.NOMBRE_CATEGORIA AS "NOMBRE_CATEGORIA", COUNT(*) AS "CANTIDAD_PRODUCTOS" FROM CATEGORIAS C JOIN PRODUCTOS P ON C.ID_CATEGORIA = P.ID_CATEGORIA GROUP BY C.NOMBRE_CATEGORIA')
-            .then(function(conteo){
+        db.Categoria.findAll({ 
+            attributes: { 
+                include: [[Sequelize.fn("COUNT", Sequelize.col("id_categoria")), "n_productos"]] 
+            },
+            include: [{
+                model: db.Producto,
+                as: 'productos',
+                 attributes: [],
+                
+            }],
+            group: ['id']
+        }).then(function(resultados){
+            let categorias = []
+            for (let i = 0; i < resultados.length; i++) {
+                categorias.push({
+                    Categoria: resultados[i].nombre_categoria,
+                    productos: resultados[i].n_productos
+                })
+            }
+            db.Producto.findAll()
+            .then(function(Productos){
                 let arreglo = []
-                for(let i=0; i<resultados.length; i++){
+                for(let i=0; i<Productos.length; i++){
                     arreglo.push({
-                        id:resultados[i].id_producto,
-                        name: resultados[i].nombre,
-                        description: resultados[i].descripcion,
-                        detail: `/productos/${resultados[i].sku}`
+                        id:Productos[i].id_producto,
+                        name: Productos[i].nombre,
+                        description: Productos[i].descripcion,
+                        detail: `/productos/${Productos[i].sku}`
                     })
                 }
                 res.json({
-                    count: resultados.length,
-                    countByCategroy: conteo[0][0],
-                    products: arreglo
+                    resultados:categorias,
+                    count: Productos.length,
+                    Ruta: arreglo,
+                    Productos: Productos
+                   
                 })
             })
         })
-    },
-    detalle: function(req,res){
+    }
+}
+
+    /* detalle: function(req,res){
         db.Producto.findByPk(req.params.id)
         .then(function(productoDetail){
             res.json({
@@ -31,7 +53,7 @@ let apiController = {
                 url: `/public/images/fotosProductos/${productoDetail.imagen_1}`
             })
         })
-    }
-}
+    } */
+
 
 module.exports = apiController;

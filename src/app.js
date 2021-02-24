@@ -9,6 +9,8 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
 
+
+
 const recordameMiddleware = require ('./middlewares/recordameMiddleware')
 const usuarioLogueado = require ('./middlewares/usuarioLogueado')
 const {guestAuth, userAuth, roleAuth} = require ('./middlewares/authMiddleware')
