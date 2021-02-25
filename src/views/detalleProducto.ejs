@@ -10,9 +10,8 @@
     <main class="detalleProducto">
         <div class="rutaProducto">
             <ul>
-                <li><a href="#"><%= productoSKU.genero %></a></li>
-                <li><a href="#">/ <%= productoSKU.categoria %></a></li>
-                <li><a href="#">/ <%= productoSKU.modelo %></a></li>
+                <li><a href="#">/ <%= categoria.nombre_categoria %></a></li>
+                <li><a href="#">/ <%= producto.modelo %></a></li>
             </ul>
         </div>
         <div class="contenedorDetalle">
@@ -23,7 +22,7 @@
                             <button><a href=""><i class="fas fa-arrow-left"></i></a></button>
                         </div>
                         
-                        <div class="img_principal"><img src= <%= `/images/fotosProductos/${productoSKU.imagen_1}` %>   alt="<%= productoSKU.imagen_1 %>"></div>
+                        <div class="img_principal"><img src= <%= `/images/fotosProductos/${producto.imagen_1}` %>   alt="<%= producto.imagen_1 %>"></div>
 
                         <div class="botonDer">
                             
@@ -34,13 +33,13 @@
                 <section class="caracteristicasProducto">
                     <h3><Descripción del producto></h3>
                     <h4>Talla</h4>
-                    <p>El/la modelo mide x y lleva talle <%= productoSKU.talle %></p>
+                    <p>El/la modelo mide x y lleva talle <%= producto.talle %></p>
                     <h4>Modelo</h4>
-                    <p> <%= productoSKU.modelo %>  </p>
+                    <p> <%= producto.modelo %>  </p>
                     <h4>Composicion</h4>
-                    <p><%= productoSKU.composicion %></p>
+                    <p><%= producto.composicion %></p>
                     <h4>Art. N°</h4>
-                    <p><%= productoSKU.sku %></p>
+                    <p><%= producto.sku %></p>
                     <div class="opinionTalles">
                         <h4>Talle según XX opiniones</h4>
                         <img src="/images/medidorTalles.jpg" alt="">
@@ -48,8 +47,8 @@
                 </section>
             </div>
             <div class="panelDerecho">
-                    <h2><%= productoSKU.nombre %>&emsp;&emsp;<a href=""><i class="far fa-heart"></i></a></h2>
-                    <h2>$<%= productoSKU.precio %></h2>
+                    <h2><%= producto.nombre %>&emsp;&emsp;<a href=""><i class="far fa-heart"></i></a></h2>
+                    <h2>$<%= producto.precio %></h2>
                     <p class="medios_de_pago">Hasta en <strong>12 cuotas sin interés</strong> con los mejores bancos </p>
                     <br>
                     <p><strong>Colores/Diseños</strong></strong></p>

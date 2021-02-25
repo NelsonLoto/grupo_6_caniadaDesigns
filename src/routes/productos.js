@@ -6,7 +6,7 @@ const productosController = require ('../controllers/productosController');
 
 
 router.get('/', productosController.productos ) //funciona OK
-router.get ('/:sku?', productosController.detalle)
+router.get ('/:id_producto?', productosController.detalle)
 router.get('/ver/carrito', productosController.carrito)
 
 

@@ -153,10 +153,11 @@ section.login .cajaLogin .formLogin .contraseña .olvide a:hover{
 
 section.login .cajaLogin .formLogin div.recuerdame{
     display: flex;
-    text-align: left;
+    justify-content: center;
+    align-items: center;
     font-size: 0.8rem;
     color: #afacac;
-    margin-top:2px;
+    margin-top:20px;
 }
 
 section.login .cajaLogin .formLogin div.recuerdame label{

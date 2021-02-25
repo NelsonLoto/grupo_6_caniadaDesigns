@@ -97,5 +97,6 @@ INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `
 INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('6', 'Guido', 'Shaggy', 'shaggy@caniada.com', '$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq', 'shaggy@caniada.com.webp', '7');
 INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('7', 'Facundo', 'Garcia', 'flete@caniada.com', '$2a$10$9l6uYNHxYqZq1P/GumOSkONUmvaRxlgUX4F3OQJ3/nwYGvaWtt5F6', 'flete@caniada.com.png', '7');
 INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('8', 'Usuario', 'Default', 'user@caniada.com', '$2a$10$zux14WSXwv54OdkuAuC0LO.2IYHeiBa/SRgRAa.dVm2b6TGG0BOYu' ,'user@caniada.com.jpg', '1');
-ALTER TABLE `caniada`.`categorias` 
-CHANGE COLUMN `id_categorias` `id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `caniada`.`categorias`
+CHANGE COLUMN `id_categoria` `id` INT(11) NOT NULL AUTO_INCREMENT ;
