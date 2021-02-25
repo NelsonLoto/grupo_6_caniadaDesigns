@@ -30,14 +30,29 @@ let productosController = {
     detalle : async function (req, res){
         let producto = await db.Producto.findOne({
             where : {
-                sku : req.params.sku
+                id_producto : req.params.id_producto
             }
         })
-        let productosDB = await db.Producto.findAll()
+
+        let productosDB = await db.Producto.findAll({
+            include : {
+                all: true
+            }
+        })
+
+        let categoria = await db.Categoria.findOne({
+            where : {
+                id : producto.id_categoria
+            }
+            
+        })
+
         return res.render('detalleProducto', {
-            productoSKU : producto,
+            producto : producto,
+            categoria: categoria,
             title : producto.nombre,
-            productosDB : productosDB
+            productosDB : productosDB,
+            
         })
     },
     carrito : function (req, res) {
