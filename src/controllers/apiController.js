@@ -25,7 +25,7 @@ let apiController = {
                         id:resultadoProductos[i].id_producto,
                         name: resultadoProductos[i].nombre,
                         description: resultadoProductos[i].descripcion,
-                        detail: `/productos/${resultadoProductos[i].id_producto}`
+                        detail: `/api/products/${resultadoProductos[i].id_producto}`
                     })
                 }
                 let response = {
@@ -33,7 +33,7 @@ let apiController = {
                     productosPorCategoria,
                     productos: detalleProductos
                 }
-                res.json(response)
+                res.status(200).json(response)
             })
         })
         // db.Categoria.findAll({ 
@@ -76,18 +76,22 @@ let apiController = {
         //         })
         //     })
         // })
-    }
-}
-
-    /* detalle: function(req,res){
-        db.Producto.findByPk(req.params.id)
+    },
+    detalle: function(req,res){
+        db.Producto.findOne({
+            where : {
+                id_producto : req.params.id
+            }
+        })
         .then(function(productoDetail){
-            res.json({
+            res.status(200).json({
                 product: productoDetail,
                 url: `/public/images/fotosProductos/${productoDetail.imagen_1}`
             })
         })
-    } */
+    }
+}
+
 
 
 module.exports = apiController;
