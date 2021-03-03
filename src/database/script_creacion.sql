@@ -48,12 +48,13 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `caniada`.`categorias` ;
 
 CREATE TABLE IF NOT EXISTS `caniada`.`categorias` (
-  `id_categoria` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nombre_categoria` VARCHAR(45) NULL,
+  `estado` VARCHAR(1) NOT NULL DEFAULT('1'),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id_categoria`))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
@@ -109,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `caniada`.`productos` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_productos_categorias1`
     FOREIGN KEY (`id_categoria`)
-    REFERENCES `caniada`.`categorias` (`id_categoria`)
+    REFERENCES `caniada`.`categorias` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_productos_talles1`

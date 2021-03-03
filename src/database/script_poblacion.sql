@@ -44,13 +44,13 @@ INSERT INTO `caniada`.`formas_de_pago` (`id_forma`, `nombre_forma`, `cuota`) VAL
 INSERT INTO `caniada`.`formas_de_pago` (`id_forma`, `nombre_forma`, `cuota`) VALUES ('3', 'Mercado Pago', '3');
 INSERT INTO `caniada`.`formas_de_pago` (`id_forma`, `nombre_forma`, `cuota`) VALUES ('4', 'Efectivo', '1');
 
-INSERT INTO `caniada`.`categorias` (`id_categoria`, `nombre_categoria`) VALUES ('1', 'Remeras');
-INSERT INTO `caniada`.`categorias` (`id_categoria`, `nombre_categoria`) VALUES ('2', 'Pantalones');
-INSERT INTO `caniada`.`categorias` (`id_categoria`, `nombre_categoria`) VALUES ('3', 'Jeans');
-INSERT INTO `caniada`.`categorias` (`id_categoria`, `nombre_categoria`) VALUES ('4', 'Camperas');
-INSERT INTO `caniada`.`categorias` (`id_categoria`, `nombre_categoria`) VALUES ('5', 'Buzos');
-INSERT INTO `caniada`.`categorias` (`id_categoria`, `nombre_categoria`) VALUES ('6', 'Shorts');
-INSERT INTO `caniada`.`categorias` (`id_categoria`, `nombre_categoria`) VALUES ('7', 'Vestidos');
+INSERT INTO `caniada`.`categorias` (`id`, `nombre_categoria`) VALUES ('1', 'Remeras');
+INSERT INTO `caniada`.`categorias` (`id`, `nombre_categoria`) VALUES ('2', 'Pantalones');
+INSERT INTO `caniada`.`categorias` (`id`, `nombre_categoria`) VALUES ('3', 'Jeans');
+INSERT INTO `caniada`.`categorias` (`id`, `nombre_categoria`) VALUES ('4', 'Camperas');
+INSERT INTO `caniada`.`categorias` (`id`, `nombre_categoria`) VALUES ('5', 'Buzos');
+INSERT INTO `caniada`.`categorias` (`id`, `nombre_categoria`) VALUES ('6', 'Shorts');
+INSERT INTO `caniada`.`categorias` (`id`, `nombre_categoria`) VALUES ('7', 'Vestidos');
 
 INSERT INTO `caniada`.`productos` (`id_producto`, `sku`, `nombre`, `descripcion`, `precio`, `cantidad`, `imagen_1`, `id_color`, `id_genero`, `id_categoria`, `id_talle`) VALUES ('1', '4', 'Remera Rolling Stones', 'Remera', '500', '1', 'RemeraStones-1606343443221.png', '1', '2', '1', '3');
 INSERT INTO `caniada`.`productos` (`id_producto`, `sku`, `nombre`, `descripcion`, `precio`, `cantidad`, `imagen_1`, `id_color`, `id_genero`, `id_categoria`, `id_talle`) VALUES ('2', '6', 'Remera The Beatles', 'Remera', '500', '1', 'RemeraBeatlesHelp-1606398453283.jpg', '10', '2', '1', '4');
@@ -69,19 +69,6 @@ INSERT INTO `caniada`.`productos` (`id_producto`, `sku`, `nombre`, `descripcion`
 INSERT INTO `caniada`.`productos` (`id_producto`, `sku`, `nombre`, `descripcion`, `precio`, `cantidad`, `imagen_1`, `id_color`, `id_genero`, `id_categoria`, `id_talle`) VALUES ('15', '3', 'Remera Pink Floyd', 'Remera', '500', '1', 'RemeraPinkFloyd-1606343443223.png', '1', '2', '1', '3');
 
 
-
--- FLETE 22-01 
-ALTER TABLE `caniada`.`categorias` 
-ADD COLUMN `estado` VARCHAR(1) NOT NULL AFTER `nombre_categoria`;
-UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '1');
-UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '2');
-UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '3');
-UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '4');
-UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '5');
-UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '6');
-UPDATE `caniada`.`categorias` SET `estado` = '1' WHERE (`id_categoria` = '7');
-
-
 -- Inserciones referidas a Usuarios: 
 INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('1', 'Usuario');
 INSERT INTO `caniada`.`roles` (`id_rol`, `nombre_rol`) VALUES ('3', 'Propietario');
@@ -97,6 +84,3 @@ INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `
 INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('6', 'Guido', 'Shaggy', 'shaggy@caniada.com', '$2a$10$iW2berZdGIx1LgpXsRkpFuly49dh/UQ4yJV0RAeTX0A54Gqz7SGfq', 'shaggy@caniada.com.webp', '7');
 INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('7', 'Facundo', 'Garcia', 'flete@caniada.com', '$2a$10$9l6uYNHxYqZq1P/GumOSkONUmvaRxlgUX4F3OQJ3/nwYGvaWtt5F6', 'flete@caniada.com.png', '7');
 INSERT INTO `caniada`.`usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `password`, `avatar`, `id_rol`) VALUES ('8', 'Usuario', 'Default', 'user@caniada.com', '$2a$10$zux14WSXwv54OdkuAuC0LO.2IYHeiBa/SRgRAa.dVm2b6TGG0BOYu' ,'user@caniada.com.jpg', '1');
-
-ALTER TABLE `caniada`.`categorias`
-CHANGE COLUMN `id_categoria` `id` INT(11) NOT NULL AUTO_INCREMENT ;
