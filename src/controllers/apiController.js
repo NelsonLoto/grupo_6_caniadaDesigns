@@ -45,7 +45,7 @@ let apiController = {
                     productosPorCategoria,
                     productos: detalleProductos
                 }
-                res.json(response)
+                res.status(200).json(response)
             })
         })
     },
@@ -62,7 +62,7 @@ let apiController = {
                 productoDetail.categoria.nombre_categoria,
                 productoDetail.talle.nombre 
             ]
-            res.json({
+            res.status(200).json({
                 product : {
                     id_producto : productoDetail.id_producto,
                     sku : productoDetail.sku,
