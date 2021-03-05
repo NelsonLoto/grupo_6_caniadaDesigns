@@ -50,7 +50,7 @@ DROP TABLE IF EXISTS `caniada`.`categorias` ;
 CREATE TABLE IF NOT EXISTS `caniada`.`categorias` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre_categoria` VARCHAR(45) NULL,
-  `estado` VARCHAR(1) NOT NULL DEFAULT('1'),
+  `estado` VARCHAR(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,

@@ -19,12 +19,23 @@ let apiController = {
             })
             .then(function(resultadoProductos){
 
+
                 let productosPorCategoria={}
                 resultadoCategorias.forEach(function(element){
                     productosPorCategoria[element.nombre_categoria] = element.productos_categoria.length
                 })
 
-                console.log(resultadoProductos);
+                
+                let montoVendidoTotal = 0;
+
+                resultadoProductos.forEach(function(element){
+                    if(element.detallesVentasPorId.length != 0){
+                        for(let i=0; i < element.detallesVentasPorId.length; i++){
+                            montoVendidoTotal += parseInt(element.detallesVentasPorId[i].monto_parcial)
+                        }
+                    }
+                })
+
 
                 let detalleProductos = []
                 for(let i=0; i<resultadoProductos.length; i++){
@@ -33,16 +44,20 @@ let apiController = {
                         name: resultadoProductos[i].nombre,
                         description: resultadoProductos[i].descripcion,
                         detail: `/api/products/${resultadoProductos[i].id_producto}`,
+                        image: `/images/fotosProductos/${resultadoProductos[i].imagen_1}`,
                         relations : {
                         color : resultadoProductos[i].color.nombre_color,
                         genero : resultadoProductos[i].genero.nombre_genero,
                         categoria : resultadoProductos[i].categoria.nombre_categoria,
-                        talle : resultadoProductos[i].talle.nombre                         
+                        talle : resultadoProductos[i].talle.nombre
+                        // cantidadVendida: resultadoProductos[i].detallesVentaPorId[0].cantidad,
+                        // montoVendido: resultadoProductos[i].detallesVentaPorId[0].monto_parcial
                     }
                     })
                 }
                 let response = {
                     totalDeProductos: resultadoProductos.length,
+                    montoVendidoTotal,
                     productosPorCategoria,
                     productos: detalleProductos
                 }
