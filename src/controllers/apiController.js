@@ -18,12 +18,13 @@ let apiController = {
                 }
             })
             .then(function(resultadoProductos){
-
-
                 let productosPorCategoria={}
+                let totalCategorias = 0
                 resultadoCategorias.forEach(function(element){
                     productosPorCategoria[element.nombre_categoria] = element.productos_categoria.length
+                    totalCategorias += 1
                 })
+
 
                 
                 let montoVendidoTotal = 0;
@@ -43,6 +44,7 @@ let apiController = {
                         id:resultadoProductos[i].id_producto,
                         name: resultadoProductos[i].nombre,
                         description: resultadoProductos[i].descripcion,
+                        price : resultadoProductos[i].precio,
                         detail: `/api/products/${resultadoProductos[i].id_producto}`,
                         image: `/images/fotosProductos/${resultadoProductos[i].imagen_1}`,
                         relations : {
@@ -59,6 +61,7 @@ let apiController = {
                     totalDeProductos: resultadoProductos.length,
                     montoVendidoTotal,
                     productosPorCategoria,
+                    totalCategorias,
                     productos: detalleProductos
                 }
                 res.status(200).json(response)
