@@ -40,9 +40,16 @@ function Sidebar(props) {
         <div className="sidebar-heading">
           <p>Menu</p>
         </div>
+
+        <li className="nav-item">
+          <a href="http://localhost:3000" className="nav-link" target="_blank">
+          <i className="fas fa-fw fa-eye"></i>
+          <span>Ver sitio</span></a>
+        </li>
         {
           dataMenu.map((element, key) => {
             return (
+
 
               <SidebarComponent
                 key={key}
