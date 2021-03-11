@@ -1,10 +1,5 @@
 let dataMenu =[
      {
-          span: "Ver sitio",
-          href: "http://localhost:3000",
-          icon: "fas fa-fw fa-eye"
-     },
-     {
           span: "Ver todos los productos",
           href: "/products_list",
           icon: "fas fa-fw fa-folder"
