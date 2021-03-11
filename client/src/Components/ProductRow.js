@@ -1,33 +1,96 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-function ProductRow({ productsJSON }) {
-    const [productos, setProductos] = useState([])
+import {makeStyles} from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
+import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import CardMedia from '@material-ui/core/CardMedia'
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 
-    useEffect(() => {
-        fetchProductos()
-    }, [])
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1
+  }
+})
 
-    const fetchProductos = async () => {
-        try {
-            const response = await axios.get('http://localhost:3000/api/products')
-            setProductos(response.data.productos)
-        }
-        catch (error) {
-            console.log(error);
-        }
+function ProductRow({productsJSON}) {
+  const [productos, setProductos] = useState([])
+  const classes = useStyles()
+
+  useEffect(() => {
+    fetchProductos()
+  }, [])
+
+  const fetchProductos = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/api/products')
+      setProductos(response.data.productos)
+      return console.log(setProductos)
+    } catch (error) {
+      console.log(error)
     }
+  }
 
-    return (
-        productos.map((producto, i) =>
-            <tr>
-                <td>{producto.name}</td>
-                <td>{producto.description}</td>
-                <td>{producto.price}</td>
-                <td>{producto.relations.categoria}</td>
-                <td>{producto.relations.color}</td>
-            </tr>
-        )
-    )
+  return  (
+    <div className={classes.root}>
+        <Typography gutterBottom variant="h2" component="h1">
+      Todos los Productos
+    </Typography>
+      <Grid 
+      container
+                spacing={2}
+                direction="row"
+                justify="flex-start"
+                alignItems="flex-start"
+         >
+             
+         {productos.map((producto, i) => (
+        <Grid item xs={12} sm={6} md={3} >
+<Card >
+<CardActionArea>
+  <CardMedia
+    component="img"
+    alt="Imagen Producto"
+    height="auto"
+    width="50px"
+    image={`http://localhost:3000${producto.image}`}
+    title="Shaggy momia"
+  />
+  <CardContent>
+    <Typography gutterBottom variant="h5" component="h2">
+      {producto.name}
+    </Typography>
+    <Typography variant="body2" color="textSecondary" component="p">
+      {producto.description}
+    </Typography>
+    <Typography variant="body2" color="textSecondary" component="p">
+      {producto.price}
+    </Typography>
+    <Typography variant="body2" color="textSecondary" component="p">
+      Categoria: {producto.relations.categoria}
+    </Typography>
+    <Typography variant="body2" color="textSecondary" component="p">
+      Color: {producto.relations.color}
+    </Typography>
+  </CardContent>
+</CardActionArea>
+<CardActions>
+  <Button size="small" color="primary">
+    Editar
+  </Button>
+  <Button size="small" color="primary">
+    Borrar
+  </Button>
+</CardActions>
+</Card>
+</Grid>
+ ))}
+ </Grid>
+    </div>
+  )
 }
 
 export default ProductRow
