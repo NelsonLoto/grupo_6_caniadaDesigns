@@ -18,7 +18,7 @@
              <select name="categoria" id="categoria">
                  <option value="seleccionar_categoria" selected disabled hidden>Seleccione categoria</option>
                  <% for (let categoria of categorias) {%>
-                    <option value="<%= categoria.id_categoria %>  "><%= categoria.nombre_categoria %></option>
+                    <option value="<%= categoria.id%>"><%= categoria.nombre_categoria %></option>
                  <% } %> 
              </select>
              </div>

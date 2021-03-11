@@ -71,12 +71,12 @@ module.exports = (sequelize, DataTypes) => {
 const config = {
     tableName: "usuarios",
     comment: "",
-    indexes: [{
-      name: "fk_usuarios_roles1_idx",
-      unique: false,
-      type: "BTREE",
-      fields: ["id_rol"]
-    }],
+    // indexes: [{
+    //   name: "fk_usuarios_roles1_idx",
+    //   unique: false,
+    //   type: "BTREE",
+    //   fields: ["id_rol"]
+    // }],
     createdAt : 'created_at',
     updatedAt : 'updated_at',
     deletedAt : 'deleted_at',

@@ -118,6 +118,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   const options = {
     tableName: "ventas",
+    timestamps:false,
+    paranoid : true,
     comment: "",
     indexes: [{
       name: "fk_ventas_ciudades1_idx",

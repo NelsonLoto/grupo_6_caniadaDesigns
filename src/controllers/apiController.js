@@ -1,9 +1,10 @@
 const db = require('../database/models')
 const Sequelize = require ('sequelize')
 const { setRandomFallback } = require('bcryptjs')
+const { signedCookie } = require('cookie-parser')
 
 let apiController = {
-    productos: function(req,res){
+    products: function(req,res){
 
         db.Categoria.findAll({
             include: {
@@ -11,13 +12,31 @@ let apiController = {
             }
         }).
         then(function(resultadoCategorias){
-            db.Producto.findAll()
+            db.Producto.findAll({
+                include : {
+                    all : true
+                }
+            })
             .then(function(resultadoProductos){
-
                 let productosPorCategoria={}
+                let totalCategorias = 0
                 resultadoCategorias.forEach(function(element){
                     productosPorCategoria[element.nombre_categoria] = element.productos_categoria.length
+                    totalCategorias += 1
                 })
+
+
+                
+                let montoVendidoTotal = 0;
+
+                resultadoProductos.forEach(function(element){
+                    if(element.detallesVentasPorId.length != 0){
+                        for(let i=0; i < element.detallesVentasPorId.length; i++){
+                            montoVendidoTotal += parseInt(element.detallesVentasPorId[i].monto_parcial)
+                        }
+                    }
+                })
+
 
                 let detalleProductos = []
                 for(let i=0; i<resultadoProductos.length; i++){
@@ -25,70 +44,122 @@ let apiController = {
                         id:resultadoProductos[i].id_producto,
                         name: resultadoProductos[i].nombre,
                         description: resultadoProductos[i].descripcion,
-                        detail: `/productos/${resultadoProductos[i].id_producto}`
+                        price : resultadoProductos[i].precio,
+                        detail: `/api/products/${resultadoProductos[i].id_producto}`,
+                        image: `/images/fotosProductos/${resultadoProductos[i].imagen_1}`,
+                        relations : {
+                        color : resultadoProductos[i].color.nombre_color,
+                        genero : resultadoProductos[i].genero.nombre_genero,
+                        categoria : resultadoProductos[i].categoria.nombre_categoria,
+                        talle : resultadoProductos[i].talle.nombre
+                        // cantidadVendida: resultadoProductos[i].detallesVentaPorId[0].cantidad,
+                        // montoVendido: resultadoProductos[i].detallesVentaPorId[0].monto_parcial
+                    }
                     })
                    
                 }
                 let response = {
                     totalDeProductos: resultadoProductos.length,
+                    montoVendidoTotal,
                     productosPorCategoria,
+                    totalCategorias,
                     productos: detalleProductos
                 }
-                res.json(response)
+                res.status(200).json(response)
             })
         })
-        // db.Categoria.findAll({ 
-        //     attributes: { 
-        //         include: [[Sequelize.fn("COUNT", Sequelize.col("id_categoria")), "cantidadPorCategoria"]] 
-        //     },
-        //     include: [{
-        //         model: db.Producto,
-        //         as: 'productos',
-        //          attributes: [],
-                
-        //     }],
-        //     group: ['id']
-        // }).then(function(resultados){
-        //     let categorias = []
-        //     for (let i = 0; i < resultados.length; i++) {
-        //         categorias.push({
-        //             Categoria: resultados[i].nombre_categoria,
-        //             productos: resultados[i].cantidadPorCategoria
-                    
-        //         })
-        //     }
-        //     db.Producto.findAll()
-        //     .then(function(Productos){
-        //         let arreglo = []
-        //         for(let i=0; i<Productos.length; i++){
-        //             arreglo.push({
-        //                 id:Productos[i].id_producto,
-        //                 name: Productos[i].nombre,
-        //                 description: Productos[i].descripcion,
-        //                 detail: `/productos/${Productos[i].sku}`
-        //             })
-        //         }
-        //         res.json({
-        //             resultados:categorias,
-        //             count: Productos.length,
-        //             Ruta: arreglo,
-        //             Productos: Productos
-                   
-        //         })
-        //     })
-        // })
+    },
+    productDetail: function(req,res){
+        db.Producto.findByPk(req.params.id, 
+            {include : {all : true}}
+        )
+        .then(function(productoDetail)
+        {            
+            let relations = {
+                color: productoDetail.color.nombre_color, 
+                genero:productoDetail.genero.nombre_genero, 
+                categoria:productoDetail.categoria.nombre_categoria,
+                talle: productoDetail.talle.nombre
+            }//el sprint pide un array de las relaciones que tenga, pero la realidad es que es mas accesible enviar un objeto para accederlo simplemente sin tener que recorrerlo. QUE OPINAN?
+            
+            res.status(200).json(
+                {
+                    product : {
+                        id_producto : productoDetail.id_producto,
+                        sku : productoDetail.sku,
+                        nombre : productoDetail.nombre,
+                        descripcion : productoDetail.descripcion,
+                        precio : productoDetail.precio,
+                        cantidad : productoDetail.cantidad,
+                        imagen_1 : productoDetail.imagen_1,
+                        imagen_2 : productoDetail.imagen_2,
+                        imagen_3 : productoDetail.imagen_3,
+                        imagen_4 : productoDetail.imagen_4,
+                        // id_color : productoDetail.id_color,
+                        // id_genero : productoDetail.id_genero,
+                        // id_categoria : productoDetail.id_categoria,
+                        // id_talle: productoDetail.id_talle,
+                        //NO TIENE SENTIDO ENVIAR ESTOS DATOS EN LA API, YA QUE ENVIAMOS EL DATO RELACIONADO DENTRO DE LA PROPIEDAD RELATIONS, a pesar de que el sprint lo pida, no es funcional. 
+                        created_at : productoDetail.created_at,
+                        updated_at: productoDetail.updated_at,
+                        deleted_at : productoDetail.deleted_at,
+                        url: `/images/fotosProductos/${productoDetail.imagen_1}`,
+                        relations : relations
+                    }
+                }
+            )
+        })
+    },
+    users : function (req, res){
+        db.Usuario.findAll({
+            include: {
+                all:true
+            }
+        })
+        .then(function(resultadoUsers){
+            let admin;
+            let users= [];
+            resultadoUsers.forEach(function(user){
+                (user.id_rol == 9) ? admin= false : admin = true;
+                users.push({
+                    id: user.id_usuario,
+                    nombre: user.nombre,
+                    apellido: user.apellido,
+                    email: user.email,
+                    admin: admin,
+                    avatar: `/images/avatars/${user.avatar}`,
+                    detail: `/api/users/${user.id_usuario}`
+                })
+            })
+            res.status(200).json({
+                //resultadoUsers
+                count: users.length,
+                users
+            })
+        })
+        
+    },
+    userDetail : function (req, res){
+        db.Usuario.findByPk(req.params.id)
+        .then(function(singleUser){
+            let admin;
+            (singleUser.id_rol == 9) ? admin= false : admin = true;
+            res.status(200).json({
+                all: '/api/users',
+                id: singleUser.id,
+                nombre:singleUser.nombre,
+                apellido:singleUser.apellido,
+                email:singleUser.email,
+                admin: admin,
+                avatar:`/images/avatars/${singleUser.avatar}`,
+                createdAt:singleUser.created_at,
+                updatedAt:singleUser.updated_at,
+                deletedAt:singleUser.deleted_at,
+            })
+        })
+        
     }
 }
-
-    /* detalle: function(req,res){
-        db.Producto.findByPk(req.params.id)
-        .then(function(productoDetail){
-            res.json({
-                product: productoDetail,
-                url: `/public/images/fotosProductos/${productoDetail.imagen_1}`
-            })
-        })
-    } */
 
 
 module.exports = apiController;
