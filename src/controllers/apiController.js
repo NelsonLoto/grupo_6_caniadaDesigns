@@ -4,29 +4,6 @@ const { setRandomFallback } = require('bcryptjs')
 
 let apiController = {
     productos: function(req,res){
-<<<<<<< HEAD
-        db.Producto.findAll()
-        .then(function(resultados){
-            db.Categoria.findAll({ include: { all: true }})
-        .then(function(categorias){
-            let productosPorCategoria = {}
-
-            for (let i = 0; i < categorias.length; i++) {
-                productosPorCategoria[categorias[i].nombre_categoria] = categorias[i].productos.length
-                
-            
-            }
-            // categorias.forEach(element => {
-            //     productosPorCategoria[element.nombre_categoria] = element.productos.length
-            // });
-            let arreglo = []
-                for(let i=0; i<resultados.length; i++){
-                    arreglo.push({
-                        id:resultados[i].id_producto,
-                        name: resultados[i].nombre,
-                        description: resultados[i].descripcion,
-                        detail: `/productos/${resultados[i].nombre}`
-=======
 
         db.Categoria.findAll({
             include: {
@@ -49,22 +26,9 @@ let apiController = {
                         name: resultadoProductos[i].nombre,
                         description: resultadoProductos[i].descripcion,
                         detail: `/productos/${resultadoProductos[i].id_producto}`
->>>>>>> 3c344696dccb014e4e536c349f517d930f271562
                     })
                    
                 }
-<<<<<<< HEAD
-                 
-                res.json({
-                    Count: resultados.length,
-                    countByCategory: productosPorCategoria,
-                    Products: arreglo
-                    
-        })
-    })
-})
-    }}
-=======
                 let response = {
                     totalDeProductos: resultadoProductos.length,
                     productosPorCategoria,
@@ -126,6 +90,5 @@ let apiController = {
         })
     } */
 
->>>>>>> 3c344696dccb014e4e536c349f517d930f271562
 
 module.exports = apiController;
