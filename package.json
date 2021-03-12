@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon ./src/app.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node ./src/app.js && npm install && npm start",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   },
   "homepage": "https://github.com/NelsonLoto/grupo_6_caniadaDesigns#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "bcryptjs": "^2.4.3",
     "concurrently": "^6.0.0",
     "cookie-parser": "^1.4.5",

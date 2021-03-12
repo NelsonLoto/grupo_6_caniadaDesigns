@@ -12,7 +12,14 @@ import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+  },
+  content: {
+    paddingRight: 30,
+    paddingLeft: 30
+  },
+  img: {
+    
   }
 })
 
@@ -35,13 +42,15 @@ function ProductRow({productsJSON}) {
   }
 
   return (
+
+      <div className={classes.content}>
     <div className={classes.root}>
       <Typography gutterBottom variant="h2" component="h1">
         Todos los Productos
       </Typography>
       <Grid
         container
-        spacing={2}
+        spacing={3}
         direction="row"
         justify="flex-start"
         alignItems="flex-start"
@@ -49,13 +58,14 @@ function ProductRow({productsJSON}) {
         {productos.map((producto, i) => (
           <Grid item xs={12} sm={6} md={3}>
             <Card>
-              <CardActionArea>
+              <CardActionArea className= "container">
                 <CardMedia
                   component="img"
                   alt="Imagen Producto"
-                  height="auto"
+                  height={"auto"}
                   image={`http://localhost:3000${producto.image}`}
-                  title="Shaggy momia"
+                  title="imagen de producto"
+                  className={classes.img}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -104,6 +114,8 @@ function ProductRow({productsJSON}) {
         ))}
       </Grid>
     </div>
+    </div>
+
   )
 }
 
