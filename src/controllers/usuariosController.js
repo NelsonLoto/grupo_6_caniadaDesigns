@@ -32,6 +32,7 @@ let usuarios = {
                         }
                         else if (usuario.email == req.body.email && bcrypt.compareSync(req.body.password, usuario.password) ){
                             req.session.user = usuario
+                            
                             if (req.body.remember != undefined) {
                                 res.cookie('remember', usuario.email, { maxAge: 600000000 });
                             }

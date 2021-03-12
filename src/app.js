@@ -7,6 +7,7 @@ const path = require('path')
 const methodOverride = require ('method-override')
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const cors = require ('cors')
 
 
 
@@ -40,17 +41,32 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({extended : false}))
 app.use(express.json());
 app.use(cookieParser());
-app.use(session({secret: "laSalNoSalaYElAzucarNoEndulza"}));
-app.use(recordameMiddleware);
-app.use(usuarioLogueado);
+app.use(session({
+     key:"user_sid",
+     secret: "laSalNoSalaYElAzucarNoEndulza",
+     saveUninitialized:false,
+     resave:false,
+     cookie:{
+          httpOnly:true,
+          maxAge:36000000
+     }
+}));
+
+
+//Este middleware verificará si la cookie del usuario todavía está guardada en el navegador y el usuario no está logueado, si es asi, cerrará automáticamente la sesión del usuario.
+// Esto generalmente sucede cuando detiene su servidor express después de iniciar sesión, su cookie aún permanece guardada en el navegador.
+
 app.use((req, res, next) => {
-     res.header('Access-Control-Allow-Origin', '*');
-     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+     if (req.cookies.user_sid && !req.session.user) {
+         res.clearCookie('user_sid');        
+     }
      next();
  });
- 
+
+
+app.use(recordameMiddleware);
+app.use(usuarioLogueado);
+app.use(cors())
 
 
 
