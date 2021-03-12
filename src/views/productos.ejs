@@ -8,77 +8,57 @@
 <body>
     <%- include('./partials/header') %>
     <main class="detalleProducto">
-        <div class="rutaProducto">
-            <ul>
-                <li><a href="#">género</a></li>
-                <li><a href="#">/ categoría</a></li>
-                <li><a href="#">/ subcategoría</a></li>
-                <li><a href="#">/ producto</a></li>
-            </ul>
-        </div>
-        <div class="contenedorDetalle">
-            <div class="panelIzquierdo">
-                <section class="vidriera">
-                    <div class="imagenes">
-                        <div class="botonIzq">
-                            <button><a href=""><i class="fas fa-arrow-left"></i></a></button>
-                        </div>
-                        <div class="img_principal"><img src="/images/producto1/remeraLisaBlanca1.jpeg" alt="remeraLisaBlanca1"></div>
-                        <div class="img_secundaria">
-                            <img src="/images/producto1/remeraLisaBlanca2.jpeg" alt="remeraLisaBlanca2">
-                        </div>
-                        <div class="botonDer">
-                            <button><a href=""><i class="fas fa-arrow-right"></i></a></button>
-                        </div>
-                    </div>
-                </section>
-                <section class="caracteristicasProducto">
-                    <h3>Descripción del producto</h3>
-                    <h4>Talla</h4>
-                    <p>El/la modelo mide x y lleva talle x</p>
-                    <h4>Modelo</h4>
-                    <p>Slim Fit</p>
-                    <h4>Composicion</h4>
-                    <p>Tipo de composición</p>
-                    <h4>Art. N°</h4>
-                    <p>123456</p>
-                    <div class="opinionTalles">
-                        <h4>Talle según XX opiniones</h4>
-                        <img src="/images/medidorTalles.jpg" alt="">
-                    </div>
-                </section>
-            </div>
-            <div class="panelDerecho">
-                    <h2>Nombre del producto&emsp;&emsp;<a href=""><i class="far fa-heart"></i></a></h2>
-                    <h2>Precio</h2>
-                    <p class="medios_de_pago">Hasta en <strong>12 cuotas sin interés</strong> con los mejores bancos </p>
-                    <br>
-                    <p><strong>Colores/Diseños</strong></strong></p>
-                    <div class="coloresProducto">
-                        <div class="miniatura"><a href="#"><img src="/images/producto1/miniaturaRemeraLisaNegra.jpeg" alt="color1"></a></div>
-                        <div class="miniatura"><a href="#"><img src="/images/producto1/miniaturaRemeraLisaBordo.jpeg"alt="color2"></a></div>
-                        <div class="miniatura"><a href="#"><img src="/images/producto1/miniaturaRemeraLisaVerde.jpeg" alt="color3"></a></div>
-                        <button><i class="fas fa-arrow-right"></i></button>
-                    </div>
-                    <div class="seleccionTalles">
-                        <select name="seleccionTalles" id="seleccionTalles">
-                                   <option value="selecTalle" selected disabled hidden>Seleccioná tu talle</option>
-                                   <option value="XS">XS</option>
-                                   <option value="S">S</option>
-                                   <option value="M">M</option>
-                                   <option value="L">L</option>
-                                   <option value="XL">XL</option>
-                                   <option value="XXL">XXL</option>
-                              </select>
-                    </div>
-                    <small><a href="#">Tabla de talles</a></small>
-                    <a href="/productos/ver/carrito" class="boton"><i class="fas fa-shopping-bag"></i>&emsp;Añadir</a>
-                    <ul>
-                        <li><i class="far fa-check-circle"></i>&ensp;Envíos gratis a todo el país</li>
-                        <li><i class="far fa-check-circle"></i>&ensp;Devoluciones gratuitas</li>
-                    </ul>
-            </div>
-        </div>
+        <h1 class="tituloTienda">Tienda Caniada</h1>
+        <ul id="flexboxProductos" class="">
+            <!--1------------------------------------>
+                 <% for (let i = 0; i < productosDB.length; i++) { %> 
+                        <!-- Filtro por si la BD es menor a 9-->
+                                <li class="item-uno">
+                                     <div class="box box-productos">
+                                          <div class="slide-img">
+                                               <img src= <%= `/images/fotosProductos/${productosDB[i].imagen_1}` %>   alt=<%= productosDB[i].imagen_1 %>>
+                                                <div class="overlay">
+                                                    <!--buy-btn------>	
+                                                          <a href="#" class="carritoOverlay"><i class="far fa-heart">
+                                                              <span class="tooltiptext">Whislist</span>
+                                                          </i></a>	
+                                                          <a href="/carrito" class="whislistOverlay"><i class="fas fa-shopping-cart"><span class="tooltiptext">Agregar al Carrito</span></i></a>	
+                                                          <a href=<%=`/productos/${productosDB[i].id_producto}`%> class="vistaRapida"><i class="far fa-eye"><span class="tooltiptext">Ver Producto</span></i></a>	
+                                                    </div>
+                                          </div>
+                                         
+                                          <div class="detail-box">
+                                               <div class="descripcionProducto">
+                                                    <a href=<%=`/productos/${productosDB[i].id_producto}`%>><p><%=productosDB[i].nombre%></p></a>
+                                               </div>
+                                               <div class="precioYoferta">
+                                                    <div class="precio"><%=productosDB[i].precio%></div>
+                                               </div>
+                                               <div class="envio">
+                                                    <p>Envío Gratis</p>
+                                               </div>
+                                               <div class="lineaInferior">
+                                                    <div><span class="fa fa-star checked"></span>
+                                                         <span class="fa fa-star checked"></span>
+                                                         <span class="fa fa-star checked"></span>
+                                                         <span class="fa fa-star"></span>
+                                                         <span class="fa fa-star"></span></div>
+                                                    <div class="carritoYWhislist">
+                                                         
+                                                     
+                                                    </div>
+                                               </div>
+                                          </div>
+                                     </div>
+            
+                                </li>
+            
+                                <% } %> 
+            
+                               
+                           </ul>
+
+
         <%- include ('./partials/componentes/carrousel') %> 
     </main>
 

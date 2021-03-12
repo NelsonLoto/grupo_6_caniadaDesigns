@@ -34,61 +34,75 @@ function ProductRow({productsJSON}) {
     }
   }
 
-  return  (
+  return (
     <div className={classes.root}>
-        <Typography gutterBottom variant="h2" component="h1">
-      Todos los Productos
-    </Typography>
-      <Grid 
-      container
-                spacing={2}
-                direction="row"
-                justify="flex-start"
-                alignItems="flex-start"
-         >
-             
-         {productos.map((producto, i) => (
-        <Grid item xs={12} sm={6} md={3} >
-<Card >
-<CardActionArea>
-  <CardMedia
-    component="img"
-    alt="Imagen Producto"
-    height="auto"
-    width="50px"
-    image={`http://localhost:3000${producto.image}`}
-    title="Shaggy momia"
-  />
-  <CardContent>
-    <Typography gutterBottom variant="h5" component="h2">
-      {producto.name}
-    </Typography>
-    <Typography variant="body2" color="textSecondary" component="p">
-      {producto.description}
-    </Typography>
-    <Typography variant="body2" color="textSecondary" component="p">
-      {producto.price}
-    </Typography>
-    <Typography variant="body2" color="textSecondary" component="p">
-      Categoria: {producto.relations.categoria}
-    </Typography>
-    <Typography variant="body2" color="textSecondary" component="p">
-      Color: {producto.relations.color}
-    </Typography>
-  </CardContent>
-</CardActionArea>
-<CardActions>
-  <Button size="small" color="primary">
-    Editar
-  </Button>
-  <Button size="small" color="primary">
-    Borrar
-  </Button>
-</CardActions>
-</Card>
-</Grid>
- ))}
- </Grid>
+      <Typography gutterBottom variant="h2" component="h1">
+        Todos los Productos
+      </Typography>
+      <Grid
+        container
+        spacing={2}
+        direction="row"
+        justify="flex-start"
+        alignItems="flex-start"
+      >
+        {productos.map((producto, i) => (
+          <Grid item xs={12} sm={6} md={3}>
+            <Card>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  alt="Imagen Producto"
+                  height="auto"
+                  image={`http://localhost:3000${producto.image}`}
+                  title="Shaggy momia"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {producto.name}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    {producto.description}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    {producto.price}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    Categoria: {producto.relations.categoria}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    Color: {producto.relations.color}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Editar
+                </Button>
+                <Button size="small" color="primary">
+                  Borrar
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
     </div>
   )
 }

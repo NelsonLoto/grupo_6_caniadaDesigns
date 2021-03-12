@@ -1,11 +1,11 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom'
+import React from 'react'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
-import '../styles/App.css';
+import '../styles/App.css'
 
 import Main from './Main'
-import Sidebar from "./Sidebar"
-import ProductsList from "./ProductsList"
+import Sidebar from './Sidebar'
+import ProductsList from './ProductsList'
 
 function App() {
   return (
@@ -19,9 +19,8 @@ function App() {
           </Switch>
         </Router>
       </div>
-
     </div>
   )
 }
 
-export default App;
+export default App
