@@ -14,6 +14,9 @@ function App() {
         <Router>
           <Sidebar />
           <Switch>
+            //aca va la autenticacion
+            //pop up de login si no esta logueado, en session(?)
+            
             <Route path="/" exact component={Main} />
             <Route path="/products_list" exact component={ProductsList} />
           </Switch>
