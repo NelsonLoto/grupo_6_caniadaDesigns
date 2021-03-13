@@ -1,27 +1,28 @@
-// //funcion
 
-// let agregarCarrito = document.getElementsByClassName('whislistOverlay')
-//  console.log(agregarCarrito);
+ 
+    document.querySelectorAll('.agregarCarrito').forEach(item => {
+        
+        item.addEventListener('click', () => {
+          console.log(item.dataset.myvalue);
+          var existing = localStorage.getItem('Producto');// traigo la data que exista hasta el momento
+          existing = existing ? existing.split(',') : []; //si no existe data, hago un array, y si es un array lo hago string.
+          existing.push(item.dataset.myvalue); //agrego nueva data al array
 
-// // agregarCarrito.addEventListener('click', ()=> {
-// //     // console.log("lo atrapamos");
-// //     // localStorage.setItem('Producto',productosDB[i].id_producto )
-// //     // console.log(localStorage.getItem("Producto"));
-// //     let id = agregarCarrito.querySelector('p')
-
-// //     console.log(agregarCarrito)
-
-// // })
+          localStorage.setItem('Producto', existing.toString()); //lo guardo de nuevo en local storage
 
 
-// function levantaID(){        
-//       let elemento = document.getElementsByClassName('elItem');
-//       let array_id = [];          
-//       for(let i = 0; i < elemento.length; i++){             
-//       let id = elemento[i].getAttribute('id');
-//                      array_id.push(id);
-//                  }        
-//                      console.log(array_id);   
-//                      localStorage.setItem('datos', JSON.stringify(array_id));
-//                      // Guardo el objeto como un string en Storage } //End function levantaID
+          
+      })
 
+  
+     
+   })
+
+
+
+
+//  let agregarCarrito = document.querySelectorAll('agregarCarrito')
+//     console.log(agregarCarrito);
+//     Array.prototype.forEach.call(agregarCarrito, function(agregarCarrito) {
+//         var id = agregarCarrito.dataset.myvalue;
+//         console.log("ID producto: "+ id);})
