@@ -1,32 +1,19 @@
-//funcion
+document.querySelectorAll('.agregarCarrito').forEach(item => {
+        
+        item.addEventListener('click', () => {
+          console.log(item.dataset.myvalue);
+          var existing = localStorage.getItem('Producto');// traigo la data que exista hasta el momento
+          existing = existing ? existing.split(',') : []; //si no existe data, hago un array, y si es un array lo hago string.
+          existing.push(item.dataset.myvalue); //agrego nueva data al array
 
-let agregarCarrito= document.querySelector('.contenedor-cards')
+          localStorage.setItem('Producto', existing.toString()); //lo guardo de nuevo en local storage
 
-
-agregarCarrito.addEventListener('click', function(e) {
-     let productos= []
-     
-     if(e.target.id == "linkAgregarCarrito"){
-          
-          if(localStorage != null){
-               productos = Object.entries(localStorage);
-               productos.forEach(productoYaCargado => {
-                    if (productoYaCargado[0] == e.target.dataset.producto){
-                              localStorage.removeItem(productoYaCargado[0])
-                              console.log(productoYaCargado[1])
-                              let viejaCantidad= productoYaCargado[1]
-                              let nuevaCantidad = (parseInt(viejaCantidad))+1;
-                              localStorage.setItem(e.target.dataset.producto, nuevaCantidad );
-                    }
-               });
-               
-          }else{
-               console.log("local storage esta vacio")
-          }
-          localStorage.setItem(e.target.dataset.producto, 1);
-
-     }
-})
-     
+      })
+   })
 
 
+//  let agregarCarrito = document.querySelectorAll('agregarCarrito')
+//     console.log(agregarCarrito);
+//     Array.prototype.forEach.call(agregarCarrito, function(agregarCarrito) {
+//         var id = agregarCarrito.dataset.myvalue;
+//         console.log("ID producto: "+ id);})

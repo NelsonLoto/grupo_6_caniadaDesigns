@@ -1,30 +1,30 @@
 <header class="template">
-    <div class="logo">
-         <a href="/" >
-              <img class="header" src="/images//logos/isoLogoTipoBlanco.svg" alt="">
-         </a>
-    </div>
-    
-   
-    <nav class="menu">
-         <ul>
-              <li><a href="">Categorías</a></li>
-              <li><a href="/#seccionTres">Destacados</a></li>
-              <li><a href="">Colecciones</a></li>
-              
-         </ul>
+     <div class="logo">
+          <a href="/">
+               <img class="header" src="/images//logos/isoLogoTipoBlanco.svg" alt="">
+          </a>
+     </div>
 
-         <div class="boton-menu">
-              <i class="fas fa-bars"></i>
-         </div>
 
-    </nav>
-    
+     <nav class="menu">
+          <ul>
+               <li><a href="">Categorías</a></li>
+               <li><a href="/#seccionTres">Destacados</a></li>
+               <li><a href="">Colecciones</a></li>
 
-    <nav class="user">
-         
-              
-              <!-- <li> <a href=""><i class="content-search fas fa-search"></i></a>
+          </ul>
+
+          <div class="boton-menu">
+               <i class="fas fa-bars"></i>
+          </div>
+
+     </nav>
+
+
+     <nav class="user">
+
+
+          <!-- <li> <a href=""><i class="content-search fas fa-search"></i></a>
 
                    <form action="/productos" method="GET">
                         <input type="text" name="search" autocomplete="off" required >
@@ -32,130 +32,180 @@
                    </form>
 
               </li> -->
-              
-              <% if( locals.usuarioLogueado == undefined) {%>
 
-               <ul class="userMenu">
+          <% if( locals.usuarioLogueado == undefined) {%>
 
-                    <li class="search"> <a href=""><i class="content-search fas fa-search"></i></a></li>
 
-                    <li class="bag"><a href="/productos/ver/carrito"><span class="notificacion">4</span><i class="fas fa-shopping-bag"></i></a></li>
 
-                    <li class="user"><a href="/usuarios/login"><i class="fas fa-sign-in-alt"></i></a></li>
-               </ul>
 
-               <% } else if ( locals.usuarioLogueado.id_rol === 1 || 
+
+
+          <div class="navbar-right">
+               <a href=""><i class="content-search fas fa-search"></i></a>
+               <a href="#" id="cart"><i class="fa fa-shopping-bag"></i><span class="badge">3</span></a>
+               <div class="shopping-cart">
+                    <div class="shopping-cart-header">
+                         <div class="shopping-cart-total">
+                              <span class="lighter-text">Total:</span>
+                              <span class="main-color-text total">$461.15</span>
+                              <br>
+                         </div>
+                    </div>
+                    <!--end shopping-cart-header -->
+
+                    <ul class="shopping-cart-items">
+                         <li class="clearfix">
+                              <img src="/images/fotosProductos/RemeraStones-1606343443221.png" alt="item1" />
+                              <span class="item-name">Remera Rolling Stones</span>
+                              <span class="item-detail">Talle L</span>
+                              <span class="item-price">$49.50</span>
+                              <span class="item-quantity">Cantidad: 01</span>
+                         </li>
+
+                         <li class="clearfix">
+                              <img src="/images/fotosProductos/RemeraStones-1606343443221.png" alt="item1" />
+                              <span class="item-name">Remera Rolling Stones</span>
+                              <span class="item-detail">Talle M</span>
+                              <span class="item-price">$34.06</span>
+                              <span class="item-quantity">Cantidad: 3</span>
+                         </li>
+
+                         <li class="clearfix">
+                              <img src="/images/fotosProductos/RemeraStones-1606343443221.png" alt="item1" />
+                              <span class="item-name">Remera Rolling Stones</span>
+                              <span class="item-detail">Talle S</span>
+                              <span class="item-price">$14.21</span>
+                              <span class="item-quantity">Cantidad: 4</span>
+                         </li>
+                    </ul>
+
+                    <a href="#" class="button">Checkout <i class="fa fa-chevron-right"></i></a>
+               </div>
+               <a href="/usuarios/login"><i class="fas fa-sign-in-alt"></i></a>
+
+          </div>
+          <!--end shopping-cart -->
+
+
+
+
+          </li>
+
+          </ul>
+
+          <% } else if ( locals.usuarioLogueado.id_rol === 1 || 
                               locals.usuarioLogueado.id_rol === 3 ||
                               locals.usuarioLogueado.id_rol === 5 ||
                               locals.usuarioLogueado.id_rol === 7 ){ 
                %>
-               
-                    <ul class="userMenu">
-          
-                         <li class="usuario">
-     
-                              <div class="perfil">
-                                   <div class="avatar">     
-                                        <img src="/images/avatars/<%= usuarioLogueado.avatar %> " alt="">
-                                   </div>
-                              </div>
-     
-                              <div class="flecha">
-                                   <a href="#">
-                                        <i class="fas fa-chevron-down"></i>
-                                   </a>
-                              </div>
-     
-                              <div class="dropdown">
-     
-                                   <div class="dropdown-option">
-                                        <a href="http://localhost:3006">
-                                        <i class="fas fa-briefcase"></i>
-                                        <p>Ir a Panel Admin</p>
-                                        </a>
-                                   </div>
-     
-                                   <div class="dropdown-option">
-                                        <a href="/">
-                                        <i class="fas fa-user-cog"></i>
-                                        <p>Configuración</p>
-                                        </a>
-                                   </div>
-     
-                                   <div class="dropdown-option">
-                                        <a href="/usuarios/logout">
-                                        <i class="fas fa-sign-out-alt"></i>
-                                        <p>Cerrar sesión</p>
-                                        </a>
-                                   </div>
-     
-                              </div>  
-     
-     
-                         </li>
-                         
-                    </ul>
-               
 
-               <% } else { %>
+          <ul class="userMenu">
 
-               <ul class="userMenu">
+               <li class="usuario">
 
-                    <li class="search"> <a href=""><i class="content-search fas fa-search"></i></a></li>
-
-                    <li class="bag"><a href="/productos/ver/carrito"><span class="notificacion">4</span><i class="fas fa-shopping-bag"></i></a></li>
-
-                    <li class="usuario">
-
-                         <div class="perfil">
-                              <div class="avatar">     
-                                   <img src="/images/avatars/<%= usuarioLogueado.avatar %> " alt="">
-                              </div>
+                    <div class="perfil">
+                         <div class="avatar">
+                              <img src="/images/avatars/<%= usuarioLogueado.avatar %> " alt="">
                          </div>
+                    </div>
 
-                         <div class="flecha">
-                              <a href="#">
-                                   <i class="fas fa-chevron-down"></i>
+                    <div class="flecha">
+                         <a href="#">
+                              <i class="fas fa-chevron-down"></i>
+                         </a>
+                    </div>
+
+                    <div class="dropdown">
+
+                         <div class="dropdown-option">
+                              <a href="http://localhost:3006">
+                                   <i class="fas fa-briefcase"></i>
+                                   <p>Ir a Panel Admin</p>
                               </a>
                          </div>
 
-                         <div class="dropdown">
-
-                              <div class="dropdown-option">
-                                   <a href="#">
-                                   <i class="fas fa-eye"></i>
-                                   <p>Ver perfil</p>
-                                   </a>
-                              </div>
-
-                              <div class="dropdown-option">
-                                   <a href="/">
-                                   <i class="fas fa-history"></i>
-                                   <p>Mis compras</p>
-                                   </a>
-                              </div>
-
-                              <div class="dropdown-option">
-                                   <a href="/">
+                         <div class="dropdown-option">
+                              <a href="/">
                                    <i class="fas fa-user-cog"></i>
                                    <p>Configuración</p>
-                                   </a>
-                              </div>
+                              </a>
+                         </div>
 
-                              <div class="dropdown-option">
-                                   <a href="/usuarios/logout">
+                         <div class="dropdown-option">
+                              <a href="/usuarios/logout">
                                    <i class="fas fa-sign-out-alt"></i>
                                    <p>Cerrar sesión</p>
-                                   </a>
-                              </div>
+                              </a>
+                         </div>
 
-                         </div>  
+                    </div>
 
 
-                    </li>
-                    
-               </ul>
-               <% } %>
-    </nav>
+               </li>
+
+          </ul>
+
+
+          <% } else { %>
+
+          <ul class="userMenu">
+
+               <li class="search"> <a href=""><i class="content-search fas fa-search"></i></a></li>
+
+               <li class="bag"><a href="/productos/ver/carrito"><span class="notificacion">4</span><i
+                              class="fas fa-shopping-bag"></i></a></li>
+
+               <li class="usuario">
+
+                    <div class="perfil">
+                         <div class="avatar">
+                              <img src="/images/avatars/<%= usuarioLogueado.avatar %> " alt="">
+                         </div>
+                    </div>
+
+                    <div class="flecha">
+                         <a href="#">
+                              <i class="fas fa-chevron-down"></i>
+                         </a>
+                    </div>
+
+                    <div class="dropdown">
+
+                         <div class="dropdown-option">
+                              <a href="#">
+                                   <i class="fas fa-eye"></i>
+                                   <p>Ver perfil</p>
+                              </a>
+                         </div>
+
+                         <div class="dropdown-option">
+                              <a href="/">
+                                   <i class="fas fa-history"></i>
+                                   <p>Mis compras</p>
+                              </a>
+                         </div>
+
+                         <div class="dropdown-option">
+                              <a href="/">
+                                   <i class="fas fa-user-cog"></i>
+                                   <p>Configuración</p>
+                              </a>
+                         </div>
+
+                         <div class="dropdown-option">
+                              <a href="/usuarios/logout">
+                                   <i class="fas fa-sign-out-alt"></i>
+                                   <p>Cerrar sesión</p>
+                              </a>
+                         </div>
+
+                    </div>
+
+
+               </li>
+
+          </ul>
+          <% } %>
+     </nav>
 
 </header>
