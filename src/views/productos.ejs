@@ -9,21 +9,34 @@
     <%- include('./partials/header') %>
     <main class="detalleProducto">
         <h1 class="tituloTienda">Tienda Caniada</h1>
-        <ul id="flexboxProductos" class="">
+        <ul id="flexboxProductos" class="contenedor-cards">
             <!--1------------------------------------>
                  <% for (let i = 0; i < productosDB.length; i++) { %> 
                         <!-- Filtro por si la BD es menor a 9-->
-                                <li class="item-uno">
+                                <li class="item-uno" id="card">
                                      <div class="box box-productos">
                                           <div class="slide-img">
                                                <img src= <%= `/images/fotosProductos/${productosDB[i].imagen_1}` %>   alt=<%= productosDB[i].imagen_1 %>>
                                                 <div class="overlay">
                                                     <!--buy-btn------>	
-                                                          <a href="#" class="carritoOverlay"><i class="far fa-heart">
-                                                              <span class="tooltiptext">Whislist</span>
-                                                          </i></a>	
-                                                          <a href="#" id="agregarCarrito" class="whislistOverlay"><i class="fas fa-shopping-cart"><span class="tooltiptext">Agregar al Carrito</span></i><p id=<%= productosDB[i].id_producto %>></p></a>
-                                                          <a href=<%=`/productos/${productosDB[i].id_producto}`%> class="vistaRapida"><i class="far fa-eye"><span class="tooltiptext">Ver Producto</span></i></a>	
+
+                                                            <a href="#" class="whislistOverlay">
+                                                                 <i class="far fa-heart">
+                                                                      <span class="tooltiptext">Whislist</span>
+                                                                 </i>
+                                                            </a>	
+
+                                                            <a href="#" class="carritoOverlay" data-producto="<%= productosDB[i].id_producto %>" data-nombre="<%=productosDB[i].nombre%>"id="linkAgregarCarrito">
+                                                                 <i class="fas fa-shopping-cart" >
+                                                                      <span class="tooltiptext">Agregar al Carrito</span>
+                                                                 </i>
+                                                            </a>
+
+                                                            <a href=<%=`/productos/${productosDB[i].id_producto}`%> class="vistaRapida">
+                                                                 <i class="far fa-eye">
+                                                                      <span class="tooltiptext">Ver Producto</span>
+                                                                 </i>
+                                                            </a>	
                                                     </div>
                                           </div>
                                          

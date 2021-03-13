@@ -50,7 +50,7 @@
         font-family: calibri;
         border-radius: 20px;
         box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
-        padding: 10px;
+        padding: 0px;
         margin:10px;
         position: relative;
     }
@@ -92,6 +92,10 @@
     .vistaRapida:hover .tooltiptext{
         visibility: visible;
         opacity: 1;
+    }
+
+    i.fa-shopping-cart{
+        pointer-events: none;
     }
 
 .box{
@@ -158,7 +162,7 @@ text-align: center;
    
 }
 
-.fa fa-star{
+.fa .fa-star{
         font-size: 0.5rem;
 }
 
