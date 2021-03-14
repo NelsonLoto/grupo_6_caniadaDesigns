@@ -1,19 +1,60 @@
-document.querySelectorAll('.agregarCarrito').forEach(item => {
-        
-        item.addEventListener('click', () => {
-          console.log(item.dataset.myvalue);
-          var existing = localStorage.getItem('Producto');// traigo la data que exista hasta el momento
-          existing = existing ? existing.split(',') : []; //si no existe data, hago un array, y si es un array lo hago string.
-          existing.push(item.dataset.myvalue); //agrego nueva data al array
+let agregarCarrito = document.querySelector(".contenedor-cards");
 
-          localStorage.setItem('Producto', existing.toString()); //lo guardo de nuevo en local storage
+    function obtenerProductosLocalStorage() {
+       let productos;
+       if (localStorage.getItem('productos') === null) {
 
-      })
-   })
+         productos = [];
+
+        } else {
+         productos= JSON.parse(localStorage.getItem('productos'));
+        } 
+         return productos;
+    }
+
+    function agregarProductoLocalStorage(idProducto, producto) { 
+       
+         let productosLocalStorage = obtenerProductosLocalStorage();
+         let productoData = JSON.parse(producto);
+
+         let productoClickeado = {
+            id: idProducto,
+            nombre:productoData.nombre,
+            img: productoData.imagen_1,
+            cantidad: 1
+         }
+         
+         let productoExistente = productosLocalStorage.find(element=>element.id == idProducto)
+         
+         if (productoExistente == undefined){
+            productosLocalStorage.push(productoClickeado);
+         } else{
+            productoClickeado.cantidad = productoExistente.cantidad + 1;
+            let posicion = productosLocalStorage.indexOf(productoExistente);
+
+            if(posicion >-1){
+               productosLocalStorage.splice(posicion, 1)
+            }
+            
+            productosLocalStorage.push(productoClickeado)
+         }
+         console.log(`el producto de id ${productoClickeado.id} fue agregado correctamente. Cantidad: ${productoClickeado.cantidad}`);
+         
+         localStorage.setItem('productos', JSON.stringify(productosLocalStorage))
+   }
 
 
-//  let agregarCarrito = document.querySelectorAll('agregarCarrito')
-//     console.log(agregarCarrito);
-//     Array.prototype.forEach.call(agregarCarrito, function(agregarCarrito) {
-//         var id = agregarCarrito.dataset.myvalue;
-//         console.log("ID producto: "+ id);})
+
+    agregarCarrito.addEventListener("click", function (e) {
+
+      if (e.target.id == "linkAgregarCarrito") {
+         //console.log(e.target.dataset.idProducto)
+         //console.log(e.target.dataset.producto)
+         agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
+      }
+    }); 
+
+
+   
+
+ 
