@@ -89,6 +89,17 @@
 .shopping-cart-header {
     border-bottom: 1px solid #E8E8E8;
     padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-cart-header div p.vaciarCarrito:empty{
+    display: none;
+}
+.shopping-cart-header div p.vaciarCarrito{
+    color: tomato;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .shopping-cart-total {
@@ -192,3 +203,6 @@
     display: table;
     clear: both;
 }
+
+
+

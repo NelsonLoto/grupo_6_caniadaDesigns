@@ -7,61 +7,61 @@
           <div class="flechaIzqCarrousel"></div>
           <div class="slider">
 
-               <ul id="autoWidth" class="contenedorCarrouselCards">
+               <ul id="autoWidth" class="contenedor-cardsCarrousel">
 <!--1------------------------------------>
      <% for (let i = 0; i < 8; i++) { %> 
             <!-- Filtro por si la BD es menor a 9-->
-                    <li class="item-uno">
-                         <div class="box">
-                              <div class="slide-img">
-                                   <img src= <%= `/images/fotosProductos/${productosDB[i].imagen_1}` %>   alt=<%= productosDB[i].imagen_1 %>>
-                                    <div class="overlay">
-                                        <!--buy-btn------>	
-                                                  <a href="#" class="carritoOverlay">
-                                                       <i class="far fa-heart">
-                                                            <span class="tooltiptext">Whislist</span>
-                                                       </i>
-                                                  </a>	
-
-                                                  <a href="#" class="whislistOverlay agregarCarrito" data-producto="<%= productosDB[i].id_producto %>" id="linkAgregarCarrito">
-                                                       <i class="fas fa-shopping-cart">
-                                                            <span class="tooltiptext">Agregar al Carrito</span>
-                                                       </i>
-                                                  </a>	
-
-                                                  <a href=<%=`/productos/${productosDB[i].id_producto}`%> class="vistaRapida">
-                                                       <i class="far fa-eye">
-                                                            <span class="tooltiptext">Ver Producto</span>
-                                                       </i>
-                                                  </a>	
-                                        </div>
-                              </div>
-                             
-                              <div class="detail-box">
-                                   <div class="descripcionProducto">
-                                        <a href=<%=`/productos/${productosDB[i].id_producto}`%>><p><%=productosDB[i].nombre%></p></a>
-                                   </div>
-                                   <div class="precioYoferta">
-                                        <div class="precio"><%=productosDB[i].precio%></div>
-                                   </div>
-                                   <div class="envio">
-                                        <p>Envío Gratis</p>
-                                   </div>
-                                   <div class="lineaInferior">
-                                        <div><span class="fa fa-star checked"></span>
-                                             <span class="fa fa-star checked"></span>
-                                             <span class="fa fa-star checked"></span>
-                                             <span class="fa fa-star"></span>
-                                             <span class="fa fa-star"></span></div>
-                                        <div class="carritoYWhislist">
-                                             
-                                         
-                                        </div>
-                                   </div>
+            <li class="item-uno" id="card">
+               <div class="box box-productos">
+                    <div class="slide-img">
+                         <img src= <%= `/images/fotosProductos/${productosDB[i].imagen_1}` %>   alt=<%= productosDB[i].imagen_1 %>>
+                            <div class="overlay">
+                              <!--buy-btn------>	
+                                 <a href="#" class="whislistOverlay"> 
+                                      <i class="far fa-heart"> 
+                                           <span class="tooltiptext">Whislist</span> 
+                                      </i> 
+                                 </a> 
+                                 
+                                 <a href="#" class="carritoOverlay" id="linkAgregarCarritoCarrousel" data-id-producto="<%= productosDB[i].id_producto %>" data-producto="<%=JSON.stringify(productosDB[i])%>" > 
+                                      <i class="fas fa-shopping-cart" > 
+                                           <span class="tooltiptext">Agregar al Carrito</span> 
+                                      </i> 
+                                 </a> 
+                                 
+                                 <a href=<%=`/productos/${productosDB[i].id_producto}`%> class="vistaRapida"> 
+                                      <i class="far fa-eye"> 
+                                           <span class="tooltiptext">Ver Producto</span> 
+                                      </i> 
+                                 </a> 
+                            </div>
+                    </div>
+                   
+                    <div class="detail-box">
+                         <div class="descripcionProducto">
+                              <a href=<%=`/productos/${productosDB[i].id_producto}`%>><p><%=productosDB[i].nombre%></p></a>
+                         </div>
+                         <div class="precioYoferta">
+                              <div class="precio"><%=productosDB[i].precio%></div>
+                         </div>
+                         <div class="envio">
+                              <p>Envío Gratis</p>
+                         </div>
+                         <div class="lineaInferior">
+                              <div><span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star"></span>
+                                   <span class="fa fa-star"></span></div>
+                              <div class="carritoYWhislist">
+                                   
+                               
                               </div>
                          </div>
+                    </div>
+               </div>
 
-                    </li>
+          </li>
 
                     <% } %> 
 
