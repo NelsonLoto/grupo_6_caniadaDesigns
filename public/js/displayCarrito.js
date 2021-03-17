@@ -1,3 +1,4 @@
+let body = document.querySelector('body')
 let dropdownCarrito = document.getElementById('cart')
 let totalCarrito = document.querySelector('.total');
 let vaciarCarrito = document.querySelector('.vaciarCarrito');
@@ -17,7 +18,7 @@ function obtenerProductosLocalStorage() {
      return productos;
   }
 
-  function notificacion() {
+  function notificacion(  ) {
      let productos = obtenerProductosLocalStorage()
       if (productos == false){
          badge.innerHTML = ""
@@ -28,7 +29,6 @@ function obtenerProductosLocalStorage() {
      }
 
 dropdownCarrito.addEventListener('click', () => {
-     notificacion();
      let productosLocalStorage= obtenerProductosLocalStorage()
 
     let ul = document.querySelector('.shopping-cart-items')
@@ -82,15 +82,45 @@ dropdownCarrito.addEventListener('click', () => {
      totalCarrito.innerHTML = `$${total}`;
 
 
-     vaciarCarrito.innerHTML = "X"
+     vaciarCarrito.innerHTML = "Vaciar carrito"
 
-     vaciarCarrito.addEventListener('click', (e)=>{
-          localStorage.clear()
-          ul.innerHTML= "";
-          notificacion()
+     vaciarCarrito.addEventListener('click', ()=>{
+           body.innerHTML += `
+               <div class="modalConfirmacion">
+                    <div class="card-modal-confirmacion">
+                         <p>Eliminar todos los productos del carrito?</p>
+                         <div class="buttons">
+                              <button class="confirmarVaciarCarrito">Confirmar</button>
+                              <button class="cancelarVaciarCarrito">Cancelar</button>
+                         </div>
+                    </div>
+               </div>`;
+          
+          let modalConfirmacion = document.querySelector('.modalConfirmacion')
+
+          let confirmarVaciarCarrito = document.querySelector('.confirmarVaciarCarrito')
+          let cancelarVaciarCarrito = document.querySelector('.cancelarVaciarCarrito')
+
+          confirmarVaciarCarrito.addEventListener('click', (e)=>{
+               e.preventDefault()
+               localStorage.clear();
+               ul.innerHTML= "";
+               notificacion;
+               modalConfirmacion.classList = 'modalConfirmacion hidden'
+               
+          })
+
+          cancelarVaciarCarrito.addEventListener('click', ()=>{
+               modalConfirmacion.classList = 'modalConfirmacion hidden'
+          } )
+          
+          
+          
      })
-
+     
 
 
 })
+
+
 
