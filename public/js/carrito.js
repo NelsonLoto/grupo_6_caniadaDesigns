@@ -1,20 +1,24 @@
+
+
 window.addEventListener('load', () => {
+
+   
    let agregarCarrito = document.querySelector(".contenedor-cards");
    let agregarCarritoCarrousel = document.querySelector(".contenedor-cardsCarrousel");
    let agregarCarritoDetalle = document.querySelector("#linkAgregarCarritoDetalle");
+   let badge = document.querySelector('.badge');
 
    (function notificacion() {
-      let productos = obtenerProductosLocalStorage()
-      let badge = document.querySelector('.badge');
+   let productos = obtenerProductosLocalStorage()
 
-      badge.innerHTML = productos.length//actualiza la cantidad de productos que hay en el carrito, dentro de la burbuja roja en el header.
 
-      // if (productos = []){
-      //    badge.innerHTML = ""
-      // } else{
-      //    badge.innerHTML = productos.length//actualiza la cantidad de productos que hay en el carrito, dentro de la burbuja roja en el header.
-      // }
 
+    if (productos == false){
+       badge.innerHTML = ""
+    } else{
+       badge.innerHTML = productos.length//actualiza la cantidad de productos que hay en el carrito, dentro de la burbuja roja en el header.
+    }
+    return badge
    })()
 
    function obtenerProductosLocalStorage() {
@@ -32,7 +36,7 @@ window.addEventListener('load', () => {
    }
 
    function agregarProductoLocalStorage(idProducto, producto) {
-
+      
       let productosLocalStorage = obtenerProductosLocalStorage();
       let productoData = JSON.parse(producto);
 
@@ -41,7 +45,7 @@ window.addEventListener('load', () => {
          id: idProducto,
          nombre: productoData.nombre,
          precio: productoData.precio,
-         talle: productoData.talle,
+         talle: productoData.talle.nombre,
          img: `/images/fotosProductos/${productoData.imagen_1}`,
          cantidad: 1
       }
@@ -63,14 +67,15 @@ window.addEventListener('load', () => {
          productosLocalStorage.push(productoClickeado)
       }
       console.log(`el producto de id ${productoClickeado.id} fue agregado correctamente. Cantidad: ${productoClickeado.cantidad}`);
-
-      localStorage.setItem('productos', JSON.stringify(productosLocalStorage))
+      
+      localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
+      notificacion();
    }
 
    if (window.location.pathname == "/productos"){
       agregarCarrito.addEventListener("click", function (e) {
          console.log(e)
-         if (e.target.id == "linkAgregarCarrito" || e.target.id == "linkAgregarCarritoCarrousel") {
+         if (e.target.id == "linkAgregarCarrito") {
             agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
          }
       });
@@ -88,6 +93,15 @@ window.addEventListener('load', () => {
    });
 });
 
+
+function asd(elemento, targetId){
+   elemento.addEventListener("click", function (e) {
+      console.log(e)
+     if (e.target.id == "linkAgregarCarrito" || e.target.id == "linkAgregarCarritoCarrousel") {
+        agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
+     }
+   })}
+ 
 
 
 

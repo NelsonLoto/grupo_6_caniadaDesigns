@@ -1,6 +1,7 @@
 let dropdownCarrito = document.getElementById('cart')
 let totalCarrito = document.querySelector('.total');
 let vaciarCarrito = document.querySelector('.vaciarCarrito');
+let badge = document.querySelector('.badge');
 
 
 function obtenerProductosLocalStorage() {
@@ -16,9 +17,18 @@ function obtenerProductosLocalStorage() {
      return productos;
   }
 
-
+  function notificacion() {
+     let productos = obtenerProductosLocalStorage()
+      if (productos == false){
+         badge.innerHTML = ""
+      } else{
+         badge.innerHTML = productos.length//actualiza la cantidad de productos que hay en el carrito, dentro de la burbuja roja en el header.
+      }
+      return badge
+     }
 
 dropdownCarrito.addEventListener('click', () => {
+     notificacion();
      let productosLocalStorage= obtenerProductosLocalStorage()
 
     let ul = document.querySelector('.shopping-cart-items')
@@ -49,13 +59,14 @@ dropdownCarrito.addEventListener('click', () => {
           spanQuantity.classList = 'item-quantity';
           
           spanName.innerHTML= element.nombre;
-          //spanDetail.innerHTML= element.
+          spanDetail.innerHTML= element.talle
           spanPrice.innerHTML= `$${element.precio * element.cantidad}`;
           spanQuantity.innerHTML= `Cantidad : ${element.cantidad}`;
 
           lista.appendChild(img);
           lista.appendChild(spanName);
           lista.appendChild(spanPrice);
+          lista.appendChild(spanDetail);
           lista.appendChild(spanQuantity);
 
 
@@ -76,6 +87,7 @@ dropdownCarrito.addEventListener('click', () => {
      vaciarCarrito.addEventListener('click', (e)=>{
           localStorage.clear()
           ul.innerHTML= "";
+          notificacion()
      })
 
 

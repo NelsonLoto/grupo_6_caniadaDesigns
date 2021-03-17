@@ -20,7 +20,11 @@ const tallesDB = categoriasDB[3]
 
 let productosController = {
     productos: function (req, res) {  
-            db.Producto.findAll()
+            db.Producto.findAll({
+                include : {
+                    all : true
+                }
+            })
                 .then (function(productos){
                     res.render('productos', {
                         title: 'Caniada - Productos', 
