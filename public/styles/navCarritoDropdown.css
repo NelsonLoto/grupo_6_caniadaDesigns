@@ -1,7 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 
-
+body{
+    position: relative
+}
 .modalConfirmacion {
     position: absolute;
     background-color: #37373893;
@@ -15,18 +17,18 @@
 }
 .modalConfirmacion .card-modal-confirmacion{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    width: 30%;
-    height: 15%;
+    width: 400px;
+    height: 130px;
     border: #373738;
     border-radius: 10px;
     background-color: white;
 }
 .modalConfirmacion .buttons{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
     margin-top: 30px;
 }

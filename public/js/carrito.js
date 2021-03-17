@@ -8,32 +8,34 @@ window.addEventListener('load', () => {
    let agregarCarritoDetalle = document.querySelector("#linkAgregarCarritoDetalle");
    let badge = document.querySelector('.badge');
 
-   (function notificacion() {
-   let productos = obtenerProductosLocalStorage()
-
-
-
-    if (productos == false){
-       badge.innerHTML = ""
-    } else{
-       badge.innerHTML = productos.length//actualiza la cantidad de productos que hay en el carrito, dentro de la burbuja roja en el header.
-    }
-    return badge
-   })()
-
    function obtenerProductosLocalStorage() {
 
       let productos;
-      if (localStorage.getItem('productos') === null) {
+      if (localStorage.getItem('productos') == null) {
 
          productos = [];
 
       } else {
          productos = JSON.parse(localStorage.getItem('productos'));
       }
-
+      console.log(productos)
       return productos;
    }
+
+   function notificacion() {
+   let productos = obtenerProductosLocalStorage()
+
+    if (productos.length == 0){
+       badge.innerHTML = ""
+    } else{
+       badge.innerHTML = productos.length//actualiza la cantidad de productos que hay en el carrito, dentro de la burbuja roja en el header.
+    }
+    return badge
+   }
+
+   notificacion()
+
+   
 
    function agregarProductoLocalStorage(idProducto, producto) {
       
@@ -51,8 +53,9 @@ window.addEventListener('load', () => {
       }
 
       console.log(productoData)
-
-      let productoExistente = productosLocalStorage.find(element => element.id == idProducto)
+      
+        let productoExistente = productosLocalStorage.find(element => element.id == idProducto)
+      
 
       if (productoExistente == undefined) {
          productosLocalStorage.push(productoClickeado);
@@ -69,14 +72,14 @@ window.addEventListener('load', () => {
       console.log(`el producto de id ${productoClickeado.id} fue agregado correctamente. Cantidad: ${productoClickeado.cantidad}`);
       
       localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
-      notificacion();
+      notificacion()
    }
 
    if (window.location.pathname == "/productos"){
       agregarCarrito.addEventListener("click", function (e) {
          console.log(e)
          if (e.target.id == "linkAgregarCarrito") {
-            agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
+            agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto);
          }
       });
    } 
@@ -91,7 +94,11 @@ window.addEventListener('load', () => {
          agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
       }
    });
+
+   
 });
+
+
 
 
 function asd(elemento, targetId){
