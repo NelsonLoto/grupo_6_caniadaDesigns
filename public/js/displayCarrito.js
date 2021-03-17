@@ -103,11 +103,12 @@ dropdownCarrito.addEventListener('click', () => {
                          <p>Eliminar todos los productos del carrito?</p>
                          <div class="buttons">
                               <a href="#" class="confirmarVaciarCarrito">Confirmar</a>
-                              <a href="#" class="cancelarVaciarCarrito">Cancelar</a>
+
                          </div>
                     </div>`;
           
           body.append(modal)
+
           let confirmarVaciarCarrito = document.querySelector('.confirmarVaciarCarrito')
           
           confirmarVaciarCarrito.addEventListener('click', ()=>{
@@ -118,11 +119,11 @@ dropdownCarrito.addEventListener('click', () => {
                
           })
           
-          let cancelarVaciarCarrito = document.querySelector('.cancelarVaciarCarrito')
+          // let cancelarVaciarCarrito = document.querySelector('.cancelarVaciarCarrito')
 
-          cancelarVaciarCarrito.addEventListener('click', ()=>{
-               modal.classList = 'hidden'
-          } )
+          // cancelarVaciarCarrito.addEventListener('click', ()=>{
+          //      modal.classList = 'hidden'
+          // } )
           
      })
 
