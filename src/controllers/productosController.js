@@ -35,7 +35,11 @@ let productosController = {
         let producto = await db.Producto.findOne({
             where : {
                 id_producto : req.params.id_producto
+            },
+            include : {
+                all: true
             }
+
         })
 
         let productosDB = await db.Producto.findAll({
