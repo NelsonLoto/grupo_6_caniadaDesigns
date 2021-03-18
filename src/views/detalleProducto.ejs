@@ -46,7 +46,7 @@
                     </div>
                 </section>
             </div>
-            <div class="panelDerecho">
+            <div class="panelDerecho" id="contenedor-detalle">
                     <h2><%= producto.nombre %>&emsp;&emsp;<a href=""><i class="far fa-heart"></i></a></h2>
                     <h2>$<%= producto.precio %></h2>
                     <p class="medios_de_pago">Hasta en <strong>12 cuotas sin interés</strong> con los mejores bancos </p>
@@ -70,7 +70,7 @@
                               </select>
                     </div>
                     <small><a href="#">Tabla de talles</a></small>
-                    <a href="/productos/ver/carrito" id="agregarCarrito" class="boton"><i class="fas fa-shopping-bag"></i>&emsp;Añadir</a>
+                    <a href="#" id="linkAgregarCarritoDetalle" class="boton" data-id-producto="<%= producto.id_producto %>" data-producto="<%=JSON.stringify(producto)%>"><i class="fas fa-shopping-bag"></i>&emsp;Añadir</a>
                     <ul>
                         <li><i class="far fa-check-circle"></i>&ensp;Envíos gratis a todo el país</li>
                         <li><i class="far fa-check-circle"></i>&ensp;Devoluciones gratuitas</li>

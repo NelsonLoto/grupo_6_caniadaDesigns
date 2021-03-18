@@ -1,6 +1,55 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 
+body{
+    position: relative
+}
+.modalConfirmacion {
+    position: absolute;
+    background-color: #37373893;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalConfirmacion .card-modal-confirmacion{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 130px;
+    border: #373738;
+    border-radius: 10px;
+    background-color: white;
+}
+.modalConfirmacion .buttons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 30px;
+}
+.modalConfirmacion button{
+    border: none;
+    background: none;
+    width: 20%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.modalConfirmacion button.confirmarVaciarCarrito{
+    color: tomato
+}
+.modalConfirmacion.hidden{
+    visibility: hidden;
+}
+.modalConfirmacion.hiddenCancelar{
+    visibility: hidden;
+}
 
 .lighter-text {
     color: #ABB0BE;
@@ -57,6 +106,8 @@
     cursor: pointer;
 }
 
+
+
 .shopping-cart {
     background: white;
     width: 320px;
@@ -89,6 +140,21 @@
 .shopping-cart-header {
     border-bottom: 1px solid #E8E8E8;
     padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-cart-header div p.vaciarCarrito:empty{
+    display: none;
+}
+.shopping-cart-header div p.vaciarCarrito{
+    color: tomato;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: solid 1px tomato;
+    border-radius: 6px;
 }
 
 .shopping-cart-total {
@@ -103,6 +169,16 @@
 
 .shopping-cart-items li {
     margin-bottom: 18px;
+    position: relative;
+}
+
+div.separador{
+    margin-top: 10px;
+    color: #cdcdcd;
+    width: 100%;
+
+    border-top: 1px solid #E8E8E8;
+
 }
 
 .shopping-cart-items img {
@@ -115,7 +191,9 @@
 .item-name {
     display: block;
     font-size: 16px;
-    color: #373738;
+    color: #3c3c3c;
+    font-family: 'Inter'!important;
+    
 }
 
 .item-detail {
@@ -124,19 +202,35 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    color: #373738;
+    color: #696969;
+
 }
 
 
 .item-price {
-    color: #cb2900;
+    color: #3c3c3c;
     margin-right: 8px;
+    font-family: 'Inter'!important;
+
 }
 
 .item-quantity {
-    color: #ABB0BE;
+    color: #a2a2a2;
+    font-family: 'Inter'!important;
+    font-size: 14px;
 }
 
+.item-delete {
+    color: #f1443ef0;
+    position: absolute; 
+    right: 0;
+    top: 15px;
+    cursor: pointer;
+}
+
+.item-delete i{
+    cursor: pointer;
+}
 
 
 
@@ -163,10 +257,10 @@
 }
 
 .button {
-    background: #f80c0cc0;
+    background: #e93838c0;
     color: white;
     text-align: center;
-    padding: 12px;
+    padding: 8px 10px;
     text-decoration: none;
     display: block;
     border-radius: 3px;
@@ -192,3 +286,6 @@
     display: table;
     clear: both;
 }
+
+
+

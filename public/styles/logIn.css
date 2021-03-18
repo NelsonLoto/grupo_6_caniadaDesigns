@@ -128,8 +128,17 @@ section.login div.cajaLogin .formLogin .legal small{
 }
 
 /*-------------------------------------------
-OLVIDÉ MI CONTRASEÑA Y RECUÉRDAME
+OLVIDÉ MI CONTRASEÑA Y RECUÉRDAME Y MOSTRAR CONTRASEÑA
 -------------------------------------------*/
+section.login .cajaLogin .formLogin div.chexBoxDoble {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1px;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+
 section.login .cajaLogin .formLogin .contraseña .olvide { 
     padding-bottom: 0;
     text-align: right;
@@ -153,17 +162,33 @@ section.login .cajaLogin .formLogin .contraseña .olvide a:hover{
 
 section.login .cajaLogin .formLogin div.recuerdame{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     font-size: 0.8rem;
     color: #afacac;
-    margin-top:20px;
+    margin-top:10px;
 }
 
 section.login .cajaLogin .formLogin div.recuerdame label{
     cursor:pointer;
 }
 section.login .cajaLogin .formLogin div.recuerdame:hover{
+    color: rgb(55, 55, 242);
+}
+
+section.login .cajaLogin .formLogin div.mostrarContraseña{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    font-size: 0.8rem;
+    color: #afacac;
+    margin-top:5px;
+}
+
+section.login .cajaLogin .formLogin div.mostrarContraseña label{
+    cursor:pointer;
+}
+section.login .cajaLogin .formLogin div.mostrarContraseña:hover{
     color: rgb(55, 55, 242);
 }
 
