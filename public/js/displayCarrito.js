@@ -5,9 +5,7 @@ let totalCarrito = document.querySelector('.total');
 let vaciarCarrito = document.querySelector('.vaciarCarrito');
 let ul = document.querySelector('.shopping-cart-items')
 
-
 let badge = document.querySelector('.badge');
-
 
 
 function obtenerProductosLocalStorage() {
@@ -22,7 +20,8 @@ function obtenerProductosLocalStorage() {
 
      return productos;
   }
-  function notificacion() {
+
+function notificacion() {
      let productos = obtenerProductosLocalStorage()
       if (productos.length == 0){
          badge.innerHTML = ""
@@ -31,7 +30,7 @@ function obtenerProductosLocalStorage() {
           badge.innerHTML = productos.length//actualiza la cantidad de productos que hay en el carrito, dentro de la burbuja roja en el header.
        }
       return badge
-  }
+}
 
   
   
@@ -106,6 +105,9 @@ function obtenerProductosLocalStorage() {
           notificacion();
 
            })
+     }else{
+          ul.innerHTML = `
+          <li><p>Carrito Vacío</p></li>`
      }
 
      vaciarCarrito.innerHTML = "Vaciar carrito"

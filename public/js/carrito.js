@@ -18,19 +18,19 @@ window.addEventListener('load', () => {
       } else {
          productos = JSON.parse(localStorage.getItem('productos'));
       }
-      console.log(productos)
+
       return productos;
    }
 
    function notificacion() {
-   let productos = obtenerProductosLocalStorage()
+      let productos = obtenerProductosLocalStorage()
 
-    if (productos.length == 0){
-       badge.innerHTML = ""
-    } else{
-       badge.innerHTML = productos.length//actualiza la cantidad de productos que hay en el carrito, dentro de la burbuja roja en el header.
-    }
-    return badge
+      if (productos.length == 0){
+         badge.innerHTML = ""
+      } else{
+         badge.innerHTML = productos.length//actualiza la cantidad de productos que hay en el carrito, dentro de la burbuja roja en el header.
+      }
+      return badge
    }
 
    notificacion()
@@ -41,7 +41,6 @@ window.addEventListener('load', () => {
       
       let productosLocalStorage = obtenerProductosLocalStorage();
       let productoData = JSON.parse(producto);
-      console.log(productoData)
 
 
       let productoClickeado = {
@@ -53,7 +52,6 @@ window.addEventListener('load', () => {
          cantidad: 1
       }
 
-      console.log(productoData)
       
       let productoExistente = productosLocalStorage.find(element => element.id == idProducto)
       
@@ -76,43 +74,51 @@ window.addEventListener('load', () => {
       notificacion()
    }
 
+   const agregarCarritoFunction= function( elemento, idElemento){
+      elemento.addEventListener("click", function (e) {
    
+        if (e.target.id == idElemento) {
+           agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
+        }
+   })}
+    
+
    if (window.location.pathname == "/productos"){
-      agregarCarrito.addEventListener("click", function (e) {
-         if (e.target.id == "linkAgregarCarrito") {
-            agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto);
-         }
-      });
+      agregarCarritoFunction(agregarCarrito,'linkAgregarCarrito');
    };
    
-   agregarCarritoDetalle.addEventListener("click", function (e) {
-      if (e.target.id == "linkAgregarCarritoDetalle") {
-         agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
-      }
-   });
-
-   agregarCarritoCarrousel.addEventListener("click", function (e) {
-      if (e.target.id == "linkAgregarCarritoCarrousel") {
-         agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
-      }
-   });
-
+   agregarCarritoFunction(agregarCarritoDetalle,'linkAgregarCarritoDetalle');
+   agregarCarritoFunction(agregarCarritoCarrousel,'linkAgregarCarritoCarrousel');
    
+   // if (window.location.pathname == "/productos"){
+   //    agregarCarrito.addEventListener("click", function (e) {
+   //       if (e.target.id == "linkAgregarCarrito") {
+   //          agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto);
+   //       }
+   //    });
+   // };
 
-   
+   // agregarCarritoDetalle.addEventListener("click", function (e) {
+   //    if (e.target.id == "linkAgregarCarritoDetalle") {
+   //       agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
+   //    }
+   // });
+
+   // agregarCarritoCarrousel.addEventListener("click", function (e) {
+   //    if (e.target.id == "linkAgregarCarritoCarrousel") {
+   //       agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
+   //    }
+   // });
+
 });
 
 
+if (window.location.pathname == "/productos/ver/carrito"){
+   console.log('carrito')
+};
 
 
-function asd(elemento, targetId){
-   elemento.addEventListener("click", function (e) {
-      console.log(e)
-     if (e.target.id == "linkAgregarCarrito" || e.target.id == "linkAgregarCarritoCarrousel") {
-        agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
-     }
-   })}
- 
+
 
 
 
