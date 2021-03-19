@@ -61,14 +61,18 @@ body{
 }
 
 
-.navbar-right a {
+.navbar-right a{
     display: inline;
     padding-left: 20px;
     color: #ffffff;
     text-decoration: none;
 }
 
-.navbar-right a:hover {
+.navbar-right a.ver-carrito {
+    color:rgb(223, 75, 75)
+}
+
+.navbar-right a.button-checkout:hover {
     color: #cfd1d8;
 }
 
@@ -223,8 +227,8 @@ div.separador{
 .item-delete {
     color: #f1443ef0;
     position: absolute; 
-    right: 0;
-    top: 15px;
+    right: 10px;
+    top: 20px;
     cursor: pointer;
 }
 
@@ -256,7 +260,7 @@ div.separador{
     float: left;
 }
 
-.button {
+.button-checkout {
     background: #e93838c0;
     color: white;
     text-align: center;
@@ -269,11 +273,11 @@ div.separador{
     text-transform: uppercase;
 }
 
-.button:hover {
+.button-checkout:hover {
     background: lighten(#f80c0c, 3%);
 }
 
-.button i {
+.button-checkout i {
     padding-left: 5px;
 }
 

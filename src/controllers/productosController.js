@@ -54,8 +54,8 @@ let productosController = {
             }
             
         })
-        return res.send(productosDB)
-        res.render('detalleProducto', {
+
+        return res.render('detalleProducto', {
             producto : producto,
             categoria: categoria,
             title : producto.nombre,

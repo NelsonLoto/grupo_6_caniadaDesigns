@@ -36,8 +36,19 @@ function notificacion() {
   
   dropdownCarrito.addEventListener('click', () => {
      let productosLocalStorage= obtenerProductosLocalStorage()
-
+     
      ul.innerHTML= ""; 
+
+     if(productosLocalStorage.length == 0){
+          ul.innerHTML= `
+          <li class="clearfix">
+          
+               <span class="item-quantity">No hay nada en tu carrito todavía</span>
+               <a class="ver-carrito" href="/productos"><p>Ir a tienda</p></a>
+               <div class="separador"></div>
+          </li>`
+          
+     }
 
      let total = 0;
      productosLocalStorage.forEach(element => {

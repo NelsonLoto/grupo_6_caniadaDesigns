@@ -18,6 +18,11 @@ section.vistaResumen{
 
 
 /*-----------------TARJETA PRODUCTO------------------*/
+section.vistaResumen .contenedorProductos{
+     display: flex;
+     flex-direction: column;
+     
+}
 
 section.vistaResumen .producto{
      display: flex;

@@ -1,18 +1,4 @@
 window.addEventListener('load', function(){
-<<<<<<< HEAD
-=======
-
-    if (window.location.pathname == "/usuarios/register"){
-        const form = document.querySelector('#form')
-    const nombre = document.querySelector('#nombre')
-    const apellido = document.querySelector('#apellido')
-    const email = document.querySelector('#email')
-    const password = document.querySelector('#password')
-    const password2 = document.querySelector('#repassword')
-    const small = document.querySelectorAll('small')
-    const input = document.querySelectorAll('#form input')
-    const terminos = document.querySelector('#legal')
->>>>>>> 5480629f60487bd3e26b0942e5024016ab4591a2
 
     if (window.location.pathname == "/productos/ver/carrito"){
         const form = document.querySelector('#form')
@@ -131,38 +117,6 @@ window.addEventListener('load', function(){
             }
             console.log(e.target.name);
         }
-<<<<<<< HEAD
-=======
-    }
-
-    input.forEach(input => {
-        input.addEventListener('keyup', validarFormulario );
-        input.addEventListener('blur', validarFormulario );
-        })
-        
-       
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-    
-        // checkInputs()
-        if(campos.nombre && campos.apellido && campos.email & campos.password && terminos.checked){
-            form.submit()
-         
-         }
-    } );
-    
-    console.log(terminos)
-    console.log(campos.nombre)
-    console.log(campos.apellido)
-    console.log(campos.email)
-    console.log(campos.password)
-    console.log(terminos.checked)
-
-     };
-
-    
->>>>>>> 5480629f60487bd3e26b0942e5024016ab4591a2
     
         const validarPassword = () =>{
             if (password.value !== password2.value){
