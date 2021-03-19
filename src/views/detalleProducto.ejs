@@ -33,7 +33,7 @@
                 <section class="caracteristicasProducto">
                     <h3><Descripción del producto></h3>
                     <h4>Talla</h4>
-                    <p>El/la modelo mide x y lleva talle <%= producto.talle %></p>
+                    <p>El/la modelo mide x y lleva talle <%= producto.talle.nombre %></p>
                     <h4>Modelo</h4>
                     <p> <%= producto.modelo %>  </p>
                     <h4>Composicion</h4>
@@ -85,7 +85,7 @@
 
     </main>
 
-
+    <script type="text/javascript" src="/js/productoDetalle.js"></script>
     <footer>
         <%- include('./partials/footer') %>
    </footer>

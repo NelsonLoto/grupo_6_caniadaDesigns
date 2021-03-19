@@ -53,12 +53,21 @@ header.template nav.menu ul{
 
 header.template nav.menu ul li{
     font-size: 1rem;
-    color: #fafafa;
+    color: #fafafa!important;
 }
 
 header.template nav.menu ul li a{
     font-size: 1rem;
-    color: #fafafa;
+    color: #fafafa!important;
+}
+header.template nav.menu ul li p{
+    font-size: 1rem;
+    color: #fafafa!important;
+}
+
+header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option p {
+    margin-left: 10px;
+    color: white;
 }
 
 header.template nav.user{

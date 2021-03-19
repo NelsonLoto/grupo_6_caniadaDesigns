@@ -1,174 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-     <head>
-          <%- include('./partials/head') %>
-       </head>
+
+<head>
+     <%- include('./partials/head') %>
+</head>
 
 <body>
      <%- include('./partials/header') %>
-     
+
      <main class="contenedorCarrito">
 
 
-     
+
 
           <section class="vistaResumen">
                <div class="tituloSeccion">
                     <h2>Productos en tu carrito: </h2>
                </div>
-               <div class="producto 1">
-                    <div class="imagenProducto">
-                         <img class="imgProducto" src="/images/producto1/Talking Heads.png" alt="">
-                    </div>
-                    <div class="detalleProductoCarrito">
-                         <div class="nombreDescripcion">
-                              <h4>Nombre del Producto</h4>
-                              <p>Descripción<p>
-                              <p>Detalles</p>
-                         </div>
-                         <div class="cantidadYtalle">
-                              <div>
-                                   <input type="text" value="1">
-                              </div>
-                              <div class="talles">
-                                   <p>Talle:</p>
-                                   <select name="talle" id="talle">
-                                        <option value="">...</option>
-                                        <option value="">XS</option>
-                                        <option value="">S</option>
-                                        <option value="">M</option>
-                                        <option value="">L</option>
-                                        <option value="">XL</option>
-                                        <option value="">XXL</option>
-                                   </select>
-                              </div>
-                              
-                         </div>
-                    </div>
 
-                    <div class="precioYeliminar">
-                         <h3>$500</h3>
-                         <a href=""><img src="/images/eliminar.svg" alt=""></a>
-                    </div>
-               </div>
-
-               <div class="producto 2">
-                    <div class="imagenProducto">
-                         <img class="imgProducto" src="/images/producto1/Miles Trompeta - Roja.png" alt="">
-                    </div>
-                    <div class="detalleProductoCarrito">
-                         <div class="nombreDescripcion">
-                              <h4>Nombre del Producto</h4>
-                              <p>Descripción<p>
-                              <p>Detalles</p>
-                         </div>
-                         <div class="cantidadYtalle">
-                              <div>
-                                   <input type="text" value="1">
-                              </div>
-                              <div class="talles">
-                                   <p>Talle:</p>
-                                   <select name="talle" id="talle">
-                                        <option value="">XS</option>
-                                        <option value="">S</option>
-                                        <option value="">M</option>
-                                        <option value="">L</option>
-                                        <option value="">XL</option>
-                                        <option value="">XXL</option>
-                                   </select>
-                              </div>
-                              
-                         </div>
-                    </div>
-
-                    <div class="precioYeliminar">
-                         <h3>$500</h3>
-                         <a href=""><img src="/images/eliminar.svg" alt=""></a>
-                    </div>
+               <div class="contenedorProductos">
+                    
 
                </div>
 
-               <div class="producto 3">
-                    <div class="imagenProducto">
-                         <img class="imgProducto" src="/images/producto1/helpBlanca.jpg" alt="">
-                    </div>
-                    <div class="detalleProductoCarrito">
-                         <div class="nombreDescripcion">
-                              <h4>Nombre del Producto</h4>
-                              <p>Descripción<p>
-                              <p>Detalles</p>
-                         </div>
-                         <div class="cantidadYtalle">
-                              <div>
-                                   <input type="text" value="1">
-                              </div>
-                              <div class="talles">
-                                   <p>Talle:</p>
-                                   <select name="talle" id="talle">
-                                        <option value="">XS</option>
-                                        <option value="">S</option>
-                                        <option value="">M</option>
-                                        <option value="">L</option>
-                                        <option value="">XL</option>
-                                        <option value="">XXL</option>
-                                   </select>
-                              </div>
-                              
-                         </div>
-                    </div>
-
-                    <div class="precioYeliminar">
-                         <h3>$500</h3>
-                         <a href=""><img src="/images/eliminar.svg" alt=""></a>
-                    </div>
-               </div>
-
-               <div class="producto 4">
-                    <div class="imagenProducto">
-                         <img class="imgProducto" src="/images/producto1/RSNegra.png" alt="">
-                    </div>
-                    <div class="detalleProductoCarrito">
-                         <div class="nombreDescripcion">
-                              <h4>Nombre del Producto</h4>
-                              <p>Descripción<p>
-                              <p>Detalles</p>
-                         </div>
-                         <div class="cantidadYtalle">
-                              <div>
-                                   <input type="text" value="1">
-                              </div>
-                              <div class="talles">
-                                   <p>Talle:</p>
-                                   <select name="talle" id="talle">
-                                        <option value="">XS</option>
-                                        <option value="">S</option>
-                                        <option value="">M</option>
-                                        <option value="">L</option>
-                                        <option value="">XL</option>
-                                        <option value="">XXL</option>
-                                   </select>
-                              </div>
-                              
-                         </div>
-                    </div>
-
-                    <div class="precioYeliminar">
-                         <h3>$500</h3>
-                         <a href=""><img src="/images/eliminar.svg" alt=""></a>
-                    </div>
-               </div>
-
-               <div class="infoEnvio">
-                    <div class="envio">
-                         <i class="fas fa-check-circle"></i>
-                         <p>Envio Gratis</p>
-                    </div>
-                    <div class="devolucion">
-                         <i class="fas fa-check-circle"></i>
-                         <p>Devolucion gratis dentro de 30 días</p>
-                    </div>
-               </div>
                
+
+
                <div class="detalleTotal">
                     <div class="subtotal">
                          <h5>Total</h5>
@@ -183,7 +40,7 @@
                          <h4>$2000</h4>
                     </div>
                </div>
-               
+
           </section>
 
           <section class="pago">
@@ -200,35 +57,35 @@
                               <div class="completar">
 
                                    <label class="nombre">Nombre
-                                   <input type="text"></label>
-                                   
+                                        <input type="text"></label>
+
                                    <label class="apellido">Apellido
-                                   <input type="text"></label>
+                                        <input type="text"></label>
 
                                    <label class="localidad">Localidad
-                                   <input type="text"></label>
-     
+                                        <input type="text"></label>
+
                                    <label class="zip">Código postal
-                                   <input type="text"></label>
-                                   
+                                        <input type="text"></label>
+
                                    <label class="calle">Calle
-                                   <input type="text"></label>
-                                   
+                                        <input type="text"></label>
+
                                    <label class="numeracion">Nº
-                                   <input type="text"></label>
-                                   
+                                        <input type="text"></label>
+
                                    <label class="masInfo">Otra información
-                                   <input type="text"></label>
+                                        <input type="text"></label>
 
                                    <label class="email">Email
-                                   <input type="email"></label>
+                                        <input type="email"></label>
 
                                    <label class="phone">Teléfono
-                                   <input type="phone"></label>
-     
-                                   
+                                        <input type="phone"></label>
+
+
                               </div>
-                    
+
                               <div class="seleccionEnvio">
                                    <label for="domicilio">
                                         <p><input type="radio" name="envio" id="domicilio">Entrega a Domicilio</p>
@@ -239,12 +96,14 @@
                                    <label for="sucursal">
                                         <p><input type="radio" name="envio" id="sucursal">Retiro en sucursal</p>
                                    </label>
-                                   
+
                               </div>
 
                               <div class="newsletterAceptar">
                                    <p>
-                                        <label for="newsletter"><input type="checkbox" name="newslatter" id="newsletter">Acepto que me manden promos y novedades por e-mail.</label>
+                                        <label for="newsletter"><input type="checkbox" name="newslatter"
+                                                  id="newsletter">Acepto que me manden promos y novedades por
+                                             e-mail.</label>
                                    </p>
                               </div>
 
@@ -262,7 +121,7 @@
                                              <img src="/images/mercadoPago.svg" alt="">
                                         </a>
                                    </button>
-                              </div>   
+                              </div>
                          </form>
                     </div>
                </div>
@@ -272,8 +131,8 @@
      <footer>
           <%- include('./partials/footer') %>
      </footer>
-     
-     
+
+
 </body>
 
 </html>
