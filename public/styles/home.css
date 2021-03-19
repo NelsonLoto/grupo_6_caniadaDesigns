@@ -28,6 +28,7 @@ html {
     font-size: 32px;
     line-height: 140%;
     color: #363636;
+    margin-bottom: 20px;
 }
 .callToAction{
     border: none;
@@ -35,12 +36,10 @@ html {
     background-color: #fc5e5e;
     color: #fff;
     padding: 10px 20px;
-    margin-top: 10px;
+    margin-top: 10px !important;
 }
 
-.callToAction a{
-    color: white;
-}
+
 
 .flechaScroll{
     margin-bottom: 10px;
@@ -71,6 +70,11 @@ html {
     height: 100vh;
     
 }
+
+.seccionDos div.izquierda h2{
+    margin-bottom: 20px;
+    
+}
 .divSeccionDos{
     width: 50%;
     height: 100%;
@@ -99,7 +103,8 @@ html {
     text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
-    color:#363636
+    color:#363636;
+    
 }
 section div .carrouselDeProductos{
     display: flex;
@@ -150,6 +155,10 @@ section div .carrouselDeProductos{
     align-items: center;    
     background-color: rgba(255, 255, 255, 0.267) ;
     
+}
+
+.seccionCuatro .columnaDerecha h2{
+    margin-bottom: 20px;
 }
 .seccionCuatro .columnaDerecha div.coleccionTitulo{
     text-align: right;

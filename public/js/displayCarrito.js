@@ -59,7 +59,7 @@ function notificacion() {
                <span class="item-detail">Talle ${element.talle}</span>
                <span class="item-price">$ ${element.precio * element.cantidad}</span>
                <span class="item-quantity">Cantidad: ${element.cantidad}</span>
-               <span class="item-delete"><i class="far fa-trash-alt" data-id-producto=${element.id}></i></span>
+               <span class="item-delete ${element.id}" data-id-producto=${element.id}><i class="far fa-trash-alt" data-id-producto=${element.id}></i></span>
                <div class="separador"></div>
           </li>
           `
@@ -96,26 +96,29 @@ function notificacion() {
      totalCarrito.innerHTML = `$${total}`;
 
      if(productosLocalStorage != null){
-          let eliminarItem = document.querySelector('.item-delete');
 
-          eliminarItem.addEventListener('click', (e)=>{
 
+          let [...eliminarItem] = document.querySelectorAll(`.item-delete`);
+          eliminarItem.forEach(element=>{
+               element.addEventListener('click', (e)=>{
      
-          let idProducto = e.target.dataset.idProducto
-          
-          let productoExistente = productosLocalStorage.find(element => element.id == idProducto)
-          
-          let posicion = productosLocalStorage.indexOf(productoExistente);
-          
-          if (posicion > -1) {
-               productosLocalStorage.splice(posicion, 1)
-          }
+               let idProducto = e.target.dataset.idProducto
+                    
+               let productoExistente = productosLocalStorage.find(producto => producto.id == idProducto)
+               console.log(productoExistente.id)
+                    
+               let posicion = productosLocalStorage.indexOf(productoExistente);
+                    
+               if (posicion > -1) {
+                    productosLocalStorage.splice(posicion, 1)
+               }
 
-          localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
-          
-          notificacion();
-
+               localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
+               notificacion();
            })
+
+          })
+
      }
 
      vaciarCarrito.innerHTML = "Vaciar carrito"

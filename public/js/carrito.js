@@ -157,30 +157,32 @@ if (window.location.pathname == "/productos/ver/carrito"){
    let montoTotal = document.querySelector('.monto-total');
       montoTotal.innerHTML = `$ ${subtotalAPagar }`
    
-   if(productosLocalStorage != null){
-      let eliminarItem = document.querySelector('.item-delete');
+      if(productosLocalStorage != null){
 
-      eliminarItem.addEventListener('click', (e)=>{
+         let [...eliminarItem] = document.querySelectorAll(`.item-delete`);
+         eliminarItem.forEach(element=>{
+              element.addEventListener('click', (e)=>{
+    
+              let idProducto = e.target.dataset.idProducto
+                   
+              let productoExistente = productosLocalStorage.find(producto => producto.id == idProducto)
+              console.log(productoExistente.id)
+                   
+              let posicion = productosLocalStorage.indexOf(productoExistente);
+                   
+              if (posicion > -1) {
+                   productosLocalStorage.splice(posicion, 1)
+              }
 
+              localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
 
-      let idProducto = e.target.dataset.idProducto
-      
-      let productoExistente = productosLocalStorage.find(element => element.id ==   idProducto)
-      
-      let posicion = productosLocalStorage.indexOf(productoExistente);
-      
-      if (posicion > -1) {
-           productosLocalStorage.splice(posicion, 1)
-      }
+              notificacion();
+              window.location.reload()
 
-      localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
+          })
+         })
 
-      notificacion();
-
-      document.location.reload()
-
-       })
-   }
+    }
 
 };
 
