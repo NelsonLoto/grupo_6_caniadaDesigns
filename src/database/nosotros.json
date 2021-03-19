@@ -2,7 +2,7 @@
      {
           "nombre" : "Nelson",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid accusamus omnis corporis dolor laudantium voluptas exercitationem, architecto amet non, tenetur porro? Autem, eligendi obcaecati?",
-          "avatar" : "jeff.jpg",
+          "avatar" : "nelson@caniada.com.webp",
           "gitHub" : "https://github.com/",
           "linkedin" : "https://www.linkedin.com/",
           "mail" : "caniada.grupo6@gmail.com"
@@ -11,28 +11,28 @@
      {
           "nombre" : "Shaggy",
           "description": "Dolorem dicta possimus, numquam delectus repellendus aliquid accusamus omnis corporis dolor laudantium voluptas exercitationem, architecto amet non, tenetur porro? ",
-          "avatar" : "elon.jpg",
-          "gitHub" : "https://github.com/",
+          "avatar" : "shaggy@caniada.com.webp",
+          "gitHub" : "https://github.com/guidomagaldi",
           "linkedin" : "https://www.linkedin.com/",
-          "mail" : "caniada.grupo6@gmail.com"
+          "mail" : "guidomagaldi57@gmail.com"
 
      },
      {
           "nombre" : "Juanpi",
           "description": "Dolorem dicta possimus, numquam delectus repellendus aliquid accusamus omnis corporis dolor laudantium voluptas exercitationem. Autem, eligendi obcaecati?",
-          "avatar" : "markey.jpg",
-          "gitHub" : "https://github.com/",
+          "avatar" : "juanpi@caniada.com.webp",
+          "gitHub" : "https://github.com/juanpije",
           "linkedin" : "https://www.linkedin.com/",
-          "mail" : "caniada.grupo6@gmail.com"
+          "mail" : "jpjepik@gmail.com"
 
      },
      {
           "nombre" : "Flete",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dicta possimus, numquam delectus repellendus aliquid accusamus omnis corporis dolor laudantium voluptas.",
-          "avatar" : "larry.jpg",
-          "gitHub" : "https://github.com/",
+          "avatar" : "flete@caniada.com.png",
+          "gitHub" : "https://github.com/fletech",
           "linkedin" : "https://www.linkedin.com/",
-          "mail" : "caniada.grupo6@gmail.com"
+          "mail" : "facundogarcia.ar@gmail.com"
 
      }
 ]

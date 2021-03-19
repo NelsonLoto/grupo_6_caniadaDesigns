@@ -1,5 +1,7 @@
 window.addEventListener('load', function(){
-    const form = document.querySelector('#form')
+
+    if (window.location.pathname == "/usuarios/register"){
+        const form = document.querySelector('#form')
     const nombre = document.querySelector('#nombre')
     const apellido = document.querySelector('#apellido')
     const email = document.querySelector('#email')
@@ -159,6 +161,9 @@ window.addEventListener('load', function(){
     console.log(campos.password)
     console.log(terminos.checked)
 
+     };
+
+    
     
     
     // function checkInputs(){

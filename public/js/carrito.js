@@ -73,60 +73,73 @@ window.addEventListener('load', () => {
       localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
       notificacion()
    }
-
-   const agregarCarritoFunction= function( elemento, idElemento){
-      elemento.addEventListener("click", function (e) {
-   
-        if (e.target.id == idElemento) {
-           agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
-        }
-   })}
-    
-
+   var id = window.location.pathname.split( '/' )[2];
+     
    if (window.location.pathname == "/productos"){
-      agregarCarritoFunction(agregarCarrito,'linkAgregarCarrito');
+      agregarCarrito.addEventListener("click", function (e) {
+         if (e.target.id == "linkAgregarCarrito") {
+            agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto);
+         }
+      });
    };
-   
-   agregarCarritoFunction(agregarCarritoDetalle,'linkAgregarCarritoDetalle');
-   agregarCarritoFunction(agregarCarritoCarrousel,'linkAgregarCarritoCarrousel');
-   
-   // if (window.location.pathname == "/productos"){
-   //    agregarCarrito.addEventListener("click", function (e) {
-   //       if (e.target.id == "linkAgregarCarrito") {
-   //          agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto);
-   //       }
-   //    });
-   // };
-
-   // agregarCarritoDetalle.addEventListener("click", function (e) {
-   //    if (e.target.id == "linkAgregarCarritoDetalle") {
-   //       agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
-   //    }
-   // });
-
-   // agregarCarritoCarrousel.addEventListener("click", function (e) {
-   //    if (e.target.id == "linkAgregarCarritoCarrousel") {
-   //       agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
-   //    }
-   // });
-
-});
-
+  
+   if (typeof id === 'number'){
+   agregarCarritoDetalle.addEventListener("click", function (e) {
+      if (e.target.id == "linkAgregarCarritoDetalle") {
+         agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
+      }
+   });
+   }
 
 if (window.location.pathname == "/productos/ver/carrito"){
-   console.log('carrito')
+   let productosLocalStorage = obtenerProductosLocalStorage();
+   
+   let total = 0;
+   productosLocalStorage.forEach(element => {
+
+      let contenedorProductos = document.querySelector('.contenedorProductos')
+
+      contenedorProductos.innerHTML += `<div class="producto 1">
+      <div class="imagenProducto"></div>
+      <img class="imgProducto" src="${element.img}" alt="">
+ </div>
+ <div class="detalleProductoCarrito">
+      <div class="nombreDescripcion">
+           <h4>${element.nombre}</h4>
+           <p>Descripción<p>
+                     <p>Cantidad</p>
+      </div>
+      <div class="cantidadYtalle">
+           <div>
+                <input type="text" value="">
+           </div>
+           <div class="talles">
+                <p>Talle:</p>
+                <select name="talle" id="talle">
+                     <option value="">...</option>
+                     <option value="">XS</option>
+                     <option value="">S</option>
+                     <option value="">M</option>
+                     <option value="">L</option>
+                     <option value="">XL</option>
+                     <option value="">XXL</option>
+                </select>
+           </div>
+
+      </div>
+ </div>
+ 
+ <div class="precioYeliminar">
+                    <h3>$500</h3>
+                    <a href=""><img src="/images/eliminar.svg" alt=""></a>
+               </div>`
+   
+
+
+
+});
+   
+
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+})
