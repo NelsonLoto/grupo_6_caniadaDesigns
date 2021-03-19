@@ -105,9 +105,6 @@ function notificacion() {
           notificacion();
 
            })
-     }else{
-          ul.innerHTML = `
-          <li><p>Carrito Vacío</p></li>`
      }
 
      vaciarCarrito.innerHTML = "Vaciar carrito"
@@ -118,7 +115,6 @@ function notificacion() {
           ul.innerHTML= "";
           notificacion();
 
-          console.log(ul)
           
           //let modal;
           // modal = document.createElement('div')
