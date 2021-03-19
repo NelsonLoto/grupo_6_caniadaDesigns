@@ -99,6 +99,7 @@ function notificacion() {
 
 
           let [...eliminarItem] = document.querySelectorAll(`.item-delete`);
+          
           eliminarItem.forEach(element=>{
                element.addEventListener('click', (e)=>{
      
@@ -114,7 +115,11 @@ function notificacion() {
                }
 
                localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
+
+
                notificacion();
+               window.location.reload()
+
            })
 
           })

@@ -66,6 +66,11 @@ let productosController = {
     carrito : function (req, res) {
         res.render('carrito',  { title: 'Caniada - Carrito' })
     },
+    checkout: function(req, res){
+        console.log(req.body)
+        res.send(req.body)
+
+    },
     productosAdmin: function ( req, res ){
         db.Producto.findAll()
             .then ((productosDB)=> res.render ('templateAdmin', {

@@ -1,8 +1,11 @@
-main.contenedorCarrito {
+body {
+     position: relative;
+}
+main.contenedor-carrito {
      display: flex;
      justify-content: space-evenly; 
      flex-wrap: wrap;
-     
+
 }
 
 /*---------------------------------------------------*/
@@ -337,7 +340,7 @@ section.pago .seccionFija .formulario .completar label.calle{
 
 section.pago .seccionFija .formulario .seleccionEnvio{
      display: flex;
-     justify-content: space-between;
+     justify-content: space-evenly;
      align-items: center;
      font-size: 0.9rem;
      padding: 5px 0px;
@@ -402,6 +405,7 @@ section.pago .seccionFija .formulario .botonPagar button {
      box-shadow: 0px 0px 8px rgb(197, 197, 197);
      border: none;
      border-radius: 40px;
+     cursor: pointer;
 }
 
 section.pago .seccionFija .formulario .botonPagar button:hover {
@@ -417,6 +421,7 @@ section.pago .seccionFija .formulario .botonPagar button a {
      align-items: center;
      padding: 5px 0px;
      color: white;
+     pointer-events: none;
 }
 
 section.pago .seccionFija .formulario .botonPagar button a:hover {
@@ -485,12 +490,12 @@ section.pago .seccionFija .formulario .botonPagar button a p{
 
 @media screen and (max-width: 770px){
 
-     main.contenedorCarrito {
+     main.contenedor-carrito {
           flex-direction: column;
           align-items: center;
      }
 
-     main.contenedorCarrito section{
+     main.contenedor-carrito section{
           width: 90%;
      }
 
@@ -558,3 +563,38 @@ section.pago .seccionFija .formulario .botonPagar button a p{
           border-radius: 40px;
      }
 }
+
+/* Clases agregadas con JS*/
+body div.checkout-exitoso {
+     position: absolute;
+     width: 100;
+}
+
+main.contenedor-carrito div.background-checkout {
+     position: absolute;
+     top: 0vh;
+     width: 100vw;
+     height: 100vh;
+     background-color: #36363661;
+}
+
+div.cantidadYtalle div.stepper{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 10px;
+     width: 20px;
+     height: 20px;
+     background-color: #4f4f4f;
+     margin: 0px 5px;
+     cursor: pointer;
+}
+
+div.cantidadYtalle div.stepper span{
+     color: #fafafa;
+     text-align: center;
+     font-size: 20px;
+     width: 100%;
+     
+}
+

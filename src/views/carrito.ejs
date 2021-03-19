@@ -8,10 +8,7 @@
 <body>
      <%- include('./partials/header') %>
 
-     <main class="contenedorCarrito">
-
-
-
+     <main class="contenedor-carrito">
 
           <section class="vistaResumen">
                <div class="tituloSeccion">
@@ -19,13 +16,8 @@
                </div>
 
                <div class="contenedor-productos">
-                    
-
                </div>
                
-
-               
-
                <div class="infoEnvio">
                     <div class="envio">
                          <i class="fas fa-check-circle"></i>
@@ -43,8 +35,8 @@
                          <h5 class="monto-acumulado"></h5>
                     </div>
                     <div class="costoEnvio">
-                         <h5>Envío</h5>
-                         <h5>$0</h5>
+                         <h5>Impuestos <small>(IVA 21%.-)</small></h5>
+                         <h5 class="impuestos"></h5>
                     </div>
                     <div class="totalPedido">
                          <h4>Total del pedido</h4>
@@ -64,35 +56,35 @@
                     <p class="datos">Datos de facturación</p>
 
                     <div class="formulario">
-                         <form action="">
+                         <form action="" method="POST" >
                               <div class="completar">
 
                                    <label class="nombre">Nombre
-                                        <input type="text"></label>
+                                        <input type="text" name="nombre"></label>
 
                                    <label class="apellido">Apellido
-                                        <input type="text"></label>
+                                        <input type="text" name="apellido"></label>
 
                                    <label class="localidad">Localidad
-                                        <input type="text"></label>
+                                        <input type="text" name="localidad"></label>
 
                                    <label class="zip">Código postal
-                                        <input type="text"></label>
+                                        <input type="text" name="zip"></label>
 
                                    <label class="calle">Calle
-                                        <input type="text"></label>
+                                        <input type="text" name="calle"></label>
 
                                    <label class="numeracion">Nº
-                                        <input type="text"></label>
+                                        <input type="text" name="numeracion"></label>
 
                                    <label class="masInfo">Otra información
-                                        <input type="text"></label>
+                                        <input type="text" name="masinfo"></label>
 
                                    <label class="email">Email
-                                        <input type="email"></label>
+                                        <input type="email" name="email"></label>
 
                                    <label class="phone">Teléfono
-                                        <input type="phone"></label>
+                                        <input type="phone" name="telefono"></label>
 
 
                               </div>
@@ -101,11 +93,9 @@
                                    <label for="domicilio">
                                         <p><input type="radio" name="envio" id="domicilio">Entrega a Domicilio</p>
                                    </label>
-                                   <label for="otra">
-                                        <p><input type="radio" name="envio" id="otra">Otra dirección</p>
-                                   </label>
+                                   
                                    <label for="sucursal">
-                                        <p><input type="radio" name="envio" id="sucursal">Retiro en sucursal</p>
+                                        <p><input type="radio" name="retiro" id="sucursal">Retiro en sucursal</p>
                                    </label>
 
                               </div>
@@ -123,16 +113,22 @@
                                    <p><a class="detalles" href="">Ver detalles</a></p>
                               </div>
 
-                              <h3 class="montoAPagar">$2000</h3>
+                              <h3 class="montoAPagar"></h3>
+
+                              <div class="data-carrito">
+                                   
+                              </div>
 
                               <div class="botonPagar">
-                                   <button type="submit">
+
+                                   <button type="submit" id="checkout-post" >
                                         <a href="">
                                              <p>Pagar con</p>
                                              <img src="/images/mercadoPago.svg" alt="">
                                         </a>
                                    </button>
                               </div>
+                              
                          </form>
                     </div>
                </div>
@@ -142,6 +138,7 @@
      <footer>
           <%- include('./partials/footer') %>
      </footer>
+     <script type="text/javascript" src="/js/checkout.js"></script>
 
 
 </body>

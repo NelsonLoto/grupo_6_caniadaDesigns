@@ -118,9 +118,15 @@ if (window.location.pathname == "/productos/ver/carrito"){
 
            <div class="cantidadYtalle">
 
-                <div>
-                     <input type="text" value=${element.cantidad}>
-                </div>
+               <div class="stepper">
+                  <span class="stepper-restar" data-id-producto=${element.id}>-</span>
+               </div>
+               <div>
+                     <input class="cantidad-producto ${element.id}" data-id-producto="${element.id}" type="text" value=${element.cantidad} readonly>
+               </div>
+               <div class="stepper">
+                  <span class="stepper-sumar" data-id-producto=${element.id}>+</span>
+               </div>
 
                 <div class="talles">
                      <p>Talle:</p>
@@ -154,8 +160,10 @@ if (window.location.pathname == "/productos/ver/carrito"){
 
    let montoAcumulado = document.querySelector('.monto-acumulado');
       montoAcumulado.innerHTML = `$ ${subtotalAPagar }`
+   let impuestos = document.querySelector('.impuestos');
+      impuestos.innerHTML = `$${subtotalAPagar * 0.21}`
    let montoTotal = document.querySelector('.monto-total');
-      montoTotal.innerHTML = `$ ${subtotalAPagar }`
+      montoTotal.innerHTML = `$ ${subtotalAPagar * 1.21 }`
    
       if(productosLocalStorage != null){
 
@@ -177,6 +185,7 @@ if (window.location.pathname == "/productos/ver/carrito"){
               localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
 
               notificacion();
+              
               window.location.reload()
 
           })
