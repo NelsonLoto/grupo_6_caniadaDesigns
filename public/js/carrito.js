@@ -3,9 +3,7 @@
 window.addEventListener('load', () => {
 
    
-   let agregarCarrito = document.querySelector(".contenedor-cards");
-   let agregarCarritoCarrousel = document.querySelector(".contenedor-cardsCarrousel");
-   let agregarCarritoDetalle = document.querySelector("#linkAgregarCarritoDetalle");
+   let agregarCarrito = document.querySelectorAll("#linkAgregarCarrito");
    let badge = document.querySelector('.badge');
 
    function obtenerProductosLocalStorage() {
@@ -22,7 +20,7 @@ window.addEventListener('load', () => {
       return productos;
    }
 
-   function notificacion() {
+   function notificacionEnBadge() {
       let productos = obtenerProductosLocalStorage()
 
       if (productos.length == 0){
@@ -33,7 +31,7 @@ window.addEventListener('load', () => {
       return badge
    }
 
-   notificacion()
+   notificacionEnBadge()
 
    
 
@@ -71,128 +69,117 @@ window.addEventListener('load', () => {
       console.log(`el producto de id ${productoClickeado.id} fue agregado correctamente. Cantidad: ${productoClickeado.cantidad}`);
       
       localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
-      notificacion()
+      notificacionEnBadge()
    }
 
 
-   var id = window.location.pathname.split( '/' )[2];
-     
-   if (window.location.pathname == "/productos"){
-      agregarCarrito.addEventListener("click", function (e) {
-         if (e.target.id == "linkAgregarCarrito") {
-            agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto);
-         }
-      });
-   };
-  
-   //if (typeof id === 'number'){
-   if (window.location.pathname == `/productos/${id}`){
-   agregarCarritoDetalle.addEventListener("click", function (e) {
-      if (e.target.id == "linkAgregarCarritoDetalle") {
-         agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
-      }
-   });
-   }
+   agregarCarrito.forEach(linkDeAgregarACarrito=>{
+      linkDeAgregarACarrito.addEventListener("click", function (e) {
 
-if (window.location.pathname == "/productos/ver/carrito"){
-   let productosLocalStorage = obtenerProductosLocalStorage();
+            agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
+
+      })
+   })
    
-   let subtotalAPagar = 0;
-   productosLocalStorage.forEach(element => {
 
-      let contenedorProductos = document.querySelector('.contenedor-productos')
+// if (window.location.pathname == "/productos/ver/carrito"){
+//    let productosLocalStorage = obtenerProductosLocalStorage();
+   
+//    let subtotalAPagar = 0;
+//    productosLocalStorage.forEach(element => {
 
-      contenedorProductos.innerHTML += `
-      <div class="producto 1">
+//       let contenedorProductos = document.querySelector('.contenedor-productos')
 
-      <div class="imagenProducto">
-         <img class="imgProducto" src="${element.img}" alt="">
-      </div>
+//       contenedorProductos.innerHTML += `
+//       <div class="producto 1">
 
-      <div class="detalleProductoCarrito">
-           <div class="nombreDescripcion">
-                <a class="ver-carrito" href="/productos/${element.id}"><h4>${element.nombre}</h4></a>
-                <p><p>
-                <p>Detalles</p>
-           </div>
+//       <div class="imagenProducto">
+//          <img class="imgProducto" src="${element.img}" alt="">
+//       </div>
 
-           <div class="cantidadYtalle">
+//       <div class="detalleProductoCarrito">
+//            <div class="nombreDescripcion">
+//                 <a class="ver-carrito" href="/productos/${element.id}"><h4>${element.nombre}</h4></a>
+//                 <p><p>
+//                 <p>Detalles</p>
+//            </div>
 
-               <div class="stepper">
-                  <span class="stepper-restar" data-id-producto=${element.id}>-</span>
-               </div>
-               <div>
-                     <input class="cantidad-producto ${element.id}" data-id-producto="${element.id}" type="text" value=${element.cantidad} readonly>
-               </div>
-               <div class="stepper">
-                  <span class="stepper-sumar" data-id-producto=${element.id}>+</span>
-               </div>
+//            <div class="cantidadYtalle">
 
-                <div class="talles">
-                     <p>Talle:</p>
-                     <select name="talle" id="talle">
-                          <option value="">...</option>
-                          <option value="">XS</option>
-                          <option value="">S</option>
-                          <option value="">M</option>
-                          <option value="">L</option>
-                          <option value="">XL</option>
-                          <option value="">XXL</option>
-                     </select>
-                </div>
+//                <div class="stepper">
+//                   <span class="stepper-restar" data-id-producto=${element.id}>-</span>
+//                </div>
+//                <div>
+//                      <input class="cantidad-producto ${element.id}" data-id-producto="${element.id}" type="text" value=${element.cantidad}>
+//                </div>
+//                <div class="stepper">
+//                   <span class="stepper-sumar" data-id-producto=${element.id}>+</span>
+//                </div>
+
+//                 <div class="talles">
+//                      <p>Talle:</p>
+//                      <select name="talle" id="talle">
+//                           <option value="">...</option>
+//                           <option value="">XS</option>
+//                           <option value="">S</option>
+//                           <option value="">M</option>
+//                           <option value="">L</option>
+//                           <option value="">XL</option>
+//                           <option value="">XXL</option>
+//                      </select>
+//                 </div>
                 
-           </div>
-      </div>
+//            </div>
+//       </div>
 
-      <div class="precioYeliminar">
-           <h3>$${element.precio * element.cantidad}</h3>
-           <span class="item-delete"><i class="far fa-trash-alt" data-id-producto=${element.id}></i></span>
-      </div>
- </div>`
+//       <div class="precioYeliminar">
+//            <h3 class="precio-cantidad">$${element.precio}</h3>
+//            <span class="item-delete"><i class="far fa-trash-alt" data-id-producto=${element.id}></i></span>
+//       </div>
+//  </div>`
 
-      let precioPorCantidad = element.precio * element.cantidad;
-      subtotalAPagar = subtotalAPagar + precioPorCantidad
+//       let precioPorCantidad = element.precio * element.cantidad;
+//       subtotalAPagar = subtotalAPagar + precioPorCantidad
    
 
-      
 
-   });
+//    });
 
-   let montoAcumulado = document.querySelector('.monto-acumulado');
-      montoAcumulado.innerHTML = `$ ${subtotalAPagar }`
-   let impuestos = document.querySelector('.impuestos');
-      impuestos.innerHTML = `$${subtotalAPagar * 0.21}`
-   let montoTotal = document.querySelector('.monto-total');
-      montoTotal.innerHTML = `$ ${subtotalAPagar * 1.21 }`
+//    let subtotal = document.querySelector('.monto-acumulado');
+//       subtotal.innerHTML = `$ ${subtotalAPagar }`
+//    let impuestos = document.querySelector('.impuestos');
+//       impuestos.innerHTML = `$${subtotalAPagar * 0.21}`;
+//    let montoTotal = document.querySelector('.monto-total');
+//       montoTotal.innerHTML = `$ ${subtotalAPagar * 1.21 }`;
    
-      if(productosLocalStorage != null){
+//    if(productosLocalStorage != null){
 
-         let [...eliminarItem] = document.querySelectorAll(`.item-delete`);
-         eliminarItem.forEach(element=>{
-              element.addEventListener('click', (e)=>{
+//          let [...eliminarItem] = document.querySelectorAll(`.item-delete`);
+
+//          eliminarItem.forEach(element=>{
+//             element.addEventListener('click', (e)=>{
     
-              let idProducto = e.target.dataset.idProducto
+//             let idProducto = e.target.dataset.idProducto
                    
-              let productoExistente = productosLocalStorage.find(producto => producto.id == idProducto)
-              console.log(productoExistente.id)
+//             let productoExistente = productosLocalStorage.find(producto => producto.id == idProducto)
                    
-              let posicion = productosLocalStorage.indexOf(productoExistente);
+//             let posicion = productosLocalStorage.indexOf(productoExistente);
                    
-              if (posicion > -1) {
-                   productosLocalStorage.splice(posicion, 1)
-              }
+//             if (posicion > -1) {
+//                   productosLocalStorage.splice(posicion, 1)
+//             }
 
-              localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
+//             localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
 
-              notificacion();
+//             notificacionEnBadge();
               
-              window.location.reload()
+//             window.location.reload()
 
-          })
-         })
+//             })
+//          })
 
-    }
+//    }
 
-};
+// };
 
 })

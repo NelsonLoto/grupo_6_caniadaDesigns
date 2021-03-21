@@ -1,6 +1,6 @@
 window.addEventListener('load', function(){
 
-    if (window.location.pathname == "/productos/ver/carrito"){
+    if (window.location.pathname == "/usuarios/register"){
         const form = document.querySelector('#form')
         const nombre = document.querySelector('#nombre')
         const apellido = document.querySelector('#apellido')
