@@ -68,6 +68,8 @@ window.addEventListener('load', () => {
          productosLocalStorage.push(productoClickeado)
       }
       console.log(`el producto de id ${productoClickeado.id} fue agregado correctamente. Cantidad: ${productoClickeado.cantidad}`);
+
+      console.log(productoClickeado)
       
       localStorage.setItem('productos', JSON.stringify(productosLocalStorage));
       notificacionEnBadge()

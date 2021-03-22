@@ -133,6 +133,7 @@ function notificacion() {
           localStorage.clear();
           ul.innerHTML= "";
           notificacion();
+          window.location.reload();
 
           
           //let modal;
