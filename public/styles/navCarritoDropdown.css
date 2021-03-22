@@ -58,12 +58,11 @@ body{
 .navbar-right {
     float: right;
     position: relative;
+    display: flex;
 }
 
 
 .navbar-right a{
-    display: inline;
-    padding-left: 20px;
     color: #ffffff;
     text-decoration: none;
 }
@@ -92,7 +91,7 @@ body{
 
 
 
-.badge {
+/* .badge {
     width: 16px;
     line-height: 16px;
     background-color: tomato;
@@ -108,7 +107,7 @@ body{
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     box-shadow: -6px 4px 15px rgb(223, 75, 75);
     cursor: pointer;
-}
+} */
 
 
 
@@ -116,8 +115,8 @@ body{
     background: white;
     width: 320px;
     position: absolute;
-    top: 30px;
-    right: -10px;
+    top: 8vh;
+    right: 150px;
     border-radius: 3px;
     padding: 20px;
     overflow: hidden;

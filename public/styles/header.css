@@ -65,7 +65,7 @@ header.template nav.menu ul li p{
     color: #fafafa!important;
 }
 
-header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option p {
+/* header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option p {
     margin-left: 10px;
     color: white;
 }
@@ -76,7 +76,9 @@ header.template nav.user{
     align-items: center;
     width: 33.3%;
     justify-content: center;
-}
+} */
+
+
 /*ICONO BÚSQUEDA*/
 /*
 header nav.user ul li form {
@@ -153,29 +155,14 @@ form input:valid + label::after{
 
 
 /*icono CARRITO*/
-header.template nav.user ul li.bag,
+
+/* header.template nav.user ul li.bag,
 header.template nav.user ul li.search{
     position: relative;
     padding: 0px 0px;
-}
+}*/
 
-header.template nav.user ul li span.notificacion{
-    width: 16px;
-    line-height: 16px;
-    background-color: tomato;
-    z-index: 2;
-    position: absolute;
-    right: -12px;
-    top:0px;
-    color:white;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 12px;
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    box-shadow: -6px 4px 15px rgb(223, 75, 75);
-    cursor: pointer;
-}
+
 
 /* header.template nav.user {
     color: #363636;
@@ -187,7 +174,7 @@ header.template nav.user ul li span.notificacion{
     margin-right: 10vw;
 } */
 
-header.template nav.user ul li {
+/* header.template nav.user ul li {
     margin-left: 50px;
     font-size: 1.1rem;
     color: #fafafa;
@@ -197,7 +184,7 @@ header.template nav.user ul li {
 header.template nav.user ul li a:hover {
     transition: all ease-out 0.1s;
     
-}
+} */
 
 header.template nav.menu ul li a:hover {
     transition: all ease-out 0.1s;
@@ -205,7 +192,7 @@ header.template nav.menu ul li a:hover {
     
 }
 
-header.template nav.use ul li a{
+/* header.template nav.user ul li a{
     color: #fafafa;
 }
 
@@ -295,7 +282,94 @@ header.template nav.user ul.userMenu li.usuario:hover div.dropdown,
 header.template nav.user ul.userMenu li.usuario div.flecha:focus a:focus + div.dropdown{
     display: flex;
     z-index: 1;
+} */
+
+
+nav.user {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
+
+
+nav.user div.navbar-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+nav.user div.navbar-right div.contenedor-icono{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav.user div.navbar-right div.contenedor-icono a{
+
+    font-size: 16px ;
+}
+header.template nav.user div.contenedor-icono.carrito a{
+    position: relative;
+    
+}
+
+header.template nav.user div.contenedor-icono.carrito a span.badge{
+    width: 18px;
+    line-height: 18px;
+    background-color: tomato;
+    z-index: 2;
+    position: absolute;
+    right: -14px;
+    top: -10px;
+    color:white;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    /* box-shadow: -6px 4px 15px rgb(223, 75, 75); */
+    cursor: pointer;
+} 
+
+nav.user div.navbar-right div.contenedor-icono.usuario div.avatar{
+    width: 100%;
+    height: 100%;
+    font-size: 16px ;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    position: relative;
+    cursor: pointer;
+}
+
+nav.user div.navbar-right div.contenedor-icono.usuario div.avatar img{
+    width: 60%;
+    height: 60%;
+    cursor: pointer;
+    border: solid 1px #fafafa;
+    border-radius: 50px;
+    object-fit: cover;
+}   
+
+nav.user div.navbar-right div.contenedor-icono.usuario div.avatar span.flecha-menu{
+    position: absolute;
+    top: 22px;
+    right: 0px;
+    color: #fafafa;
+    font-size: 8px;
+}
+
+
+
+
+
+
 
 @media screen and (max-width: 860px){
     header.template div.logo{

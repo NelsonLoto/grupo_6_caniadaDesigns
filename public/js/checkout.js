@@ -31,7 +31,7 @@ window.addEventListener('load',()=>{
           obtenerProductosLocalStorage();
           
           let dataUser = document.getElementById('data-user');
-          console.log(dataUser.dataset)
+          console.log(dataUser)
           let idUser
           if (dataUser.dataset.idUser != undefined){
                console.log(dataUser.dataset.idUser)
