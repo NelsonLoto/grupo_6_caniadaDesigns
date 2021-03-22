@@ -51,7 +51,8 @@ let apiController = {
                         color : resultadoProductos[i].color.nombre_color,
                         genero : resultadoProductos[i].genero.nombre_genero,
                         categoria : resultadoProductos[i].categoria.nombre_categoria,
-                        talle : resultadoProductos[i].talle.nombre
+                        talles : resultadoProductos[i].talles
+                        // talles : resultadoProductos[i].talles.
                         // cantidadVendida: resultadoProductos[i].detallesVentaPorId[0].cantidad,
                         // montoVendido: resultadoProductos[i].detallesVentaPorId[0].monto_parcial
                     }
@@ -79,7 +80,7 @@ let apiController = {
                 color: productoDetail.color.nombre_color, 
                 genero:productoDetail.genero.nombre_genero, 
                 categoria:productoDetail.categoria.nombre_categoria,
-                talle: productoDetail.talle.nombre
+                talles : productoDetail.talles
             }//el sprint pide un array de las relaciones que tenga, pero la realidad es que es mas accesible enviar un objeto para accederlo simplemente sin tener que recorrerlo. QUE OPINAN?
             
             res.status(200).json(

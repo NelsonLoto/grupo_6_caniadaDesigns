@@ -12,4 +12,3 @@ router.post('/ver/carrito', productosController.checkout)
 
 
 module.exports = router
-

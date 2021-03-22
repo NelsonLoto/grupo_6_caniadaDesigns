@@ -27,10 +27,14 @@ const config = {
   };
   const Talle = sequelize.define("Talle", cols, config);
   Talle.associate = function(models){
-    Talle.hasMany (models.Producto, {
-      foreignKey : 'id_talle',
-      as : 'productos'
+    Talle.belongsToMany(models.Producto, {
+      as: 'productos',
+      through : 'talles_productos',
+      foreignKey : 'talle_id_talle',
+      otherKey : 'producto_id_producto',
+      timestamps : false
     })
   }
+  
   return Talle;
 };

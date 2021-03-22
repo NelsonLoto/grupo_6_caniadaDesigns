@@ -11,9 +11,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     sku: {
       type: DataTypes.INTEGER(11),
-      allowNull: false,
+      allowNull: true,
       defaultValue: null,
-      primaryKey: true,
       autoIncrement: false,
       comment: null,
       field: "sku"
@@ -189,17 +188,16 @@ const config = {
       foreignKey : 'id_categoria',
       as : 'categoria'
     }),
-    Producto.belongsTo(models.Talle, {
-      foreignKey : 'id_talle',
-      as : 'talle'
-    }),
     Producto.hasMany(models.DetalleVenta, {
       foreignKey : 'id_producto',
       as : 'detallesVentasPorId'
     }),
-    Producto.hasMany(models.DetalleVenta,{
-      foreignKey : 'sku',
-      as : 'detallesVentasPorSku'
+    Producto.belongsToMany(models.Talle, {
+      as : 'talles',
+      through : 'talles_productos',
+      foreingKey: 'producto_id_producto',
+      otherKey : 'talle_id_talle',
+      timestamps : false
     })
   }
   return Producto;

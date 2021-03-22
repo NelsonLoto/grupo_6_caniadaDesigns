@@ -50,9 +50,8 @@ window.addEventListener('load',()=>{
           let subtotalAPagar = 0; 
 
           productosLocalStorage.forEach(element => {
-
                contenedorProductos.innerHTML += `
-               <div class="producto 1">
+               <div class="producto 1" id=${element.id}-${element.talle}>
          
                <div class="imagenProducto">
                   <img class="imgProducto" src="${element.img}" alt="">
@@ -68,19 +67,19 @@ window.addEventListener('load',()=>{
                     <div class="cantidadYtalle">
          
                         <div class="stepper">
-                           <span class="stepper-restar" data-id-producto=${element.id}>-</span>
+                           <span class="stepper-restar" data-id-producto=${element.id} data-talle-producto=${element.talle}>-</span>
                         </div>
                         <div>
-                              <input class="cantidad-producto ${element.id}" data-id-producto="${element.id}" type="text" value=${element.cantidad}>
+                              <input class="cantidad-producto ${element.id}" data-id-producto="${element.id}" type="text" value=${element.cantidad} data-talle-producto=${element.talle}>
                         </div>
                         <div class="stepper">
-                           <span class="stepper-sumar" data-id-producto=${element.id}>+</span>
+                           <span class="stepper-sumar" data-id-producto=${element.id} data-talle-producto=${element.talle}>+</span>
                         </div>
          
                          <div class="talles">
                               <p>Talle:</p>
                               <select name="talle" id="talle">
-                                   <option value="">...</option>
+                                   <option value="${element.talle}">${element.talle}</option>
                                    <option value="">XS</option>
                                    <option value="">S</option>
                                    <option value="">M</option>
@@ -95,7 +94,7 @@ window.addEventListener('load',()=>{
          
                <div class="precioYeliminar">
                     <h3 class="precio-cantidad">$${element.precio}</h3>
-                    <span class="item-delete"><i class="far fa-trash-alt" data-id-producto=${element.id}></i></span>
+                    <span class="item-delete"><i class="far fa-trash-alt" data-id-producto=${element.id} data-talle-producto=${element.talle}></i></span>
                </div>
           </div>`
          
@@ -117,10 +116,10 @@ window.addEventListener('load',()=>{
 
           eliminarItem.forEach(element=>{
             element.addEventListener('click', (e)=>{
-    
+               
             let idProducto = e.target.dataset.idProducto
-                   
-            let productoExistente = productosLocalStorage.find(producto => producto.id == idProducto)
+            let talleProducto = e.target.dataset.talleProducto
+            let productoExistente = productosLocalStorage.find(producto => producto.id == idProducto && producto.talle == talleProducto)
                    
             let posicion = productosLocalStorage.indexOf(productoExistente);
                    
@@ -147,12 +146,11 @@ window.addEventListener('load',()=>{
           //Stepper INCREMENTA
           stepperSumar.forEach(stepperSuma=>{
                stepperSuma.addEventListener('click', (e)=>{
-                   let productoModificado= cantidadProducto.find(producto=>producto.dataset.idProducto == e.target.dataset.idProducto)
+                   let productoModificado= cantidadProducto.find(producto=>producto.dataset.idProducto == e.target.dataset.idProducto && producto.dataset.talleProducto == e.target.dataset.talleProducto)
 
+                   productoModificado.value = parseInt(productoModificado.value) + 1
 
-                    productoModificado.value = parseInt(productoModificado.value) + 1
-
-                    let productosLocalStorageActualizado = productosLocalStorage.find(element => productoModificado.dataset.idProducto == element.id)
+                    let productosLocalStorageActualizado = productosLocalStorage.find(element => productoModificado.dataset.idProducto == element.id && productoModificado.dataset.talleProducto == element.talle)
 
                     productosLocalStorageActualizado.cantidad = productoModificado.value;
                     let posicion = productosLocalStorage.indexOf(productoModificado);
@@ -172,14 +170,14 @@ window.addEventListener('load',()=>{
           //Stepper disminuye
           stepperRestar.forEach(stepperResta=>{
                stepperResta.addEventListener('click', (e)=>{
-                   let productoModificado= cantidadProducto.find(producto=>producto.dataset.idProducto == e.target.dataset.idProducto)
+                   let productoModificado= cantidadProducto.find(producto=>producto.dataset.idProducto == e.target.dataset.idProducto && producto.dataset.talleProducto == e.target.dataset.talleProducto)
 
 
 
                     if(productoModificado.value >= 2){productoModificado.value = parseInt(productoModificado.value) - 1}
                     
 
-                    let productosLocalStorageActualizado = productosLocalStorage.find(element => productoModificado.dataset.idProducto == element.id)
+                    let productosLocalStorageActualizado = productosLocalStorage.find(element => productoModificado.dataset.idProducto == element.id )
 
                     productosLocalStorageActualizado.cantidad = productoModificado.value;
                     let posicion = productosLocalStorage.indexOf(productoModificado);

@@ -33,7 +33,7 @@
                 <section class="caracteristicasProducto">
                     <h3><Descripción del producto></h3>
                     <h4>Talla</h4>
-                    <p>El/la modelo mide x y lleva talle <%= producto.talle.nombre %></p>
+                    <p>El/la modelo mide x y lleva talle <%= producto %></p>
                     <h4>Modelo</h4>
                     <p> <%= producto.modelo %>  </p>
                     <h4>Composicion</h4>
@@ -60,17 +60,14 @@
                     </div>
                     <div class="seleccionTalles">
                         <select name="seleccionTalles" id="seleccionTalles">
-                                   <option value="selecTalle" selected disabled hidden>Seleccioná tu talle</option>
-                                   <option value="XS">XS</option>
-                                   <option value="S">S</option>
-                                   <option value="M">M</option>
-                                   <option value="L">L</option>
-                                   <option value="XL">XL</option>
-                                   <option value="XXL">XXL</option>
+                            <option value="selecTalle" selected disabled hidden>Seleccioná tu talle</option>
+                            <%for (let talle of producto.talles) {%>
+                                    <option value=<%=talle.nombre%>><%= talle.nombre %></option>
+                                    <% } %>
                               </select>
                     </div>
                     <small><a href="#">Tabla de talles</a></small>
-                    <a href="#" id="linkAgregarCarrito" class="boton" data-id-producto="<%= producto.id_producto %>" data-producto="<%=JSON.stringify(producto)%>"><i class="fas fa-shopping-bag"></i>&emsp;Añadir</a>
+                    <a href="#" id="linkAgregarCarrito" class="boton" data-id-producto="<%= producto.id_producto %>" data-producto="<%=JSON.stringify(producto)%>" ><i class="fas fa-shopping-bag"></i>&emsp;Añadir</a>
                     <ul>
                         <li><i class="far fa-check-circle"></i>&ensp;Envíos gratis a todo el país</li>
                         <li><i class="far fa-check-circle"></i>&ensp;Devoluciones gratuitas</li>

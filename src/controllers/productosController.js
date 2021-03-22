@@ -4,7 +4,7 @@ const fs = require('fs')
 const db = require('../database/models')
 const { resolveSoa } = require('dns')
 const { QueryTypes } = require('sequelize')
-const { text } = require('express')
+const { text, response } = require('express')
 //Leyendo JSON DB
 let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'), 'utf8')) // 
 
@@ -39,28 +39,23 @@ let productosController = {
             include : {
                 all: true
             }
-
         })
-
         let productosDB = await db.Producto.findAll({
             include : {
                 all: true
             }
         })
-
         let categoria = await db.Categoria.findOne({
             where : {
                 id : producto.id_categoria
             }
             
         })
-
         return res.render('detalleProducto', {
             producto : producto,
             categoria: categoria,
             title : producto.nombre,
             productosDB : productosDB,
-            
         })
     },
     carrito : function (req, res) {
@@ -110,6 +105,7 @@ let productosController = {
             sku: req.body.sku,
             imagen_1: req.file.filename
         }))
+        
         res.render('templateAdmin', {
             accion: 'Crear nuevo producto',
             path: '/admin/productos/nuevo',

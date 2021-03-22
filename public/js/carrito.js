@@ -16,7 +16,6 @@ window.addEventListener('load', () => {
       } else {
          productos = JSON.parse(localStorage.getItem('productos'));
       }
-
       return productos;
    }
 
@@ -39,21 +38,23 @@ window.addEventListener('load', () => {
       
       let productosLocalStorage = obtenerProductosLocalStorage();
       let productoData = JSON.parse(producto);
-
-
+      let talle = document.getElementById('seleccionTalles').value
       let productoClickeado = {
          id: idProducto,
          nombre: productoData.nombre,
          precio: productoData.precio,
-         talle: productoData.talle.nombre,
+         talle: talle,
          img: `/images/fotosProductos/${productoData.imagen_1}`,
          cantidad: 1
       }
 
-      
-      let productoExistente = productosLocalStorage.find(element => element.id == idProducto)
-      
+      console.log(productoClickeado);
+      let productoExistente = productosLocalStorage.find(element => element.id == idProducto && element.talle == talle)
+      console.log(productoExistente);
 
+      if (productoClickeado.talle == 'selecTalle'){
+          return window.alert('Debes seleccionar un talle')
+      } else 
       if (productoExistente == undefined) {
          productosLocalStorage.push(productoClickeado);
       } else {
@@ -75,9 +76,8 @@ window.addEventListener('load', () => {
 
    agregarCarrito.forEach(linkDeAgregarACarrito=>{
       linkDeAgregarACarrito.addEventListener("click", function (e) {
-
             agregarProductoLocalStorage(e.target.dataset.idProducto, e.target.dataset.producto)
-
+            console.log(e.target.dataset.producto);
       })
    })
    

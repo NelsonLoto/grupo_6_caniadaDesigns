@@ -35,19 +35,6 @@ module.exports = (sequelize, DataTypes) => {
         model: "Producto"
       }
     },
-    sku: {
-      type: DataTypes.INTEGER(11),
-      allowNull: false,
-      defaultValue: null,
-      primaryKey: false,
-      autoIncrement: false,
-      comment: null,
-      field: "sku",
-      references: {
-        key: "sku",
-        model: "Producto"
-      }
-    },
     cantidad: {
       type: DataTypes.INTEGER(11),
       allowNull: true,
@@ -75,7 +62,7 @@ const config = {
       name: "fk_detalles_ventas_productos1_idx",
       unique: false,
       type: "BTREE",
-      fields: ["id_producto", "sku"]
+      fields: ["id_producto"]
     }, {
       name: "fk_detalles_ventas_ventas1_idx",
       unique: false,
@@ -92,10 +79,6 @@ const config = {
     DetalleVenta.belongsTo(models.Producto, {
       foreignKey : 'id_producto',
       as : 'producto'
-    }),
-    DetalleVenta.belongsTo(models.Producto,{
-      foreignKey : 'sku',
-      as : 'sku_id'
     })
   }
   return DetalleVenta;
