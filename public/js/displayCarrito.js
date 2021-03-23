@@ -1,9 +1,13 @@
 window.addEventListener('load',()=>{
 //let body = document.querySelector('body')
-let dropdownCarrito = document.getElementById('cart')
+let dropdownCarrito = document.getElementById('cart');
 let totalCarrito = document.querySelector('.total');
+let contenedorVaciarCarrito = document.querySelector('.shopping-cart-vaciar');
+let iconoVaciarCarrito = document.querySelector('.shopping-cart-vaciar i');
 let vaciarCarrito = document.querySelector('.vaciarCarrito');
-let ul = document.querySelector('.shopping-cart-items')
+let ul = document.querySelector('.shopping-cart-items');
+let buttonConfirmarCompra = document.querySelector('.button-checkout');
+
 
 let badge = document.querySelector('.badge');
 
@@ -40,15 +44,21 @@ function notificacion() {
      ul.innerHTML= ""; 
 
      if(productosLocalStorage.length == 0){
+          
           ul.innerHTML= `
           <li class="clearfix">
           
                <span class="item-quantity">No hay nada en tu carrito todavía</span>
-               <a class="ver-carrito" href="/productos"><p>Ir a tienda</p></a>
+               <a class="ver-carrito" href="/productos"><i class="fas fa-store"></i><p>Ir a tienda</p></a>
                <div class="separador"></div>
-          </li>`
+          </li>`;
+
+          contenedorVaciarCarrito.classList.toggle('display-none');
+          buttonConfirmarCompra.classList.toggle('display-none')
           
      }
+
+     
 
      let total = 0;
      productosLocalStorage.forEach(element => {
@@ -126,9 +136,8 @@ function notificacion() {
 
      }
 
-     vaciarCarrito.innerHTML = "Vaciar carrito"
 
-     vaciarCarrito.addEventListener('click', (e)=>{
+     contenedorVaciarCarrito.addEventListener('click', (e)=>{
           //let divParent =((e.target.parentElement).parentElement).parentElement;
           localStorage.clear();
           ul.innerHTML= "";

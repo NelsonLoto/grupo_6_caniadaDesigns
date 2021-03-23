@@ -38,7 +38,6 @@ window.addEventListener('load', ()=>{
                });
 
                body.addEventListener('click', (e)=>{
-                    e.stopPropagation();
 
                     esconderMenu();
                })

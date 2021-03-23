@@ -72,7 +72,7 @@ body{
 }
 
 .navbar-right a.button-checkout:hover {
-    color: #cfd1d8;
+    color: #f4f4f4;
 }
 
 
@@ -118,7 +118,7 @@ body{
     top: 8vh;
     right: 150px;
     border-radius: 3px;
-    padding: 20px;
+    padding: 15px;
     overflow: hidden;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26) !important;
     -webkit-transition: all .2s ease;
@@ -148,16 +148,20 @@ body{
     align-items: center;
 }
 
+.shopping-cart-vaciar {
+    cursor: pointer;
+    border: solid 1px #ABB0BE;
+    padding: 0px 5px;
+    border-radius: 20px;
+}
 .shopping-cart-header div p.vaciarCarrito:empty{
     display: none;
 }
 .shopping-cart-header div p.vaciarCarrito{
     color: tomato;
     font-weight: normal;
-    cursor: pointer;
-    padding: 5px 10px;
-    border: solid 1px tomato;
-    border-radius: 6px;
+    padding: 5px 5px;
+    font-size: 12px;
 }
 
 .shopping-cart-total {
@@ -260,20 +264,22 @@ div.separador{
 }
 
 .button-checkout {
-    background: #e93838c0;
+    background: rgb(245, 85, 77);
+    
     color: white;
     text-align: center;
     padding: 8px 10px;
     text-decoration: none;
     display: block;
-    border-radius: 3px;
+    border-radius: 20px;
     font-size: 16px;
-    margin: 25px 0 15px 0;
+    margin: 25px 0 5px 0;
     text-transform: uppercase;
 }
 
 .button-checkout:hover {
     background: lighten(#f80c0c, 3%);
+    background: #f55757;
 }
 
 .button-checkout i {
@@ -288,6 +294,45 @@ div.separador{
     content: "";
     display: table;
     clear: both;
+}
+
+.clearfix a.ver-carrito{
+    display: flex;
+    align-items: center;
+}
+
+.clearfix a.ver-carrito i{
+    margin-right: 10px;
+    color: white;
+    font-size: 12px;
+    background-color: #f55757; 
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.shopping-cart-vaciar{
+    display: flex;
+    align-items: center;
+}
+
+.shopping-cart-vaciar i {
+    color: tomato;
+}
+
+.shopping-cart-vaciar p.vaciarCarrito{
+    display:flex
+
+}
+
+.display-none{
+    display: none;
 }
 
 
