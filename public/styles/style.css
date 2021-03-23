@@ -62,7 +62,10 @@
      @import url(/styles/logIn.css);
           
      /*-----CREAR PRODUCTO----*/
-          @import url(/styles/crearProducto.css);
+     @import url(/styles/crearProducto.css);
+
+     /*-----OVERVIEW Admin----*/
+     @import url(/styles/overview.css);
 
 
 /* ---------------------------

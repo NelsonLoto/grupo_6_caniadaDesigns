@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const productosController = require ('../controllers/productosController');
+const mainController = require ('../controllers/mainController');
 const usuariosController = require ('../controllers/usuariosController');
 const {guestAuth, roleAuth} = require ('../middlewares/authMiddleware')
 
@@ -24,6 +25,7 @@ var storage = multer.diskStorage({
 
 
 
+router.get ('/overview' ,roleAuth , mainController.homeAdmin) //funciona OK
 router.get ('/productos/all' ,roleAuth , productosController.productosAdmin) //funciona OK
 router.get ('/productos/nuevo', roleAuth ,productosController.crearView) //funciona OK
 router.post ('/productos/nuevo', roleAuth ,upload.single('fotoProducto'),productosController.crearSave)

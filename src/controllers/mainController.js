@@ -24,7 +24,14 @@ let mainController = {
         view: '/nosotros',
         nosotros
     })
-}
+    },
+    homeAdmin: function(req,res){
+        return res.render('templateAdmin', {
+            title : 'Admin - Panel',
+            view: '/admin/overview',
+            
+        })
+    }
 }
 
 module.exports = mainController

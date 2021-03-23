@@ -68,14 +68,22 @@
          <section class="col2">
              <div class="talle">
              <label for="talle">Talle</label>
-             <select name="talle" id="talle" value = "<%= producto.talle.id_talle %>">
-                    <% for (let talle of talles) { %>
-                        <% if (talle.id_talle != producto.talle.id_talle){ %> 
-                            <option value="<%= talle.id_talle %> "><%= talle.nombre %> </option>
-                        <% } else { %>
-                            <option value="<%= talle.id_talle%>" selected><%=talle.nombre%></option>
-                        <% } %>   
+             <select name="talle" id="talle">
+
+
+                <% for (let talle of talles) { %>
+                    <% if (talle.id_talle == producto.id_talle){ %> 
+                        <option value="<%= talle.id_talle %>"selected disabled><%= talle.nombre %></option>
                     <% } %> 
+                <% } %>
+                
+
+                <% for (let talle of talles) { %>
+                    <option value="<%= talle.id_talle%>"><%=talle.nombre%></option>
+                <% } %> 
+
+
+                
              </select>
              </div>
 

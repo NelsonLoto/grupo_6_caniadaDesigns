@@ -1,15 +1,53 @@
 <section class="productosAdmin">
      <div class="caja">
           <ul>
+               <div class="row contenedor-row-1">
+                    <div class="column col-imagen">
+
+                    </div>
+                    <div class="column col-nombre">
+                         <p>Nombre producto</p>
+                    </div>
+                    <div class="column col-descripcion">
+                         <p>Descripcion</p>
+                    </div>
+                    <div class="column col-precio">
+                         <p>Precio $</p>
+                    </div>
+                    <div class="column col-editar">
+                         <p>Editar</p>
+                    </div>
+                    <div class="column col-eliminar">
+                         <p>Eliminar</p>
+                    </div>
+               </div>
                <hr>
           <% for( let i = 0; i < productosDB.length; i++ ) { %>
                <li>
-                    <p><%= productosDB[i].nombre %> </p>
-                    <div class="accion">
-                         <a href="/admin/productos/editar/<%=productosDB[i].id_producto%> "> Editar </a>
-                         <form action="/admin/productos/borrar/<%= productosDB[i].id_producto%>?_method=DELETE" method="POST">
-                              <button type="submit">Borrar</button>
-                         </form>
+                    <div class="row contenedor-row">
+                         <div class="column col-imagen">
+                              <div class="contenedor-imagen">
+                                   <img src="/images/fotosProductos/<%=productosDB[i].imagen_1 %>" alt="">
+                              </div>
+                         </div>
+                         <div class="column col-nombre">
+                              <p><%= productosDB[i].nombre %> </p>
+                         </div>
+                         <div class="column col-descripcion">
+                              <p><%= productosDB[i].descripcion %> </p>
+                         </div>
+                         <div class="column col-precio">
+                              <p><%= productosDB[i].precio %> </p>
+                         </div>
+                         <div class="column col-editar">
+                              <a href="/admin/productos/editar/<%=productosDB[i].id_producto%> "><i class="fas fa-pen"></i></a>
+                         </div>
+                         <div class="column col-eliminar">
+                              <form action="/admin/productos/borrar/<%= productosDB[i].id_producto%>?_method=DELETE" method="POST">
+                                   <button type="submit"><i class="far fa-trash-alt"></i>
+                                   </button>
+                              </form>
+                         </div>
                     </div>
                </li>
                <hr>

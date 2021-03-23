@@ -166,17 +166,16 @@ let productosController = {
     },
     editarView : async function (req, res){//Deberíamos poder editar por SKU y no por ID
         let producto = await db.Producto.findByPk(req.params.id, {
-            include : [
-                {association : 'color'},
-                {association : 'genero'},
-                {association : 'categoria'},
-                {association : 'talle'}
-            ]
+            include : {
+                all: true
+            }
         })
         let categorias = await db.Categoria.findAll()
         let generos = await db.Genero.findAll()
         let colores = await db.Color.findAll()
         let talles = await db.Talle.findAll()
+
+        // return res.send({producto: producto,talles: talles})
         return res.render('templateAdmin', {
             title : 'Admin - Editar producto',
             view: '/productosAdmin/editarProducto',
