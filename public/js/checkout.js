@@ -208,6 +208,7 @@ window.addEventListener('load',()=>{
           
           carritoLength.innerHTML = `<input type="number" name="carritoLength" value=${obtenerProductosLocalStorage.length} hidden>
           <input type="number" name="carritoSubtotal" value=${montoAcumulado} hidden>
+          <input type="number" name="carritoTotal" value=${montoAcumulado*1.21} hidden>
           `;
 
           montoAPagar.innerHTML = `$${montoAcumulado * 1.21}`;
@@ -230,6 +231,7 @@ window.addEventListener('load',()=>{
           carritoLength.innerHTML += 
           `<input type="number" name="carritoLength" value=${productosLocalStorage.length} hidden>
           <input type="number" name="carritoSubtotal" value=${montoAcumulado} hidden>
+          <input type="number" name="carritoTotal" value=${montoAcumulado*1.21} hidden>
           `;
 
           montoAPagar.innerHTML = `$${montoAcumulado * 1.21}`

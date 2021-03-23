@@ -63,7 +63,54 @@ let productosController = {
     },
     checkout: function(req, res){
         console.log(req.body)
-        res.send(req.body)
+
+        let carritoRecibido = req.body;
+        let carritoLength = req.body.carritoLength;
+
+        let productosCrudo = [];
+
+
+        for (let propiedad in carritoRecibido) {
+
+            for(let i= 1; i<= carritoLength; i++){
+                if(propiedad == `producto${i}`){
+                    let producto = propiedad;
+                    productosCrudo.push(carritoRecibido[producto])
+                }
+            }
+        }
+
+        let carritoParaBD = {
+            id_usuario : 9,
+            monto_parcial : carritoRecibido.carritoSubtotal,
+            monto_total : carritoRecibido.carritoTotal,
+            calle_envio : carritoRecibido.calle,
+            numero_calle_envio: carritoRecibido.numeracion,
+            codigo_postal : carritoRecibido.zip,
+            productos : [],
+        }
+
+        productosCrudo.forEach(e=>{
+            
+            productoListosParaBd = {
+                id_producto : e.split("_", 1)[0],
+                cantidad : parseInt(e.split("_", 2)[1]),
+                talle : e.split("_", 3)[2],
+            }
+
+            carritoParaBD.productos.push(productoListosParaBd)
+        })
+
+
+        
+
+        
+
+        
+
+
+
+        res.send( carritoParaBD)
 
     },
     productosAdmin: function ( req, res ){

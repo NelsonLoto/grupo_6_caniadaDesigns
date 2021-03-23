@@ -423,6 +423,22 @@ INSERT INTO `talles_productos` VALUES (1,3,1),(2,2,1),(3,3,2),(4,2,2),(5,1,2),(6
 /*!40000 ALTER TABLE `talles_productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
+
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('20', '4', '8');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('21', '5', '8');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('22', '1', '9');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('23', '2', '9');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('24', '3', '9');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('25', '4', '10');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('26', '5', '10');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('27', '3', '11');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('28', '5', '11');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('29', '2', '12');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('30', '4', '12');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('31', '1', '13');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('32', '2', '14');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('33', '3', '15');
+-- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('34', '4', '15');
 --
 -- Table structure for table `usuarios`
 --
