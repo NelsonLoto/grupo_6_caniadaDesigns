@@ -79,7 +79,7 @@ let usuarios = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 avatar: req.file.filename,
-                id_rol: 1
+                id_rol: 9
             });
             req.session.user = usuario;
             if (req.body.remember != undefined) {
