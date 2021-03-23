@@ -65,18 +65,7 @@ header.template nav.menu ul li p{
     color: #fafafa!important;
 }
 
-/* header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option p {
-    margin-left: 10px;
-    color: white;
-}
 
-header.template nav.user{
-    display: flex;
-    height: 100%;
-    align-items: center;
-    width: 33.3%;
-    justify-content: center;
-} */
 
 
 /*ICONO BÚSQUEDA*/
@@ -153,136 +142,13 @@ form input:valid + label::after{
 
 
 
-
-/*icono CARRITO*/
-
-/* header.template nav.user ul li.bag,
-header.template nav.user ul li.search{
-    position: relative;
-    padding: 0px 0px;
-}*/
-
-
-
-/* header.template nav.user {
-    color: #363636;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    margin-right: 10vw;
-} */
-
-/* header.template nav.user ul li {
-    margin-left: 50px;
-    font-size: 1.1rem;
-    color: #fafafa;
-
-}
-
-header.template nav.user ul li a:hover {
-    transition: all ease-out 0.1s;
-    
-} */
-
 header.template nav.menu ul li a:hover {
     transition: all ease-out 0.1s;
     /*color: rgb(248, 233, 222);*/
     
 }
 
-/* header.template nav.user ul li a{
-    color: #fafafa;
-}
 
-header.template nav.user ul.userMenu li.usuario{
-    position: relative;
-    width: 2.5rem;
-}
-header.template nav.user ul.userMenu li.user{
-    padding: 20px 0px;
-}
-header.template nav.user ul li.usuario div.perfil {
-    padding: 20px 0px;
-    cursor: pointer;
-    position: relative;
-}
-header.template nav.user ul li.usuario div.perfil div.avatar{
-    width:40px;
-    height: 40px;
-}
-header.template nav.user ul li.usuario div.perfil div.avatar img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    border: solid 1px#f09292;
-}
-
-header.template nav.user ul.userMenu li.usuario div.flecha{
-    position: absolute;
-    top:40%;
-    right: -15px;
-    font-size: 10px;
-    cursor: pointer;
-    height: 60%;
-    width: 40px;
-    text-align: right;
-    color: #f3c3c3;
-}
-header.template nav.user ul.userMenu li.usuario div.flecha i{ 
-    
-    color: #f09292;
-}
-
-header.template nav.user ul.userMenu li.usuario div.dropdown{
-    font-size: 0.8rem;
-    display: none;
-    position: absolute;
-    top:60px;
-    left: -20px;
-    width: 150px;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    background-color: #303030;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    padding: 8px 0px;
-    box-shadow: 1px 15px 10px #dddcdc;;
-}
-header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option{
-    padding: 1px 15px;
-    margin: 3px 0px;
-    width: 100%;
-    cursor: pointer;
-}
-header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option a{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-}
-
-header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option a i{
-    text-align: left;
-    color: #f56c6c;
-    width: 15%
-}
-
-header.template nav.user ul.userMenu li.usuario div.dropdown div.dropdown-option p{
-    margin-left: 10px;
-}
-
-
-
-
-header.template nav.user ul.userMenu li.usuario:hover div.dropdown,
-header.template nav.user ul.userMenu li.usuario div.flecha:focus a:focus + div.dropdown{
-    display: flex;
-    z-index: 1;
-} */
 
 
 nav.user {
@@ -314,6 +180,12 @@ nav.user div.navbar-right div.contenedor-icono a{
 
     font-size: 16px ;
 }
+
+header.template nav.user div.contenedor-icono.carrito.admin{
+    display: none;
+    
+}
+
 header.template nav.user div.contenedor-icono.carrito a{
     position: relative;
     
@@ -345,16 +217,34 @@ nav.user div.navbar-right div.contenedor-icono.usuario div.avatar{
     align-items: center;
     justify-content:center;
     position: relative;
-    cursor: pointer;
 }
+
+nav.user div.navbar-right div.contenedor-icono.usuario div.menu-dropdown{
+    display: none;
+}
+
+nav.user div.navbar-right div.contenedor-icono.usuario div.menu-dropdown-toggled{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    z-index: 4;
+    background-color: #303030;
+    border-radius: 4px;
+}
+
+
+
+
 
 nav.user div.navbar-right div.contenedor-icono.usuario div.avatar img{
     width: 60%;
     height: 60%;
-    cursor: pointer;
     border: solid 1px #fafafa;
     border-radius: 50px;
     object-fit: cover;
+    cursor: pointer;
 }   
 
 nav.user div.navbar-right div.contenedor-icono.usuario div.avatar span.flecha-menu{
@@ -363,11 +253,49 @@ nav.user div.navbar-right div.contenedor-icono.usuario div.avatar span.flecha-me
     right: 0px;
     color: #fafafa;
     font-size: 8px;
+    cursor: pointer;
 }
 
 
+/* 
+Dropdown Menu
+ */
 
 
+ div.menu-dropdown-toggled div.dropdown-option{
+    width: 200px;
+    display: flex;
+}
+
+div.menu-dropdown-toggled div.dropdown-option a{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    margin: 8px ;
+    padding: 5px;
+    border-radius: 8px;
+
+}
+
+div.menu-dropdown-toggled div.dropdown-option a:hover{
+    background-color: #555555;
+}
+div.menu-dropdown-toggled div.dropdown-option a:hover > i{
+    background-color: #fc5e5e;
+}
+
+div.menu-dropdown-toggled div.dropdown-option a i{
+    border-radius: 50%;
+    background-color: #7e7e7e;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin-right: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
 
 
 

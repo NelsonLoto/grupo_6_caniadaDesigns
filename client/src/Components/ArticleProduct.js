@@ -23,14 +23,14 @@ class ArticleProduct extends Component{
      }
 
      resultApi(){
-          this.apiCall("https://grupo6-caniada.herokuapp.com/api/products",this.handlerData)
+          this.apiCall("http://localhost:3000/api/products",this.handlerData)
      }
 
      handlerData = (data)=>{
           // console.log(data)
           this.setState({
                image: `https://grupo6-caniada.herokuapp.com/${data.productos[data.totalDeProductos-1].image}`,
-               description: data.productos[data.totalDeProductos-1].description,
+               description: data.productos[data.totalDeProductos-1].name,
           })
      }
 
