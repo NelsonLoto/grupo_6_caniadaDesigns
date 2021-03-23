@@ -168,7 +168,8 @@ main.contenedor section.registro div form div{
 
 main.contenedor section.registro div form div.checkbox{
     display: flex;
-    flex-direction: row;
+    flex-direction: column ;
+    margin-left: 1px;
     width: 100%;
 }
 main.contenedor section.registro div form div.checkbox input{
@@ -181,9 +182,18 @@ main.contenedor section.registro div form div.checkbox p{
 }
 main.contenedor section.registro div form div.checkbox .terminos{
     display: flex;
-    flex-direction: column ;
-    justify-content: center;
+    width: 100%;
+    padding-bottom: 1px;
+    justify-content: left;
+    align-items: center;
+    height: 30px;
 }
+
+main.contenedor section.registro div form div.checkbox .terminos input{
+    align-self: baseline;
+    margin-right: 2px;
+}
+
 main.contenedor section.registro div form div.checkbox{
     font-size: 0.8rem;
     margin-bottom: 0px;
@@ -201,8 +211,7 @@ main.contenedor section.registro div .submit {
     
     width: 100%;
     text-align: center;
-    margin: 10px 0px;
-
+    margin: 20px 0px;
 }
 
 main.contenedor section.registro div button.usuario{
@@ -215,9 +224,9 @@ main.contenedor section.registro div button.usuario{
 
 
 main.contenedor section.registro div.submit button:hover {
-    background-color: #eb5757;
-    
+    background-color: #eb5757;   
 }
+
 main.contenedor section.registro div.submit button{
     padding: 0px 30px;
     color: white;
