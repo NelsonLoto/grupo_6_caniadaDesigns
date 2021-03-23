@@ -37,10 +37,6 @@ window.addEventListener('load', ()=>{
                     desplegarMenu();
                });
 
-               body.addEventListener('click', (e)=>{
-
-                    esconderMenu();
-               })
 
                body.addEventListener('keydown', (e)=>{
                     if(e.key == "Escape"){
