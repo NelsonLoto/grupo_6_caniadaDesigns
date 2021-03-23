@@ -5,6 +5,7 @@ const db = require('../database/models')
 const { resolveSoa } = require('dns')
 const { QueryTypes } = require('sequelize')
 const { text, response } = require('express')
+
 //Leyendo JSON DB
 let productosDB = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/productos.json'), 'utf8')) // 
 
@@ -61,17 +62,14 @@ let productosController = {
     carrito : function (req, res) {
         res.render('carrito',  { title: 'Caniada - Carrito' })
     },
-    checkout: function(req, res){
-        console.log(req.body)
+    checkout: async function (req, res) {
 
         let carritoRecibido = req.body;
         let carritoLength = req.body.carritoLength;
-
         let productosCrudo = [];
-
+        let arrayDeProductosEnCarrito = [];
 
         for (let propiedad in carritoRecibido) {
-
             for(let i= 1; i<= carritoLength; i++){
                 if(propiedad == `producto${i}`){
                     let producto = propiedad;
@@ -80,40 +78,46 @@ let productosController = {
             }
         }
 
-        let carritoParaBD = {
-            id_usuario : 9,
-            monto_parcial : carritoRecibido.carritoSubtotal,
-            monto_total : carritoRecibido.carritoTotal,
-            calle_envio : carritoRecibido.calle,
-            numero_calle_envio: carritoRecibido.numeracion,
-            codigo_postal : carritoRecibido.zip,
-            productos : [],
-        }
-
         productosCrudo.forEach(e=>{
             
-            productoListosParaBd = {
+            let producto = {
                 id_producto : e.split("_", 1)[0],
                 cantidad : parseInt(e.split("_", 2)[1]),
                 talle : e.split("_", 3)[2],
+                monto_parcial: parseInt(e.split("_", 4)[3]),
             }
-
-            carritoParaBD.productos.push(productoListosParaBd)
+            arrayDeProductosEnCarrito.push(producto)
         })
 
+    
+        let venta = await db.Venta.create({
+            id_usuario : parseInt(carritoRecibido.idUsuario),
+            monto_parcial : parseInt(carritoRecibido.carritoSubtotal),
+            monto_total : parseInt(carritoRecibido.carritoTotal),
+            calle_envio : carritoRecibido.calle,
+            numero_calle_envio: parseInt(carritoRecibido.numeracion),
+            codigo_postal : parseInt(carritoRecibido.zip),
+            id_ciudad: 5,
+            id_forma_pago: 3,
+            id_descuento: 1
+        });
 
-        
 
-        
+        let detalleVenta = await arrayDeProductosEnCarrito.forEach(unProducto=>{
+            db.DetalleVenta.create({
+                id_venta : venta.id_venta,
+                id_producto : unProducto.id_producto,
+                cantidad : unProducto.cantidad,
+                monto_parcial : unProducto.monto_parcial
+            })
+        })
 
-        
+        console.log(detalleVenta)
 
-
-
-        res.send( carritoParaBD)
+        res.redirect('/')
 
     },
-    productosAdmin: function ( req, res ){
+    productosAdmin: function ( req,res ){
         db.Producto.findAll()
             .then ((productosDB)=> res.render ('templateAdmin', {
                 productosDB : productosDB,

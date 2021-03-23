@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, DataTypes) => {
   const cols = {
     id_venta: {
@@ -24,8 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     fecha_venta: {
       type: DataTypes.DATE,
-      allowNull: true,
-      defaultValue: null,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
       primaryKey: false,
       autoIncrement: false,
       comment: null,

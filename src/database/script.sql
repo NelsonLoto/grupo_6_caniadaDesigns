@@ -32,6 +32,9 @@ CREATE TABLE `Descuentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+INSERT INTO `caniada`.`Descuentos` (`id_descuento`, `nombre_descuento`, `porcentaje_descuento`) VALUES ('1', 'PrecioLista', '0');
+INSERT INTO `caniada`.`Descuentos` (`id_descuento`, `nombre_descuento`, `porcentaje_descuento`) VALUES ('2', 'Promocion', '20');
+
 --
 -- Dumping data for table `Descuentos`
 --
@@ -246,6 +249,10 @@ LOCK TABLES `permisos` WRITE;
 /*!40000 ALTER TABLE `permisos` ENABLE KEYS */;
 UNLOCK TABLES;
 
+
+
+
+
 --
 -- Table structure for table `permisos_x_rol`
 --
@@ -421,25 +428,26 @@ LOCK TABLES `talles_productos` WRITE;
 /*!40000 ALTER TABLE `talles_productos` DISABLE KEYS */;
 INSERT INTO `talles_productos` VALUES (1,3,1),(2,2,1),(3,3,2),(4,2,2),(5,1,2),(6,4,3),(7,2,3),(8,1,4),(9,4,5),(10,1,5),(11,2,5),(12,1,6),(13,3,6),(14,2,6),(15,5,6),(16,4,7),(17,2,7),(18,3,7),(19,1,7);
 /*!40000 ALTER TABLE `talles_productos` ENABLE KEYS */;
+
+
 UNLOCK TABLES;
 
+INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('20', '4', '8');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('21', '5', '8');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('22', '1', '9');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('23', '2', '9');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('24', '3', '9');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('25', '4', '10');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('26', '5', '10');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('27', '3', '11');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('28', '5', '11');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('29', '2', '12');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('30', '4', '12');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('31', '1', '13');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('32', '2', '14');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('33', '3', '15');
+ INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('34', '4', '15');
 
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('20', '4', '8');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('21', '5', '8');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('22', '1', '9');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('23', '2', '9');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('24', '3', '9');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('25', '4', '10');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('26', '5', '10');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('27', '3', '11');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('28', '5', '11');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('29', '2', '12');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('30', '4', '12');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('31', '1', '13');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('32', '2', '14');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('33', '3', '15');
--- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('34', '4', '15');
---
 -- Table structure for table `usuarios`
 --
 
@@ -503,6 +511,19 @@ CREATE TABLE `ventas` (
   CONSTRAINT `fk_ventas_usuarios1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+
+ALTER TABLE `caniada`.`ventas` 
+CHANGE COLUMN `fecha_venta` `fecha_venta` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ;
+
+
+ALTER TABLE `caniada`.`ventas` 
+CHANGE COLUMN `monto_parcial` `monto_parcial` DECIMAL(7,2) NULL DEFAULT NULL ,
+CHANGE COLUMN `monto_total` `monto_total` DECIMAL(7,2) NULL DEFAULT NULL ;
+
+
+ALTER TABLE `caniada`.`detalles_ventas` 
+CHANGE COLUMN `monto_parcial` `monto_parcial` DECIMAL(7,2) NULL DEFAULT NULL ;
 
 --
 -- Dumping data for table `ventas`

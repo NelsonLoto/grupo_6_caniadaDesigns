@@ -29,16 +29,20 @@ window.addEventListener('load',()=>{
 
      }else{
           obtenerProductosLocalStorage();
+
+         
           
           let dataUser = document.getElementById('data-user');
-          console.log(dataUser)
-          let idUser
-          if (dataUser.dataset.idUser != undefined){
-               console.log(dataUser.dataset.idUser)
-               idUser = dataUser.dataset.idUser;
+          console.log(dataUser);
+          let idUsuario
+          console.log(dataUser.dataset.idUsuario)
+          if (dataUser.dataset.idUsuario != undefined){
+               idUsuario = dataUser.dataset.idUsuario;
           }
-          console.log(idUser)
-          let dataCarrito = document.querySelector('.data-carrito')
+          console.log(idUsuario)
+
+          let dataCarrito = document.querySelector('.data-carrito');
+          console.log(dataCarrito)
           let carritoLength = document.querySelector('.carrito-length')
           let montoAPagar= document.querySelector('.montoAPagar')
           
@@ -202,13 +206,14 @@ window.addEventListener('load',()=>{
                carritoLength.innerHTML = "";
           obtenerProductosLocalStorage.forEach((producto, i) => {
                dataCarrito.innerHTML += 
-                    `<input type="text" name="producto${i+1}" value=${producto.id}_${producto.cantidad}_${producto.talle} hidden>`;
+                    `<input type="text" name="producto${i+1}" value=${producto.id}_${producto.cantidad}_${producto.talle}_${producto.precio*producto.cantidad} hidden>`;
                montoAcumulado += producto.precio *producto.cantidad;
           });
           
           carritoLength.innerHTML = `<input type="number" name="carritoLength" value=${obtenerProductosLocalStorage.length} hidden>
           <input type="number" name="carritoSubtotal" value=${montoAcumulado} hidden>
           <input type="number" name="carritoTotal" value=${montoAcumulado*1.21} hidden>
+          <input type="number" name="idUsuario" value=${idUsuario} hidden>
           `;
 
           montoAPagar.innerHTML = `$${montoAcumulado * 1.21}`;
@@ -224,7 +229,7 @@ window.addEventListener('load',()=>{
 
           productosLocalStorage.forEach((producto, i) => {
                dataCarrito.innerHTML += 
-                    `<input type="text" name="producto${i+1}" value=${producto.id}_${producto.cantidad}_${producto.talle} hidden>`;
+                    `<input type="text" name="producto${i+1}" value=${producto.id}_${producto.cantidad}_${producto.talle}_${producto.precio*producto.cantidad} hidden>`;
                montoAcumulado += producto.precio *producto.cantidad;
           });
 
@@ -232,6 +237,7 @@ window.addEventListener('load',()=>{
           `<input type="number" name="carritoLength" value=${productosLocalStorage.length} hidden>
           <input type="number" name="carritoSubtotal" value=${montoAcumulado} hidden>
           <input type="number" name="carritoTotal" value=${montoAcumulado*1.21} hidden>
+          <input type="number" name="idUsuario" value=${idUsuario} hidden>
           `;
 
           montoAPagar.innerHTML = `$${montoAcumulado * 1.21}`
