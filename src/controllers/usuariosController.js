@@ -106,6 +106,9 @@ let usuarios = {
             })
         })
         
+        },
+        perfil: function (req,res){
+            res.render('perfil', {title: "Mi Perfil"})
         }
     }
 module.exports = usuarios

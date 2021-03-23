@@ -29,6 +29,7 @@ router.post ('/login',loginValidation ,usuariosController.loginPost )
 router.get ('/logout',usuariosController.logout )
 router.get('/register', userAuth ,usuariosController.register) //funciona OK
 router.post('/register', upload.single('avatar'), registerValidation , usuariosController.registerPost) //funciona OK
+router.get('/perfil', usuariosController.perfil)
 
 //prueba Shaggy
 router.get('/register2', function(req,res){
