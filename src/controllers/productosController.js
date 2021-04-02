@@ -52,6 +52,13 @@ let productosController = {
             }
             
         })
+
+        // return res.send({
+        //     producto : producto,
+        //     categoria: categoria,
+        //     title : producto.nombre,
+        //     productosDB : productosDB,
+        // })
         return res.render('detalleProducto', {
             producto : producto,
             categoria: categoria,

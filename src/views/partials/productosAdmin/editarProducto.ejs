@@ -26,10 +26,10 @@
          <section class="col1">
              <div class="categorias">
              <label for="categoria">Categoría</label>
-             <select name="categoria" id="categoria" value = "<%= producto.categoria.id_categoria %>">
-                <option value="<%= producto.categoria.id_categoria%>" selected><%=producto.categoria.nombre_categoria%></option> 
+             <select name="categoria" id="categoria" value = "<%= producto.categoria.id %>">
+                <option value="<%= producto.categoria.id%>" selected><%=producto.categoria.nombre_categoria%></option> 
                 <% for (let categoria of categorias) { %>
-                    <option value="<%= categoria.id_categoria %> "><%= categoria.nombre_categoria %> </option>
+                    <option value="<%= categoria.id %> "><%= categoria.nombre_categoria %> </option>
                 <% } %> 
              </select>
              </div>

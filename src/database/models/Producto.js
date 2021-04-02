@@ -146,27 +146,27 @@ const config = {
     timestamps : false,
     tableName: "productos",
     comment: "",
-    indexes: [{
-      name: "fk_productos_colores_idx",
-      unique: false,
-      type: "BTREE",
-      fields: ["id_color"]
-    }, {
-      name: "fk_productos_generos1_idx",
-      unique: false,
-      type: "BTREE",
-      fields: ["id_genero"]
-    }, {
-      name: "fk_productos_categorias1_idx",
-      unique: false,
-      type: "BTREE",
-      fields: ["id_categoria"]
-    }, {
-      name: "fk_productos_talles1_idx",
-      unique: false,
-      type: "BTREE",
-      fields: ["id_talle"]
-    }],
+    // indexes: [{
+    //   name: "fk_productos_colores_idx",
+    //   unique: false,
+    //   type: "BTREE",
+    //   fields: ["id_color"]
+    // }, {
+    //   name: "fk_productos_generos1_idx",
+    //   unique: false,
+    //   type: "BTREE",
+    //   fields: ["id_genero"]
+    // }, {
+    //   name: "fk_productos_categorias1_idx",
+    //   unique: false,
+    //   type: "BTREE",
+    //   fields: ["id_categoria"]
+    // }, {
+    //   name: "fk_productos_talles1_idx",
+    //   unique: false,
+    //   type: "BTREE",
+    //   fields: ["id_talle"]
+    // }],
     createdAt : 'created_at',
     updatedAt : 'updated_at',
     deletedAt : 'deleted_at',

@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `caniada` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `caniada`;
+CREATE DATABASE  IF NOT EXISTS `caniadagrupo6_db` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `caniadagrupo6_db`;
 -- MySQL dump 10.13  Distrib 8.0.21, for macos10.15 (x86_64)
 --
--- Host: localhost    Database: caniada
+-- Host: localhost    Database: caniadagrupo6_db
 -- ------------------------------------------------------
 -- Server version	5.7.32
 
@@ -32,8 +32,8 @@ CREATE TABLE `Descuentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `caniada`.`Descuentos` (`id_descuento`, `nombre_descuento`, `porcentaje_descuento`) VALUES ('1', 'PrecioLista', '0');
-INSERT INTO `caniada`.`Descuentos` (`id_descuento`, `nombre_descuento`, `porcentaje_descuento`) VALUES ('2', 'Promocion', '20');
+INSERT INTO `caniadagrupo6_db`.`Descuentos` (`id_descuento`, `nombre_descuento`, `porcentaje_descuento`) VALUES ('1', 'PrecioLista', '0');
+INSERT INTO `caniadagrupo6_db`.`Descuentos` (`id_descuento`, `nombre_descuento`, `porcentaje_descuento`) VALUES ('2', 'Promocion', '20');
 
 --
 -- Dumping data for table `Descuentos`
@@ -432,21 +432,21 @@ INSERT INTO `talles_productos` VALUES (1,3,1),(2,2,1),(3,3,2),(4,2,2),(5,1,2),(6
 
 UNLOCK TABLES;
 
-INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('20', '4', '8');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('21', '5', '8');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('22', '1', '9');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('23', '2', '9');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('24', '3', '9');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('25', '4', '10');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('26', '5', '10');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('27', '3', '11');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('28', '5', '11');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('29', '2', '12');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('30', '4', '12');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('31', '1', '13');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('32', '2', '14');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('33', '3', '15');
- INSERT INTO `caniada`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('34', '4', '15');
+INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('20', '4', '8');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('21', '5', '8');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('22', '1', '9');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('23', '2', '9');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('24', '3', '9');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('25', '4', '10');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('26', '5', '10');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('27', '3', '11');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('28', '5', '11');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('29', '2', '12');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('30', '4', '12');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('31', '1', '13');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('32', '2', '14');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('33', '3', '15');
+ INSERT INTO `caniadagrupo6_db`.`talles_productos` (`id_talles_productos`, `talle_id_talle`, `producto_id_producto`) VALUES ('34', '4', '15');
 
 -- Table structure for table `usuarios`
 --
@@ -513,16 +513,16 @@ CREATE TABLE `ventas` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 
-ALTER TABLE `caniada`.`ventas` 
+ALTER TABLE `caniadagrupo6_db`.`ventas` 
 CHANGE COLUMN `fecha_venta` `fecha_venta` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ;
 
 
-ALTER TABLE `caniada`.`ventas` 
+ALTER TABLE `caniadagrupo6_db`.`ventas` 
 CHANGE COLUMN `monto_parcial` `monto_parcial` DECIMAL(7,2) NULL DEFAULT NULL ,
 CHANGE COLUMN `monto_total` `monto_total` DECIMAL(7,2) NULL DEFAULT NULL ;
 
 
-ALTER TABLE `caniada`.`detalles_ventas` 
+ALTER TABLE `caniadagrupo6_db`.`detalles_ventas` 
 CHANGE COLUMN `monto_parcial` `monto_parcial` DECIMAL(7,2) NULL DEFAULT NULL ;
 
 --

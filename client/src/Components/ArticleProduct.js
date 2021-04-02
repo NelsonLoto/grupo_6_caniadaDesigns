@@ -9,6 +9,7 @@ class ArticleProduct extends Component{
           this.state= {
                image: undefined,
                imageDefault : imageDefault,
+               url:'http://localhost:3000/productos'
           }
      }
 
@@ -27,11 +28,15 @@ class ArticleProduct extends Component{
      }
 
      handlerData = (data)=>{
-          // console.log(data)
+          console.log(data.productos)
           this.setState({
-               image: `https://grupo6-caniada.herokuapp.com/${data.productos[data.totalDeProductos-1].image}`,
+               image: `http://localhost:3000${data.productos[data.totalDeProductos-1].image}`,
                description: data.productos[data.totalDeProductos-1].name,
+               url: `http://localhost:3000/productos/${data.productos[data.totalDeProductos-1].id}`
+               
           })
+
+
      }
 
      componentDidMount(){
@@ -44,6 +49,7 @@ class ArticleProduct extends Component{
 
           let img;
           let p;
+          
           if(this.state.image != undefined){
                img = <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={this.state.image} alt="...loading"/>
                p = this.state.description
@@ -60,7 +66,7 @@ class ArticleProduct extends Component{
                    </div>
 
                    <p>{p}</p>
-                   <a target="_blank" rel="nofollow" href="/">View product detail</a>
+                   <a target="_blank" rel="nofollow" href={this.state.url}>View product detail</a>
                </div>
             
           )

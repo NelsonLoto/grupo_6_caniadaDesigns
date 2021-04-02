@@ -251,6 +251,7 @@ window.addEventListener('load',()=>{
           button.addEventListener('click', (e)=>{
                obtenerProductosLocalStorage();
                localStorage.clear();
+               window.open("https://www.mercadopago.com.ar", "_blank");
                // if(idUser != undefined){
                //      obtenerProductosLocalStorage();
                //      localStorage.clear();
