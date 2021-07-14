@@ -2,33 +2,33 @@
 
 ## Descripción del negocio
 
-Caniada Designs es un e-commerce de indumentaria casual. Su target son hombres y mujeres de 18 a 35 años ubicados en Argentina.  
+Caniada Designs es un e-commerce de indumentaria casual, con diseños de bandas de música. Su target son hombres y mujeres de 18 a 35 años ubicados en Argentina.
 
 ## Integrantes del equipo
 
 **Facundo Garcia**
 
-* Apodo: Flete.
-* Viviendo en Suecia / Extrañando Argentina
-* Ocupación: Chef a punto de colgar los cuchillos para poner manos en el teclado. 
+- Apodo: Flete.
+- Viviendo en Suecia / Extrañando Argentina
+- Ocupación: Chef a punto de colgar los cuchillos para poner manos en el teclado.
 
 **Guido Magaldi**
 
-* Apodo: Shaggy.
-* Residencia: Bariloche, Argentina.
-* Ocupación: Médico que no se cuelga más el estetoscopio y le mete muchas ganas a este mundo digital.
+- Apodo: Shaggy.
+- Residencia: Bariloche, Argentina.
+- Ocupación: Médico que no se cuelga más el estetoscopio y le mete muchas ganas a este mundo digital.
 
 **Nelson Javier Loto**
 
-* Apodo: Negro/Canela.
-* Residencia: Córdoba, Capital.
-* Ocupación: Estudiante de Ingeniería en Sistema de Información en la UTN de Córdoba. Trabajando  actualmente como Analista Desarrollador orientado al Soporte DataWarehouse en DicSys S.A para Claro.
+- Apodo: Negro/Canela.
+- Residencia: Córdoba, Capital.
+- Ocupación: Estudiante de Ingeniería en Sistema de Información en la UTN de Córdoba. Trabajando actualmente como Analista Desarrollador orientado al Soporte DataWarehouse en DicSys S.A para Claro.
 
 **Juan Pablo Jepik**
 
-* Apodo: Juanpi
-* Residencia: Corrientes, Capital.
-* Ocupación: Estudiante de Licenciatura en Administración en la UNNE.
+- Apodo: Juanpi
+- Residencia: Corrientes, Capital.
+- Ocupación: Estudiante de Licenciatura en Administración en la UNNE.
 
 ## Referentes
 
@@ -42,25 +42,21 @@ Caniada Designs es un e-commerce de indumentaria casual. Su target son hombres y
 
 - https://id.atlassian.com/invite/p/jira-software?id=XUkbbkzZQYKV0w8jKcvC2Q
 
-
 ## HEROKU APP
 
-     Versión de escritorio (no es del todo responsive todavía).
+- https://caniada.herokuapp.com/ HOME
+- https://caniada.herokuapp.com/nosotros NOSOTROS
+- https://caniada.herokuapp.com/usuarios/register REGISTRO
+- https://caniada.herokuapp.com/usuarios/login LOGIN (1º)
+- https://caniada.herokuapp.com/productos/:sku DETALLE DE PRODUCTO
+- https://caniada.herokuapp.com/admin/productos/all VER LISTADO de PRODUCTOS
+- https://caniada.herokuapp.com/admin/productos/nuevo CREAR NUEVO PRODUCTO
+- https://caniada.herokuapp.com/admin/productos/editar/:id EDITAR PRODUCTO
 
-- https://grupo6-caniada.herokuapp.com/ HOME
-- https://grupo6-caniada.herokuapp.com/nosotros NOSOTROS
-- https://grupo6-caniada.herokuapp.com/usuarios/register REGISTRO (1º)
-- https://grupo6-caniada.herokuapp.com/usuarios/login LOGIN (2º)
-- https://grupo6-caniada.herokuapp.com/productos/:sku DETALLE DE PRODUCTO
-- https://grupo6-caniada.herokuapp.com/admin/productos/all VER LISTADO de PRODUCTOS
-- https://grupo6-caniada.herokuapp.com/admin/productos/nuevo CREAR NUEVO PRODUCTO
-- https://grupo6-caniada.herokuapp.com/admin/productos/editar/:id EDITAR PRODUCTO
+- (1º):Para poder hacer login de admin usar:
 
-- (1º): En Heroku no se puede registar un usuario. 
-- (2º): 
-     Para poder hacer login de admin usar: 
-     - admin@caniada.com / admin123
+  - admin@caniada.com / admin123
 
-     Para poder hacer login de user usar: 
-     - user@caniada.com / user123
-     
+  Para poder hacer login de user usar:
+
+  - user@caniada.com / user123
